@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/ui/Navbar';
 import { ConsoleDemoWindow } from '@/components/ui/ConsoleDemoWindow';
+import { ParticleText } from '@/components/ui/ParticleText';
 import {
   Sparkles,
   ArrowRight,
@@ -38,18 +39,39 @@ export default function LandingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <main id="home" className="flex-1 max-w-7xl mx-auto px-6 pt-16 pb-24 w-full flex flex-col items-center text-center relative z-10 space-y-20">
+      <main id="home" className="flex-1 max-w-7xl mx-auto px-6 pt-12 pb-24 w-full flex flex-col items-center text-center relative z-10 space-y-16">
         {/* Top Header Block */}
-        <div className="flex flex-col items-center text-center max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-semibold mb-6 shadow-lg shadow-blue-500/5">
+        <div className="flex flex-col items-center text-center max-w-4xl w-full">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-semibold mb-4 shadow-lg shadow-blue-500/5">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
             <span>AI Technical Interviewer • Next.js 15 Platform</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
-            The AI-based Interview Platform <br />
-            <span className="text-gradient">by AB TALKS</span>
-          </h1>
+          {/* Particle Animated Headline */}
+          <div className="w-full max-w-3xl flex flex-col items-center mb-6">
+            <div className="w-full h-32 sm:h-44 md:h-52 relative flex items-center justify-center">
+              <ParticleText
+                text="InterviewOS"
+                color="#ffffff"
+                highlightColor="#8b5cf6"
+                particleSize={2.5}
+                density={3}
+                scatter={160}
+                gatherDuration={1500}
+                stagger={300}
+                pointerRepel={50}
+                repelRadius={140}
+                idleDrift={0.8}
+                trigger="mount"
+                fontSize="clamp(3.5rem, 11vw, 7rem)"
+                fontWeight={900}
+                glow
+              />
+            </div>
+            <p className="text-2xl sm:text-4xl font-extrabold text-gradient tracking-tight -mt-4">
+              by ABTalks
+            </p>
+          </div>
 
           <p className="text-base sm:text-lg text-gray-300 max-w-2xl font-normal leading-relaxed mb-10">
             ABTalks InterviewOS conducts adaptive technical interviews based on what you've actually learned —
