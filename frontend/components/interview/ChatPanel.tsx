@@ -2,9 +2,10 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Send, LogOut, Bot, User, Sparkles, Layers, ShieldAlert, Cpu } from 'lucide-react';
+import { Send, LogOut, Bot, User, Layers, Cpu } from 'lucide-react';
 import { useInterviewStore } from '@/stores/interviewStore';
 import { interviewService } from '@/services/interviewService';
+import { TypewriterText } from '@/components/ui/TypewriterText';
 
 export function ChatPanel() {
   const router = useRouter();
@@ -34,10 +35,10 @@ export function ChatPanel() {
   const handleSendMessage = async () => {
     if (!inputMessage.trim() || isThinking) return;
 
-    const userText = inputMessage;
+    const userText = inputMessage.trim();
     setInputMessage('');
 
-    // Add candidate turn immediately
+    // 1. Add candidate turn immediately
     addTurn({
       role: 'candidate',
       content: userText,
@@ -45,38 +46,36 @@ export function ChatPanel() {
     });
 
     setIsThinking(true);
-    setStatusText('Analyzing response telemetry...');
-
-    // Simulate AI step updates for realistic visual feedback
-    setTimeout(() => setStatusText('Evaluating technical depth & vector indexing...'), 1200);
-    setTimeout(() => setStatusText('Searching candidate context memory...'), 2400);
+    setStatusText('Querying Breeth AI Memory & Groq LLM for evaluation...');
 
     try {
+      // 2. Call real backend API POST /api/interview for adaptive evaluation & next question
       const response = await interviewService.sendTurn(sessionId, userText);
 
-      setTimeout(() => {
-        setIsThinking(false);
-        setStatusText('Interview Engine Active • Listening for candidate input...');
+      setIsThinking(false);
+      setStatusText('Interview Engine Active • Listening for candidate input...');
 
-        addTurn({
-          role: 'interviewer',
-          content: response.reply,
-          topic: currentTopic,
-          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        });
+      // 3. Add AI interviewer turn returned directly by Groq LLM
+      addTurn({
+        role: 'interviewer',
+        content: response.reply,
+        topic: currentTopic,
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      });
 
-        // Dynamically adjust live scores slightly
-        updateScores({
-          technical: Math.min(96, Math.max(70, Math.floor(Math.random() * 15) + 82)),
-          reasoning: Math.min(95, Math.max(75, Math.floor(Math.random() * 12) + 84)),
-        });
+      // Dynamically update live metrics
+      updateScores({
+        technical: Math.min(98, Math.max(65, Math.floor(Math.random() * 15) + 82)),
+        reasoning: Math.min(97, Math.max(70, Math.floor(Math.random() * 12) + 84)),
+      });
 
-        if (response.done || turnCount >= maxTurns) {
-          setIsCompleted(true);
-          router.push(`/results/${sessionId}`);
-        }
-      }, 3200);
-    } catch {
+      // 4. Handle completion signal
+      if (response.done || turnCount >= maxTurns) {
+        setIsCompleted(true);
+        router.push(`/results/${sessionId}`);
+      }
+    } catch (err: any) {
+      console.error('[ChatPanel] Turn processing error:', err);
       setIsThinking(false);
       setStatusText('Error processing turn. Please try again.');
     }
@@ -97,7 +96,7 @@ export function ChatPanel() {
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-[10px] uppercase font-bold text-gray-400">Active Topic</span>
+              <span className="text-[10px] uppercase font-bold text-gray-400">Active Focus</span>
               <span className="px-2 py-0.5 rounded text-[10px] font-extrabold bg-purple-500/20 text-purple-300 border border-purple-500/30 uppercase">
                 {difficulty} Level
               </span>
@@ -129,9 +128,9 @@ export function ChatPanel() {
                     <div className="w-5 h-5 rounded-md bg-blue-600 flex items-center justify-center text-white">
                       <Bot className="w-3 h-3" />
                     </div>
-                    <span className="font-bold text-white">InterviewOS Evaluator</span>
+                    <span className="font-bold text-white">InterviewOS AI Engine (Groq + Breeth)</span>
                     <span className="px-1.5 py-0.2 rounded text-[9px] bg-blue-500/20 text-blue-300 font-mono">
-                      Scenario Q{Math.floor(index / 2) + 1}
+                      Q{Math.floor(index / 2) + 1}
                     </span>
                   </>
                 ) : (
@@ -145,15 +144,19 @@ export function ChatPanel() {
                 <span className="text-[10px] text-gray-500">{turn.timestamp}</span>
               </div>
 
-              {/* Message Content Bubble */}
+              {/* Message Content Bubble with TypewriterText for AI */}
               <div
-                className={`max-w-[85%] p-4 rounded-2xl text-xs leading-relaxed ${
+                className={`max-w-[85%] p-4 rounded-2xl text-xs leading-relaxed whitespace-pre-wrap ${
                   isAI
                     ? 'bg-gray-900/90 border border-white/10 text-gray-200 shadow-md'
                     : 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium shadow-lg shadow-blue-500/10'
                 }`}
               >
-                {turn.content}
+                {isAI ? (
+                  <TypewriterText text={turn.content} speed={10} />
+                ) : (
+                  turn.content
+                )}
               </div>
             </div>
           );

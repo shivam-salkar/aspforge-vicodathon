@@ -2,9 +2,11 @@
 
 import { useEffect, useState, use } from 'react';
 import Link from 'next/link';
-import { Cpu, ShieldCheck, Clock, UserCheck, Bot } from 'lucide-react';
+import { Cpu, Clock, UserCheck } from 'lucide-react';
 import { useInterviewStore } from '@/stores/interviewStore';
 import { useCandidateStore } from '@/stores/candidateStore';
+import { candidateService } from '@/services/candidateService';
+import { interviewService } from '@/services/interviewService';
 import { TimelineSidebar } from '@/components/interview/TimelineSidebar';
 import { ChatPanel } from '@/components/interview/ChatPanel';
 import { LiveAssessmentPanel } from '@/components/interview/LiveAssessmentPanel';
@@ -13,8 +15,9 @@ export default function InterviewConsolePage({ params }: { params: Promise<{ ses
   const resolvedParams = use(params);
   const sessionId = resolvedParams.sessionId;
 
-  const { activeCandidate } = useCandidateStore();
+  const { activeCandidate, setActiveCandidate } = useCandidateStore();
   const { turnCount, maxTurns, elapsedSeconds, tickTimer, initSession, turns } = useInterviewStore();
+  const [isInitializing, setIsInitializing] = useState(false);
 
   // Running Timer
   useEffect(() => {
@@ -22,21 +25,55 @@ export default function InterviewConsolePage({ params }: { params: Promise<{ ses
     return () => clearInterval(timer);
   }, [tickTimer]);
 
-  // Ensure initial session prompt exists
+  // Ensure real API session initialization on mount
   useEffect(() => {
-    if (turns.length === 0) {
-      initSession(
-        sessionId,
-        `Welcome ${activeCandidate?.member.name || 'Candidate'}. I am your InterviewOS AI Technical Evaluator. I've analyzed your telemetry and background in ${activeCandidate?.member.jobRole || 'Software Engineering'}. Let's begin with System Architecture & Prompt Engineering: How do you handle schema evolution and backfilling in large-scale event streams without causing query latency spikes in your vector indexes?`
-      );
+    async function initializeEngine() {
+      if (turns.length === 0 && !isInitializing) {
+        setIsInitializing(true);
+
+        // Ensure active candidate profile exists
+        let cand = activeCandidate;
+        if (!cand) {
+          cand = await candidateService.getCandidateById('CAND-001');
+          setActiveCandidate(cand);
+        }
+
+        try {
+          // Call backend POST /api/interview to initialize Groq + Breeth AI session
+          const response = await interviewService.startInterview(sessionId, cand);
+          initSession(sessionId, response.reply);
+        } catch (err) {
+          console.error('[InterviewConsole] Engine initialization error:', err);
+          initSession(
+            sessionId,
+            `Welcome ${cand.member.name}. I am your InterviewOS AI Technical Interviewer. Let's begin by discussing System Architecture & Vector Search: How do you optimize query latency in high-dimensional indexes?`
+          );
+        } finally {
+          setIsInitializing(false);
+        }
+      }
     }
-  }, [sessionId, activeCandidate, initSession, turns.length]);
+
+    initializeEngine();
+  }, [sessionId, activeCandidate, setActiveCandidate, initSession, turns.length, isInitializing]);
 
   const formatTimer = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
+
+  if (isInitializing || turns.length === 0) {
+    return (
+      <div className="h-screen bg-[#08090A] flex flex-col items-center justify-center text-white p-6 text-center">
+        <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-6" />
+        <h2 className="text-lg font-bold tracking-tight">Initializing InterviewOS AI Engine...</h2>
+        <p className="text-xs text-gray-400 max-w-md mt-2 leading-relaxed">
+          Ingesting candidate profile telemetry into Breeth AI memory store & querying Groq LLM for real personalized technical questions...
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="h-screen bg-[#08090A] text-gray-100 flex flex-col overflow-hidden">
@@ -53,7 +90,7 @@ export default function InterviewConsolePage({ params }: { params: Promise<{ ses
 
           <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center gap-1.5 uppercase tracking-wider">
             <span className="w-2 h-2 rounded-full bg-blue-400 animate-ping" />
-            Live Interview
+            Live Interview Session
           </span>
         </div>
 

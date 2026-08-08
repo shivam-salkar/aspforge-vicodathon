@@ -18,6 +18,20 @@ import type {
   Mission,
 } from '../types/interview.js';
 
+// ─── System Prompt Definition ────────────────────────────────────────────────
+
+const SYSTEM_PROMPT = `
+You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+
+RULES:
+1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+5. Keep your total response under 60 words (3-4 sentences max).
+6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+`;
+
 // ─── In-Memory Session Store ─────────────────────────────────────────────────
 
 const sessions = new Map<string, InterviewSession>();
@@ -31,6 +45,23 @@ function loadCurriculum(): Curriculum {
   const raw = fs.readFileSync(path.resolve(process.cwd(), 'data/curriculum.json'), 'utf-8');
   curriculumCache = JSON.parse(raw) as Curriculum;
   return curriculumCache;
+}
+
+// ─── Sanitizer Helper ────────────────────────────────────────────────────────
+
+function sanitizeReply(reply: string): string {
+  if (!reply) return '';
+  return reply
+    .replace(/\*\*(?:Evaluation|Next Question|Question|Feedback):\*\*/gi, '')
+    .replace(/(?:Evaluation|Next Question|Question|Feedback):/gi, '')
+    .replace(/The candidate's answer/gi, 'Your answer')
+    .replace(/The candidate's response/gi, 'Your response')
+    .replace(/The candidate/gi, 'You')
+    .replace(/\b(\w+)\s+\1\b/gi, '$1') // Strip duplicate consecutive words (e.g. "optimize optimize")
+    .replace(/\bundefined\b/gi, '') // Strip residual 'undefined' tokens
+    .replace(/\n+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 // ─── Candidate Analysis Helpers ──────────────────────────────────────────────
@@ -74,9 +105,9 @@ function buildCandidateProfile(candidate: Candidate): string {
   return [
     `Candidate: ${m.name}`,
     `Role: ${m.jobRole} | Experience: ${m.yearsExperience} years | Education: ${m.education}`,
-    `Cohort Progress: ${s.missionsCompleted}/31 missions completed, ${s.missionsFirstTry} first-try passes, ${s.commitDays}/31 commit days`,
+    `Cohort Progress: ${s.missionsCompleted}/31 missions completed, ${s.missionsFirstTry} first-try passes`,
     strongTopics.length > 0 ? `Strong areas: ${strongTopics.join(', ')}` : '',
-    weakTopics.length > 0 ? `Weak areas (multiple attempts): ${weakTopics.join(', ')}` : '',
+    weakTopics.length > 0 ? `Weak areas: ${weakTopics.join(', ')}` : '',
     skippedTopics.length > 0 ? `Skipped topics: ${skippedTopics.join(', ')}` : '',
   ].filter(Boolean).join('\n');
 }
@@ -85,7 +116,6 @@ function selectNextTopic(session: InterviewSession): string {
   const curriculum = loadCurriculum();
   const { skippedTopics, weakTopics } = analyzeCandidateTelemetry(session.candidate, curriculum);
 
-  // Prioritize: skipped topics first, then weak topics, then uncovered modules
   const allModules = curriculum.modules.map(m => m.title);
   const uncoveredSkipped = skippedTopics.filter(t => !session.topicsCovered.has(t));
   const uncoveredWeak = weakTopics.filter(t => !session.topicsCovered.has(t));
@@ -94,20 +124,19 @@ function selectNextTopic(session: InterviewSession): string {
   if (uncoveredSkipped.length > 0) return uncoveredSkipped[0];
   if (uncoveredWeak.length > 0) return uncoveredWeak[0];
   if (uncoveredAny.length > 0) return uncoveredAny[0];
-  // If all covered, cycle back to weak areas
   return weakTopics[0] || allModules[session.turnCount % allModules.length];
 }
 
 function getDifficultyLabel(difficulty: 'easy' | 'medium' | 'hard'): string {
-  return { easy: 'beginner-friendly', medium: 'intermediate', hard: 'senior-level' }[difficulty];
+  return { easy: 'beginner', medium: 'intermediate', hard: 'senior' }[difficulty];
 }
 
-function adjustDifficulty(session: InterviewSession, answerQuality: string): void {
-  const lower = answerQuality.toLowerCase();
-  if (lower.includes('excellent') || lower.includes('strong') || lower.includes('correct')) {
+function adjustDifficulty(session: InterviewSession, text: string): void {
+  const lower = text.toLowerCase();
+  if (lower.includes('correct') || lower.includes('solid') || lower.includes('good') || lower.includes('accurate') || lower.includes('great point')) {
     if (session.difficulty === 'easy') session.difficulty = 'medium';
     else if (session.difficulty === 'medium') session.difficulty = 'hard';
-  } else if (lower.includes('weak') || lower.includes('incorrect') || lower.includes('needs improvement')) {
+  } else if (lower.includes('weak') || lower.includes('incorrect') || lower.includes("don't know") || lower.includes('missed') || lower.includes('didn\'t quite')) {
     if (session.difficulty === 'hard') session.difficulty = 'medium';
     else if (session.difficulty === 'medium') session.difficulty = 'easy';
   }
@@ -126,7 +155,6 @@ export async function startInterview(
   const profile = buildCandidateProfile(candidate);
   const { skippedTopics, weakTopics } = analyzeCandidateTelemetry(candidate, curriculum);
 
-  // Determine initial topic priority
   const initialTopic = skippedTopics[0] || weakTopics[0] || curriculum.modules[2].title;
 
   const session: InterviewSession = {
@@ -144,34 +172,24 @@ export async function startInterview(
 
   sessions.set(sessionId, session);
 
-  // Ingest candidate profile into Breeth memory
-  try {
-    await breethClient.createEpisode({
-      title: `Interview Session Init: ${candidate.member.name}`,
-      content: profile,
-      tags: ['interview-init', sessionId, candidate.member.id],
-      metadata: { sessionId, candidateId: candidate.member.id },
-    });
-  } catch (err) {
+  // Ingest candidate profile into Breeth memory (background logging)
+  breethClient.createEpisode({
+    title: `Interview Session Init: ${candidate.member.name}`,
+    content: profile,
+    tags: ['interview-init', sessionId, candidate.member.id],
+    metadata: { sessionId, candidateId: candidate.member.id },
+  }).catch((err) => {
     console.warn('[InterviewEngine] Breeth episode creation failed (non-fatal):', (err as Error).message);
-  }
+  });
 
-  // Generate welcome + first question via Groq
-  const systemPrompt = `You are an expert AI technical interviewer for the ABTalks AI Cohort program. You are conducting a personalized technical assessment interview.
-
-Your interview rules:
-- Be professional, encouraging, and precise.
-- Ask one clear technical question at a time.
-- Ground your questions in the 31-day AI curriculum the candidate completed.
-- Start with topics where the candidate showed weakness or skipped content.
-- Adjust difficulty based on answers.
+  const systemPrompt = `${SYSTEM_PROMPT}
 
 Candidate Profile:
 ${profile}
 
-Curriculum modules: ${curriculum.modules.map(m => m.title).join(', ')}`;
+Target Curriculum Focus: "${initialTopic}" (${getDifficultyLabel(session.difficulty)} level)`;
 
-  const userPrompt = `Start the interview with ${candidate.member.name}. Introduce yourself briefly, acknowledge their background as a ${candidate.member.jobRole}, and ask your first ${getDifficultyLabel(session.difficulty)} technical question about "${initialTopic}".`;
+  const userPrompt = `Ask your first technical question directly to ${candidate.member.name} ("you") about "${initialTopic}". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.`;
 
   let reply: string;
   try {
@@ -181,20 +199,20 @@ Curriculum modules: ${curriculum.modules.map(m => m.title).join(', ')}`;
         { role: 'user', content: userPrompt },
       ],
       model: 'llama-3.3-70b-versatile',
-      temperature: 0.7,
-      max_tokens: 1024,
+      temperature: 0.6,
+      max_tokens: 200,
     });
-    reply = response.choices[0]?.message?.content || 'Welcome! Let us begin the interview.';
+    reply = sanitizeReply(response.choices[0]?.message?.content || '');
 
     logAiInteraction({
       taskName: `Interview Start: ${candidate.member.name}`,
       userPrompt: `System: ${systemPrompt}\nUser: ${userPrompt}`,
-      reasoning: `Initialized session ${sessionId}. First topic: "${initialTopic}". Difficulty: ${session.difficulty}.`,
+      reasoning: `Initialized session ${sessionId}. Topic: "${initialTopic}". Difficulty: ${session.difficulty}.`,
       output: { model: 'llama-3.3-70b-versatile', usage: response.usage, reply },
     });
   } catch (err) {
-    reply = `Welcome, ${candidate.member.name}! I'm your AI interviewer for today's technical assessment. Based on your cohort journey, let's start with a question about ${initialTopic}. Can you explain what you understand about this topic and how you applied it during the program?`;
-    console.warn('[InterviewEngine] Groq completion failed, using fallback greeting:', (err as Error).message);
+    reply = `Welcome ${candidate.member.name}. Regarding ${initialTopic}: How do you approach scaling vector search indexing without incurring excessive memory overhead?`;
+    console.warn('[InterviewEngine] Groq completion failed, using concise fallback:', (err as Error).message);
   }
 
   // Record the turn
@@ -214,79 +232,73 @@ export async function processConversationTurn(
 ): Promise<InterviewApiResponse> {
   const session = sessions.get(sessionId);
   if (!session) {
-    return { reply: `Error: No active session found for sessionId "${sessionId}". Please start a new interview.`, done: true };
+    return { reply: `No active session found for "${sessionId}". Please start a new interview.`, done: true };
   }
 
   // Record candidate's answer
   session.turns.push({ role: 'candidate', content: message, topic: session.currentTopic, timestamp: new Date().toISOString() });
   session.turnCount++;
 
-  // Log the candidate turn into Breeth memory
-  try {
-    await breethClient.extractIntent({
-      title: `Turn ${session.turnCount} — Candidate Answer`,
-      content: `Topic: ${session.currentTopic}\nCandidate Answer: ${message}`,
-      tags: ['interview-turn', sessionId, session.candidate.member.id],
-      metadata: { sessionId, turn: session.turnCount, topic: session.currentTopic },
-    });
-  } catch (err) {
+  // Log turn to Breeth AI memory (non-blocking async)
+  breethClient.extractIntent({
+    title: `Turn ${session.turnCount} — Candidate Answer`,
+    content: `Topic: ${session.currentTopic}\nCandidate Answer: ${message}`,
+    tags: ['interview-turn', sessionId, session.candidate.member.id],
+    metadata: { sessionId, turn: session.turnCount, topic: session.currentTopic },
+  }).catch((err) => {
     console.warn('[InterviewEngine] Breeth extractIntent failed (non-fatal):', (err as Error).message);
-  }
+  });
 
-  // Check if interview should end: >= 8 interviewer questions across >= 4 topics
+  // Check if interview threshold met (>= 8 interviewer turns across >= 4 topics)
   const interviewerTurns = session.turns.filter(t => t.role === 'interviewer').length;
   if (interviewerTurns >= 8 && session.topicsCovered.size >= 4) {
     return await generateFinalFeedback(session);
   }
 
-  // Retrieve context from Breeth memory
+  // Retrieve persistent context from Breeth memory
   let breethContext = '';
   try {
     const searchResult = await breethClient.searchMemory({
-      query: `${session.currentTopic} ${message}`,
-      limit: 3,
+      query: `${session.candidate.member.name} ${session.currentTopic} ${message.substring(0, 100)}`,
+      limit: 5,
     });
     if (searchResult?.edges?.length > 0) {
-      breethContext = `\nRelevant context from memory:\n${searchResult.edges.map((e: any) => e.content || e.text || JSON.stringify(e)).join('\n')}`;
+      const memoryFacts = searchResult.edges
+        .map((e: any) => e.fact || e.content || e.name || '')
+        .filter(Boolean)
+        .slice(0, 3)
+        .join('; ');
+      if (memoryFacts) {
+        breethContext = `Persistent Memory Facts (Breeth AI): ${memoryFacts}`;
+      }
     }
   } catch (err) {
     console.warn('[InterviewEngine] Breeth search failed (non-fatal):', (err as Error).message);
   }
 
-  // Build conversation history for Groq
-  const conversationHistory = session.turns.map(t =>
+  // Recent 4 turns for context window efficiency
+  const recentTurns = session.turns.slice(-4).map(t =>
     t.role === 'interviewer' ? `Interviewer: ${t.content}` : `Candidate: ${t.content}`
-  ).join('\n\n');
+  ).join('\n');
 
   const profile = buildCandidateProfile(session.candidate);
   const nextTopic = selectNextTopic(session);
 
-  const systemPrompt = `You are an expert AI technical interviewer for the ABTalks AI Cohort program.
+  const systemPrompt = `${SYSTEM_PROMPT}
 
 Candidate Profile:
 ${profile}
+${breethContext}
 
-Interview rules:
-- You have asked ${interviewerTurns} questions so far across ${session.topicsCovered.size} topics.
-- You must ask at least 8 questions covering at least 4 distinct curriculum topics before ending.
-- Topics covered so far: ${[...session.topicsCovered].join(', ')}
-- Current difficulty: ${getDifficultyLabel(session.difficulty)}
-- Evaluate the candidate's last answer first, then ask the next question.
-- If the answer was strong, increase difficulty. If weak, simplify or probe deeper.
-${breethContext}`;
+Interview Progress:
+- Focus Topic: "${nextTopic}" (${getDifficultyLabel(session.difficulty)} level)`;
 
-  const userPrompt = `Conversation so far:
-${conversationHistory}
+  const userPrompt = `Recent Conversation:
+${recentTurns}
 
-First, briefly evaluate the quality of the candidate's last answer (was it correct, partially correct, or incorrect?). Then ask your next ${getDifficultyLabel(session.difficulty)} technical question about "${nextTopic}".
-
-Reply in this exact format:
-**Evaluation:** [Your brief assessment of the previous answer]
-
-**Next Question:** [Your next technical question]`;
+React directly to what the candidate just said in 1 sentence using second-person ("you" / "your answer"). If they said "i dont know", acknowledge it empathetically ("Fair enough if you haven't worked with that directly"). Then ask your next sharp technical question about "${nextTopic}" (max 2 sentences). Total response under 60 words. Never say "the candidate" or "the candidate's answer".`;
 
   let reply: string;
-  let answerEvaluation = 'moderate';
 
   try {
     const response = await groqClient.chat.completions.create({
@@ -295,36 +307,31 @@ Reply in this exact format:
         { role: 'user', content: userPrompt },
       ],
       model: 'llama-3.3-70b-versatile',
-      temperature: 0.7,
-      max_tokens: 1024,
+      temperature: 0.6,
+      max_tokens: 200,
     });
-    reply = response.choices[0]?.message?.content || '';
 
-    // Extract evaluation sentiment for difficulty adjustment
-    const evalMatch = reply.match(/\*\*Evaluation:\*\*\s*(.+?)(?:\n|$)/i);
-    if (evalMatch) {
-      answerEvaluation = evalMatch[1];
-    }
+    reply = sanitizeReply(response.choices[0]?.message?.content || '');
 
     logAiInteraction({
       taskName: `Interview Turn ${session.turnCount}: ${session.candidate.member.name}`,
-      userPrompt: `Candidate answered: "${message.substring(0, 200)}..."`,
-      reasoning: `Turn ${session.turnCount}. Evaluated answer on "${session.currentTopic}". Next topic: "${nextTopic}". Topics covered: ${session.topicsCovered.size}. Interviewer questions: ${interviewerTurns}.`,
-      output: { model: 'llama-3.3-70b-versatile', usage: response.usage, reply: reply.substring(0, 500) },
+      userPrompt: `Candidate: "${message.substring(0, 150)}..."`,
+      reasoning: `Turn ${session.turnCount}. Evaluated on "${session.currentTopic}". Next topic: "${nextTopic}".`,
+      output: { model: 'llama-3.3-70b-versatile', usage: response.usage, reply },
     });
   } catch (err) {
-    reply = `Thank you for your answer. Let's move on to the next topic. Regarding ${nextTopic}: Can you explain the key concepts and how they were applied in your cohort work?`;
+    reply = `Got it. Moving to ${nextTopic}: How do you approach designing this component for high availability?`;
     console.warn('[InterviewEngine] Groq completion failed, using fallback:', (err as Error).message);
   }
 
-  // Adjust difficulty based on evaluation
-  adjustDifficulty(session, answerEvaluation);
+  // Adjust difficulty based on reply content
+  adjustDifficulty(session, reply);
 
   // Track areas
-  const evalLower = answerEvaluation.toLowerCase();
-  if (evalLower.includes('incorrect') || evalLower.includes('weak') || evalLower.includes('partial')) {
+  const lower = message.toLowerCase();
+  if (lower.includes("don't know") || lower.includes("dont know") || lower.includes("not sure")) {
     if (!session.weakAreas.includes(session.currentTopic)) session.weakAreas.push(session.currentTopic);
-  } else if (evalLower.includes('excellent') || evalLower.includes('correct') || evalLower.includes('strong')) {
+  } else {
     if (!session.strongAreas.includes(session.currentTopic)) session.strongAreas.push(session.currentTopic);
   }
 
@@ -346,7 +353,6 @@ async function generateFinalFeedback(session: InterviewSession): Promise<Intervi
     t.role === 'interviewer' ? `Interviewer: ${t.content}` : `Candidate: ${t.content}`
   ).join('\n\n');
 
-  // Retrieve all memory from Breeth for synthesis
   let memoryContext = '';
   try {
     const searchResult = await breethClient.searchMemory({
@@ -354,33 +360,30 @@ async function generateFinalFeedback(session: InterviewSession): Promise<Intervi
       limit: 10,
     });
     if (searchResult?.edges?.length > 0) {
-      memoryContext = `\nBreeth Memory Context:\n${searchResult.edges.map((e: any) => e.content || e.text || JSON.stringify(e)).join('\n')}`;
+      memoryContext = `\nBreeth Memory Context:\n${searchResult.edges.map((e: any) => e.fact || e.content || JSON.stringify(e)).join('\n')}`;
     }
   } catch (err) {
     console.warn('[InterviewEngine] Breeth search for feedback failed (non-fatal):', (err as Error).message);
   }
 
-  const systemPrompt = `You are an expert AI technical interviewer. Generate a final evaluation of the candidate's interview performance.
+  const systemPrompt = `You are an expert AI technical interviewer. Synthesize final performance feedback.
 
 Candidate Profile:
 ${profile}
 ${memoryContext}
 
 Topics covered: ${[...session.topicsCovered].join(', ')}
-Total turns: ${session.turnCount}
-Weak areas identified: ${session.weakAreas.join(', ') || 'None'}
-Strong areas identified: ${session.strongAreas.join(', ') || 'None'}`;
+Total turns: ${session.turnCount}`;
 
-  const userPrompt = `Based on the full interview conversation below, generate a structured evaluation.
-
+  const userPrompt = `Conversation history:
 ${conversationHistory}
 
-You MUST respond with ONLY a valid JSON object in this exact format (no markdown, no code fences):
+Output ONLY a valid JSON object matching this exact schema:
 {
-  "summary": "2-3 sentence overall evaluation of the candidate",
-  "strengths": ["strength 1", "strength 2", "..."],
-  "gaps": ["gap 1", "gap 2", "..."],
-  "next": ["recommendation 1", "recommendation 2", "..."]
+  "summary": "2-3 sentence overall evaluation",
+  "strengths": ["strength 1", "strength 2"],
+  "gaps": ["gap 1", "gap 2"],
+  "next": ["recommendation 1", "recommendation 2"]
 }`;
 
   let feedback: Feedback;
@@ -393,7 +396,7 @@ You MUST respond with ONLY a valid JSON object in this exact format (no markdown
       ],
       model: 'llama-3.3-70b-versatile',
       temperature: 0.4,
-      max_tokens: 1024,
+      max_tokens: 800,
     });
 
     const raw = response.choices[0]?.message?.content || '';
@@ -401,43 +404,35 @@ You MUST respond with ONLY a valid JSON object in this exact format (no markdown
     logAiInteraction({
       taskName: `Interview Feedback: ${session.candidate.member.name}`,
       userPrompt: `Generate final feedback for session ${session.sessionId}`,
-      reasoning: `Synthesized ${session.turnCount} turns across ${session.topicsCovered.size} topics. Weak: [${session.weakAreas.join(', ')}]. Strong: [${session.strongAreas.join(', ')}].`,
+      reasoning: `Synthesized ${session.turnCount} turns across ${session.topicsCovered.size} topics.`,
       output: { model: 'llama-3.3-70b-versatile', usage: response.usage, rawFeedback: raw },
     });
 
-    // Parse JSON — handle potential markdown fences from LLM
     const jsonStr = raw.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
     feedback = JSON.parse(jsonStr);
   } catch (err) {
-    console.warn('[InterviewEngine] Feedback generation/parse failed, using fallback:', (err as Error).message);
+    console.warn('[InterviewEngine] Feedback parse failed, using fallback:', (err as Error).message);
     feedback = {
       summary: `${session.candidate.member.name} completed a ${session.turnCount}-turn technical interview covering ${session.topicsCovered.size} curriculum topics.`,
-      strengths: session.strongAreas.length > 0 ? session.strongAreas : ['Completed the full interview'],
+      strengths: session.strongAreas.length > 0 ? session.strongAreas : ['Completed technical interview'],
       gaps: session.weakAreas.length > 0 ? session.weakAreas : ['No critical gaps identified'],
-      next: ['Review curriculum modules with lower scores', 'Practice hands-on exercises in identified gap areas'],
+      next: ['Review targeted curriculum modules', 'Practice architectural design trade-offs'],
     };
   }
 
-  // Clean up session
   sessions.delete(session.sessionId);
 
   return {
-    reply: 'Interview completed.',
+    reply: 'Interview completed successfully.',
     done: true,
     feedback,
   };
 }
 
-/**
- * Get a session by ID (for debugging/inspection).
- */
 export function getSession(sessionId: string): InterviewSession | undefined {
   return sessions.get(sessionId);
 }
 
-/**
- * Get all active session IDs (for debugging).
- */
 export function getActiveSessionIds(): string[] {
   return [...sessions.keys()];
 }

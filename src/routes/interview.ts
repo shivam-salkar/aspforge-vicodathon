@@ -69,12 +69,12 @@ router.get('/candidates/:id', (req: Request, res: Response): void => {
   try {
     const raw = fs.readFileSync(path.resolve(process.cwd(), 'data/candidates.json'), 'utf-8');
     const data = JSON.parse(raw);
-    const candidateId = req.params.id;
+    const candidateId = String(req.params.id || '').toLowerCase();
     const candidate = (data.candidates || []).find(
-      (c: any) => c.member.id.toLowerCase() === candidateId.toLowerCase()
+      (c: any) => c.member.id.toLowerCase() === candidateId
     );
     if (!candidate) {
-      res.status(404).json({ error: `Candidate with ID '${candidateId}' not found.` });
+      res.status(404).json({ error: `Candidate with ID '${req.params.id}' not found.` });
       return;
     }
     res.json(candidate);
@@ -82,6 +82,7 @@ router.get('/candidates/:id', (req: Request, res: Response): void => {
     res.status(500).json({ error: 'Failed to fetch candidate' });
   }
 });
+
 
 export default router;
 

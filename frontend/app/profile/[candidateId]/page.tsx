@@ -168,10 +168,11 @@ export default function ProfilePage({ params }: { params: Promise<{ candidateId:
           <StatCardsRow candidate={activeCandidate} />
 
           {/* 4. Skill Progress Section */}
-          <SkillProgressSection />
+          <SkillProgressSection candidate={activeCandidate} />
 
           {/* 5. Topic Distribution & Activity Charts */}
-          <ProfileCharts />
+          <ProfileCharts candidate={activeCandidate} />
+
         </main>
       </div>
     </div>

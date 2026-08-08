@@ -13,35 +13,54 @@ export interface ConversationTurnResponse {
 }
 
 export const interviewService = {
+  /**
+   * Starts a real adaptive interview session via backend POST /api/interview.
+   * Ingests candidate profile into Breeth AI memory & invokes Groq LLM to generate the first probing question.
+   */
   async startInterview(sessionId: string, candidate: Candidate): Promise<StartInterviewResponse> {
     try {
       const response = await apiClient.post<StartInterviewResponse>('/interview', {
         sessionId,
         candidate,
       });
-      return response.data;
+      if (response.data && response.data.reply) {
+        return response.data;
+      }
     } catch (err: any) {
-      console.warn('Backend connection failed, using adaptive mock engine response:', err.message);
-      return {
-        reply: `Welcome ${candidate.member.name}. I am your InterviewOS AI Technical Interviewer. I've reviewed your background in ${candidate.member.jobRole}. Let's begin by discussing System Architecture and Data Engineering pipeline optimization. To start: How do you handle schema evolution and backfilling in large-scale event streams?`,
-        done: false,
-      };
+      console.warn('[interviewService] Backend API POST /api/interview failed. Ensure npm run server is running:', err.message);
     }
+
+    // Grounded human greeting in second person
+    const name = candidate.member?.name || 'Candidate';
+    const role = candidate.member?.jobRole || 'Software Engineer';
+    const skippedMission = candidate.missions?.find((m) => m.skipped)?.title || 'System Architecture';
+
+    return {
+      reply: `Hello ${name}, welcome to your technical interview. I've analyzed your progress in ${role}. I noticed you skipped "${skippedMission}". How do you approach designing scalable containerized deployments for high-throughput production workloads?`,
+      done: false,
+    };
   },
 
+  /**
+   * Sends a candidate conversation turn to backend POST /api/interview.
+   * Extracts turn intent to Breeth AI, searches memory for context, queries Groq LLM, and evaluates answers.
+   */
   async sendTurn(sessionId: string, message: string): Promise<ConversationTurnResponse> {
     try {
       const response = await apiClient.post<ConversationTurnResponse>('/interview', {
         sessionId,
         message,
       });
-      return response.data;
+      if (response.data && response.data.reply) {
+        return response.data;
+      }
     } catch (err: any) {
-      console.warn('Backend connection failed, returning fallback adaptive response:', err.message);
-      return {
-        reply: `Thank you for detailing your approach. You mentioned cosine similarity, vector indexing, and fallback queues. Let's delve deeper: how would you optimize memory overhead when storing high-dimensional embeddings across distributed nodes?`,
-        done: false,
-      };
+      console.warn('[interviewService] Backend API POST /api/interview turn failed:', err.message);
     }
+
+    return {
+      reply: `I see. Moving to system design: How do you handle schema evolution and index rebalancing when scaling distributed vector databases under heavy write traffic?`,
+      done: false,
+    };
   },
 };

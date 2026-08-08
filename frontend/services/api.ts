@@ -7,5 +7,5 @@ export const apiClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 15000,
+  timeout: 60000, // 60s timeout for LLM + Breeth AI memory processing
 });
