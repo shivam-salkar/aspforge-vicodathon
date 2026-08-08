@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { TypewriterText } from './TypewriterText';
-import { Layers, Bot, User, Send, LogOut, Terminal, Play } from 'lucide-react';
+import { Layers, Bot, User, Send, LogOut, Terminal } from 'lucide-react';
 
 const demoScript = [
   {
@@ -26,6 +26,12 @@ const demoScript = [
 
 export function ConsoleDemoWindow() {
   const [step, setStep] = useState(0);
+  const [loopKey, setLoopKey] = useState(0);
+
+  const restartLoop = () => {
+    setStep(0);
+    setLoopKey((prev) => prev + 1);
+  };
 
   return (
     <div className="w-full max-w-2xl mx-auto flex flex-col items-center">
@@ -76,7 +82,7 @@ export function ConsoleDemoWindow() {
         </div>
 
         {/* Dynamic Chat Messages Stream */}
-        <div className="space-y-5 mb-5 min-h-[320px]">
+        <div key={loopKey} className="space-y-5 mb-5 min-h-[320px]">
           {/* Q1 AI Turn */}
           <div className="space-y-1.5">
             <div className="flex items-center gap-2 text-xs text-gray-400">
@@ -92,6 +98,7 @@ export function ConsoleDemoWindow() {
 
             <div className="p-4 rounded-xl bg-[#11131A] border border-white/10 text-gray-200 text-xs font-mono leading-relaxed shadow-inner">
               <TypewriterText
+                key={`q1-${loopKey}`}
                 text={demoScript[0].text}
                 speed={20}
                 onComplete={() => {
@@ -114,8 +121,9 @@ export function ConsoleDemoWindow() {
 
               <div className="p-3 px-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-semibold shadow-md shadow-blue-600/20">
                 <TypewriterText
+                  key={`cand-${loopKey}`}
                   text={demoScript[1].text}
-                  speed={40}
+                  speed={35}
                   onComplete={() => {
                     if (step === 1) setStep(2);
                   }}
@@ -140,11 +148,12 @@ export function ConsoleDemoWindow() {
 
               <div className="p-4 rounded-xl bg-[#11131A] border border-white/10 text-gray-200 text-xs font-mono leading-relaxed shadow-inner">
                 <TypewriterText
+                  key={`q2-${loopKey}`}
                   text={demoScript[2].text}
                   speed={20}
                   onComplete={() => {
-                    // Loop back after 4s
-                    setTimeout(() => setStep(0), 4000);
+                    // Pause 3.5s then restart loop
+                    setTimeout(() => restartLoop(), 3500);
                   }}
                 />
               </div>
