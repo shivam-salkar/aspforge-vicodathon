@@ -1,9 +1,11 @@
 /**
- * InterviewOS — Express router for POST /api/interview.
+ * InterviewOS — Express router for POST /api/interview and GET endpoints.
  */
 import { Router, Request, Response } from 'express';
-import { startInterview, processConversationTurn } from '../services/interviewEngine.js';
+import { startInterview, processConversationTurn, getInterviewResult, getInterviewResultsByCandidateId } from '../services/interviewEngine.js';
 import type { InterviewApiRequest, InterviewApiResponse } from '../types/interview.js';
+import fs from 'fs';
+import path from 'path';
 
 const router = Router();
 
@@ -32,7 +34,8 @@ router.post('/interview', async (req: Request, res: Response): Promise<void> => 
       response = await startInterview(body.sessionId, body.candidate);
     } else if (body.message && typeof body.message === 'string') {
       // ── Flow 2: Conversation turn ──────────────────────────────────────
-      response = await processConversationTurn(body.sessionId, body.message);
+      const timeSpent = typeof body.timeSpentSeconds === 'number' ? body.timeSpentSeconds : 60;
+      response = await processConversationTurn(body.sessionId, body.message, timeSpent);
     } else {
       res.status(400).json({
         error: 'Request must include either "candidate" (to start) or "message" (to continue).',
@@ -50,8 +53,20 @@ router.post('/interview', async (req: Request, res: Response): Promise<void> => 
   }
 });
 
-import fs from 'fs';
-import path from 'path';
+// ── GET /api/interview/:sessionId/results — Fetch session evaluation results ──
+router.get('/interview/:sessionId/results', (req: Request, res: Response): void => {
+  try {
+    const sessionId = String(req.params.sessionId || '');
+    const result = getInterviewResult(sessionId);
+    if (!result) {
+      res.status(404).json({ error: `Session results for '${sessionId}' not found or session expired.` });
+      return;
+    }
+    res.json(result);
+  } catch (error: any) {
+    res.status(500).json({ error: 'Failed to fetch interview results' });
+  }
+});
 
 // ── GET /api/candidates — List or search candidates ──────────────────────────
 router.get('/candidates', (_req: Request, res: Response): void => {
@@ -61,6 +76,17 @@ router.get('/candidates', (_req: Request, res: Response): void => {
     res.json(data.candidates || []);
   } catch (error: any) {
     res.status(500).json({ error: 'Failed to load candidates data' });
+  }
+});
+
+// ── GET /api/candidates/:id/interviews — Fetch candidate past interview history ──
+router.get('/candidates/:id/interviews', (req: Request, res: Response): void => {
+  try {
+    const candidateId = String(req.params.id || '');
+    const results = getInterviewResultsByCandidateId(candidateId);
+    res.json(results);
+  } catch (error: any) {
+    res.status(500).json({ error: 'Failed to fetch candidate interview history' });
   }
 });
 
@@ -83,6 +109,4 @@ router.get('/candidates/:id', (req: Request, res: Response): void => {
   }
 });
 
-
 export default router;
-

@@ -60,12 +60,53 @@ export interface ConversationTurn {
   content: string;
   topic?: string;
   timestamp: string;
+  timeSpentSeconds?: number;
+}
+
+export interface RecordedQuestion {
+  questionNumber: number;
+  topic: string;
+  dayNumber?: number;
+  question: string;
+  answer: string;
+  timeSpentSeconds: number;
+  score: number; // 0-10 scale
+  isRight: boolean; // score > 5
+}
+
+export interface TopicTimeAnalysis {
+  topic: string;
+  dayNumber?: number;
+  questionCount: number;
+  avgScore: number;
+  totalTimeSeconds: number;
+}
+
+export interface InterviewResultData {
+  sessionId: string;
+  candidateId: string;
+  candidateName: string;
+  jobRole: string;
+  createdAt?: string;
+  overallScore: number; // 0-10 scale
+  overallPercentage: number;
+  totalQuestions: number;
+  rightCount: number;
+  wrongCount: number;
+  totalTimeSeconds: number;
+  questions: RecordedQuestion[];
+  topicTimeAnalysis: TopicTimeAnalysis[];
+  summary?: string;
+  strengths?: string[];
+  gaps?: string[];
+  next?: string[];
 }
 
 export interface InterviewSession {
   sessionId: string;
   candidate: Candidate;
   turns: ConversationTurn[];
+  recordedQuestions: RecordedQuestion[];
   turnCount: number;
   topicsCovered: Set<string>;
   currentTopic: string;
@@ -81,6 +122,7 @@ export interface InterviewApiRequest {
   sessionId: string;
   candidate?: Candidate;
   message?: string;
+  timeSpentSeconds?: number;
 }
 
 export interface Feedback {
@@ -93,5 +135,9 @@ export interface Feedback {
 export interface InterviewApiResponse {
   reply: string;
   done: boolean;
+  topic?: string;
+  score?: number;
+  isRight?: boolean;
   feedback?: Feedback;
+  result?: InterviewResultData;
 }

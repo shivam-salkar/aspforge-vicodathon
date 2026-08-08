@@ -15418,3 +15418,4770 @@ Attempted POST /v1/episodes. Caught error/response: {"error":"missing_authorizat
 }
 ```
 ---
+
+## [2026-08-08T17:43:50.481Z] - Interview Start: Michael Brown
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 24fa8394
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Michael Brown
+> Role: DevOps Engineer | Experience: 10 years | Education: B.Tech Information Technology
+> Cohort Progress: 31/31 missions completed, 22 first-try passes
+> Strong areas: Chatbot Application Build, Evaluation, Security & Deployment, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> 
+> Target Curriculum Focus: "LLM Core, Prompting & Fine-Tuning" (intermediate level)
+> User: Ask your first technical question directly to Michael Brown ("you") about "LLM Core, Prompting & Fine-Tuning". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-msknxfer. Topic: "LLM Core, Prompting & Fine-Tuning". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.056511794,
+    "prompt_tokens": 402,
+    "prompt_time": 0.026092305,
+    "completion_tokens": 33,
+    "completion_time": 0.198520942,
+    "total_tokens": 435,
+    "total_time": 0.224613247
+  },
+  "reply": "You've built chatbot applications, now consider LLM core: how would you architect a pipeline to fine-tune a large language model for domain-specific tasks?"
+}
+```
+---
+
+## [2026-08-08T17:44:02.629Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 68267f56
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Michael Brown","content":"Candidate: Michael Brown\nRole: DevOps Engineer | Experience: 10 years | Education: B.Tech Information Technology\nCohort Progress: 31/31 missions completed, 22 first-try passes\nStrong areas: Chatbot Application Build, Evaluation, Security & Deployment, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning","tags":["interview-init","sess-msknxfer","CAND-005"],"metadata":{"sessionId":"sess-msknxfer","candidateId":"CAND-005"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786211031596",
+  "extracted": {
+    "entities": 12,
+    "edges": 9
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "7fc4426fbd2e",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T17:44:04.354Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** e782644f
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-msknxfer. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.055447792,
+    "prompt_tokens": 397,
+    "prompt_time": 0.065808257,
+    "completion_tokens": 37,
+    "completion_time": 0.149782547,
+    "total_tokens": 434,
+    "total_time": 0.215590804
+  },
+  "reply": "You've completed most missions, but skipped Production and Capstone. How would you design a scalable architecture for a real-time chatbot application, considering trade-offs between latency and throughput?"
+}
+```
+---
+
+## [2026-08-08T17:44:04.355Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 29cb21f8
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-msknxfer. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.055639057,
+    "prompt_tokens": 397,
+    "prompt_time": 0.070499582,
+    "completion_tokens": 32,
+    "completion_time": 0.139919661,
+    "total_tokens": 429,
+    "total_time": 0.210419243
+  },
+  "reply": "You've built several chatbot applications, how would you architect a scalable production environment for a high-traffic model, considering trade-offs between latency and cost?"
+}
+```
+---
+
+## [2026-08-08T17:44:14.555Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 6e459970
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-msknxfer","CAND-001"],"metadata":{"sessionId":"sess-msknxfer","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786211045585",
+  "extracted": {
+    "entities": 11,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "3a1841e6bc8b",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T17:44:17.662Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 112ad819
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-msknxfer","CAND-001"],"metadata":{"sessionId":"sess-msknxfer","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786211045590",
+  "extracted": {
+    "entities": 11,
+    "edges": 19
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "ea4d39e0fbb6",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T17:44:43.162Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 6be54e7c
+
+### 1. User Prompt / Intent
+> {"query":"Sarah Johnson Production & Capstone amazon?","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "0ced6210-c925-4ceb-8792-28839b506ea8",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson skipped Production & Capstone",
+      "name": "SKIPPED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "00469119-e873-4769-8092-f805b0867fc6",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson is strong in Production & Capstone",
+      "name": "STRONG_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "ed2592d7-e85b-467f-81be-228c2fce0fa3",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson has skipped Production & Capstone",
+      "name": "SKIPPED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "5af10da0-587d-4ed2-88f9-a5a3a5c94b9b",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson has strong skills in Production & Capstone",
+      "name": "SKILL_AREA",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "5287c4c9-9062-4a72-ac32-5b79fe9133d0",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson skipped topics Production & Capstone",
+      "name": "SKIPPED",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T17:44:43.588Z] - Interview Turn 2: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 050a877c
+
+### 1. User Prompt / Intent
+> Candidate: "amazon?..."
+
+### 2. AI Reasoning & Strategy
+Turn 2. Evaluated on "Production & Capstone". Next topic: "LLM Core, Prompting & Fine-Tuning".
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.162162252,
+    "prompt_tokens": 537,
+    "prompt_time": 0.027502287,
+    "completion_tokens": 33,
+    "completion_time": 0.193645423,
+    "total_tokens": 570,
+    "total_time": 0.22114771
+  },
+  "reply": "Your answer was brief, mentioning Amazon, but didn't quite cover the scaling aspect. How do you fine-tune a large language model for a specific task?"
+}
+```
+---
+
+## [2026-08-08T17:44:51.164Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** c7cd6290
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Candidate Answer","content":"Topic: Production & Capstone\nCandidate Answer: amazon?","tags":["interview-turn","sess-msknxfer","CAND-001"],"metadata":{"sessionId":"sess-msknxfer","turn":2,"topic":"Production & Capstone"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786211081677",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "1ce4ee1335b1",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T17:52:49.458Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** c8a6986f
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-msko8zhr. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.1624532,
+    "prompt_tokens": 397,
+    "prompt_time": 0.020398449,
+    "completion_tokens": 32,
+    "completion_time": 0.143272427,
+    "total_tokens": 429,
+    "total_time": 0.163670876
+  },
+  "reply": "You've completed most missions, but skipped Production and Capstone. How would you design a scalable chatbot deployment, considering trade-offs between latency and cost?"
+}
+```
+---
+
+## [2026-08-08T17:53:03.332Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 9b965cdc
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-msko8zhr","CAND-001"],"metadata":{"sessionId":"sess-msko8zhr","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786211570529",
+  "extracted": {
+    "entities": 11,
+    "edges": 8
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "f330e52fc45a",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T17:57:49.386Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 79554ef7
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskofewg. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.16171379,
+    "prompt_tokens": 397,
+    "prompt_time": 0.037815,
+    "completion_tokens": 21,
+    "completion_time": 0.081838258,
+    "total_tokens": 418,
+    "total_time": 0.119653258
+  },
+  "reply": "You've built several chatbot applications, how do you handle scaling vector search in a production environment?"
+}
+```
+---
+
+## [2026-08-08T17:58:02.765Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 80f4b671
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskofewg","CAND-001"],"metadata":{"sessionId":"sess-mskofewg","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786211870562",
+  "extracted": {
+    "entities": 11,
+    "edges": 12
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "9e06888646c0",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T17:58:11.151Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 1cf58f4f
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Candidate Answer","content":"Topic: Production & Capstone\nCandidate Answer: idk","tags":["interview-turn","sess-mskofewg","CAND-001"],"metadata":{"sessionId":"sess-mskofewg","turn":2,"topic":"Production & Capstone"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786211888356",
+  "extracted": {
+    "entities": 2,
+    "edges": 1
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "7116fb5292d9",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T17:58:12.275Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 5aaf60ff
+
+### 1. User Prompt / Intent
+> {"query":"Sarah Johnson Production & Capstone idk","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "0ced6210-c925-4ceb-8792-28839b506ea8",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson skipped Production & Capstone",
+      "name": "SKIPPED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "00469119-e873-4769-8092-f805b0867fc6",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson is strong in Production & Capstone",
+      "name": "STRONG_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "ed2592d7-e85b-467f-81be-228c2fce0fa3",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson has skipped Production & Capstone",
+      "name": "SKIPPED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "5af10da0-587d-4ed2-88f9-a5a3a5c94b9b",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson has strong skills in Production & Capstone",
+      "name": "SKILL_AREA",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "5287c4c9-9062-4a72-ac32-5b79fe9133d0",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson skipped topics Production & Capstone",
+      "name": "SKIPPED",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T17:58:12.659Z] - Interview Turn 2: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 02ccda7e
+
+### 1. User Prompt / Intent
+> Candidate: "idk..."
+
+### 2. AI Reasoning & Strategy
+Turn 2. Evaluated on "Production & Capstone". Next topic: "LLM Core, Prompting & Fine-Tuning".
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161409693,
+    "prompt_tokens": 522,
+    "prompt_time": 0.025438346,
+    "completion_tokens": 40,
+    "completion_time": 0.147665289,
+    "total_tokens": 562,
+    "total_time": 0.173103635
+  },
+  "reply": "Fair enough if you haven't worked with that directly. You skipped Production & Capstone, so let's focus on LLM Core: How do you fine-tune a model for specific tasks?"
+}
+```
+---
+
+## [2026-08-08T18:00:58.219Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** b8d733e8
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
+> 5. EVERY question MUST start with the exact header format: "Topic: <Day Title> (Day <N>) | Q<Q.no>: <Question>"
+> 6. Keep your total response under 60 words (3-4 sentences max).
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Completed Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Docker & Kubernetes Deployment (Day 28), Capstone Project & Final Demo (Day 31)
+> 
+> Target Completed Curriculum Topic: "Embeddings Explained" (Day 7) [Level: intermediate]
+> User: Ask your first technical question Q1 directly to Sarah Johnson ("you") about completed topic "Embeddings Explained" (Day 7). Focus on concrete system architecture, tools (Sentence Transformers, OpenAI Embeddings, Scikit-learn, Matplotlib), or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskojgn3. Topic: "Embeddings Explained (Day 7)". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.055122617,
+    "prompt_tokens": 458,
+    "prompt_time": 0.045117703,
+    "completion_tokens": 38,
+    "completion_time": 0.150764009,
+    "total_tokens": 496,
+    "total_time": 0.195881712
+  },
+  "reply": "Topic: Embeddings Explained (Day 7) | Q1: You implemented sentence embeddings, how do you compare performance between Sentence Transformers and OpenAI Embeddings in your system?"
+}
+```
+---
+
+## [2026-08-08T18:01:17.561Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 9757208c
+
+### 1. User Prompt / Intent
+> {"query":"Sarah Johnson Embeddings Explained (Day 7) ummm, sorry","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "04af174d-816c-4c7e-9cbe-92076e756f68",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "Sarah Johnson is strong in Embeddings and Vector Search",
+      "name": "STRONG_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "ea11f739-d6ab-409d-b4d7-d75aff0ce072",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "Sarah Johnson skilled in Embeddings & Vector Search",
+      "name": "SKILLED_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "7e3d5892-1b47-4822-9821-673618f71904",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "Sarah Johnson is strong in Embeddings & Vector Search",
+      "name": "HAS_STRONG_AREA",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9cff9c80-50cc-4482-bc81-e4f518182a5b",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "Sarah Johnson excels in Embeddings & Vector Search",
+      "name": "EXCELS_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "f25f10c1-fc25-4a83-ab8d-bffe295e4f56",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "Sarah Johnson has strong area in Embeddings & Vector Search",
+      "name": "STRONG_AREA",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:01:17.885Z] - Interview Turn 2: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** a236a124
+
+### 1. User Prompt / Intent
+> Candidate: "ummm, sorry..."
+
+### 2. AI Reasoning & Strategy
+Turn 2. Q2 on completed day 8 ("Vector Databases Overview").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.055027615,
+    "prompt_tokens": 541,
+    "prompt_time": 0.057441464,
+    "completion_tokens": 38,
+    "completion_time": 0.161313683,
+    "total_tokens": 579,
+    "total_time": 0.218755147
+  },
+  "reply": "Topic: Vector Databases Overview (Day 8) | Q2: You seemed unsure about comparing those embeddings, that's okay. Topic: Vector Databases Overview (Day 8) | Q2: How do you index vectors in a database?"
+}
+```
+---
+
+## [2026-08-08T18:01:18.641Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** d838703e
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Candidate Answer","content":"Topic: Embeddings Explained (Day 7)\nCandidate Answer: ummm, sorry","tags":["interview-turn","sess-mskojgn3","CAND-001"],"metadata":{"sessionId":"sess-mskojgn3","turn":2,"topic":"Embeddings Explained (Day 7)"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786212075897",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "644c8bdafcd2",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:01:29.150Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 9112ca34
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nCompleted Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Docker & Kubernetes Deployment (Day 28), Capstone Project & Final Demo (Day 31)","tags":["interview-init","sess-mskojgn3","CAND-001"],"metadata":{"sessionId":"sess-mskojgn3","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786212059350",
+  "extracted": {
+    "entities": 15,
+    "edges": 16
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "1980251eefd5",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:01:49.071Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** e89b37eb
+
+### 1. User Prompt / Intent
+> {"query":"Sarah Johnson Vector Databases Overview (Day 8) using sql","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "5571a893-0ebf-48bc-a06e-f35f423d5bef",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "Vector Databases Overview",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9cff9c80-50cc-4482-bc81-e4f518182a5b",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "Sarah Johnson excels in Embeddings & Vector Search",
+      "name": "EXCELS_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "5c8f1c68-7561-4f1e-a690-dfd62e83cde2",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "Sarah Johnson works in Embeddings & Vector Search",
+      "name": "WORKS_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "7e3d5892-1b47-4822-9821-673618f71904",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "Sarah Johnson is strong in Embeddings & Vector Search",
+      "name": "HAS_STRONG_AREA",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "04af174d-816c-4c7e-9cbe-92076e756f68",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "Sarah Johnson is strong in Embeddings and Vector Search",
+      "name": "STRONG_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:01:49.489Z] - Interview Turn 4: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** d2d58f61
+
+### 1. User Prompt / Intent
+> Candidate: "using sql..."
+
+### 2. AI Reasoning & Strategy
+Turn 4. Q3 on completed day 10 ("The Retrieval & Matching Engine").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161457933,
+    "prompt_tokens": 598,
+    "prompt_time": 0.031524218,
+    "completion_tokens": 44,
+    "completion_time": 0.179463686,
+    "total_tokens": 642,
+    "total_time": 0.210987904
+  },
+  "reply": "Topic: The Retrieval & Matching Engine (Day 10) | Q3: You provided a brief answer, but SQL isn't typically used for vector indexing. Topic: The Retrieval & Matching Engine (Day 10) | Q3: How do you handle retrieval in your engine?"
+}
+```
+---
+
+## [2026-08-08T18:01:50.997Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** dccb4f80
+
+### 1. User Prompt / Intent
+> {"title":"Turn 4 — Candidate Answer","content":"Topic: Vector Databases Overview (Day 8)\nCandidate Answer: using sql","tags":["interview-turn","sess-mskojgn3","CAND-001"],"metadata":{"sessionId":"sess-mskojgn3","turn":4,"topic":"Vector Databases Overview (Day 8)"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786212107602",
+  "extracted": {
+    "entities": 2,
+    "edges": 2
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "d502c370635b",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:15:30.996Z] - Interview Start: Michael Brown
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** ab498de5
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
+> 5. NEVER output markdown labels or prefixes like "Evaluation:" or "Topic:". Speak naturally in conversational speech.
+> 6. Keep your total response under 60 words (3-4 sentences max).
+> 
+> 
+> Candidate Profile:
+> Candidate: Michael Brown
+> Role: DevOps Engineer | Experience: 10 years | Education: B.Tech Information Technology
+> Cohort Progress: 31/31 missions completed, 22 first-try passes
+> Completed Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Full-Stack Integration & Streaming Responses (Day 18), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Docker & Kubernetes Deployment (Day 28), Monitoring, Logging & Observability (Day 29), Capstone Project & Final Demo (Day 31)
+> 
+> Target Completed Curriculum Topic: "Embeddings Explained" (Day 7) [Level: intermediate]
+> User: Ask your first technical question Q1 directly to Michael Brown ("you") about completed topic "Embeddings Explained" (Day 7). Focus on concrete system architecture, tools (Sentence Transformers, OpenAI Embeddings, Scikit-learn, Matplotlib), or trade-offs. Speak in second-person. Under 60 words total. No topic headers in text.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskp25z5. Topic: "Embeddings Explained (Day 7)". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.160626665,
+    "prompt_tokens": 465,
+    "prompt_time": 0.024098025,
+    "completion_tokens": 37,
+    "completion_time": 0.152913825,
+    "total_tokens": 502,
+    "total_time": 0.17701185
+  },
+  "reply": "You completed Embeddings Explained, so how would you utilize Sentence Transformers and Scikit-learn to generate and compare embeddings in a production environment, considering scalability and performance trade-offs?"
+}
+```
+---
+
+## [2026-08-08T18:15:58.651Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** cef8c677
+
+### 1. User Prompt / Intent
+> {"query":"Michael Brown Embeddings Explained (Day 7) next","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "801e252a-dad8-417d-9b29-2166cefd7050",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "197e8aa5-7869-44f3-846f-16ee0ca112f0",
+      "fact": "Michael Brown strong in Evaluation",
+      "name": "STRONG_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "d91f7804-60b7-4906-8049-2c59a2f897b1",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "38662e5e-2eb0-4e35-b498-14589f011389",
+      "fact": "Embeddings Explained",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "348437a7-fdd6-4599-a540-c7869972dbeb",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "ad0afff5-1580-415e-8203-3eef7f5db3a7",
+      "fact": "Michael Brown has completed all 31 missions",
+      "name": "COHORT_PROGRESS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "a55c0003-c4cc-4d08-8300-ded7b5d8caf8",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "52c352a9-36c5-4694-a8a9-c3e17eab6767",
+      "fact": "Michael Brown education B.Tech Information Technology",
+      "name": "HAS_EDUCATION",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "f7277fc5-818b-47ea-aced-d27e5c9fe36b",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "197e8aa5-7869-44f3-846f-16ee0ca112f0",
+      "fact": "Michael Brown is strong in Evaluation",
+      "name": "STRONG_AREA",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:15:58.975Z] - Interview Turn 2: Michael Brown
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** e07d39b6
+
+### 1. User Prompt / Intent
+> Candidate: "next..."
+
+### 2. AI Reasoning & Strategy
+Turn 2. Q2 on completed day 8 ("Vector Databases Overview").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.051155595,
+    "prompt_tokens": 543,
+    "prompt_time": 0.052949325,
+    "completion_tokens": 28,
+    "completion_time": 0.171063802,
+    "total_tokens": 571,
+    "total_time": 0.224013127
+  },
+  "reply": "You didn't provide an answer, let's move on. How do you optimize vector database indexing for efficient similarity searches in your applications?"
+}
+```
+---
+
+## [2026-08-08T18:16:01.155Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** d1d6f71a
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Michael Brown","content":"Candidate: Michael Brown\nRole: DevOps Engineer | Experience: 10 years | Education: B.Tech Information Technology\nCohort Progress: 31/31 missions completed, 22 first-try passes\nCompleted Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Full-Stack Integration & Streaming Responses (Day 18), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Docker & Kubernetes Deployment (Day 28), Monitoring, Logging & Observability (Day 29), Capstone Project & Final Demo (Day 31)","tags":["interview-init","sess-mskp25z5","CAND-005"],"metadata":{"sessionId":"sess-mskp25z5","candidateId":"CAND-005"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786212932167",
+  "extracted": {
+    "entities": 24,
+    "edges": 25
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "93c2b8161b9f",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:16:03.857Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** ee7b85f8
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Candidate Answer","content":"Topic: Embeddings Explained (Day 7)\nScore: 2/10 (WRONG)\nAnswer: next","tags":["interview-turn","sess-mskp25z5","CAND-005"],"metadata":{"sessionId":"sess-mskp25z5","turn":2,"topic":"Embeddings Explained (Day 7)","score":2,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786212956196",
+  "extracted": {
+    "entities": 2,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "e80e19e42589",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:16:34.020Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** e5788756
+
+### 1. User Prompt / Intent
+> {"query":"Michael Brown Vector Databases Overview (Day 8) Vector database indexing is the process of organizing high-dimensional embeddings so that similarity","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "5571a893-0ebf-48bc-a06e-f35f423d5bef",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "Vector Databases Overview",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c0a8516b-5d01-42b4-8324-58adf99a19c3",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "fact": "completed curriculum Item Vector Databases Overview Day 8",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "ea2bdc4d-ac52-4a1a-a5ba-0cf9d032bbf4",
+      "source_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "target_node": "8c5157e7-7694-4a1c-be5f-8a184ea9bf21",
+      "fact": "discusses vector databases overview as the subject of this episode",
+      "name": "TOPIC_OF",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9eba5322-a1e1-4267-ba65-4d4312bfdfdc",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "Specializes in embeddings and vector search technologies",
+      "name": "SKILLED_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "f7277fc5-818b-47ea-aced-d27e5c9fe36b",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "197e8aa5-7869-44f3-846f-16ee0ca112f0",
+      "fact": "Michael Brown is strong in Evaluation",
+      "name": "STRONG_AREA",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:16:34.412Z] - Interview Turn 4: Michael Brown
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 3d24c604
+
+### 1. User Prompt / Intent
+> Candidate: "Vector database indexing is the process of organizing high-dimensional embeddings so that similarity search can be performed quickly and accurately. I..."
+
+### 2. AI Reasoning & Strategy
+Turn 4. Q3 on completed day 10 ("The Retrieval & Matching Engine").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.162102665,
+    "prompt_tokens": 643,
+    "prompt_time": 0.034787854,
+    "completion_tokens": 31,
+    "completion_time": 0.155552135,
+    "total_tokens": 674,
+    "total_time": 0.190339989
+  },
+  "reply": "You provided a good overview of vector database indexing, now can you explain how you'd implement a retrieval engine using approximate nearest neighbors search in your application?"
+}
+```
+---
+
+## [2026-08-08T18:16:51.837Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** b387f238
+
+### 1. User Prompt / Intent
+> {"title":"Turn 4 — Candidate Answer","content":"Topic: Vector Databases Overview (Day 8)\nScore: 9.5/10 (RIGHT)\nAnswer: Vector database indexing is the process of organizing high-dimensional embeddings so that similarity search can be performed quickly and accurately. It matters because many applications, such as recommendation systems, semantic search, and retrieval-augmented generation, depend on finding the nearest vectors among very large datasets with low latency.","tags":["interview-turn","sess-mskp25z5","CAND-005"],"metadata":{"sessionId":"sess-mskp25z5","turn":4,"topic":"Vector Databases Overview (Day 8)","score":9.5,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786212997869",
+  "extracted": {
+    "entities": 8,
+    "edges": 9
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "1a38fc4e8a1a",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": {
+    "should_extract": true,
+    "confidence": 0.96,
+    "reason": "User asks for explanation of vector database indexing and its importance."
+  }
+}
+```
+---
+
+## [2026-08-08T18:17:15.863Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 1a27119c
+
+### 1. User Prompt / Intent
+> {"query":"Michael Brown The Retrieval & Matching Engine (Day 10) A retrieval engine using approximate nearest neighbors (ANN) search is a system that finds items sim","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "f0266f91-d1b9-4f5e-9038-fc9390df696d",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "2fbd4524-7872-44d0-ab71-8e4941c0c475",
+      "fact": "The Retrieval & Matching Engine",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "e14f84b7-d2e1-4f15-8afe-7cc154cf9de6",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "completed curriculum Item The Retrieval & Matching Engine Day 10",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "a727992f-f64c-4d0f-a01e-cca0519c94eb",
+      "source_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "target_node": "5b433d5d-7176-460b-98c5-7077fc24b96d",
+      "fact": "Vector database indexing enables similarity search operation",
+      "name": "FACILITATES",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "bbcdcfad-45f3-4eb1-9416-c4ed271ec060",
+      "source_node": "38662e5e-2eb0-4e35-b498-14589f011389",
+      "target_node": "3b896f5a-729c-4a55-990c-53bd06fa360f",
+      "fact": "Retrieval-augmented generation is an application that depends on similarity search",
+      "name": "IS_A_TYPE_OF",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "fd609a18-2dbf-431d-a69e-d4460e905ecb",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "628b3af8-3f07-4cb6-a52f-f203a2a26d58",
+      "fact": "Michael Brown has experience 10 years",
+      "name": "HAS_EXPERIENCE",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:17:16.249Z] - Interview Turn 6: Michael Brown
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 13eb4fe4
+
+### 1. User Prompt / Intent
+> Candidate: "A retrieval engine using approximate nearest neighbors (ANN) search is a system that finds items similar to a query by comparing vector embeddings rat..."
+
+### 2. AI Reasoning & Strategy
+Turn 6. Q4 on completed day 12 ("Prompt Engineering Fundamentals").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.160574285,
+    "prompt_tokens": 692,
+    "prompt_time": 0.035548626,
+    "completion_tokens": 31,
+    "completion_time": 0.148507815,
+    "total_tokens": 723,
+    "total_time": 0.184056441
+  },
+  "reply": "You provided a clear explanation of retrieval engines using ANN search. How do you design effective prompts for your applications, considering you completed Prompt Engineering Fundamentals?"
+}
+```
+---
+
+## [2026-08-08T18:17:19.437Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** b8d4e7ba
+
+### 1. User Prompt / Intent
+> {"title":"Turn 6 — Candidate Answer","content":"Topic: The Retrieval & Matching Engine (Day 10)\nScore: 8.3/10 (RIGHT)\nAnswer: A retrieval engine using approximate nearest neighbors (ANN) search is a system that finds items similar to a query by comparing vector embeddings rather than relying only on exact keyword matches. It matters because it enables fast, scalable search over large datasets for use cases such as semantic search, recommendations, and question answering.","tags":["interview-turn","sess-mskp25z5","CAND-005"],"metadata":{"sessionId":"sess-mskp25z5","turn":6,"topic":"The Retrieval & Matching Engine (Day 10)","score":8.3,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213031351",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "f941636f95fe",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": {
+    "should_extract": true,
+    "confidence": 0.92,
+    "reason": "User provided a detailed technical explanation of ANN retrieval engines, indicating strong intent to retain this knowledge."
+  }
+}
+```
+---
+
+## [2026-08-08T18:17:27.500Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** e3251546
+
+### 1. User Prompt / Intent
+> {"title":"Turn 8 — Candidate Answer","content":"Topic: Prompt Engineering Fundamentals (Day 12)\nScore: 3.2/10 (WRONG)\nAnswer: no idea","tags":["interview-turn","sess-mskp25z5","CAND-005"],"metadata":{"sessionId":"sess-mskp25z5","turn":8,"topic":"Prompt Engineering Fundamentals (Day 12)","score":3.2,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213045519",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "f15e961c85bf",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:17:37.774Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** d81ecbe5
+
+### 1. User Prompt / Intent
+> {"query":"Michael Brown Prompt Engineering Fundamentals (Day 12) no idea","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "0d29d95b-81de-48a5-a84c-414b190965de",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "70a09a4b-4c72-4122-9328-61470ab4c515",
+      "fact": "completed curriculum Item Prompt Engineering Fundamentals Day 12",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "4cd71cac-7143-4484-b7e4-1771e3940ac3",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "5b433d5d-7176-460b-98c5-7077fc24b96d",
+      "fact": "Prompt Engineering Fundamentals",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "348437a7-fdd6-4599-a540-c7869972dbeb",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "ad0afff5-1580-415e-8203-3eef7f5db3a7",
+      "fact": "Michael Brown has completed all 31 missions",
+      "name": "COHORT_PROGRESS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "801e252a-dad8-417d-9b29-2166cefd7050",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "197e8aa5-7869-44f3-846f-16ee0ca112f0",
+      "fact": "Michael Brown strong in Evaluation",
+      "name": "STRONG_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c65f7c93-b2b4-4068-a5ee-27759979fd47",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "c278eddf-57e8-4dcf-bbdf-12a7c915d182",
+      "fact": "Michael Brown has role DevOps Engineer",
+      "name": "HAS_ROLE",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:17:38.080Z] - Interview Turn 8: Michael Brown
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** f9d4d384
+
+### 1. User Prompt / Intent
+> Candidate: "no idea..."
+
+### 2. AI Reasoning & Strategy
+Turn 8. Q5 on completed day 18 ("Full-Stack Integration & Streaming Responses").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.056221082,
+    "prompt_tokens": 644,
+    "prompt_time": 0.046547627,
+    "completion_tokens": 24,
+    "completion_time": 0.143540073,
+    "total_tokens": 668,
+    "total_time": 0.1900877
+  },
+  "reply": "You seemed unsure about prompt design, that's okay. How do you handle streaming responses in your full-stack application?"
+}
+```
+---
+
+## [2026-08-08T18:18:07.119Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 64cc3421
+
+### 1. User Prompt / Intent
+> {"query":"Michael Brown Full-Stack Integration & Streaming Responses (Day 18) I handle streaming responses by using server-sent events or WebSockets to send incremental chunks fr","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "a3269465-792a-40e0-ad95-4a0a7e122e11",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "6f310f17-4ff5-4d2b-a1d5-877026020adb",
+      "fact": "completed curriculum Item Full-Stack Integration & Streaming Responses Day 18",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c65f7c93-b2b4-4068-a5ee-27759979fd47",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "c278eddf-57e8-4dcf-bbdf-12a7c915d182",
+      "fact": "Michael Brown has role DevOps Engineer",
+      "name": "HAS_ROLE",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "76c983dd-1236-4b0f-8e3c-d4dd65160005",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "c278eddf-57e8-4dcf-bbdf-12a7c915d182",
+      "fact": "Michael Brown is a DevOps Engineer with 10 years of experience and a B.Tech in Information Technology",
+      "name": "ROLE",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "801e252a-dad8-417d-9b29-2166cefd7050",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "197e8aa5-7869-44f3-846f-16ee0ca112f0",
+      "fact": "Michael Brown strong in Evaluation",
+      "name": "STRONG_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c4102cfe-ad2c-44a3-ab72-57329c0b925f",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "d63ae5c3-b250-4fcb-8e5d-d8e9b0e0700c",
+      "fact": "Michael Brown strong in Chatbot Application Build",
+      "name": "STRONG_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:18:07.348Z] - Interview Turn 10: Michael Brown
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 0bb73979
+
+### 1. User Prompt / Intent
+> Candidate: "I handle streaming responses by using server-sent events or WebSockets to send incremental chunks from the backend, while the frontend updates the UI ..."
+
+### 2. AI Reasoning & Strategy
+Turn 10. Q6 on completed day 22 ("Multi-Agent Orchestration").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.056357333,
+    "prompt_tokens": 632,
+    "prompt_time": 0.047839767,
+    "completion_tokens": 18,
+    "completion_time": 0.089962184,
+    "total_tokens": 650,
+    "total_time": 0.137801951
+  },
+  "reply": "You handled streaming responses well. How do you orchestrate multiple agents in your system?"
+}
+```
+---
+
+## [2026-08-08T18:18:10.240Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 04b49e16
+
+### 1. User Prompt / Intent
+> {"title":"Turn 10 — Candidate Answer","content":"Topic: Full-Stack Integration & Streaming Responses (Day 18)\nScore: 6.5/10 (RIGHT)\nAnswer: I handle streaming responses by using server-sent events or WebSockets to send incremental chunks from the backend, while the frontend updates the UI progressively and manages loading, cancellation, and error states gracefully.","tags":["interview-turn","sess-mskp25z5","CAND-005"],"metadata":{"sessionId":"sess-mskp25z5","turn":10,"topic":"Full-Stack Integration & Streaming Responses (Day 18)","score":6.5,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213086583",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "2876fe3cd2ae",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:18:18.398Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** b6678b0e
+
+### 1. User Prompt / Intent
+> {"query":"Michael Brown Multi-Agent Orchestration (Day 22) no idea","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "6c74e44e-0b05-45be-8c37-ddae0f198371",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "94123ec7-1ce5-47ef-843f-dd496a48ef7b",
+      "fact": "completed curriculum Item Multi-Agent Orchestration Day 22",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "56a7ce2c-04e7-42d2-9bb3-c7b057836637",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "6df839ff-661f-4643-9be3-c35ccc2f3239",
+      "fact": "Multi-Agent Orchestration",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "98a7b1ac-5811-49fa-910f-681ded57fcca",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "db1520c5-ff26-4b18-934b-8a854d7b6df7",
+      "fact": "Michael Brown has 22 first-try passes",
+      "name": "HAS_COUNT",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "a5690997-7a64-41d7-bdc9-1079df904008",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "ad0afff5-1580-415e-8203-3eef7f5db3a7",
+      "fact": "Michael Brown has 31/31 missions completed",
+      "name": "HAS_COUNT",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c65f7c93-b2b4-4068-a5ee-27759979fd47",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "c278eddf-57e8-4dcf-bbdf-12a7c915d182",
+      "fact": "Michael Brown has role DevOps Engineer",
+      "name": "HAS_ROLE",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:18:18.650Z] - Interview Turn 12: Michael Brown
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 9f20dc67
+
+### 1. User Prompt / Intent
+> Candidate: "no idea..."
+
+### 2. AI Reasoning & Strategy
+Turn 12. Q7 on completed day 23 ("Model Context Protocol (MCP)").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.056758772,
+    "prompt_tokens": 605,
+    "prompt_time": 0.054941467,
+    "completion_tokens": 22,
+    "completion_time": 0.103545519,
+    "total_tokens": 627,
+    "total_time": 0.158486986
+  },
+  "reply": "That's okay, you can't know everything. How do you implement Model Context Protocol in your application?"
+}
+```
+---
+
+## [2026-08-08T18:18:20.668Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 7e81f0a3
+
+### 1. User Prompt / Intent
+> {"title":"Turn 12 — Candidate Answer","content":"Topic: Multi-Agent Orchestration (Day 22)\nScore: 3.1/10 (WRONG)\nAnswer: no idea","tags":["interview-turn","sess-mskp25z5","CAND-005"],"metadata":{"sessionId":"sess-mskp25z5","turn":12,"topic":"Multi-Agent Orchestration (Day 22)","score":3.1,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213097972",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "48e9c3bf4f27",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:18:51.048Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 0206b85a
+
+### 1. User Prompt / Intent
+> {"query":"Michael Brown Model Context Protocol (MCP) (Day 23) I implement Model Context Protocol by exposing standardized MCP servers for tools and data sources, ","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "87823404-b042-4fec-aac4-563258b6cf01",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "628b3af8-3f07-4cb6-a52f-f203a2a26d58",
+      "fact": "Model Context Protocol (MCP)",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c3329d5c-f4b0-4ffd-831b-c9eeba43f1f7",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "b5f442c2-fee7-4c31-8598-df614b6733cb",
+      "fact": "completed curriculum Item Model Context Protocol Day 23",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "18c339ed-3944-4b02-b955-df81c171e950",
+      "source_node": "d2a331f1-34cd-4201-99bf-3badf6f2da3b",
+      "target_node": "f21b3e22-713e-4f9b-b3cc-3fe3aef46f08",
+      "fact": "MCP tool connections implement exponential backoff retries",
+      "name": "IMPLEMENTS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "4a23b058-8c46-4b49-8837-e03236b9c9ec",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "bb67dc29-7b20-4119-9aad-a932d5e84a12",
+      "fact": "Michael Brown is strong in Security & Deployment",
+      "name": "STRONG_AREA",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "a67dc3eb-67bf-4d26-9296-2277e09af983",
+      "source_node": "d2a331f1-34cd-4201-99bf-3badf6f2da3b",
+      "target_node": "af132013-d09f-48aa-aae4-e67df23cfc74",
+      "fact": "MCP tool connections fallback to local cached memory state when connections drop",
+      "name": "FALLBACK_TO",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:18:51.293Z] - Interview Turn 14: Michael Brown
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 82df3cf6
+
+### 1. User Prompt / Intent
+> Candidate: "I implement Model Context Protocol by exposing standardized MCP servers for tools and data sources, then connecting them through a secure adapter laye..."
+
+### 2. AI Reasoning & Strategy
+Turn 14. Q8 on completed day 28 ("Docker & Kubernetes Deployment").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.055986386,
+    "prompt_tokens": 599,
+    "prompt_time": 0.034018953,
+    "completion_tokens": 23,
+    "completion_time": 0.115482863,
+    "total_tokens": 622,
+    "total_time": 0.149501816
+  },
+  "reply": "You provided a clear explanation of Model Context Protocol implementation. How do you deploy your application using Docker and Kubernetes?"
+}
+```
+---
+
+## [2026-08-08T18:18:55.589Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** e5d20a09
+
+### 1. User Prompt / Intent
+> {"title":"Turn 14 — Candidate Answer","content":"Topic: Model Context Protocol (MCP) (Day 23)\nScore: 9.4/10 (RIGHT)\nAnswer: I implement Model Context Protocol by exposing standardized MCP servers for tools and data sources, then connecting them through a secure adapter layer so the application can discover, authorize, and invoke capabilities consistently across different clients.","tags":["interview-turn","sess-mskp25z5","CAND-005"],"metadata":{"sessionId":"sess-mskp25z5","turn":14,"topic":"Model Context Protocol (MCP) (Day 23)","score":9.4,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213129720",
+  "extracted": {
+    "entities": 5,
+    "edges": 5
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "2e14441424fb",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:19:06.251Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 22fb5585
+
+### 1. User Prompt / Intent
+> {"query":"interview evaluation Michael Brown","limit":10}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "801e252a-dad8-417d-9b29-2166cefd7050",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "197e8aa5-7869-44f3-846f-16ee0ca112f0",
+      "fact": "Michael Brown strong in Evaluation",
+      "name": "STRONG_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "f7277fc5-818b-47ea-aced-d27e5c9fe36b",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "197e8aa5-7869-44f3-846f-16ee0ca112f0",
+      "fact": "Michael Brown is strong in Evaluation",
+      "name": "STRONG_AREA",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "fd609a18-2dbf-431d-a69e-d4460e905ecb",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "628b3af8-3f07-4cb6-a52f-f203a2a26d58",
+      "fact": "Michael Brown has experience 10 years",
+      "name": "HAS_EXPERIENCE",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "a55c0003-c4cc-4d08-8300-ded7b5d8caf8",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "52c352a9-36c5-4694-a8a9-c3e17eab6767",
+      "fact": "Michael Brown education B.Tech Information Technology",
+      "name": "HAS_EDUCATION",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "60c1122b-adc1-49a6-a08f-6e365e19598f",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Michael Brown strong in Production & Capstone",
+      "name": "STRONG_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c042f5af-b618-49f7-8f16-a3e48b0b893e",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Michael Brown is strong in Production & Capstone",
+      "name": "STRONG_AREA",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "348437a7-fdd6-4599-a540-c7869972dbeb",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "ad0afff5-1580-415e-8203-3eef7f5db3a7",
+      "fact": "Michael Brown has completed all 31 missions",
+      "name": "COHORT_PROGRESS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c65f7c93-b2b4-4068-a5ee-27759979fd47",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "c278eddf-57e8-4dcf-bbdf-12a7c915d182",
+      "fact": "Michael Brown has role DevOps Engineer",
+      "name": "HAS_ROLE",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "3b30d10e-1301-4f11-ab10-716d8baf7722",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "bb67dc29-7b20-4119-9aad-a932d5e84a12",
+      "fact": "Michael Brown strong in Security & Deployment",
+      "name": "STRONG_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "4a23b058-8c46-4b49-8837-e03236b9c9ec",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "bb67dc29-7b20-4119-9aad-a932d5e84a12",
+      "fact": "Michael Brown is strong in Security & Deployment",
+      "name": "STRONG_AREA",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 10,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:19:07.017Z] - Interview Feedback: Michael Brown
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 33b85687
+
+### 1. User Prompt / Intent
+> Generate final feedback for session sess-mskp25z5
+
+### 2. AI Reasoning & Strategy
+Synthesized 16 turns across 16 topics.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.160994171,
+    "prompt_tokens": 908,
+    "prompt_time": 0.066249647,
+    "completion_tokens": 144,
+    "completion_time": 0.504278878,
+    "total_tokens": 1052,
+    "total_time": 0.570528525
+  },
+  "rawFeedback": "```json\n{\n  \"summary\": \"Michael Brown demonstrated a strong foundation in DevOps engineering, completing all 31 missions and showcasing expertise in areas like vector database indexing and Model Context Protocol implementation. However, he struggled with certain topics, such as prompt design and multi-agent orchestration. Overall, Michael has a solid technical base but requires further development in specific areas to excel as a DevOps engineer.\",\n  \"strengths\": [\"Vector database indexing\", \"Model Context Protocol implementation\"],\n  \"gaps\": [\"Prompt design\", \"Multi-agent orchestration\", \"Docker and Kubernetes deployment\"],\n  \"next\": [\"Review and practice prompt engineering fundamentals\", \"Explore multi-agent orchestration techniques and tools\"]\n}\n```"
+}
+```
+---
+
+## [2026-08-08T18:19:07.066Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 45c49831
+
+### 1. User Prompt / Intent
+> {"title":"Turn 16 — Candidate Answer","content":"Topic: Docker & Kubernetes Deployment (Day 28)\nScore: 2.6/10 (WRONG)\nAnswer: i dont know","tags":["interview-turn","sess-mskp25z5","CAND-005"],"metadata":{"sessionId":"sess-mskp25z5","turn":16,"topic":"Docker & Kubernetes Deployment (Day 28)","score":2.6,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213144583",
+  "extracted": {
+    "entities": 0,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "7d5c977feb4b",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:26:23.986Z] - Interview Start: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 7bfd067f
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
+> 5. NEVER output markdown labels or prefixes like "Evaluation:" or "Topic:". Speak naturally in conversational speech.
+> 6. Keep your total response under 60 words (3-4 sentences max).
+> 
+> 
+> Candidate Profile:
+> Candidate: Alex Turner
+> Role: Backend Software Engineer | Experience: 5 years | Education: B.Tech Computer Science
+> Cohort Progress: 29/31 missions completed, 10 first-try passes
+> Completed Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Advanced Prompting: Function Calling & Structured Outputs (Day 13), Chatbot Backend & API Integration (Day 16), Full-Stack Integration & Streaming Responses (Day 18), Multi-Agent Orchestration (Day 22), Docker & Kubernetes Deployment (Day 28), Capstone Project & Final Demo (Day 31)
+> 
+> Target Completed Curriculum Topic: "Embeddings Explained" (Day 7) [Level: intermediate]
+> User: Ask your first technical question Q1 directly to Alex Turner ("you") about completed topic "Embeddings Explained" (Day 7). Focus on concrete system architecture, tools (Sentence Transformers, OpenAI Embeddings, Scikit-learn, Matplotlib), or trade-offs. Speak in second-person. Under 60 words total. No topic headers in text.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskpg5xw. Topic: "Embeddings Explained (Day 7)". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.055159783,
+    "prompt_tokens": 468,
+    "prompt_time": 0.052491746,
+    "completion_tokens": 38,
+    "completion_time": 0.171812706,
+    "total_tokens": 506,
+    "total_time": 0.224304452
+  },
+  "reply": "You completed Embeddings Explained, so how would you architect a system using Sentence Transformers and Scikit-learn to generate and compare embeddings, considering trade-offs between accuracy and computational efficiency?"
+}
+```
+---
+
+## [2026-08-08T18:26:48.902Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 654beab2
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Candidate Answer","content":"Topic: Embeddings Explained (Day 7)\nScore: 3.3/10 (WRONG)\nAnswer: i dont know","tags":["interview-turn","sess-mskpg5xw","CAND-002"],"metadata":{"sessionId":"sess-mskpg5xw","turn":2,"topic":"Embeddings Explained (Day 7)","score":3.3,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213605933",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "51cd479c113e",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:26:50.467Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 8ca27b94
+
+### 1. User Prompt / Intent
+> {"query":"Alex Turner Embeddings Explained (Day 7) i dont know","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "bf4cd8b6-8a1b-4a12-8121-5dbd1d8b229c",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "completed curriculum Item Embeddings Explained Day 7",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "d91f7804-60b7-4906-8049-2c59a2f897b1",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "38662e5e-2eb0-4e35-b498-14589f011389",
+      "fact": "Embeddings Explained",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c99bf027-9e9f-4db4-a64c-40c9b1bc5e93",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "789eaa3c-f56b-4995-a6ca-cb0b045ace66",
+      "fact": "Alex Turner has 5 years of experience",
+      "name": "HAS_EXPERIENCE",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "0ce6b4e4-96b8-4a86-83b0-b66f77e3b379",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "af994acb-ba44-47c3-bd3d-9623eb7096ad",
+      "fact": "Alex Turner has weak areas in Embeddings and Vector Search, LLM Core, and Prompting and Fine-Tuning",
+      "name": "HAS_WEAKNESS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "b4afb461-00e6-4bf9-aa45-0320f774a8fc",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "a3665891-a5f0-415c-bcbe-8e4a0e09b4f8",
+      "fact": "Alex Turner obtained a B.Tech in Computer Science",
+      "name": "EDUCATED_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:26:50.887Z] - Interview Turn 2: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 91dfb1c5
+
+### 1. User Prompt / Intent
+> Candidate: "i dont know..."
+
+### 2. AI Reasoning & Strategy
+Turn 2. Q2 on completed day 8 ("Vector Databases Overview").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161932891,
+    "prompt_tokens": 554,
+    "prompt_time": 0.053983477,
+    "completion_tokens": 33,
+    "completion_time": 0.148859751,
+    "total_tokens": 587,
+    "total_time": 0.202843228
+  },
+  "reply": "That's okay, it can be a tough question. You mentioned completing Vector Databases Overview, how do you index vectors in a database for efficient similarity search?"
+}
+```
+---
+
+## [2026-08-08T18:26:51.950Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 008bea19
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Alex Turner","content":"Candidate: Alex Turner\nRole: Backend Software Engineer | Experience: 5 years | Education: B.Tech Computer Science\nCohort Progress: 29/31 missions completed, 10 first-try passes\nCompleted Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Advanced Prompting: Function Calling & Structured Outputs (Day 13), Chatbot Backend & API Integration (Day 16), Full-Stack Integration & Streaming Responses (Day 18), Multi-Agent Orchestration (Day 22), Docker & Kubernetes Deployment (Day 28), Capstone Project & Final Demo (Day 31)","tags":["interview-init","sess-mskpg5xw","CAND-002"],"metadata":{"sessionId":"sess-mskpg5xw","candidateId":"CAND-002"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213585174",
+  "extracted": {
+    "entities": 27,
+    "edges": 53
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "398e60ce74e2",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:27:29.374Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** adadc80d
+
+### 1. User Prompt / Intent
+> {"query":"Alex Turner Vector Databases Overview (Day 8) I index vectors using approximate nearest-neighbor structures such as HNSW, IVF, or PQ, often combin","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "3beff4d6-5f13-48ed-906c-77b0c8c7fb50",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "fact": "Alex Turner completed the topic Vector Databases Overview on Day 8",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "a727992f-f64c-4d0f-a01e-cca0519c94eb",
+      "source_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "target_node": "5b433d5d-7176-460b-98c5-7077fc24b96d",
+      "fact": "Vector database indexing enables similarity search operation",
+      "name": "FACILITATES",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "5571a893-0ebf-48bc-a06e-f35f423d5bef",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "Vector Databases Overview",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c0a8516b-5d01-42b4-8324-58adf99a19c3",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "fact": "completed curriculum Item Vector Databases Overview Day 8",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "ea2bdc4d-ac52-4a1a-a5ba-0cf9d032bbf4",
+      "source_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "target_node": "8c5157e7-7694-4a1c-be5f-8a184ea9bf21",
+      "fact": "discusses vector databases overview as the subject of this episode",
+      "name": "TOPIC_OF",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:27:29.625Z] - Interview Turn 4: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** c014f6e2
+
+### 1. User Prompt / Intent
+> Candidate: "I index vectors using approximate nearest-neighbor structures such as HNSW, IVF, or PQ, often combined with metadata filtering and sharding to balance..."
+
+### 2. AI Reasoning & Strategy
+Turn 4. Q3 on completed day 10 ("The Retrieval & Matching Engine").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.054744843,
+    "prompt_tokens": 638,
+    "prompt_time": 0.032646007,
+    "completion_tokens": 27,
+    "completion_time": 0.115613465,
+    "total_tokens": 665,
+    "total_time": 0.148259472
+  },
+  "reply": "You provided a clear approach to indexing vectors. How do you handle matching in a retrieval engine, considering recall and precision trade-offs?"
+}
+```
+---
+
+## [2026-08-08T18:27:36.645Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 722945ab
+
+### 1. User Prompt / Intent
+> {"title":"Turn 4 — Candidate Answer","content":"Topic: Vector Databases Overview (Day 8)\nScore: 8.9/10 (RIGHT)\nAnswer: I index vectors using approximate nearest-neighbor structures such as HNSW, IVF, or PQ, often combined with metadata filtering and sharding to balance search speed, memory use, and retrieval accuracy.","tags":["interview-turn","sess-mskpg5xw","CAND-002"],"metadata":{"sessionId":"sess-mskpg5xw","turn":4,"topic":"Vector Databases Overview (Day 8)","score":8.9,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213647380",
+  "extracted": {
+    "entities": 5,
+    "edges": 9
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "9c42a5bb0248",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:28:06.740Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** f0eb8b26
+
+### 1. User Prompt / Intent
+> {"query":"Alex Turner The Retrieval & Matching Engine (Day 10) Calibration","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "3d46f29a-6089-45d2-b86b-fd5b7dec3c28",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "Alex Turner completed the topic The Retrieval & Matching Engine on Day 10",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "e14f84b7-d2e1-4f15-8afe-7cc154cf9de6",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "completed curriculum Item The Retrieval & Matching Engine Day 10",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "143e9c1d-176f-4913-808d-bd0df7d4da52",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "Alex Turner completed the topic Embeddings Explained on Day 7",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c76afd42-de6a-49e5-a840-cac6a54ada16",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "70a09a4b-4c72-4122-9328-61470ab4c515",
+      "fact": "Alex Turner completed the topic Prompt Engineering Fundamentals on Day 12",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "f0266f91-d1b9-4f5e-9038-fc9390df696d",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "2fbd4524-7872-44d0-ab71-8e4941c0c475",
+      "fact": "The Retrieval & Matching Engine",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:28:07.260Z] - Interview Turn 6: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 327dd5a5
+
+### 1. User Prompt / Intent
+> Candidate: "Calibration..."
+
+### 2. AI Reasoning & Strategy
+Turn 6. Q4 on completed day 12 ("Prompt Engineering Fundamentals").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161328275,
+    "prompt_tokens": 637,
+    "prompt_time": 0.043855345,
+    "completion_tokens": 37,
+    "completion_time": 0.184917137,
+    "total_tokens": 674,
+    "total_time": 0.228772482
+  },
+  "reply": "You seemed to struggle with that question, calibration isn't a clear approach. How do you design effective prompts in your chatbot backend, considering the trade-offs between specificity and flexibility?"
+}
+```
+---
+
+## [2026-08-08T18:28:14.202Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** ce11d0d6
+
+### 1. User Prompt / Intent
+> {"title":"Turn 6 — Candidate Answer","content":"Topic: The Retrieval & Matching Engine (Day 10)\nScore: 5.1/10 (RIGHT)\nAnswer: Calibration","tags":["interview-turn","sess-mskpg5xw","CAND-002"],"metadata":{"sessionId":"sess-mskpg5xw","turn":6,"topic":"The Retrieval & Matching Engine (Day 10)","score":5.1,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213685502",
+  "extracted": {
+    "entities": 15,
+    "edges": 1
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "b14f67749989",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:28:32.559Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 6416ebcc
+
+### 1. User Prompt / Intent
+> {"query":"Alex Turner Prompt Engineering Fundamentals (Day 12) i dont know","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "c76afd42-de6a-49e5-a840-cac6a54ada16",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "70a09a4b-4c72-4122-9328-61470ab4c515",
+      "fact": "Alex Turner completed the topic Prompt Engineering Fundamentals on Day 12",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "0d29d95b-81de-48a5-a84c-414b190965de",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "70a09a4b-4c72-4122-9328-61470ab4c515",
+      "fact": "completed curriculum Item Prompt Engineering Fundamentals Day 12",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "f1f1c53a-b7a1-4d20-abe3-021c0e7d8ce3",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "2ca650bd-4c19-4549-b98b-7d8cbe0bd3ac",
+      "fact": "Alex Turner completed the topic Advanced Prompting: Function Calling & Structured Outputs on Day 13",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "143e9c1d-176f-4913-808d-bd0df7d4da52",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "Alex Turner completed the topic Embeddings Explained on Day 7",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "4cd71cac-7143-4484-b7e4-1771e3940ac3",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "5b433d5d-7176-460b-98c5-7077fc24b96d",
+      "fact": "Prompt Engineering Fundamentals",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:28:32.871Z] - Interview Turn 8: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 8145c6a4
+
+### 1. User Prompt / Intent
+> Candidate: "i dont know..."
+
+### 2. AI Reasoning & Strategy
+Turn 8. Q5 on completed day 13 ("Advanced Prompting: Function Calling & Structured Outputs").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.051105848,
+    "prompt_tokens": 618,
+    "prompt_time": 0.031584024,
+    "completion_tokens": 38,
+    "completion_time": 0.179840555,
+    "total_tokens": 656,
+    "total_time": 0.211424579
+  },
+  "reply": "That's okay, it can be tough to recall everything, you're doing your best. You completed Advanced Prompting on Day 13, how do you use function calling in prompts?"
+}
+```
+---
+
+## [2026-08-08T18:28:35.984Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 017aa80b
+
+### 1. User Prompt / Intent
+> {"title":"Turn 8 — Candidate Answer","content":"Topic: Prompt Engineering Fundamentals (Day 12)\nScore: 2.6/10 (WRONG)\nAnswer: i dont know","tags":["interview-turn","sess-mskpg5xw","CAND-002"],"metadata":{"sessionId":"sess-mskpg5xw","turn":8,"topic":"Prompt Engineering Fundamentals (Day 12)","score":2.6,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213713127",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "a9686566c801",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:28:53.858Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 6cfc6d44
+
+### 1. User Prompt / Intent
+> {"query":"Alex Turner Advanced Prompting: Function Calling & Structured Outputs (Day 13) By explicitly instructing the model when and how to call available functions, specifying each functi","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "f1f1c53a-b7a1-4d20-abe3-021c0e7d8ce3",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "2ca650bd-4c19-4549-b98b-7d8cbe0bd3ac",
+      "fact": "Alex Turner completed the topic Advanced Prompting: Function Calling & Structured Outputs on Day 13",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "143e9c1d-176f-4913-808d-bd0df7d4da52",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "Alex Turner completed the topic Embeddings Explained on Day 7",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c76afd42-de6a-49e5-a840-cac6a54ada16",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "70a09a4b-4c72-4122-9328-61470ab4c515",
+      "fact": "Alex Turner completed the topic Prompt Engineering Fundamentals on Day 12",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "3d46f29a-6089-45d2-b86b-fd5b7dec3c28",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "Alex Turner completed the topic The Retrieval & Matching Engine on Day 10",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "2fc99b94-71ac-4150-b992-bd327a70aa6e",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "94123ec7-1ce5-47ef-843f-dd496a48ef7b",
+      "fact": "Alex Turner completed the topic Multi-Agent Orchestration on Day 22",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:28:54.193Z] - Interview Turn 10: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 90ce6038
+
+### 1. User Prompt / Intent
+> Candidate: "By explicitly instructing the model when and how to call available functions, specifying each function’s purpose and required parameters in the prompt..."
+
+### 2. AI Reasoning & Strategy
+Turn 10. Q6 on completed day 16 ("Chatbot Backend & API Integration").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161180181,
+    "prompt_tokens": 648,
+    "prompt_time": 0.034524848,
+    "completion_tokens": 24,
+    "completion_time": 0.092588193,
+    "total_tokens": 672,
+    "total_time": 0.127113041
+  },
+  "reply": "You provided a clear explanation of function calling in prompts. How do you handle API integration in your chatbot backend?"
+}
+```
+---
+
+## [2026-08-08T18:28:55.732Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** ab300971
+
+### 1. User Prompt / Intent
+> {"title":"Turn 10 — Candidate Answer","content":"Topic: Advanced Prompting: Function Calling & Structured Outputs (Day 13)\nScore: 8/10 (RIGHT)\nAnswer: By explicitly instructing the model when and how to call available functions, specifying each function’s purpose and required parameters in the prompt.","tags":["interview-turn","sess-mskpg5xw","CAND-002"],"metadata":{"sessionId":"sess-mskpg5xw","turn":10,"topic":"Advanced Prompting: Function Calling & Structured Outputs (Day 13)","score":8,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213733602",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "c101e6f24a84",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:29:14.454Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 2d965ab9
+
+### 1. User Prompt / Intent
+> {"query":"Alex Turner Chatbot Backend & API Integration (Day 16) By routing requests through a dedicated service layer that authenticates, validates, retries, and no","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "252003c8-e66c-41f6-88f4-53eedc8897d4",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "adf948ae-8236-425f-9c9e-0dfe2da40547",
+      "fact": "Alex Turner completed the topic Chatbot Backend & API Integration on Day 16",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c9818dc8-9ab7-4b48-8a9d-1b54c6910c04",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "8d6f3fe3-4403-4dd4-a082-4500aa741710",
+      "fact": "Chatbot Backend & API Integration",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "d223f3b7-2bda-4415-845f-819c82a5f613",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "68e31b0a-a03a-4124-96e9-f971f04473ca",
+      "fact": "Alex Turner works as a Backend Software Engineer",
+      "name": "OCCUPATION",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "509b4e6c-dea0-4397-ab4f-a4e70e627a5f",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "39fb19cb-c886-4879-ad64-9de9310ea8b6",
+      "fact": "Alex Turner has strong areas in Chatbot Application Build, Evaluation, and Security Deployment",
+      "name": "HAS_STRENGTH",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9d228abf-dda6-4f38-862c-3df57b7db8f9",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "68e31b0a-a03a-4124-96e9-f971f04473ca",
+      "fact": "Alex Turner holds the position of Backend Software Engineer",
+      "name": "POSITIONS",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:29:14.673Z] - Interview Turn 12: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** d7db45c5
+
+### 1. User Prompt / Intent
+> Candidate: "By routing requests through a dedicated service layer that authenticates, validates, retries, and normalizes third-party API calls before passing the ..."
+
+### 2. AI Reasoning & Strategy
+Turn 12. Q7 on completed day 18 ("Full-Stack Integration & Streaming Responses").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.051060371,
+    "prompt_tokens": 650,
+    "prompt_time": 0.03206886,
+    "completion_tokens": 23,
+    "completion_time": 0.08671407,
+    "total_tokens": 673,
+    "total_time": 0.11878293
+  },
+  "reply": "You provided a clear overview of handling API integration. How do you implement streaming responses in your full-stack application?"
+}
+```
+---
+
+## [2026-08-08T18:29:14.706Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 1a70ad80
+
+### 1. User Prompt / Intent
+> {"title":"Turn 12 — Candidate Answer","content":"Topic: Chatbot Backend & API Integration (Day 16)\nScore: 6.7/10 (RIGHT)\nAnswer: By routing requests through a dedicated service layer that authenticates, validates, retries, and normalizes third-party API calls before passing the results back to the chatbot.","tags":["interview-turn","sess-mskpg5xw","CAND-002"],"metadata":{"sessionId":"sess-mskpg5xw","turn":12,"topic":"Chatbot Backend & API Integration (Day 16)","score":6.7,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213752627",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "4e46623b187c",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:29:41.875Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 7d3db6a2
+
+### 1. User Prompt / Intent
+> {"query":"Alex Turner Full-Stack Integration & Streaming Responses (Day 18) I implement streaming by sending partial response chunks from the backend over SSE or WebSockets and","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "97e445a0-1148-4fa7-b7a4-45c5ea9e43a2",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "6f310f17-4ff5-4d2b-a1d5-877026020adb",
+      "fact": "Alex Turner completed the topic Full-Stack Integration & Streaming Responses on Day 18",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "a3269465-792a-40e0-ad95-4a0a7e122e11",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "6f310f17-4ff5-4d2b-a1d5-877026020adb",
+      "fact": "completed curriculum Item Full-Stack Integration & Streaming Responses Day 18",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "252003c8-e66c-41f6-88f4-53eedc8897d4",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "adf948ae-8236-425f-9c9e-0dfe2da40547",
+      "fact": "Alex Turner completed the topic Chatbot Backend & API Integration on Day 16",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "d223f3b7-2bda-4415-845f-819c82a5f613",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "68e31b0a-a03a-4124-96e9-f971f04473ca",
+      "fact": "Alex Turner works as a Backend Software Engineer",
+      "name": "OCCUPATION",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9d228abf-dda6-4f38-862c-3df57b7db8f9",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "68e31b0a-a03a-4124-96e9-f971f04473ca",
+      "fact": "Alex Turner holds the position of Backend Software Engineer",
+      "name": "POSITIONS",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:29:42.262Z] - Interview Turn 14: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** f74f5972
+
+### 1. User Prompt / Intent
+> Candidate: "I implement streaming by sending partial response chunks from the backend over SSE or WebSockets and updating the frontend incrementally as each chunk..."
+
+### 2. AI Reasoning & Strategy
+Turn 14. Q8 on completed day 22 ("Multi-Agent Orchestration").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161785618,
+    "prompt_tokens": 648,
+    "prompt_time": 0.05080646,
+    "completion_tokens": 27,
+    "completion_time": 0.132659426,
+    "total_tokens": 675,
+    "total_time": 0.183465886
+  },
+  "reply": "You provided a concise explanation of streaming responses. How do you orchestrate multiple agents in a system, considering their interactions and dependencies?"
+}
+```
+---
+
+## [2026-08-08T18:29:42.599Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 8b46e5ec
+
+### 1. User Prompt / Intent
+> {"title":"Turn 14 — Candidate Answer","content":"Topic: Full-Stack Integration & Streaming Responses (Day 18)\nScore: 6.5/10 (RIGHT)\nAnswer: I implement streaming by sending partial response chunks from the backend over SSE or WebSockets and updating the frontend incrementally as each chunk arrives.","tags":["interview-turn","sess-mskpg5xw","CAND-002"],"metadata":{"sessionId":"sess-mskpg5xw","turn":14,"topic":"Full-Stack Integration & Streaming Responses (Day 18)","score":6.5,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213780517",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "8ec2cc681037",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:29:55.722Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 6832fd63
+
+### 1. User Prompt / Intent
+> {"query":"interview evaluation Alex Turner","limit":10}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "c99bf027-9e9f-4db4-a64c-40c9b1bc5e93",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "789eaa3c-f56b-4995-a6ca-cb0b045ace66",
+      "fact": "Alex Turner has 5 years of experience",
+      "name": "HAS_EXPERIENCE",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "509b4e6c-dea0-4397-ab4f-a4e70e627a5f",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "39fb19cb-c886-4879-ad64-9de9310ea8b6",
+      "fact": "Alex Turner has strong areas in Chatbot Application Build, Evaluation, and Security Deployment",
+      "name": "HAS_STRENGTH",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "b4afb461-00e6-4bf9-aa45-0320f774a8fc",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "a3665891-a5f0-415c-bcbe-8e4a0e09b4f8",
+      "fact": "Alex Turner obtained a B.Tech in Computer Science",
+      "name": "EDUCATED_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "0ce6b4e4-96b8-4a86-83b0-b66f77e3b379",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "af994acb-ba44-47c3-bd3d-9623eb7096ad",
+      "fact": "Alex Turner has weak areas in Embeddings and Vector Search, LLM Core, and Prompting and Fine-Tuning",
+      "name": "HAS_WEAKNESS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "8c699f62-69c5-46f0-aa6a-7bab28973ae6",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "62f58bc7-cf95-4c00-94e9-6b482f6977f6",
+      "fact": "Alex Turner has achieved 10 first-try passes",
+      "name": "PASS_COUNT",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "f1f1c53a-b7a1-4d20-abe3-021c0e7d8ce3",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "2ca650bd-4c19-4549-b98b-7d8cbe0bd3ac",
+      "fact": "Alex Turner completed the topic Advanced Prompting: Function Calling & Structured Outputs on Day 13",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "d223f3b7-2bda-4415-845f-819c82a5f613",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "68e31b0a-a03a-4124-96e9-f971f04473ca",
+      "fact": "Alex Turner works as a Backend Software Engineer",
+      "name": "OCCUPATION",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9d228abf-dda6-4f38-862c-3df57b7db8f9",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "68e31b0a-a03a-4124-96e9-f971f04473ca",
+      "fact": "Alex Turner holds the position of Backend Software Engineer",
+      "name": "POSITIONS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "3d46f29a-6089-45d2-b86b-fd5b7dec3c28",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "Alex Turner completed the topic The Retrieval & Matching Engine on Day 10",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "e5c0e94f-6845-4074-814d-6cc3f05775ae",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "b2928f6c-1ec6-4614-b62a-5c42fb775852",
+      "fact": "Alex Turner has completed 29 out of 31 missions",
+      "name": "PROGRESS",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 10,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:29:56.374Z] - Interview Feedback: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 8f936706
+
+### 1. User Prompt / Intent
+> Generate final feedback for session sess-mskpg5xw
+
+### 2. AI Reasoning & Strategy
+Synthesized 16 turns across 16 topics.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.055284353,
+    "prompt_tokens": 939,
+    "prompt_time": 0.048118346,
+    "completion_tokens": 140,
+    "completion_time": 0.511613017,
+    "total_tokens": 1079,
+    "total_time": 0.559731363
+  },
+  "rawFeedback": "```\n{\n  \"summary\": \"Alex Turner demonstrated strengths in chatbot application build, evaluation, and security deployment, but struggled with fundamental concepts such as embeddings, vector search, and prompt engineering. Despite completing relevant topics, Turner's understanding of these areas was inconsistent. Overall, Turner's performance showed promise, but requires further development in key areas.\",\n  \"strengths\": [\"Chatbot Backend & API Integration\", \"Full-Stack Integration & Streaming Responses\"],\n  \"gaps\": [\"Embeddings and Vector Search\", \"Prompt Engineering Fundamentals\"],\n  \"next\": [\"Review and practice embedding generation and comparison\", \"Focus on developing a deeper understanding of prompt engineering and its applications\"]\n}\n```"
+}
+```
+---
+
+## [2026-08-08T18:29:57.522Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 942c181b
+
+### 1. User Prompt / Intent
+> {"title":"Turn 16 — Candidate Answer","content":"Topic: Multi-Agent Orchestration (Day 22)\nScore: 3/10 (WRONG)\nAnswer: i dont know","tags":["interview-turn","sess-mskpg5xw","CAND-002"],"metadata":{"sessionId":"sess-mskpg5xw","turn":16,"topic":"Multi-Agent Orchestration (Day 22)","score":3,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213793207",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "de6a799dc225",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:33:16.353Z] - Interview Start: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** dd2bc4ee
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
+> 5. NEVER output markdown labels or prefixes like "Evaluation:" or "Topic:". Speak naturally in conversational speech.
+> 6. Keep your total response under 60 words (3-4 sentences max).
+> 
+> 
+> Candidate Profile:
+> Candidate: Alex Turner
+> Role: Backend Software Engineer | Experience: 5 years | Education: B.Tech Computer Science
+> Cohort Progress: 29/31 missions completed, 10 first-try passes
+> Completed Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Advanced Prompting: Function Calling & Structured Outputs (Day 13), Chatbot Backend & API Integration (Day 16), Full-Stack Integration & Streaming Responses (Day 18), Multi-Agent Orchestration (Day 22), Docker & Kubernetes Deployment (Day 28), Capstone Project & Final Demo (Day 31)
+> 
+> Target Completed Curriculum Topic: "Embeddings Explained" (Day 7) [Level: intermediate]
+> User: Ask your first technical question Q1 directly to Alex Turner ("you") about completed topic "Embeddings Explained" (Day 7). Focus on concrete system architecture, tools (Sentence Transformers, OpenAI Embeddings, Scikit-learn, Matplotlib), or trade-offs. Speak in second-person. Under 60 words total. No topic headers in text.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskpp03e. Topic: "Embeddings Explained (Day 7)". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.055229846,
+    "prompt_tokens": 468,
+    "prompt_time": 0.024627096,
+    "completion_tokens": 47,
+    "completion_time": 0.201794982,
+    "total_tokens": 515,
+    "total_time": 0.226422078
+  },
+  "reply": "You completed Embeddings Explained, so how would you architect a system using Sentence Transformers to generate dense vector embeddings, and what trade-offs would you consider when choosing between OpenAI Embeddings and Scikit-learn for your implementation?"
+}
+```
+---
+
+## [2026-08-08T18:33:24.835Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 006910f5
+
+### 1. User Prompt / Intent
+> {"query":"Alex Turner Embeddings Explained (Day 7) idk","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "143e9c1d-176f-4913-808d-bd0df7d4da52",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "Alex Turner completed the topic Embeddings Explained on Day 7",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "bf4cd8b6-8a1b-4a12-8121-5dbd1d8b229c",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "completed curriculum Item Embeddings Explained Day 7",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "3d46f29a-6089-45d2-b86b-fd5b7dec3c28",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "Alex Turner completed the topic The Retrieval & Matching Engine on Day 10",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "3beff4d6-5f13-48ed-906c-77b0c8c7fb50",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "fact": "Alex Turner completed the topic Vector Databases Overview on Day 8",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c76afd42-de6a-49e5-a840-cac6a54ada16",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "70a09a4b-4c72-4122-9328-61470ab4c515",
+      "fact": "Alex Turner completed the topic Prompt Engineering Fundamentals on Day 12",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:33:25.221Z] - Interview Turn 2: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 5a33046d
+
+### 1. User Prompt / Intent
+> Candidate: "idk..."
+
+### 2. AI Reasoning & Strategy
+Turn 2. Q2 on completed day 8 ("Vector Databases Overview").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.058529209,
+    "prompt_tokens": 578,
+    "prompt_time": 0.03424387,
+    "completion_tokens": 37,
+    "completion_time": 0.187270885,
+    "total_tokens": 615,
+    "total_time": 0.221514755
+  },
+  "reply": "That's okay, it can be tough to recall details on the spot. You mentioned completing Vector Databases Overview on Day 8, how do you index vectors in a database?"
+}
+```
+---
+
+## [2026-08-08T18:33:26.406Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 0cfeba83
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Candidate Answer","content":"Topic: Embeddings Explained (Day 7)\nScore: 2/10 (WRONG)\nAnswer: idk","tags":["interview-turn","sess-mskpp03e","CAND-002"],"metadata":{"sessionId":"sess-mskpp03e","turn":2,"topic":"Embeddings Explained (Day 7)","score":2,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786214003513",
+  "extracted": {
+    "entities": 4,
+    "edges": 1
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "a3fea67688dc",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:33:30.040Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** aca8d0c2
+
+### 1. User Prompt / Intent
+> {"title":"Turn 4 — Candidate Answer","content":"Topic: Vector Databases Overview (Day 8)\nScore: 2/10 (WRONG)\nAnswer: idk","tags":["interview-turn","sess-mskpp03e","CAND-002"],"metadata":{"sessionId":"sess-mskpp03e","turn":4,"topic":"Vector Databases Overview (Day 8)","score":2,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786214008363",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "470fca71506d",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:33:39.199Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** cf7af296
+
+### 1. User Prompt / Intent
+> {"query":"Alex Turner Vector Databases Overview (Day 8) idk","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "3beff4d6-5f13-48ed-906c-77b0c8c7fb50",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "fact": "Alex Turner completed the topic Vector Databases Overview on Day 8",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c0a8516b-5d01-42b4-8324-58adf99a19c3",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "fact": "completed curriculum Item Vector Databases Overview Day 8",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "5571a893-0ebf-48bc-a06e-f35f423d5bef",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "Vector Databases Overview",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "ea2bdc4d-ac52-4a1a-a5ba-0cf9d032bbf4",
+      "source_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "target_node": "8c5157e7-7694-4a1c-be5f-8a184ea9bf21",
+      "fact": "discusses vector databases overview as the subject of this episode",
+      "name": "TOPIC_OF",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "143e9c1d-176f-4913-808d-bd0df7d4da52",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "Alex Turner completed the topic Embeddings Explained on Day 7",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:33:39.656Z] - Interview Turn 4: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 5d764760
+
+### 1. User Prompt / Intent
+> Candidate: "idk..."
+
+### 2. AI Reasoning & Strategy
+Turn 4. Q3 on completed day 10 ("The Retrieval & Matching Engine").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161574692,
+    "prompt_tokens": 615,
+    "prompt_time": 0.093333034,
+    "completion_tokens": 35,
+    "completion_time": 0.153535179,
+    "total_tokens": 650,
+    "total_time": 0.246868213
+  },
+  "reply": "That's okay, it can be tough to recall details on the spot. You previously completed The Retrieval & Matching Engine, how do you handle retrieval in this engine?"
+}
+```
+---
+
+## [2026-08-08T18:33:43.912Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 49fd2ab3
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Alex Turner","content":"Candidate: Alex Turner\nRole: Backend Software Engineer | Experience: 5 years | Education: B.Tech Computer Science\nCohort Progress: 29/31 missions completed, 10 first-try passes\nCompleted Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Advanced Prompting: Function Calling & Structured Outputs (Day 13), Chatbot Backend & API Integration (Day 16), Full-Stack Integration & Streaming Responses (Day 18), Multi-Agent Orchestration (Day 22), Docker & Kubernetes Deployment (Day 28), Capstone Project & Final Demo (Day 31)","tags":["interview-init","sess-mskpp03e","CAND-002"],"metadata":{"sessionId":"sess-mskpp03e","candidateId":"CAND-002"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786213998115",
+  "extracted": {
+    "entities": 27,
+    "edges": 37
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "9c55df7011c0",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:34:17.965Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 2cd2819a
+
+### 1. User Prompt / Intent
+> {"query":"Alex Turner The Retrieval & Matching Engine (Day 10) The Retrieval & Matching Engine is a system component responsible for finding relevant items from a ","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "f0266f91-d1b9-4f5e-9038-fc9390df696d",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "2fbd4524-7872-44d0-ab71-8e4941c0c475",
+      "fact": "The Retrieval & Matching Engine",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "3d46f29a-6089-45d2-b86b-fd5b7dec3c28",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "Alex Turner completed the topic The Retrieval & Matching Engine on Day 10",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "276ca00b-ab17-4fb3-bcfe-294b4833a997",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "The Retrieval & Matching Engine (Day 10)",
+      "name": "COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "e14f84b7-d2e1-4f15-8afe-7cc154cf9de6",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "completed curriculum Item The Retrieval & Matching Engine Day 10",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "34a5be1b-94e8-44b6-b230-91318a59d480",
+      "source_node": "d913f040-04aa-433b-a2d9-d3bae2321dd2",
+      "target_node": "53db2e53-f9d3-4666-b4e9-1a48c29c6053",
+      "fact": "Retrieval & Matching Engine related to Calibration",
+      "name": "CALIBRATES",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:34:18.248Z] - Interview Turn 6: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** d4508c73
+
+### 1. User Prompt / Intent
+> Candidate: "The Retrieval & Matching Engine is a system component responsible for finding relevant items from a larger dataset and comparing them against a query ..."
+
+### 2. AI Reasoning & Strategy
+Turn 6. Q4 on completed day 12 ("Prompt Engineering Fundamentals").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.055367888,
+    "prompt_tokens": 652,
+    "prompt_time": 0.035291813,
+    "completion_tokens": 25,
+    "completion_time": 0.143363515,
+    "total_tokens": 677,
+    "total_time": 0.178655328
+  },
+  "reply": "You provided a clear overview of The Retrieval & Matching Engine. How do you design effective prompts in prompt engineering fundamentals?"
+}
+```
+---
+
+## [2026-08-08T18:34:19.384Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 3e4115a1
+
+### 1. User Prompt / Intent
+> {"title":"Turn 6 — Candidate Answer","content":"Topic: The Retrieval & Matching Engine (Day 10)\nScore: 7.1/10 (RIGHT)\nAnswer: The Retrieval & Matching Engine is a system component responsible for finding relevant items from a larger dataset and comparing them against a query or request. It matters because retrieval quality directly affects the speed, accuracy, and usefulness of downstream matching, ranking, or recommendation tasks.","tags":["interview-turn","sess-mskpp03e","CAND-002"],"metadata":{"sessionId":"sess-mskpp03e","turn":6,"topic":"The Retrieval & Matching Engine (Day 10)","score":7.1,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786214056600",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "d68784732601",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": {
+    "should_extract": true,
+    "confidence": 0.92,
+    "reason": "User states a preference for Retrieval & Matching Engine and its importance, indicating intent to remember this topic."
+  }
+}
+```
+---
+
+## [2026-08-08T18:34:40.953Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** f87d7339
+
+### 1. User Prompt / Intent
+> {"query":"Alex Turner Prompt Engineering Fundamentals (Day 12) Design effective prompts by being specific about the task, providing clear context and constraints, ","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "c76afd42-de6a-49e5-a840-cac6a54ada16",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "70a09a4b-4c72-4122-9328-61470ab4c515",
+      "fact": "Alex Turner completed the topic Prompt Engineering Fundamentals on Day 12",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "6c946145-a372-41b3-97f2-46b92a3abbd3",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "70a09a4b-4c72-4122-9328-61470ab4c515",
+      "fact": "Prompt Engineering Fundamentals (Day 12)",
+      "name": "COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "4cd71cac-7143-4484-b7e4-1771e3940ac3",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "5b433d5d-7176-460b-98c5-7077fc24b96d",
+      "fact": "Prompt Engineering Fundamentals",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "0d29d95b-81de-48a5-a84c-414b190965de",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "70a09a4b-4c72-4122-9328-61470ab4c515",
+      "fact": "completed curriculum Item Prompt Engineering Fundamentals Day 12",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "8b7f1b8a-e8d9-4300-ac3a-d5c479eca3c5",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "77a42f58-15ff-40be-b738-ae31d13e1979",
+      "fact": "skipped topic Prompting & Fine-Tuning",
+      "name": "SKIPPED_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:34:41.180Z] - Interview Turn 8: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** f9fcc216
+
+### 1. User Prompt / Intent
+> Candidate: "Design effective prompts by being specific about the task, providing clear context and constraints, defining the desired output format, and iterating ..."
+
+### 2. AI Reasoning & Strategy
+Turn 8. Q5 on completed day 13 ("Advanced Prompting: Function Calling & Structured Outputs").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.051385533,
+    "prompt_tokens": 674,
+    "prompt_time": 0.033732867,
+    "completion_tokens": 25,
+    "completion_time": 0.1039544,
+    "total_tokens": 699,
+    "total_time": 0.137687267
+  },
+  "reply": "You provided a clear approach to designing effective prompts. How do you use function calling in advanced prompting to generate structured outputs?"
+}
+```
+---
+
+## [2026-08-08T18:34:45.206Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 39c4fe9d
+
+### 1. User Prompt / Intent
+> {"title":"Turn 8 — Candidate Answer","content":"Topic: Prompt Engineering Fundamentals (Day 12)\nScore: 8.3/10 (RIGHT)\nAnswer: Design effective prompts by being specific about the task, providing clear context and constraints, defining the desired output format, and iterating based on the model’s responses.","tags":["interview-turn","sess-mskpp03e","CAND-002"],"metadata":{"sessionId":"sess-mskpp03e","turn":8,"topic":"Prompt Engineering Fundamentals (Day 12)","score":8.3,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786214079695",
+  "extracted": {
+    "entities": 4,
+    "edges": 3
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "01434ff9c4b2",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:34:49.245Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 18143c16
+
+### 1. User Prompt / Intent
+> {"query":"Alex Turner Advanced Prompting: Function Calling & Structured Outputs (Day 13) idk","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "f1f1c53a-b7a1-4d20-abe3-021c0e7d8ce3",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "2ca650bd-4c19-4549-b98b-7d8cbe0bd3ac",
+      "fact": "Alex Turner completed the topic Advanced Prompting: Function Calling & Structured Outputs on Day 13",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "143e9c1d-176f-4913-808d-bd0df7d4da52",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "Alex Turner completed the topic Embeddings Explained on Day 7",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c76afd42-de6a-49e5-a840-cac6a54ada16",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "70a09a4b-4c72-4122-9328-61470ab4c515",
+      "fact": "Alex Turner completed the topic Prompt Engineering Fundamentals on Day 12",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "1f83dba5-e4ec-4c77-b762-cafe9af175cd",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "06e4fc5b-6c20-421f-82c9-410827a84b20",
+      "fact": "Day 13",
+      "name": "PART_OF_DAY",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "3d46f29a-6089-45d2-b86b-fd5b7dec3c28",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "Alex Turner completed the topic The Retrieval & Matching Engine on Day 10",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:34:49.655Z] - Interview Turn 10: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 4c7e9529
+
+### 1. User Prompt / Intent
+> Candidate: "idk..."
+
+### 2. AI Reasoning & Strategy
+Turn 10. Q6 on completed day 16 ("Chatbot Backend & API Integration").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161393794,
+    "prompt_tokens": 627,
+    "prompt_time": 0.053937185,
+    "completion_tokens": 29,
+    "completion_time": 0.146586073,
+    "total_tokens": 656,
+    "total_time": 0.200523258
+  },
+  "reply": "You're being honest about not knowing, that's okay. How do you integrate a chatbot with a backend API to handle user requests?"
+}
+```
+---
+
+## [2026-08-08T18:34:49.934Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** a936aad4
+
+### 1. User Prompt / Intent
+> {"title":"Turn 10 — Candidate Answer","content":"Topic: Advanced Prompting: Function Calling & Structured Outputs (Day 13)\nScore: 2/10 (WRONG)\nAnswer: idk","tags":["interview-turn","sess-mskpp03e","CAND-002"],"metadata":{"sessionId":"sess-mskpp03e","turn":10,"topic":"Advanced Prompting: Function Calling & Structured Outputs (Day 13)","score":2,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786214086880",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "105f55c6150d",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:35:07.856Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** c0a22b45
+
+### 1. User Prompt / Intent
+> {"title":"Turn 12 — Candidate Answer","content":"Topic: Chatbot Backend & API Integration (Day 16)\nScore: 7/10 (RIGHT)\nAnswer: Integrate the chatbot by routing user messages to a backend API through a secure server-side layer, then use the API’s response to generate the reply, while handling authentication, validation, errors, and latency carefully.","tags":["interview-turn","sess-mskpp03e","CAND-002"],"metadata":{"sessionId":"sess-mskpp03e","turn":12,"topic":"Chatbot Backend & API Integration (Day 16)","score":7,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786214105782",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "42e1ef4c8711",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:35:07.895Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 6ff42feb
+
+### 1. User Prompt / Intent
+> {"query":"Alex Turner Chatbot Backend & API Integration (Day 16) Integrate the chatbot by routing user messages to a backend API through a secure server-side layer, ","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "0442e615-5faf-4bd1-a4cd-deb4b6d0985a",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "adf948ae-8236-425f-9c9e-0dfe2da40547",
+      "fact": "Chatbot Backend & API Integration (Day 16)",
+      "name": "COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "252003c8-e66c-41f6-88f4-53eedc8897d4",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "adf948ae-8236-425f-9c9e-0dfe2da40547",
+      "fact": "Alex Turner completed the topic Chatbot Backend & API Integration on Day 16",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c9818dc8-9ab7-4b48-8a9d-1b54c6910c04",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "8d6f3fe3-4403-4dd4-a082-4500aa741710",
+      "fact": "Chatbot Backend & API Integration",
+      "name": "CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "509b4e6c-dea0-4397-ab4f-a4e70e627a5f",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "39fb19cb-c886-4879-ad64-9de9310ea8b6",
+      "fact": "Alex Turner has strong areas in Chatbot Application Build, Evaluation, and Security Deployment",
+      "name": "HAS_STRENGTH",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9d228abf-dda6-4f38-862c-3df57b7db8f9",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "68e31b0a-a03a-4124-96e9-f971f04473ca",
+      "fact": "Alex Turner holds the position of Backend Software Engineer",
+      "name": "POSITIONS",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:35:08.160Z] - Interview Turn 12: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** ef4f1380
+
+### 1. User Prompt / Intent
+> Candidate: "Integrate the chatbot by routing user messages to a backend API through a secure server-side layer, then use the API’s response to generate the reply,..."
+
+### 2. AI Reasoning & Strategy
+Turn 12. Q7 on completed day 18 ("Full-Stack Integration & Streaming Responses").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.055778537,
+    "prompt_tokens": 631,
+    "prompt_time": 0.034851212,
+    "completion_tokens": 28,
+    "completion_time": 0.131685352,
+    "total_tokens": 659,
+    "total_time": 0.166536564
+  },
+  "reply": "You provided a solid approach to integrating a chatbot with a backend API. How do you handle streaming responses in a full-stack application?"
+}
+```
+---
+
+## [2026-08-08T18:35:34.138Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 3c9853ea
+
+### 1. User Prompt / Intent
+> {"query":"Alex Turner Full-Stack Integration & Streaming Responses (Day 18) Handle streaming responses by sending partial data incrementally from the server using techniques li","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "5cbd9318-aacd-4753-b6bc-f6dfcba78f4a",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "6f310f17-4ff5-4d2b-a1d5-877026020adb",
+      "fact": "Full-Stack Integration & Streaming Responses (Day 18)",
+      "name": "COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "97e445a0-1148-4fa7-b7a4-45c5ea9e43a2",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "6f310f17-4ff5-4d2b-a1d5-877026020adb",
+      "fact": "Alex Turner completed the topic Full-Stack Integration & Streaming Responses on Day 18",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "a3269465-792a-40e0-ad95-4a0a7e122e11",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "6f310f17-4ff5-4d2b-a1d5-877026020adb",
+      "fact": "completed curriculum Item Full-Stack Integration & Streaming Responses Day 18",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "252003c8-e66c-41f6-88f4-53eedc8897d4",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "adf948ae-8236-425f-9c9e-0dfe2da40547",
+      "fact": "Alex Turner completed the topic Chatbot Backend & API Integration on Day 16",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "143e9c1d-176f-4913-808d-bd0df7d4da52",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "Alex Turner completed the topic Embeddings Explained on Day 7",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:35:34.461Z] - Interview Turn 14: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 2a8b95de
+
+### 1. User Prompt / Intent
+> Candidate: "Handle streaming responses by sending partial data incrementally from the server using techniques like Server-Sent Events or WebSockets, then updating..."
+
+### 2. AI Reasoning & Strategy
+Turn 14. Q8 on completed day 22 ("Multi-Agent Orchestration").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.055380821,
+    "prompt_tokens": 679,
+    "prompt_time": 0.084333869,
+    "completion_tokens": 26,
+    "completion_time": 0.142787431,
+    "total_tokens": 705,
+    "total_time": 0.2271213
+  },
+  "reply": "You handled streaming responses well. How do you orchestrate multiple agents in a system, as you learned on Day 22?"
+}
+```
+---
+
+## [2026-08-08T18:35:35.343Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 2434e393
+
+### 1. User Prompt / Intent
+> {"title":"Turn 14 — Candidate Answer","content":"Topic: Full-Stack Integration & Streaming Responses (Day 18)\nScore: 7/10 (RIGHT)\nAnswer: Handle streaming responses by sending partial data incrementally from the server using techniques like Server-Sent Events or WebSockets, then updating the UI as chunks arrive while managing connection state, errors, and final completion cleanly.","tags":["interview-turn","sess-mskpp03e","CAND-002"],"metadata":{"sessionId":"sess-mskpp03e","turn":14,"topic":"Full-Stack Integration & Streaming Responses (Day 18)","score":7,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786214132082",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "2881fadbf287",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:35:45.973Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 478585f1
+
+### 1. User Prompt / Intent
+> {"query":"interview evaluation Alex Turner","limit":10}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "c99bf027-9e9f-4db4-a64c-40c9b1bc5e93",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "789eaa3c-f56b-4995-a6ca-cb0b045ace66",
+      "fact": "Alex Turner has 5 years of experience",
+      "name": "HAS_EXPERIENCE",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "509b4e6c-dea0-4397-ab4f-a4e70e627a5f",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "39fb19cb-c886-4879-ad64-9de9310ea8b6",
+      "fact": "Alex Turner has strong areas in Chatbot Application Build, Evaluation, and Security Deployment",
+      "name": "HAS_STRENGTH",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "b4afb461-00e6-4bf9-aa45-0320f774a8fc",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "a3665891-a5f0-415c-bcbe-8e4a0e09b4f8",
+      "fact": "Alex Turner obtained a B.Tech in Computer Science",
+      "name": "EDUCATED_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "0ce6b4e4-96b8-4a86-83b0-b66f77e3b379",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "af994acb-ba44-47c3-bd3d-9623eb7096ad",
+      "fact": "Alex Turner has weak areas in Embeddings and Vector Search, LLM Core, and Prompting and Fine-Tuning",
+      "name": "HAS_WEAKNESS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "8c699f62-69c5-46f0-aa6a-7bab28973ae6",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "62f58bc7-cf95-4c00-94e9-6b482f6977f6",
+      "fact": "Alex Turner has achieved 10 first-try passes",
+      "name": "PASS_COUNT",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "f1f1c53a-b7a1-4d20-abe3-021c0e7d8ce3",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "2ca650bd-4c19-4549-b98b-7d8cbe0bd3ac",
+      "fact": "Alex Turner completed the topic Advanced Prompting: Function Calling & Structured Outputs on Day 13",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "d223f3b7-2bda-4415-845f-819c82a5f613",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "68e31b0a-a03a-4124-96e9-f971f04473ca",
+      "fact": "Alex Turner works as a Backend Software Engineer",
+      "name": "OCCUPATION",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9d228abf-dda6-4f38-862c-3df57b7db8f9",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "68e31b0a-a03a-4124-96e9-f971f04473ca",
+      "fact": "Alex Turner holds the position of Backend Software Engineer",
+      "name": "POSITIONS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "3d46f29a-6089-45d2-b86b-fd5b7dec3c28",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "Alex Turner completed the topic The Retrieval & Matching Engine on Day 10",
+      "name": "TOPIC_COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "e5c0e94f-6845-4074-814d-6cc3f05775ae",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "b2928f6c-1ec6-4614-b62a-5c42fb775852",
+      "fact": "Alex Turner has completed 29 out of 31 missions",
+      "name": "PROGRESS",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 10,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T18:35:46.501Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** ed331952
+
+### 1. User Prompt / Intent
+> {"title":"Turn 16 — Candidate Answer","content":"Topic: Multi-Agent Orchestration (Day 22)\nScore: 2/10 (WRONG)\nAnswer: idk","tags":["interview-turn","sess-mskpp03e","CAND-002"],"metadata":{"sessionId":"sess-mskpp03e","turn":16,"topic":"Multi-Agent Orchestration (Day 22)","score":2,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786214144709",
+  "extracted": {
+    "entities": 0,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "46eb9f404b9a",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T18:35:46.695Z] - Interview Feedback: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** b486b9f0
+
+### 1. User Prompt / Intent
+> Generate final feedback for session sess-mskpp03e
+
+### 2. AI Reasoning & Strategy
+Synthesized 16 turns across 16 topics.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.050857332,
+    "prompt_tokens": 983,
+    "prompt_time": 0.058170568,
+    "completion_tokens": 167,
+    "completion_time": 0.572638202,
+    "total_tokens": 1150,
+    "total_time": 0.63080877
+  },
+  "rawFeedback": "```\n{\n  \"summary\": \"Alex Turner demonstrated strengths in chatbot application build, evaluation, and security deployment, but struggled with fundamental concepts such as embeddings, vector search, and LLM core, indicating a need for further review and practice. Overall, Alex showed promise in handling specific topics like retrieval and matching engines, prompt engineering, and full-stack integration. However, inconsistent performance and lack of knowledge in key areas require attention for improvement.\",\n  \"strengths\": [\"Chatbot application build and evaluation\", \"Full-stack integration and security deployment\"],\n  \"gaps\": [\"Embeddings and vector search\", \"LLM core and prompting fundamentals\"],\n  \"next\": [\"Review and practice fundamental concepts in embeddings, vector search, and LLM core\", \"Focus on consistent performance across all topics to improve overall proficiency\"]\n}\n```"
+}
+```
+---

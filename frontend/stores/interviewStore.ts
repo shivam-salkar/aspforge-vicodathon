@@ -1,9 +1,10 @@
 import { create } from 'zustand';
-import { ConversationTurn, LiveScores, ContextMemoryItem } from '@/types';
+import { ConversationTurn, LiveScores, ContextMemoryItem, RecordedQuestion } from '@/types';
 
 interface InterviewState {
   sessionId: string;
   turns: ConversationTurn[];
+  recordedQuestions: RecordedQuestion[];
   turnCount: number;
   maxTurns: number;
   currentTopic: string;
@@ -12,13 +13,15 @@ interface InterviewState {
   isThinking: boolean;
   isCompleted: boolean;
   elapsedSeconds: number;
+  questionTimerSeconds: number;
   scores: LiveScores;
   contextMemory: ContextMemoryItem[];
   activeSignals: string[];
   
   // Actions
-  initSession: (id: string, initialReply: string) => void;
+  initSession: (id: string, initialReply: string, topic?: string) => void;
   addTurn: (turn: ConversationTurn) => void;
+  addRecordedQuestion: (recorded: RecordedQuestion) => void;
   setStatusText: (text: string) => void;
   setIsThinking: (thinking: boolean) => void;
   setIsCompleted: (completed: boolean) => void;
@@ -31,14 +34,16 @@ interface InterviewState {
 export const useInterviewStore = create<InterviewState>((set) => ({
   sessionId: '',
   turns: [],
+  recordedQuestions: [],
   turnCount: 1,
   maxTurns: 8,
-  currentTopic: 'Day 12 — System Design & Prompt Engineering',
-  difficulty: 'hard',
+  currentTopic: 'Embeddings Explained (Day 7)',
+  difficulty: 'medium',
   statusText: 'Interview Engine Active • Listening for candidate input...',
   isThinking: false,
   isCompleted: false,
-  elapsedSeconds: 145,
+  elapsedSeconds: 0,
+  questionTimerSeconds: 0,
   scores: {
     technical: 84,
     reasoning: 88,
@@ -54,25 +59,35 @@ export const useInterviewStore = create<InterviewState>((set) => ({
   ],
   activeSignals: ['Depth: Increasing', 'Difficulty: Adaptive', 'Topic Drift: Minimal'],
 
-  initSession: (id, initialReply) =>
+  initSession: (id, initialReply, topic) =>
     set({
       sessionId: id,
       turns: [
         {
           role: 'interviewer',
           content: initialReply,
-          topic: 'Day 12 — System Design & Prompt Engineering',
+          topic: topic || 'Embeddings Explained (Day 7)',
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         },
       ],
+      currentTopic: topic || 'Embeddings Explained (Day 7)',
+      recordedQuestions: [],
       turnCount: 1,
       isCompleted: false,
+      elapsedSeconds: 0,
+      questionTimerSeconds: 0,
     }),
 
   addTurn: (turn) =>
     set((state) => ({
       turns: [...state.turns, turn],
       turnCount: turn.role === 'interviewer' ? state.turnCount + 1 : state.turnCount,
+      questionTimerSeconds: turn.role === 'interviewer' ? 0 : state.questionTimerSeconds,
+    })),
+
+  addRecordedQuestion: (recorded) =>
+    set((state) => ({
+      recordedQuestions: [...state.recordedQuestions, recorded],
     })),
 
   setStatusText: (text) => set({ statusText: text }),
@@ -93,14 +108,20 @@ export const useInterviewStore = create<InterviewState>((set) => ({
       return { contextMemory: updated };
     }),
 
-  tickTimer: () => set((state) => ({ elapsedSeconds: state.elapsedSeconds + 1 })),
+  tickTimer: () =>
+    set((state) => ({
+      elapsedSeconds: state.elapsedSeconds + 1,
+      questionTimerSeconds: state.questionTimerSeconds + 1,
+    })),
 
   resetSession: () =>
     set({
       sessionId: '',
       turns: [],
+      recordedQuestions: [],
       turnCount: 1,
       isCompleted: false,
       elapsedSeconds: 0,
+      questionTimerSeconds: 0,
     }),
 }));

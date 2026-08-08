@@ -9,114 +9,105 @@ interface ProfileChartsProps {
 }
 
 export function ProfileCharts({ candidate }: ProfileChartsProps) {
-  const { signals, missions } = candidate;
-  const commitDays = signals?.commitDays || 20;
+  const { missions } = candidate;
 
-  // 1. Calculate dynamic topic distribution from candidate missions
-  const ragMissions = missions.filter((m) => m.day >= 7 && m.day <= 10 && m.passed).length;
-  const llmMissions = missions.filter((m) => m.day >= 11 && m.day <= 15 && m.passed).length;
-  const agentMissions = missions.filter((m) => m.day >= 21 && m.day <= 24 && m.passed).length;
-  const dataMissions = missions.filter((m) => (m.day <= 6 || m.day >= 25) && m.passed).length;
+  // 1. Authentic Mission Outcome Distribution
+  const firstTry = missions.filter((m) => m.passed && m.attempts === 1).length;
+  const multiAttempts = missions.filter((m) => m.passed && (m.attempts ?? 1) > 1).length;
+  const skipped = missions.filter((m) => m.skipped).length;
+  const failed = missions.filter((m) => m.passed === false && !m.skipped).length;
 
-  const totalPassed = Math.max(1, ragMissions + llmMissions + agentMissions + dataMissions);
+  const outcomeDistribution = [
+    { name: 'First-Try Pass', value: firstTry, color: '#10b981' },
+    { name: 'Multi-Attempt Pass', value: multiAttempts, color: '#3b82f6' },
+    { name: 'Skipped Mission', value: skipped, color: '#f59e0b' },
+    { name: 'Failed Mission', value: failed, color: '#ef4444' },
+  ].filter((item) => item.value > 0);
 
-  const topicDistribution = [
-    { name: 'Data Engineering', value: Math.round((dataMissions / totalPassed) * 100) || 30, color: '#3b82f6' },
-    { name: 'System Architecture', value: Math.round((agentMissions / totalPassed) * 100) || 25, color: '#8b5cf6' },
-    { name: 'RAG & Vector DBs', value: Math.round((ragMissions / totalPassed) * 100) || 25, color: '#06b6d4' },
-    { name: 'LLM Orchestration', value: Math.round((llmMissions / totalPassed) * 100) || 20, color: '#10b981' },
-  ];
-
-  // 2. Generate activity trend proportional to candidate's commitDays
-  const baseAvg = Math.max(1, Math.round(commitDays / 4));
-  const activityTrend = [
-    { day: 'Mon', commits: Math.max(1, Math.round(baseAvg * 0.6)) },
-    { day: 'Tue', commits: Math.max(2, Math.round(baseAvg * 1.1)) },
-    { day: 'Wed', commits: Math.max(1, Math.round(baseAvg * 0.8)) },
-    { day: 'Thu', commits: Math.max(3, Math.round(baseAvg * 1.4)) },
-    { day: 'Fri', commits: Math.max(3, Math.round(baseAvg * 1.8)) },
-    { day: 'Sat', commits: Math.max(2, Math.round(baseAvg * 1.2)) },
-    { day: 'Sun', commits: Math.max(1, Math.round(baseAvg * 0.9)) },
-  ];
-
-  const engagementLabel =
-    commitDays >= 25
-      ? `High Activity (${commitDays} Commit Days)`
-      : commitDays >= 18
-      ? `Active Candidate (${commitDays} Commit Days)`
-      : `Moderate Activity (${commitDays} Commit Days)`;
+  // 2. Authentic Attempts Per Mission Bar Chart
+  const attemptsData = missions.map((m) => ({
+    dayLabel: `Day ${m.day}`,
+    title: m.title,
+    attempts: m.skipped ? 0 : m.attempts || 1,
+    status: m.skipped ? 'Skipped' : m.passed ? 'Passed' : 'Failed',
+  }));
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      {/* Topic Distribution Donut Chart */}
+      {/* 1. Mission Outcome Distribution Donut Chart */}
       <div className="glass-card p-6 border-white/10 flex flex-col justify-between">
         <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
-          <span className="p-1.5 rounded-lg bg-blue-500/20 text-blue-400">
+          <span className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400">
             <PieIcon className="w-4 h-4" />
           </span>
-          <h3 className="text-base font-bold text-white tracking-tight">Topic Distribution</h3>
+          <h3 className="text-base font-bold text-white tracking-tight">Mission Outcome Distribution</h3>
         </div>
 
         <div className="h-56 w-full flex items-center justify-center">
-          <ResponsiveContainer width="100%" height="100%">
-            <PieChart>
-              <Pie
-                data={topicDistribution}
-                innerRadius={55}
-                outerRadius={80}
-                paddingAngle={4}
-                dataKey="value"
-              >
-                {topicDistribution.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
-              </Pie>
-              <Tooltip
-                contentStyle={{ backgroundColor: '#111216', borderColor: '#374151', borderRadius: '12px' }}
-                itemStyle={{ color: '#ffffff' }}
-              />
-            </PieChart>
-          </ResponsiveContainer>
+          {outcomeDistribution.length === 0 ? (
+            <p className="text-xs text-gray-400">No mission telemetry available.</p>
+          ) : (
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={outcomeDistribution}
+                  innerRadius={55}
+                  outerRadius={80}
+                  paddingAngle={4}
+                  dataKey="value"
+                >
+                  {outcomeDistribution.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Pie>
+                <Tooltip
+                  contentStyle={{ backgroundColor: '#111216', borderColor: '#374151', borderRadius: '12px' }}
+                  itemStyle={{ color: '#ffffff' }}
+                />
+              </PieChart>
+            </ResponsiveContainer>
+          )}
         </div>
 
-        {/* Custom Legend */}
+        {/* Legend */}
         <div className="grid grid-cols-2 gap-2 pt-4 border-t border-white/10">
-          {topicDistribution.map((item) => (
+          {outcomeDistribution.map((item) => (
             <div key={item.name} className="flex items-center gap-2 text-xs">
-              <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: item.color }} />
+              <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
               <span className="text-gray-400 truncate">{item.name}</span>
-              <span className="font-bold text-white font-mono ml-auto">{item.value}%</span>
+              <span className="font-bold text-white font-mono ml-auto">{item.value}</span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Activity Trend Bar Chart */}
+      {/* 2. Attempts Per Mission Bar Chart */}
       <div className="glass-card p-6 border-white/10 flex flex-col justify-between">
         <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
-          <span className="p-1.5 rounded-lg bg-cyan-500/20 text-cyan-400">
+          <span className="p-1.5 rounded-lg bg-blue-500/20 text-blue-400">
             <BarChart2 className="w-4 h-4" />
           </span>
-          <h3 className="text-base font-bold text-white tracking-tight">Recent Activity Trend</h3>
+          <h3 className="text-base font-bold text-white tracking-tight">Attempts per Mission</h3>
         </div>
 
         <div className="h-56 w-full">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={activityTrend} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-              <XAxis dataKey="day" stroke="#6b7280" fontSize={11} tickLine={false} axisLine={false} />
-              <YAxis stroke="#6b7280" fontSize={11} tickLine={false} axisLine={false} />
+            <BarChart data={attemptsData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+              <XAxis dataKey="dayLabel" stroke="#6b7280" fontSize={10} tickLine={false} axisLine={false} />
+              <YAxis stroke="#6b7280" fontSize={10} tickLine={false} axisLine={false} allowDecimals={false} />
               <Tooltip
                 contentStyle={{ backgroundColor: '#111216', borderColor: '#374151', borderRadius: '12px' }}
                 itemStyle={{ color: '#ffffff' }}
+                formatter={(value: any, name: any, item: any) => [`${value} attempt(s) (${item.payload.status})`, item.payload.title]}
               />
-              <Bar dataKey="commits" fill="#3b82f6" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="attempts" fill="#3b82f6" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
         <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-          <span className="text-gray-400">7-Day Engagement Index</span>
-          <span className="font-bold text-emerald-400 font-mono">{engagementLabel}</span>
+          <span className="text-gray-400">Total Missions Evaluated</span>
+          <span className="font-bold text-blue-400 font-mono">{missions.length} Missions</span>
         </div>
       </div>
     </div>

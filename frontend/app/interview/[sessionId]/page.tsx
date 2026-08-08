@@ -39,20 +39,27 @@ export default function InterviewConsolePage({ params }: { params: Promise<{ ses
         let cand = activeCandidate;
         if (!cand) {
           cand = await candidateService.getCandidateById('CAND-001');
-          setActiveCandidate(cand);
+          if (cand) {
+            setActiveCandidate(cand);
+          }
         }
 
-        try {
-          // Call backend POST /api/interview to initialize Groq + Breeth AI session
-          const response = await interviewService.startInterview(sessionId, cand);
-          initSession(sessionId, response.reply);
-        } catch (err) {
-          console.error('[InterviewConsole] Engine initialization error:', err);
-          initSession(
-            sessionId,
-            `Welcome ${cand.member.name}. I am your InterviewOS AI Technical Interviewer. Let's begin by discussing System Architecture & Vector Search: How do you optimize query latency in high-dimensional indexes?`
-          );
-        } finally {
+        if (cand) {
+          try {
+            // Call backend POST /api/interview to initialize Groq + Breeth AI session
+            const response = await interviewService.startInterview(sessionId, cand);
+            initSession(sessionId, response.reply, response.topic);
+          } catch (err) {
+            console.error('[InterviewConsole] Engine initialization error:', err);
+            initSession(
+              sessionId,
+              `Welcome ${cand.member.name}. Let's begin by discussing embeddings and high-dimensional vector index optimization: How do you optimize query latency?`,
+              'Embeddings Explained (Day 7)'
+            );
+          } finally {
+            setIsInitializing(false);
+          }
+        } else {
           setIsInitializing(false);
         }
       }

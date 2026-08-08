@@ -1,0 +1,244 @@
+[
+  {
+    "sessionId": "sess-mskpp03e",
+    "candidateId": "CAND-002",
+    "candidateName": "Alex Turner",
+    "jobRole": "Backend Software Engineer",
+    "createdAt": "2026-08-08T18:33:15.985Z",
+    "overallScore": 4.7,
+    "overallPercentage": 47,
+    "totalQuestions": 8,
+    "rightCount": 4,
+    "wrongCount": 4,
+    "totalTimeSeconds": 134,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "topic": "Embeddings Explained (Day 7)",
+        "dayNumber": 7,
+        "question": "You completed Embeddings Explained, so how would you architect a system using Sentence Transformers to generate dense vector embeddings, and what trade-offs would you consider when choosing between OpenAI Embeddings and Scikit-learn for your implementation?",
+        "answer": "idk",
+        "timeSpentSeconds": 10,
+        "score": 2,
+        "isRight": false
+      },
+      {
+        "questionNumber": 2,
+        "topic": "Vector Databases Overview (Day 8)",
+        "dayNumber": 8,
+        "question": "That's okay, it can be tough to recall details on the spot. You mentioned completing Vector Databases Overview on Day 8, how do you index vectors in a database?",
+        "answer": "idk",
+        "timeSpentSeconds": 10,
+        "score": 2,
+        "isRight": false
+      },
+      {
+        "questionNumber": 3,
+        "topic": "The Retrieval & Matching Engine (Day 10)",
+        "dayNumber": 10,
+        "question": "That's okay, it can be tough to recall details on the spot. You previously completed The Retrieval & Matching Engine, how do you handle retrieval in this engine?",
+        "answer": "The Retrieval & Matching Engine is a system component responsible for finding relevant items from a larger dataset and comparing them against a query or request. It matters because retrieval quality directly affects the speed, accuracy, and usefulness of downstream matching, ranking, or recommendation tasks.",
+        "timeSpentSeconds": 35,
+        "score": 7.1,
+        "isRight": true
+      },
+      {
+        "questionNumber": 4,
+        "topic": "Prompt Engineering Fundamentals (Day 12)",
+        "dayNumber": 12,
+        "question": "You provided a clear overview of The Retrieval & Matching Engine. How do you design effective prompts in prompt engineering fundamentals?",
+        "answer": "Design effective prompts by being specific about the task, providing clear context and constraints, defining the desired output format, and iterating based on the model’s responses.",
+        "timeSpentSeconds": 21,
+        "score": 8.3,
+        "isRight": true
+      },
+      {
+        "questionNumber": 5,
+        "topic": "Advanced Prompting: Function Calling & Structured Outputs (Day 13)",
+        "dayNumber": 13,
+        "question": "You provided a clear approach to designing effective prompts. How do you use function calling in advanced prompting to generate structured outputs?",
+        "answer": "idk",
+        "timeSpentSeconds": 10,
+        "score": 2,
+        "isRight": false
+      },
+      {
+        "questionNumber": 6,
+        "topic": "Chatbot Backend & API Integration (Day 16)",
+        "dayNumber": 16,
+        "question": "You're being honest about not knowing, that's okay. How do you integrate a chatbot with a backend API to handle user requests?",
+        "answer": "Integrate the chatbot by routing user messages to a backend API through a secure server-side layer, then use the API’s response to generate the reply, while handling authentication, validation, errors, and latency carefully.",
+        "timeSpentSeconds": 15,
+        "score": 7,
+        "isRight": true
+      },
+      {
+        "questionNumber": 7,
+        "topic": "Full-Stack Integration & Streaming Responses (Day 18)",
+        "dayNumber": 18,
+        "question": "You provided a solid approach to integrating a chatbot with a backend API. How do you handle streaming responses in a full-stack application?",
+        "answer": "Handle streaming responses by sending partial data incrementally from the server using techniques like Server-Sent Events or WebSockets, then updating the UI as chunks arrive while managing connection state, errors, and final completion cleanly.",
+        "timeSpentSeconds": 23,
+        "score": 7,
+        "isRight": true
+      },
+      {
+        "questionNumber": 8,
+        "topic": "Multi-Agent Orchestration (Day 22)",
+        "dayNumber": 22,
+        "question": "You handled streaming responses well. How do you orchestrate multiple agents in a system, as you learned on Day 22?",
+        "answer": "idk",
+        "timeSpentSeconds": 10,
+        "score": 2,
+        "isRight": false
+      }
+    ],
+    "topicTimeAnalysis": [
+      {
+        "topic": "Embeddings Explained (Day 7)",
+        "dayNumber": 7,
+        "questionCount": 1,
+        "avgScore": 2,
+        "totalTimeSeconds": 10
+      },
+      {
+        "topic": "Vector Databases Overview (Day 8)",
+        "dayNumber": 8,
+        "questionCount": 1,
+        "avgScore": 2,
+        "totalTimeSeconds": 10
+      },
+      {
+        "topic": "The Retrieval & Matching Engine (Day 10)",
+        "dayNumber": 10,
+        "questionCount": 1,
+        "avgScore": 7.1,
+        "totalTimeSeconds": 35
+      },
+      {
+        "topic": "Prompt Engineering Fundamentals (Day 12)",
+        "dayNumber": 12,
+        "questionCount": 1,
+        "avgScore": 8.3,
+        "totalTimeSeconds": 21
+      },
+      {
+        "topic": "Advanced Prompting: Function Calling & Structured Outputs (Day 13)",
+        "dayNumber": 13,
+        "questionCount": 1,
+        "avgScore": 2,
+        "totalTimeSeconds": 10
+      },
+      {
+        "topic": "Chatbot Backend & API Integration (Day 16)",
+        "dayNumber": 16,
+        "questionCount": 1,
+        "avgScore": 7,
+        "totalTimeSeconds": 15
+      },
+      {
+        "topic": "Full-Stack Integration & Streaming Responses (Day 18)",
+        "dayNumber": 18,
+        "questionCount": 1,
+        "avgScore": 7,
+        "totalTimeSeconds": 23
+      },
+      {
+        "topic": "Multi-Agent Orchestration (Day 22)",
+        "dayNumber": 22,
+        "questionCount": 1,
+        "avgScore": 2,
+        "totalTimeSeconds": 10
+      }
+    ]
+  },
+  {
+    "sessionId": "sess-cand001-init1",
+    "candidateId": "CAND-001",
+    "candidateName": "Sarah Johnson",
+    "jobRole": "Senior Data Engineer",
+    "createdAt": "2026-08-08T18:30:00.000Z",
+    "overallScore": 8.2,
+    "overallPercentage": 82,
+    "totalQuestions": 5,
+    "rightCount": 4,
+    "wrongCount": 1,
+    "totalTimeSeconds": 505,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "topic": "Embeddings Explained (Day 7)",
+        "dayNumber": 7,
+        "question": "How do you optimize vector search indexing latency for high-dimensional embeddings?",
+        "answer": "I use Hierarchical Navigable Small World (HNSW) graphs with Product Quantization (PQ) to reduce memory overhead and enable approximate nearest neighbor search under 10ms SLA.",
+        "timeSpentSeconds": 115,
+        "score": 8.5,
+        "isRight": true
+      },
+      {
+        "questionNumber": 2,
+        "topic": "Embeddings Explained (Day 7)",
+        "dayNumber": 7,
+        "question": "What trade-offs exist between Cosine Similarity and L2 Euclidean Distance when normalizing dense vectors?",
+        "answer": "Cosine similarity measures angular alignment regardless of vector magnitude, making it ideal for text embeddings. L2 distance considers magnitude, which requires normalized unit vectors.",
+        "timeSpentSeconds": 90,
+        "score": 7.8,
+        "isRight": true
+      },
+      {
+        "questionNumber": 3,
+        "topic": "Vector DBs & Search (Day 8)",
+        "dayNumber": 8,
+        "question": "How do you handle schema evolution and index rebalancing under heavy concurrent write traffic in ChromaDB?",
+        "answer": "I implement write-ahead logging (WAL) and memory buffers to stage incoming vectors before flushing to persistent segment files asynchronously.",
+        "timeSpentSeconds": 140,
+        "score": 8.2,
+        "isRight": true
+      },
+      {
+        "questionNumber": 4,
+        "topic": "Vector DBs & Search (Day 8)",
+        "dayNumber": 8,
+        "question": "How do you mitigate index fragmentation during frequent upsert operations in distributed vector clusters?",
+        "answer": "Honestly, I am not completely sure about segment compaction algorithms for live upserts.",
+        "timeSpentSeconds": 45,
+        "score": 3.5,
+        "isRight": false
+      },
+      {
+        "questionNumber": 5,
+        "topic": "RAG & Context Management (Day 12)",
+        "dayNumber": 12,
+        "question": "How do you structure chunking strategies and metadata filtering for domain-specific RAG pipelines?",
+        "answer": "I use semantic boundary chunking with 15% sliding overlap and attach document section headers as metadata for hybrid keyword and vector retrieval filtering.",
+        "timeSpentSeconds": 115,
+        "score": 9,
+        "isRight": true
+      }
+    ],
+    "topicTimeAnalysis": [
+      {
+        "topic": "Embeddings Explained (Day 7)",
+        "dayNumber": 7,
+        "questionCount": 2,
+        "avgScore": 8.2,
+        "totalTimeSeconds": 205
+      },
+      {
+        "topic": "Vector DBs & Search (Day 8)",
+        "dayNumber": 8,
+        "questionCount": 2,
+        "avgScore": 5.9,
+        "totalTimeSeconds": 185
+      },
+      {
+        "topic": "RAG & Context Management (Day 12)",
+        "dayNumber": 12,
+        "questionCount": 1,
+        "avgScore": 9,
+        "totalTimeSeconds": 115
+      }
+    ],
+    "summary": "Sarah Johnson demonstrated strong performance across 3 completed curriculum topics, scoring right on 4 out of 5 technical questions."
+  }
+]
