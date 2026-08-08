@@ -9822,3 +9822,75 @@ Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?e
 }
 ```
 ---
+
+## [2026-08-08T07:38:35.169Z] - Breeth API - Create Episode (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 54beb469
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes, 28/31 commit days\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas (multiple attempts): LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-msk2b17n","CAND-001"],"metadata":{"sessionId":"sess-msk2b17n","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/episodes. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T07:39:02.170Z] - Breeth API - Extract Intent (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 29f64dd2
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Candidate Answer","content":"Topic: Production & Capstone\nCandidate Answer: Production is the way to deploy","tags":["interview-turn","sess-msk2b17n","CAND-001"],"metadata":{"sessionId":"sess-msk2b17n","turn":2,"topic":"Production & Capstone"}}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/episodes?extract_intent=true. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T07:39:02.540Z] - Breeth API - Search Memory (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 16d0e0ed
+
+### 1. User Prompt / Intent
+> {"query":"Production & Capstone Production is the way to deploy","limit":3}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/search. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
