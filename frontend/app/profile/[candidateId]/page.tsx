@@ -95,9 +95,11 @@ export default function ProfilePage({ params }: { params: Promise<{ candidateId:
         {/* Left: Brand & Navigation */}
         <div className="flex items-center gap-4 sm:gap-6">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
-              <Cpu className="w-5 h-5 text-white" />
-            </div>
+            <img
+              src="/abtalks_logo.png"
+              alt="ABTalks Logo"
+              className="w-9 h-9 object-contain rounded-md group-hover:scale-105 transition-transform"
+            />
             <div className="hidden sm:block">
               <span className="font-extrabold text-base tracking-tight text-white group-hover:text-blue-400 transition-colors">
                 InterviewOS
