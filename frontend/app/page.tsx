@@ -141,26 +141,27 @@ export default function LandingPage() {
 
           {/* Particle Animated Headline */}
           <div className="w-full max-w-3xl flex flex-col items-center mb-6">
-            <div className="w-full h-32 sm:h-44 md:h-52 relative flex items-center justify-center">
+            <div style={{ width: '100%', height: 280, background: 'transparent' }} className="relative flex items-center justify-center">
               <ParticleText
                 text="InterviewOS"
-                color="#ffffff"
-                highlightColor="#8b5cf6"
-                particleSize={2.5}
-                density={3}
-                scatter={160}
-                gatherDuration={1500}
-                stagger={300}
-                pointerRepel={50}
-                repelRadius={140}
+                particleSize={2.2}
+                density={4}
+                color="#f8fafc"
+                highlightColor="#ffffff"
+                scatter={190}
+                gatherDuration={1600}
+                stagger={420}
+                pointerRepel={42}
+                repelRadius={120}
                 idleDrift={0.8}
                 trigger="mount"
-                fontSize="clamp(3.5rem, 11vw, 7rem)"
-                fontWeight={900}
+                fontSize="clamp(3.5rem, 13vw, 9rem)"
+                fontWeight={800}
+                fontFamily="inherit"
                 glow
               />
             </div>
-            <div className="flex items-center justify-center gap-3 -mt-2 sm:-mt-4">
+            <div className="flex items-center justify-center gap-3 -mt-4">
               <span className="text-xl sm:text-3xl font-extrabold text-gray-300 tracking-tight">by</span>
               <img
                 src="/abtalks_logo.png"
