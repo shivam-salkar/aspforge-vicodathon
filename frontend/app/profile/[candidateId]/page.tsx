@@ -4,22 +4,15 @@ import { useEffect, useState, use } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import {
-  LayoutDashboard,
-  Users,
-  Brain,
-  MessageSquare,
-  FileText,
-  HelpCircle,
+  ArrowLeft,
+  Cpu,
+  ShieldCheck,
   Bell,
   Settings,
-  ShieldCheck,
-  Calendar,
-  Cpu,
   LogOut,
 } from 'lucide-react';
 import { candidateService } from '@/services/candidateService';
 import { useCandidateStore } from '@/stores/candidateStore';
-import { Candidate } from '@/types';
 import { InterviewSetupPanel } from '@/components/profile/InterviewSetupPanel';
 import { CandidateIdentityCard } from '@/components/profile/CandidateIdentityCard';
 import { StatCardsRow } from '@/components/profile/StatCardsRow';
@@ -54,127 +47,95 @@ export default function ProfilePage({ params }: { params: Promise<{ candidateId:
   }
 
   return (
-    <div className="min-h-screen bg-[#08090A] text-gray-100 flex">
-      {/* 1. Left Application Sidebar */}
-      <aside className="w-64 border-r border-white/10 glass-nav p-5 flex flex-col justify-between hidden md:flex shrink-0">
-        <div>
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 mb-8">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
+    <div className="min-h-screen bg-[#08090A] text-gray-100 flex flex-col">
+      {/* Sleek Top Navigation Header (Replacing Left Sidebar) */}
+      <header className="border-b border-white/10 glass-nav px-4 sm:px-8 py-3.5 flex items-center justify-between sticky top-0 z-50 backdrop-blur-xl bg-[#08090A]/85">
+        {/* Left: Brand & Navigation */}
+        <div className="flex items-center gap-4 sm:gap-6">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
               <Cpu className="w-5 h-5 text-white" />
             </div>
-            <div>
-              <span className="font-extrabold text-base tracking-tight text-white">InterviewOS</span>
-              <p className="text-[10px] text-gray-400 font-medium">Candidate Platform</p>
+            <div className="hidden sm:block">
+              <span className="font-extrabold text-base tracking-tight text-white group-hover:text-blue-400 transition-colors">
+                InterviewOS
+              </span>
+              <p className="text-[10px] text-gray-400 font-medium -mt-1">Candidate Intelligence Platform</p>
             </div>
           </Link>
 
-          {/* Navigation Links */}
-          <nav className="space-y-1 text-xs font-semibold text-gray-400">
-            <Link href="/" className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 hover:text-white transition-colors">
-              <LayoutDashboard className="w-4 h-4 text-gray-400" />
-              <span>Overview</span>
-            </Link>
-            <Link href="/" className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 hover:text-white transition-colors">
-              <Users className="w-4 h-4 text-gray-400" />
-              <span>Candidates</span>
-            </Link>
-            <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-blue-500/10 text-blue-400 font-bold border border-blue-500/20">
-              <Brain className="w-4 h-4 text-blue-400" />
-              <span>Intelligence</span>
-            </div>
-            <Link href="/" className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 hover:text-white transition-colors">
-              <MessageSquare className="w-4 h-4 text-gray-400" />
-              <span>Interviews</span>
-            </Link>
-            <Link href="/" className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 hover:text-white transition-colors">
-              <FileText className="w-4 h-4 text-gray-400" />
-              <span>Feedback Reports</span>
-            </Link>
-          </nav>
+          <div className="h-5 w-px bg-white/10 hidden sm:block" />
 
-          <div className="mt-8 pt-6 border-t border-white/10 space-y-1 text-xs font-semibold text-gray-400">
-            <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/5 hover:text-white transition-colors">
-              <FileText className="w-4 h-4" />
-              <span>Documentation</span>
-            </a>
-            <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/5 hover:text-white transition-colors">
-              <HelpCircle className="w-4 h-4" />
-              <span>Support</span>
-            </a>
-          </div>
-        </div>
+          {/* Back to Dashboard Button */}
+          <Link
+            href="/"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-gray-300 hover:text-white transition-all"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 text-blue-400" />
+            <span className="hidden sm:inline">Back to Dashboard</span>
+            <span className="sm:hidden">Dashboard</span>
+          </Link>
 
-        {/* Active Candidate & Schedule Session Anchor */}
-        <div className="space-y-4 pt-6 border-t border-white/10">
-          <div className="p-3 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-xs text-white">
-              {activeCandidate.member.name[0]}
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-xs font-bold text-white truncate">{activeCandidate.member.name}</p>
-              <p className="text-[10px] text-gray-400 font-mono truncate">{activeCandidate.member.id}</p>
-            </div>
-          </div>
-
-          <button className="w-full py-2.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white text-xs font-bold flex items-center justify-center gap-2 transition-all">
-            <Calendar className="w-3.5 h-3.5 text-blue-400" />
-            <span>Schedule Session</span>
-          </button>
-        </div>
-      </aside>
-
-      {/* 2. Main Content Shell */}
-      <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
-        {/* Top Header Bar */}
-        <header className="border-b border-white/10 glass-nav px-8 py-4 flex items-center justify-between sticky top-0 z-40">
           {/* Breadcrumbs */}
-          <div className="flex items-center gap-2 text-xs">
-            <span className="text-gray-400">Candidate</span>
+          <div className="hidden md:flex items-center gap-2 text-xs text-gray-400 pl-2">
+            <span>Candidates</span>
             <span className="text-gray-600">&gt;</span>
-            <span className="font-bold text-white">Intelligence Report</span>
+            <span className="font-semibold text-white truncate max-w-[150px]">{activeCandidate.member.name}</span>
           </div>
+        </div>
 
-          {/* Right Header Status & Icons */}
-          <div className="flex items-center gap-4">
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              Analysis Complete
-            </span>
+        {/* Right: Status & Actions */}
+        <div className="flex items-center gap-3 sm:gap-4">
+          <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hidden sm:flex items-center gap-1.5 shadow-sm shadow-emerald-500/10">
+            <ShieldCheck className="w-3.5 h-3.5" />
+            Telemetry Ready
+          </span>
 
-            <div className="flex items-center gap-2 border-l border-white/10 pl-4">
-              <button className="p-2 rounded-xl hover:bg-white/5 text-gray-400 hover:text-white transition-colors">
-                <Bell className="w-4 h-4" />
-              </button>
-              <button className="p-2 rounded-xl hover:bg-white/5 text-gray-400 hover:text-white transition-colors">
-                <Settings className="w-4 h-4" />
-              </button>
-              <Link href="/" className="p-2 rounded-xl hover:bg-white/5 text-gray-400 hover:text-white transition-colors">
-                <LogOut className="w-4 h-4" />
-              </Link>
-            </div>
+          <div className="flex items-center gap-1.5 border-l border-white/10 pl-3 sm:pl-4">
+            <button
+              title="Notifications"
+              className="p-2 rounded-xl hover:bg-white/5 text-gray-400 hover:text-white transition-colors"
+            >
+              <Bell className="w-4 h-4" />
+            </button>
+            <button
+              title="Settings"
+              className="p-2 rounded-xl hover:bg-white/5 text-gray-400 hover:text-white transition-colors"
+            >
+              <Settings className="w-4 h-4" />
+            </button>
+            <Link
+              href="/"
+              title="Exit Profile"
+              className="p-2 rounded-xl hover:bg-white/5 text-gray-400 hover:text-white transition-colors"
+            >
+              <LogOut className="w-4 h-4" />
+            </Link>
           </div>
-        </header>
+        </div>
+      </header>
 
-        {/* Profile Content Body */}
-        <main className="p-6 md:p-8 space-y-6 max-w-7xl mx-auto w-full">
-          {/* 1. Single Entry Point: Interview Setup Panel */}
-          <InterviewSetupPanel />
+      {/* Main Clean Full-Width Container */}
+      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 space-y-8 relative">
+        {/* Subtle Ambient Glow Effect */}
+        <div className="absolute top-12 left-1/2 -translate-x-1/2 w-3/4 h-64 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-indigo-600/10 blur-3xl rounded-full pointer-events-none -z-10" />
 
-          {/* 2. Candidate Identity Card */}
-          <CandidateIdentityCard candidate={activeCandidate} />
+        {/* 1. Single Entry Point: Interview Setup Panel */}
+        <InterviewSetupPanel />
 
-          {/* 3. Stat Cards Row */}
-          <StatCardsRow candidate={activeCandidate} />
+        {/* 2. Candidate Identity Card */}
+        <CandidateIdentityCard candidate={activeCandidate} />
 
-          {/* 4. Skill Progress Section */}
-          <SkillProgressSection candidate={activeCandidate} />
+        {/* 3. Key Stat Cards Row */}
+        <StatCardsRow candidate={activeCandidate} />
 
-          {/* 5. Topic Distribution & Activity Charts */}
-          <ProfileCharts candidate={activeCandidate} />
+        {/* 4. Skill Progress Section */}
+        <SkillProgressSection candidate={activeCandidate} />
 
-        </main>
-      </div>
+        {/* 5. Topic Distribution & Activity Charts */}
+        <ProfileCharts candidate={activeCandidate} />
+      </main>
     </div>
   );
 }
+

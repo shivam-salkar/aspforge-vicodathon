@@ -2,7 +2,6 @@
 
 import { useEffect, useState, use } from 'react';
 import Link from 'next/link';
-import { Navbar } from '@/components/ui/Navbar';
 import { resultService } from '@/services/resultService';
 import { useCandidateStore } from '@/stores/candidateStore';
 import { InterviewResult } from '@/types';
@@ -45,8 +44,6 @@ export default function ResultsPage({ params }: { params: Promise<{ sessionId: s
 
   return (
     <div className="min-h-screen bg-[#08090A] text-gray-100 flex flex-col relative overflow-hidden">
-      <Navbar />
-
       <main className="flex-1 max-w-7xl mx-auto px-6 py-10 w-full space-y-8 relative z-10">
         {/* Header Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
