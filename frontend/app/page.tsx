@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/ui/Navbar';
 import { ConsoleDemoWindow } from '@/components/ui/ConsoleDemoWindow';
 import { ParticleText } from '@/components/ui/ParticleText';
-import { DarkVeil } from '@/components/ui/DarkVeil';
+import { Aurora } from '@/components/ui/Aurora';
 import {
   Sparkles,
   ArrowRight,
@@ -33,14 +33,13 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-[#08090A] text-gray-100 flex flex-col relative overflow-hidden">
-      {/* Background Animated DarkVeil */}
-      <div className="absolute inset-0 pointer-events-none opacity-45 z-0 h-full w-full">
-        <DarkVeil
-          hueShift={240}
-          noiseIntensity={0.02}
-          scanlineIntensity={0.05}
+      {/* Dynamic Aurora WebGL Background */}
+      <div className="absolute inset-0 pointer-events-none opacity-35 overflow-hidden z-0">
+        <Aurora
+          colorStops={['#3b82f6', '#8b5cf6', '#06b6d4']}
+          blend={0.6}
+          amplitude={1.2}
           speed={0.4}
-          warpAmount={0.2}
         />
       </div>
 
