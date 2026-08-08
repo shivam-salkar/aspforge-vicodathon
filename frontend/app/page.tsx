@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/ui/Navbar';
 import { ConsoleDemoWindow } from '@/components/ui/ConsoleDemoWindow';
 import { ParticleText } from '@/components/ui/ParticleText';
+import { DarkVeil } from '@/components/ui/DarkVeil';
 import {
   Sparkles,
   ArrowRight,
@@ -32,8 +33,16 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-[#08090A] text-gray-100 flex flex-col relative overflow-hidden">
-      {/* Background Animated Blobs */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-blue-600/15 via-purple-600/10 to-transparent blur-3xl pointer-events-none" />
+      {/* Background Animated DarkVeil */}
+      <div className="absolute inset-0 pointer-events-none opacity-45 z-0 h-full w-full">
+        <DarkVeil
+          hueShift={240}
+          noiseIntensity={0.02}
+          scanlineIntensity={0.05}
+          speed={0.4}
+          warpAmount={0.2}
+        />
+      </div>
 
       {/* Navbar */}
       <Navbar />
@@ -319,7 +328,7 @@ export default function LandingPage() {
       </main>
 
       {/* Extended Footer matching spec */}
-      <footer className="border-t border-white/10 py-10 px-6 max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+      <footer className="border-t border-white/10 py-10 px-6 max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 relative z-10">
         <p className="text-center sm:text-left">
           <strong className="text-gray-300 font-bold">ABTalks InterviewOS</strong> © 2026 ABTalks InterviewOS. The pro-grade technical interview platform.
         </p>
