@@ -40,6 +40,46 @@ export interface ConversationTurn {
   content: string;
   topic?: string;
   timestamp: string;
+  timeSpentSeconds?: number;
+}
+
+export interface RecordedQuestion {
+  questionNumber: number;
+  topic: string;
+  dayNumber?: number;
+  question: string;
+  answer: string;
+  timeSpentSeconds: number;
+  score: number; // 0 to 10 scale
+  isRight: boolean; // score > 5
+}
+
+export interface TopicTimeAnalysis {
+  topic: string;
+  dayNumber?: number;
+  questionCount: number;
+  avgScore: number;
+  totalTimeSeconds: number;
+}
+
+export interface InterviewResultData {
+  sessionId: string;
+  candidateId: string;
+  candidateName: string;
+  jobRole: string;
+  createdAt?: string;
+  overallScore: number; // 0 to 10 scale
+  overallPercentage: number;
+  totalQuestions: number;
+  rightCount: number;
+  wrongCount: number;
+  totalTimeSeconds: number;
+  questions: RecordedQuestion[];
+  topicTimeAnalysis: TopicTimeAnalysis[];
+  summary?: string;
+  strengths?: string[];
+  gaps?: string[];
+  next?: string[];
 }
 
 export interface LiveScores {
@@ -58,6 +98,7 @@ export interface InterviewSession {
   sessionId: string;
   candidate: Candidate;
   turns: ConversationTurn[];
+  recordedQuestions: RecordedQuestion[];
   turnCount: number;
   currentTopic: string;
   difficulty: 'easy' | 'medium' | 'hard';
@@ -86,22 +127,13 @@ export interface Feedback {
   next: string[];
 }
 
-export interface InterviewResult {
-  sessionId: string;
-  candidateName: string;
-  jobRole: string;
-  score: number;
-  tier: string;
-  percentile: string;
-  summary: string;
-  strengths: string[];
-  gaps: string[];
-  quickStats: {
+export interface InterviewResult extends InterviewResultData {
+  tier?: string;
+  percentile?: string;
+  quickStats?: {
     totalQuestions: number;
     timeTaken: string;
     followUps: number;
     topicsCovered: number;
   };
-  domainPerformance: DomainPerformance[];
-  skillMetrics: SkillMetric[];
 }

@@ -15,7 +15,11 @@ export function LiveActionCard() {
     currentTopic,
     statusText,
     isThinking,
+    questionTimerSeconds,
+    turns,
+    recordedQuestions,
     addTurn,
+    addRecordedQuestion,
     setStatusText,
     setIsThinking,
     setIsCompleted,
@@ -66,7 +70,13 @@ export function LiveActionCard() {
     if (!inputMessage.trim() || isThinking) return;
 
     const userText = inputMessage.trim();
+    const timeSpent = Math.max(5, questionTimerSeconds);
     setInputMessage('');
+
+    // Capture last interviewer turn text & topic
+    const lastInterviewerTurn = turns.filter((t) => t.role === 'interviewer').pop();
+    const lastQuestion = lastInterviewerTurn?.content || 'Technical Question';
+    const activeTopic = lastInterviewerTurn?.topic || currentTopic;
 
     addTurn({
       role: 'candidate',
@@ -78,10 +88,24 @@ export function LiveActionCard() {
     setStatusText('Querying Breeth AI Memory & Groq LLM for evaluation...');
 
     try {
-      const response = await interviewService.sendTurn(sessionId, userText);
+      const response = await interviewService.sendTurn(sessionId, userText, timeSpent);
 
       setIsThinking(false);
       setStatusText('Interview Engine Active • Listening for candidate input...');
+
+      const score = response.score ?? (userText.length > 25 ? 8.0 : 4.0);
+      const isRight = response.isRight ?? score > 5.0;
+
+      // Add to recorded questions state
+      addRecordedQuestion({
+        questionNumber: recordedQuestions.length + 1,
+        topic: activeTopic,
+        question: lastQuestion,
+        answer: userText,
+        timeSpentSeconds: timeSpent,
+        score,
+        isRight,
+      });
 
       addTurn({
         role: 'interviewer',
@@ -91,8 +115,8 @@ export function LiveActionCard() {
       });
 
       updateScores({
-        technical: Math.min(98, Math.max(65, Math.floor(Math.random() * 15) + 82)),
-        reasoning: Math.min(97, Math.max(70, Math.floor(Math.random() * 12) + 84)),
+        technical: Math.min(98, Math.max(65, Math.floor(score * 10))),
+        reasoning: Math.min(97, Math.max(70, Math.floor(score * 10))),
       });
 
       if (response.done || turnCount >= maxTurns) {

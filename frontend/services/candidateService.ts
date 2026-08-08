@@ -1,5 +1,5 @@
 import { apiClient } from './api';
-import { Candidate } from '@/types';
+import { Candidate, InterviewResultData } from '@/types';
 import rawCandidatesData from '@/lib/candidates.json';
 
 // Parse raw candidates list from lib/candidates.json
@@ -39,7 +39,7 @@ export const candidateService = {
    * Fetches real candidate profile by ID (e.g. CAND-001 through CAND-020).
    * Queries Express API endpoint GET /api/candidates/:id; falls back to lib/candidates.json.
    */
-  async getCandidateById(candidateId: string): Promise<Candidate> {
+  async getCandidateById(candidateId: string): Promise<Candidate | null> {
     const formattedId = candidateId.toUpperCase().trim();
     try {
       const response = await apiClient.get<Candidate>(`/candidates/${formattedId}`);
@@ -54,24 +54,23 @@ export const candidateService = {
       return mockCandidates[formattedId];
     }
 
-    // Default structure for unknown IDs
-    return {
-      member: {
-        id: formattedId,
-        name: `Candidate ${formattedId}`,
-        jobRole: 'Software Engineer',
-        yearsExperience: 4,
-        education: 'BS Computer Science',
-        status: 'READY',
-      },
-      missions: [
-        { day: 7, title: 'Embeddings Explained', passed: true, attempts: 1 },
-        { day: 8, title: 'Vector Databases Overview', passed: true, attempts: 1 },
-        { day: 12, title: 'Prompt Engineering', passed: true, attempts: 2 },
-        { day: 16, title: 'API Integration', passed: true, attempts: 1 },
-      ],
-      signals: { commitDays: 20, missionsCompleted: 24, missionsFirstTry: 15 },
-    };
+    return null;
+  },
+
+  /**
+   * Fetches past interview results history for a specific candidate.
+   */
+  async getCandidateInterviews(candidateId: string): Promise<InterviewResultData[]> {
+    const formattedId = candidateId.toUpperCase().trim();
+    try {
+      const response = await apiClient.get<InterviewResultData[]>(`/candidates/${formattedId}/interviews`);
+      if (Array.isArray(response.data)) {
+        return response.data;
+      }
+    } catch (err) {
+      console.warn(`[candidateService] API fetch interviews for ${formattedId} failed.`);
+    }
+    return [];
   },
 
   /**
