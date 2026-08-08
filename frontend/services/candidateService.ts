@@ -18,6 +18,24 @@ allCandidatesFromDataset.forEach((cand) => {
 
 export const candidateService = {
   /**
+   * Verifies if candidate ID exists in database dataset.
+   */
+  async verifyCandidateExists(candidateId: string): Promise<boolean> {
+    const formattedId = candidateId.toUpperCase().trim();
+    try {
+      const response = await apiClient.get<Candidate>(`/candidates/${formattedId}`);
+      if (response.data && response.data.member && response.data.member.id) {
+        return true;
+      }
+    } catch (err: any) {
+      if (err?.response?.status === 404) {
+        return false;
+      }
+    }
+    return Boolean(mockCandidates[formattedId]);
+  },
+
+  /**
    * Fetches real candidate profile by ID (e.g. CAND-001 through CAND-020).
    * Queries Express API endpoint GET /api/candidates/:id; falls back to lib/candidates.json.
    */

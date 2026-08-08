@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { candidateService } from '@/services/candidateService';
 import { Navbar } from '@/components/ui/Navbar';
 import { ConsoleDemoWindow } from '@/components/ui/ConsoleDemoWindow';
 import { ParticleText } from '@/components/ui/ParticleText';
@@ -18,6 +19,9 @@ import {
   Trophy,
   MessageSquare,
   Quote,
+  AlertCircle,
+  X,
+  Loader2,
 } from 'lucide-react';
 
 export default function LandingPage() {
@@ -58,16 +62,66 @@ export default function LandingPage() {
     }
   };
 
-  const handleVerifyCandidate = (e: React.FormEvent) => {
+  const [errorToast, setErrorToast] = useState<string | null>(null);
+  const [isVerifying, setIsVerifying] = useState(false);
+  const [shakeInput, setShakeInput] = useState(false);
+
+  useEffect(() => {
+    if (errorToast) {
+      const timer = setTimeout(() => setErrorToast(null), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [errorToast]);
+
+  const triggerShake = () => {
+    setShakeInput(true);
+    setTimeout(() => setShakeInput(false), 600);
+  };
+
+  const handleVerifyCandidate = async (e: React.FormEvent) => {
     e.preventDefault();
     const code = otp.join('').trim().toUpperCase();
-    if (!code) return;
+    if (code.length < 3) {
+      setErrorToast('Please enter a complete 3-digit candidate code.');
+      triggerShake();
+      return;
+    }
     const formatted = `CAND-${code.padStart(3, '0')}`;
+    setIsVerifying(true);
+    setErrorToast(null);
+
+    const exists = await candidateService.verifyCandidateExists(formatted);
+    setIsVerifying(false);
+
+    if (!exists) {
+      setErrorToast(`Candidate ID "${formatted}" does not exist in dataset!`);
+      triggerShake();
+      return;
+    }
+
     router.push(`/profile/${formatted}`);
   };
 
   return (
     <div className="relative min-h-screen bg-[#08090A] text-white selection:bg-purple-500 selection:text-white">
+      {/* ERROR TOAST NOTIFICATION */}
+      {errorToast && (
+        <div className="fixed top-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-xl bg-red-500/20 border border-red-500/40 text-red-200 backdrop-blur-xl shadow-2xl shadow-red-950/50 animate-in fade-in slide-in-from-top-4 duration-300 max-w-md">
+          <AlertCircle className="w-5 h-5 text-red-400 shrink-0" />
+          <div className="flex-1 text-xs font-semibold">
+            <span className="block font-bold text-red-300 mb-0.5">Verification Error</span>
+            <span>{errorToast}</span>
+          </div>
+          <button
+            type="button"
+            onClick={() => setErrorToast(null)}
+            className="p-1 text-red-400 hover:text-white transition-colors rounded-lg hover:bg-white/10"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
+
       {/* FIXED BACKGROUND: Stays pinned to the viewport during scroll */}
       <div className="fixed inset-0 z-0 pointer-events-none w-full h-full overflow-hidden opacity-90">
         <GradientWaves amplitude={2.5} brightness={1.0} crestColor="#FFFFFF" detail="medium" fogDepth={15} grain={true} grainIntensity={0.05} height={5.5} horizonColor="#5227FF" mouseInteraction={false} opacity={1.0} parallaxStrength={0.5} speed={0.4} swell={35} tilt={1.11} turbulence={20} waveColor="#FF9FFC" waveRatio={0.9} waveScale={0.6} zoom={1.0}/>
@@ -129,7 +183,7 @@ export default function LandingPage() {
             </div>
 
             <form onSubmit={handleVerifyCandidate} className="flex flex-col sm:flex-row items-center gap-3">
-              <div className="flex items-center gap-2 glass-input px-4 py-2.5 rounded-xl border border-white/10 w-full sm:w-auto flex-1">
+              <div className={`flex items-center gap-2 glass-input px-4 py-2.5 rounded-xl border w-full sm:w-auto flex-1 transition-all ${shakeInput ? 'border-red-500/80 bg-red-500/10 ring-2 ring-red-500/30 animate-pulse' : 'border-white/10'}`}>
                 <span className="font-mono font-black text-blue-400 text-base tracking-wider select-none shrink-0">
                   CAND-
                 </span>
@@ -144,7 +198,7 @@ export default function LandingPage() {
                       onChange={(e) => handleOtpChange(idx, e.target.value)}
                       onKeyDown={(e) => handleOtpKeyDown(idx, e)}
                       onPaste={handleOtpPaste}
-                      className="w-10 h-10 text-center text-lg font-mono font-bold uppercase bg-white/5 border border-white/15 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 transition-all"
+                      className={`w-10 h-10 text-center text-lg font-mono font-bold uppercase bg-white/5 border rounded-lg text-white focus:outline-none focus:ring-2 transition-all ${shakeInput ? 'border-red-500/60 focus:border-red-500 focus:ring-red-500/30' : 'border-white/15 focus:border-blue-500 focus:ring-blue-500/30'}`}
                     />
                   ))}
                 </div>
@@ -155,16 +209,24 @@ export default function LandingPage() {
 
               <button
                 type="submit"
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white text-xs font-bold shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 transition-all hover:scale-[1.02] shrink-0"
+                disabled={isVerifying}
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white text-xs font-bold shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 transition-all hover:scale-[1.02] shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span>Start Interview</span>
-                <ArrowRight className="w-4 h-4" />
+                {isVerifying ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin text-white" />
+                    <span>Verifying...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Start Interview</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </>
+                )}
               </button>
             </form>
 
-            <p className="text-[11px] text-gray-400 mt-3 text-left">
-              Try test candidate IDs: <button type="button" onClick={() => setOtp(['0', '0', '1'])} className="text-blue-400 font-mono hover:underline font-bold">CAND-001</button> (Sarah Johnson), <button type="button" onClick={() => setOtp(['0', '0', '2'])} className="text-blue-400 font-mono hover:underline font-bold">CAND-002</button> (Alex Turner), or <button type="button" onClick={() => setOtp(['0', '0', '3'])} className="text-blue-400 font-mono hover:underline font-bold">CAND-003</button> (Emily Chen).
-            </p>
+            
           </div>
         </div>
 
@@ -268,6 +330,7 @@ export default function LandingPage() {
 
           <button className="px-6 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition-all hover:scale-105 shrink-0 shadow-lg shadow-purple-600/25">
             Join now
+            <a href="https://abtalks.in/"></a>
           </button>
         </div>
 

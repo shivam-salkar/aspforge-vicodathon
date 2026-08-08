@@ -10425,3 +10425,3274 @@ export default function Home() {
 - Typechecking and WebGL re-rendering handled by Next.js HMR implicitly.
 - No WebGL rendering context crashes detected.
 
+
+## [2026-08-08T11:46:16.788Z] - Interview Start: Alex Turner
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 7af9ff7d
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Alex Turner
+> Role: Backend Software Engineer | Experience: 5 years | Education: B.Tech Computer Science
+> Cohort Progress: 29/31 missions completed, 10 first-try passes
+> Strong areas: Chatbot Application Build, Evaluation, Security & Deployment
+> Weak areas: Embeddings & Vector Search, LLM Core, Prompting & Fine-Tuning
+> 
+> Target Curriculum Focus: "Embeddings & Vector Search" (intermediate level)
+> User: Ask your first technical question directly to Alex Turner ("you") about "Embeddings & Vector Search". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskb5lul. Topic: "Embeddings & Vector Search". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.051886444,
+    "prompt_tokens": 393,
+    "prompt_time": 0.020026336,
+    "completion_tokens": 38,
+    "completion_time": 0.229440096,
+    "total_tokens": 431,
+    "total_time": 0.249466432
+  },
+  "reply": "You've built chatbot applications, now consider vector search: how would you design an indexing system for efficient similarity searches in high-dimensional embedding spaces, given limited memory and high query throughput?"
+}
+```
+---
+
+## [2026-08-08T11:46:35.421Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 71bc45ea
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Alex Turner","content":"Candidate: Alex Turner\nRole: Backend Software Engineer | Experience: 5 years | Education: B.Tech Computer Science\nCohort Progress: 29/31 missions completed, 10 first-try passes\nStrong areas: Chatbot Application Build, Evaluation, Security & Deployment\nWeak areas: Embeddings & Vector Search, LLM Core, Prompting & Fine-Tuning","tags":["interview-init","sess-mskb5lul","CAND-002"],"metadata":{"sessionId":"sess-mskb5lul","candidateId":"CAND-002"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786189578010",
+  "extracted": {
+    "entities": 15,
+    "edges": 54
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "e4389f362553",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:11:49.294Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 6fbfc322
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.056111647,
+    "prompt_tokens": 397,
+    "prompt_time": 0.021209073,
+    "completion_tokens": 19,
+    "completion_time": 0.113102303,
+    "total_tokens": 416,
+    "total_time": 0.134311376
+  },
+  "reply": "You have a chatbot application in production, how do you handle scaling with increased traffic?"
+}
+```
+---
+
+## [2026-08-08T12:12:03.241Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** b88cb5e9
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191111211",
+  "extracted": {
+    "entities": 11,
+    "edges": 8
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "f17665704bbb",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:13:36.063Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 29f89d7d
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.056532363,
+    "prompt_tokens": 397,
+    "prompt_time": 0.075706087,
+    "completion_tokens": 19,
+    "completion_time": 0.092127338,
+    "total_tokens": 416,
+    "total_time": 0.167833425
+  },
+  "reply": "You've built several chatbot applications, how do you handle scaling vector search in production?"
+}
+```
+---
+
+## [2026-08-08T12:13:36.115Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** c957b6d5
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.056329202,
+    "prompt_tokens": 397,
+    "prompt_time": 0.078677184,
+    "completion_tokens": 39,
+    "completion_time": 0.150272972,
+    "total_tokens": 436,
+    "total_time": 0.228950156
+  },
+  "reply": "You've completed most missions, but skipped Production and Capstone topics. How would you design a scalable chatbot architecture for high-traffic production environments, considering trade-offs between latency and cost?"
+}
+```
+---
+
+## [2026-08-08T12:13:45.995Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 9480eef5
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191217496",
+  "extracted": {
+    "entities": 11,
+    "edges": 5
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "7e5bd883d517",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:13:45.995Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 2c673ffd
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191217442",
+  "extracted": {
+    "entities": 11,
+    "edges": 6
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "2c5ff1c718d2",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:13:54.819Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** b79992cd
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.162541251,
+    "prompt_tokens": 397,
+    "prompt_time": 0.020448687,
+    "completion_tokens": 28,
+    "completion_time": 0.133898811,
+    "total_tokens": 425,
+    "total_time": 0.154347498
+  },
+  "reply": "You've built several chatbot applications, how do you handle scalability in production, particularly when dealing with high traffic or large user bases?"
+}
+```
+---
+
+## [2026-08-08T12:13:54.856Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 939faceb
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161742573,
+    "prompt_tokens": 397,
+    "prompt_time": 0.042652775,
+    "completion_tokens": 36,
+    "completion_time": 0.140845833,
+    "total_tokens": 433,
+    "total_time": 0.183498608
+  },
+  "reply": "You've completed most missions, but skipped Production and Capstone. How would you design a scalable architecture for deploying a chatbot application, considering trade-offs between latency and cost?"
+}
+```
+---
+
+## [2026-08-08T12:13:56.853Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 8196269a
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.162293281,
+    "prompt_tokens": 397,
+    "prompt_time": 0.020453908,
+    "completion_tokens": 21,
+    "completion_time": 0.083109129,
+    "total_tokens": 418,
+    "total_time": 0.103563037
+  },
+  "reply": "You've built several chatbot applications, how do you handle scaling vector search in a production environment?"
+}
+```
+---
+
+## [2026-08-08T12:13:56.925Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** e1a2577a
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.162578812,
+    "prompt_tokens": 397,
+    "prompt_time": 0.039448627,
+    "completion_tokens": 39,
+    "completion_time": 0.136485312,
+    "total_tokens": 436,
+    "total_time": 0.175933939
+  },
+  "reply": "You've completed most missions, but skipped Production and Capstone topics. How would you design a scalable data pipeline for a production-ready chatbot application, considering trade-offs between latency and throughput?"
+}
+```
+---
+
+## [2026-08-08T12:13:58.788Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** c7cf625d
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.171444412,
+    "prompt_tokens": 397,
+    "prompt_time": 0.023138557,
+    "completion_tokens": 38,
+    "completion_time": 0.142425057,
+    "total_tokens": 435,
+    "total_time": 0.165563614
+  },
+  "reply": "You completed 30 missions, but skipped Production and Capstone topics. How would you design a scalable deployment pipeline for a chatbot application, considering trade-offs between latency and resource utilization?"
+}
+```
+---
+
+## [2026-08-08T12:13:58.806Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 3c833142
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.165621331,
+    "prompt_tokens": 397,
+    "prompt_time": 0.021147371,
+    "completion_tokens": 40,
+    "completion_time": 0.168807981,
+    "total_tokens": 437,
+    "total_time": 0.189955352
+  },
+  "reply": "You've built several chatbot applications, how do you handle scalability in production, particularly when dealing with high traffic or large user bases? What trade-offs do you consider when designing your system architecture?"
+}
+```
+---
+
+## [2026-08-08T12:14:02.381Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 608cd775
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.16256056,
+    "prompt_tokens": 397,
+    "prompt_time": 0.020224019,
+    "completion_tokens": 27,
+    "completion_time": 0.146804862,
+    "total_tokens": 424,
+    "total_time": 0.167028881
+  },
+  "reply": "You have a chatbot application nearing production. How will you handle scalability and high traffic, considering your embedding and vector search expertise?"
+}
+```
+---
+
+## [2026-08-08T12:14:02.539Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 5814ce05
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161867044,
+    "prompt_tokens": 397,
+    "prompt_time": 0.020420588,
+    "completion_tokens": 40,
+    "completion_time": 0.184004205,
+    "total_tokens": 437,
+    "total_time": 0.204424793
+  },
+  "reply": "You've completed most of the missions, now consider a production-ready chatbot: how would you design the architecture to handle high concurrency and low latency, given your experience with embeddings and vector search?"
+}
+```
+---
+
+## [2026-08-08T12:14:11.288Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** cdbfba34
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191236616",
+  "extracted": {
+    "entities": 11,
+    "edges": 10
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "2312b7218efa",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:14:12.402Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** d9780740
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191239105",
+  "extracted": {
+    "entities": 11,
+    "edges": 12
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "7a0d197a7f8d",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:14:12.637Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** a6e5ec1a
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191236469",
+  "extracted": {
+    "entities": 11,
+    "edges": 8
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "2ec5f20a7a43",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:14:14.798Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 4a7c1dca
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191238757",
+  "extracted": {
+    "entities": 11,
+    "edges": 12
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "022e34893fb6",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:14:18.263Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 1f79aa47
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191246295",
+  "extracted": {
+    "entities": 11,
+    "edges": 10
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "22ed5addbe3d",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:14:30.013Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** c46f6dfb
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191244366",
+  "extracted": {
+    "entities": 11,
+    "edges": 13
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "3d1ab28d71da",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:14:30.542Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 2ea64b20
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191242674",
+  "extracted": {
+    "entities": 11,
+    "edges": 8
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "e7057d42499b",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:14:31.044Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 0ea5dfcc
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191250054",
+  "extracted": {
+    "entities": 11,
+    "edges": 9
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "a68ec483216c",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:20:47.169Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 32e04e24
+
+### 1. User Prompt / Intent
+> {"query":"Sarah Johnson Production & Capstone idk","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "0ced6210-c925-4ceb-8792-28839b506ea8",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson skipped Production & Capstone",
+      "name": "SKIPPED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "00469119-e873-4769-8092-f805b0867fc6",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson is strong in Production & Capstone",
+      "name": "STRONG_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "5287c4c9-9062-4a72-ac32-5b79fe9133d0",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson skipped topics Production & Capstone",
+      "name": "SKIPPED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "5af10da0-587d-4ed2-88f9-a5a3a5c94b9b",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson has strong skills in Production & Capstone",
+      "name": "SKILL_AREA",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "ed2592d7-e85b-467f-81be-228c2fce0fa3",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson has skipped Production & Capstone",
+      "name": "SKIPPED",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T12:20:47.538Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 2cf76c40
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Candidate Answer","content":"Topic: Production & Capstone\nCandidate Answer: idk","tags":["interview-turn","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","turn":2,"topic":"Production & Capstone"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191644463",
+  "extracted": {
+    "entities": 2,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "27bc9ad012cb",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:20:48.099Z] - Interview Turn 2: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 9693f080
+
+### 1. User Prompt / Intent
+> Candidate: "idk..."
+
+### 2. AI Reasoning & Strategy
+Turn 2. Evaluated on "Production & Capstone". Next topic: "LLM Core, Prompting & Fine-Tuning".
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.320606761,
+    "prompt_tokens": 541,
+    "prompt_time": 0.090434867,
+    "completion_tokens": 40,
+    "completion_time": 0.173488486,
+    "total_tokens": 581,
+    "total_time": 0.263923353
+  },
+  "reply": "Fair enough if you haven't worked with that directly. You skipped Production & Capstone, so let's focus on LLM Core: how do you fine-tune a model for specific tasks?"
+}
+```
+---
+
+## [2026-08-08T12:21:42.912Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** d5b28e1f
+
+### 1. User Prompt / Intent
+> {"query":"Sarah Johnson LLM Core, Prompting & Fine-Tuning we fine tuen","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "0695e7b4-520c-448c-b693-1302787cb888",
+      "source_node": "3de6e24d-c1b0-4840-b7fd-ebb3214eb14b",
+      "target_node": "bfc4f1cc-9e20-46a8-bfa1-7f118ab9fd49",
+      "fact": "LLM Core enables Fine‑Tuning",
+      "name": "LLM_CORE_TYPE_FINE_TUNING",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "8b7f1b8a-e8d9-4300-ac3a-d5c479eca3c5",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "77a42f58-15ff-40be-b738-ae31d13e1979",
+      "fact": "skipped topic Prompting & Fine-Tuning",
+      "name": "SKIPPED_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "17d0752b-0c85-49b0-b1b9-d197595bc433",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "77a42f58-15ff-40be-b738-ae31d13e1979",
+      "fact": "Sarah Johnson weak area Prompting & Fine-Tuning",
+      "name": "WEAK_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "e66c0657-7347-4704-b646-697802edcc88",
+      "source_node": "77a42f58-15ff-40be-b738-ae31d13e1979",
+      "target_node": "bfc4f1cc-9e20-46a8-bfa1-7f118ab9fd49",
+      "fact": "Prompting is applied to Fine‑Tuning",
+      "name": "PROMPTING_WITH",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "4a1fdd1d-f7ea-4fde-a9e8-77dc03484358",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "77a42f58-15ff-40be-b738-ae31d13e1979",
+      "fact": "Sarah Johnson is weak in Prompting & Fine-Tuning",
+      "name": "IS_WEAK_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T12:21:43.284Z] - Interview Turn 4: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 14828e49
+
+### 1. User Prompt / Intent
+> Candidate: "we fine tuen..."
+
+### 2. AI Reasoning & Strategy
+Turn 4. Evaluated on "LLM Core, Prompting & Fine-Tuning". Next topic: "Environment & Tooling".
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.16256722,
+    "prompt_tokens": 580,
+    "prompt_time": 0.029126319,
+    "completion_tokens": 29,
+    "completion_time": 0.126951359,
+    "total_tokens": 609,
+    "total_time": 0.156077678
+  },
+  "reply": "Your answer was brief, fair enough if you haven't worked with fine-tuning directly. How do you manage dependencies in your project environment?"
+}
+```
+---
+
+## [2026-08-08T12:21:47.086Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 75174c23
+
+### 1. User Prompt / Intent
+> {"title":"Turn 4 — Candidate Answer","content":"Topic: LLM Core, Prompting & Fine-Tuning\nCandidate Answer: we fine tuen","tags":["interview-turn","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","turn":4,"topic":"LLM Core, Prompting & Fine-Tuning"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191700280",
+  "extracted": {
+    "entities": 3,
+    "edges": 2
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "6bfc30455486",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:23:38.903Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 2d3233ec
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161340002,
+    "prompt_tokens": 397,
+    "prompt_time": 0.02265894,
+    "completion_tokens": 19,
+    "completion_time": 0.089141391,
+    "total_tokens": 416,
+    "total_time": 0.111800331
+  },
+  "reply": "You've built several chatbot applications, how do you handle scaling vector search in production?"
+}
+```
+---
+
+## [2026-08-08T12:23:38.905Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 42fdc485
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161432769,
+    "prompt_tokens": 397,
+    "prompt_time": 0.02019641,
+    "completion_tokens": 36,
+    "completion_time": 0.13692757,
+    "total_tokens": 433,
+    "total_time": 0.15712398
+  },
+  "reply": "You've completed most missions, but skipped Production and Capstone. How would you design a scalable architecture for deploying a chatbot application, considering trade-offs between latency and cost?"
+}
+```
+---
+
+## [2026-08-08T12:23:48.468Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 3cf17dcb
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.162787684,
+    "prompt_tokens": 397,
+    "prompt_time": 0.020201455,
+    "completion_tokens": 28,
+    "completion_time": 0.133674081,
+    "total_tokens": 425,
+    "total_time": 0.153875536
+  },
+  "reply": "You've built several chatbot applications, how do you handle scalability in production, particularly when dealing with high traffic or large user bases?"
+}
+```
+---
+
+## [2026-08-08T12:23:48.483Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 58da3cf5
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.162611446,
+    "prompt_tokens": 397,
+    "prompt_time": 0.029551465,
+    "completion_tokens": 32,
+    "completion_time": 0.133186911,
+    "total_tokens": 429,
+    "total_time": 0.162738376
+  },
+  "reply": "You've built several chatbot applications, how would you design a scalable architecture for a high-traffic chatbot, considering trade-offs between latency and cost?"
+}
+```
+---
+
+## [2026-08-08T12:23:49.032Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 283d9255
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191820257",
+  "extracted": {
+    "entities": 11,
+    "edges": 11
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "a063dcd029d3",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:23:49.651Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 71e507cd
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191821521",
+  "extracted": {
+    "entities": 11,
+    "edges": 3
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "cb50121deead",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:24:03.367Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** b57b16bb
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191830667",
+  "extracted": {
+    "entities": 11,
+    "edges": 9
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "e8ae341ba1cd",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:24:03.879Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** e4ce6c55
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786191830668",
+  "extracted": {
+    "entities": 11,
+    "edges": 10
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "e6c288008fde",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:28:54.186Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 6b1c6587
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskcof34. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.055967559,
+    "prompt_tokens": 397,
+    "prompt_time": 0.020178993,
+    "completion_tokens": 28,
+    "completion_time": 0.133230449,
+    "total_tokens": 425,
+    "total_time": 0.153409442
+  },
+  "reply": "You've built several chatbot applications, how do you handle scalability in production, particularly when dealing with high traffic and large user bases?"
+}
+```
+---
+
+## [2026-08-08T12:29:06.576Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 4f4df87c
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskcof34","CAND-001"],"metadata":{"sessionId":"sess-mskcof34","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192135481",
+  "extracted": {
+    "entities": 11,
+    "edges": 10
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "a0fc35e47939",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:29:41.017Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** ce399cdc
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskcof34. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.055877843,
+    "prompt_tokens": 397,
+    "prompt_time": 0.020903397,
+    "completion_tokens": 19,
+    "completion_time": 0.096486655,
+    "total_tokens": 416,
+    "total_time": 0.117390052
+  },
+  "reply": "You've built several chatbot applications, how do you handle scaling vector search in production?"
+}
+```
+---
+
+## [2026-08-08T12:29:41.022Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** a0bf834a
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskcof34. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.05167207,
+    "prompt_tokens": 397,
+    "prompt_time": 0.02182939,
+    "completion_tokens": 19,
+    "completion_time": 0.097470167,
+    "total_tokens": 416,
+    "total_time": 0.119299557
+  },
+  "reply": "You've built several chatbot applications, how do you handle scaling vector search in production?"
+}
+```
+---
+
+## [2026-08-08T12:29:53.575Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 269c96de
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskcof34","CAND-001"],"metadata":{"sessionId":"sess-mskcof34","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192182257",
+  "extracted": {
+    "entities": 11,
+    "edges": 15
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "d6763185711a",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:29:58.748Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** f7850bbc
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskcof34","CAND-001"],"metadata":{"sessionId":"sess-mskcof34","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192182100",
+  "extracted": {
+    "entities": 11,
+    "edges": 20
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "ff906ed427a5",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:31:06.084Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 45b53919
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskcof34. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.058915932,
+    "prompt_tokens": 397,
+    "prompt_time": 0.033985159,
+    "completion_tokens": 26,
+    "completion_time": 0.11413663,
+    "total_tokens": 423,
+    "total_time": 0.148121789
+  },
+  "reply": "You've completed most missions, now consider a production-ready chatbot: how would you design its architecture to handle high traffic?"
+}
+```
+---
+
+## [2026-08-08T12:31:06.095Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** d96779ed
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskcof34. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.073361526,
+    "prompt_tokens": 397,
+    "prompt_time": 0.064776273,
+    "completion_tokens": 35,
+    "completion_time": 0.135997128,
+    "total_tokens": 432,
+    "total_time": 0.200773401
+  },
+  "reply": "You've worked on several projects, how do you handle model serving in production? What trade-offs do you consider when choosing between TensorFlow Serving and AWS SageMaker for deployment?"
+}
+```
+---
+
+## [2026-08-08T12:31:38.787Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 7d71c403
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskcof34","CAND-001"],"metadata":{"sessionId":"sess-mskcof34","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192269710",
+  "extracted": {
+    "entities": 11,
+    "edges": 3
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "d780c39eab09",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:31:54.958Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 91341756
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskcof34","CAND-001"],"metadata":{"sessionId":"sess-mskcof34","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192269234",
+  "extracted": {
+    "entities": 11,
+    "edges": 17
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "9f85bd43431b",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:32:07.374Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 14dec687
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskcof34. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.057696156,
+    "prompt_tokens": 397,
+    "prompt_time": 0.079336893,
+    "completion_tokens": 19,
+    "completion_time": 0.094341853,
+    "total_tokens": 416,
+    "total_time": 0.173678746
+  },
+  "reply": "You've built several chatbot applications, how do you handle scaling vector search in production?"
+}
+```
+---
+
+## [2026-08-08T12:32:07.455Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** de0c6214
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskcof34. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.052156171,
+    "prompt_tokens": 397,
+    "prompt_time": 0.085734646,
+    "completion_tokens": 34,
+    "completion_time": 0.133785071,
+    "total_tokens": 431,
+    "total_time": 0.219519717
+  },
+  "reply": "You've built several chatbot applications, how would you architect a scalable vector search system for a production-ready chatbot, considering trade-offs between latency and index size?"
+}
+```
+---
+
+## [2026-08-08T12:32:18.234Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 6dda001f
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskcof34. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.058955001,
+    "prompt_tokens": 397,
+    "prompt_time": 0.03227376,
+    "completion_tokens": 28,
+    "completion_time": 0.132528699,
+    "total_tokens": 425,
+    "total_time": 0.164802459
+  },
+  "reply": "You've built several chatbot applications, how do you handle scalability in production, specifically when dealing with high traffic and large user bases?"
+}
+```
+---
+
+## [2026-08-08T12:32:18.234Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 8981ac1d
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskcof34. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.051847303,
+    "prompt_tokens": 397,
+    "prompt_time": 0.031218469,
+    "completion_tokens": 30,
+    "completion_time": 0.14729901,
+    "total_tokens": 427,
+    "total_time": 0.178517479
+  },
+  "reply": "You've built several chatbot applications, how would you architect a production-ready system to handle high traffic, considering trade-offs between latency and cost?"
+}
+```
+---
+
+## [2026-08-08T12:32:29.124Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 49a2fc6c
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskcof34","CAND-001"],"metadata":{"sessionId":"sess-mskcof34","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192334191",
+  "extracted": {
+    "entities": 11,
+    "edges": 10
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "96b9423402f4",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:32:34.345Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** c28ce310
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskcof34","CAND-001"],"metadata":{"sessionId":"sess-mskcof34","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192336139",
+  "extracted": {
+    "entities": 11,
+    "edges": 5
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "1b6651dd182f",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:32:35.473Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 6b54d083
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskcof34","CAND-001"],"metadata":{"sessionId":"sess-mskcof34","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192340994",
+  "extracted": {
+    "entities": 11,
+    "edges": 9
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "d0eeedcffc04",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:32:38.469Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** c6bba306
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskcof34","CAND-001"],"metadata":{"sessionId":"sess-mskcof34","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192343069",
+  "extracted": {
+    "entities": 11,
+    "edges": 5
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "5cf974738e85",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:32:44.083Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 85c3e5b0
+
+### 1. User Prompt / Intent
+> {"query":"Sarah Johnson Production & Capstone idk","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "0ced6210-c925-4ceb-8792-28839b506ea8",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson skipped Production & Capstone",
+      "name": "SKIPPED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "00469119-e873-4769-8092-f805b0867fc6",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson is strong in Production & Capstone",
+      "name": "STRONG_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "14696544-a9e9-4955-bc19-002fd8988dc9",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson skipped Production and Capstone",
+      "name": "SKIPPED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "ed2592d7-e85b-467f-81be-228c2fce0fa3",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson has skipped Production & Capstone",
+      "name": "SKIPPED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "5af10da0-587d-4ed2-88f9-a5a3a5c94b9b",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "02eb5329-8e1d-4541-898b-e3845e5b84c2",
+      "fact": "Sarah Johnson has strong skills in Production & Capstone",
+      "name": "SKILL_AREA",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T12:32:47.083Z] - Interview Turn 2: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 84e07051
+
+### 1. User Prompt / Intent
+> Candidate: "idk..."
+
+### 2. AI Reasoning & Strategy
+Turn 2. Evaluated on "Production & Capstone". Next topic: "LLM Core, Prompting & Fine-Tuning".
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.058523569,
+    "prompt_tokens": 530,
+    "prompt_time": 0.028028812,
+    "completion_tokens": 43,
+    "completion_time": 2.799105112,
+    "total_tokens": 573,
+    "total_time": 2.827133924
+  },
+  "reply": "Fair enough if you haven't worked with that directly. You skipped Production and Capstone, so let's focus on LLM Core: How do you fine-tune a large language model for a specific task?"
+}
+```
+---
+
+## [2026-08-08T12:32:47.092Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 9ebfb444
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Candidate Answer","content":"Topic: Production & Capstone\nCandidate Answer: idk","tags":["interview-turn","sess-mskcof34","CAND-001"],"metadata":{"sessionId":"sess-mskcof34","turn":2,"topic":"Production & Capstone"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192360864",
+  "extracted": {
+    "entities": 2,
+    "edges": 1
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "456d1dfbf187",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:33:12.245Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** efafe8fb
+
+### 1. User Prompt / Intent
+> {"query":"Sarah Johnson LLM Core, Prompting & Fine-Tuning we can fine tune using tools like hugging face","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "0695e7b4-520c-448c-b693-1302787cb888",
+      "source_node": "3de6e24d-c1b0-4840-b7fd-ebb3214eb14b",
+      "target_node": "bfc4f1cc-9e20-46a8-bfa1-7f118ab9fd49",
+      "fact": "LLM Core enables Fine‑Tuning",
+      "name": "LLM_CORE_TYPE_FINE_TUNING",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "e66c0657-7347-4704-b646-697802edcc88",
+      "source_node": "77a42f58-15ff-40be-b738-ae31d13e1979",
+      "target_node": "bfc4f1cc-9e20-46a8-bfa1-7f118ab9fd49",
+      "fact": "Prompting is applied to Fine‑Tuning",
+      "name": "PROMPTING_WITH",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "17d0752b-0c85-49b0-b1b9-d197595bc433",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "77a42f58-15ff-40be-b738-ae31d13e1979",
+      "fact": "Sarah Johnson weak area Prompting & Fine-Tuning",
+      "name": "WEAK_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "8b7f1b8a-e8d9-4300-ac3a-d5c479eca3c5",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "77a42f58-15ff-40be-b738-ae31d13e1979",
+      "fact": "skipped topic Prompting & Fine-Tuning",
+      "name": "SKIPPED_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "4a1fdd1d-f7ea-4fde-a9e8-77dc03484358",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "77a42f58-15ff-40be-b738-ae31d13e1979",
+      "fact": "Sarah Johnson is weak in Prompting & Fine-Tuning",
+      "name": "IS_WEAK_IN",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T12:33:12.851Z] - Interview Turn 4: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** d9f099f1
+
+### 1. User Prompt / Intent
+> Candidate: "we can fine tune using tools like hugging face..."
+
+### 2. AI Reasoning & Strategy
+Turn 4. Evaluated on "LLM Core, Prompting & Fine-Tuning". Next topic: "Environment & Tooling".
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.162440617,
+    "prompt_tokens": 580,
+    "prompt_time": 0.041966761,
+    "completion_tokens": 33,
+    "completion_time": 0.172272868,
+    "total_tokens": 613,
+    "total_time": 0.214239629
+  },
+  "reply": "Your answer touches on using Hugging Face for fine-tuning. How do you manage dependencies in your project, and what tools do you use for environment consistency?"
+}
+```
+---
+
+## [2026-08-08T12:33:22.282Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 4d7cb466
+
+### 1. User Prompt / Intent
+> {"title":"Turn 4 — Candidate Answer","content":"Topic: LLM Core, Prompting & Fine-Tuning\nCandidate Answer: we can fine tune using tools like hugging face","tags":["interview-turn","sess-mskcof34","CAND-001"],"metadata":{"sessionId":"sess-mskcof34","turn":4,"topic":"LLM Core, Prompting & Fine-Tuning"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192393959",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "cadbae5a6bdb",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:34:38.591Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** ec70ee8a
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskcof34. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.058438192,
+    "prompt_tokens": 397,
+    "prompt_time": 0.040584858,
+    "completion_tokens": 19,
+    "completion_time": 0.098564245,
+    "total_tokens": 416,
+    "total_time": 0.139149103
+  },
+  "reply": "You've built several chatbot applications, how do you handle scaling vector search in production?"
+}
+```
+---
+
+## [2026-08-08T12:34:38.592Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 4d0f2dde
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskcof34. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.056107731,
+    "prompt_tokens": 397,
+    "prompt_time": 0.020449498,
+    "completion_tokens": 28,
+    "completion_time": 0.144998159,
+    "total_tokens": 425,
+    "total_time": 0.165447657
+  },
+  "reply": "You've built several chatbot applications, how do you handle scalability in production, particularly when dealing with high traffic or large user bases?"
+}
+```
+---
+
+## [2026-08-08T12:34:50.950Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** f3c75ad1
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskcof34","CAND-001"],"metadata":{"sessionId":"sess-mskcof34","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192480635",
+  "extracted": {
+    "entities": 11,
+    "edges": 10
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "37b09fa7c168",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:34:51.463Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 28b8239d
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskcof34","CAND-001"],"metadata":{"sessionId":"sess-mskcof34","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192480634",
+  "extracted": {
+    "entities": 11,
+    "edges": 3
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "083d1d3d9ea9",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:37:54.246Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 90646f5b
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskczzr2. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161155824,
+    "prompt_tokens": 397,
+    "prompt_time": 0.019242595,
+    "completion_tokens": 19,
+    "completion_time": 0.087537714,
+    "total_tokens": 416,
+    "total_time": 0.106780309
+  },
+  "reply": "You've built several chatbot applications, how do you handle scaling vector search in production?"
+}
+```
+---
+
+## [2026-08-08T12:38:07.658Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** cae88baf
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskczzr2","CAND-001"],"metadata":{"sessionId":"sess-mskczzr2","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192675619",
+  "extracted": {
+    "entities": 11,
+    "edges": 10
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "eba08cadf63e",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:39:40.062Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** e9696e07
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskczzr2. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.055913206,
+    "prompt_tokens": 397,
+    "prompt_time": 0.020950533,
+    "completion_tokens": 21,
+    "completion_time": 0.089119039,
+    "total_tokens": 418,
+    "total_time": 0.110069572
+  },
+  "reply": "You've built several chatbot applications, how do you handle scaling vector search in a production environment?"
+}
+```
+---
+
+## [2026-08-08T12:39:40.229Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** d1d08d9f
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskczzr2. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.16142436,
+    "prompt_tokens": 397,
+    "prompt_time": 0.027111518,
+    "completion_tokens": 19,
+    "completion_time": 0.088209048,
+    "total_tokens": 416,
+    "total_time": 0.115320566
+  },
+  "reply": "You've built several chatbot applications, how do you handle scaling vector search in production?"
+}
+```
+---
+
+## [2026-08-08T12:39:40.253Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 1dbb04a2
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161457763,
+    "prompt_tokens": 397,
+    "prompt_time": 0.020418259,
+    "completion_tokens": 38,
+    "completion_time": 0.123051611,
+    "total_tokens": 435,
+    "total_time": 0.14346987
+  },
+  "reply": "You've completed most missions, but skipped Production and Capstone. How would you design a scalable data pipeline for a production-ready chatbot application, considering trade-offs between latency and throughput?"
+}
+```
+---
+
+## [2026-08-08T12:39:40.294Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 5c116175
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence (e.g., "Fair enough if you haven't worked with that directly", "I see your answer didn't quite cover the scaling aspect").
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. NEVER output markdown labels like "**Evaluation:**" or "**Next Question:**".
+> 5. Keep your total response under 60 words (3-4 sentences max).
+> 6. Ask sharp, concrete technical questions focused on system architecture, data engineering, or production trade-offs. Max 2 sentences for the question.
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Strong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone
+> Weak areas: LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Target Curriculum Focus: "Production & Capstone" (intermediate level)
+> User: Ask your first technical question directly to Sarah Johnson ("you") about "Production & Capstone". Focus on concrete system architecture or trade-offs. Speak in second-person. Under 60 words total. No fluff.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mskc2g8b. Topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.162441152,
+    "prompt_tokens": 397,
+    "prompt_time": 0.02834527,
+    "completion_tokens": 31,
+    "completion_time": 0.127985449,
+    "total_tokens": 428,
+    "total_time": 0.156330719
+  },
+  "reply": "You've completed 30 missions, now consider a production-ready chatbot: how would you design its architecture to handle 10,000 concurrent users?"
+}
+```
+---
+
+## [2026-08-08T12:39:48.852Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** c1c64f70
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskczzr2","CAND-001"],"metadata":{"sessionId":"sess-mskczzr2","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192782674",
+  "extracted": {
+    "entities": 11,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "a0e940acdb4a",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:39:52.017Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 57c1eb17
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskczzr2","CAND-001"],"metadata":{"sessionId":"sess-mskczzr2","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192781289",
+  "extracted": {
+    "entities": 11,
+    "edges": 15
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "e4cb2d8ae82e",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:39:58.763Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 6c9b6582
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192782941",
+  "extracted": {
+    "entities": 11,
+    "edges": 7
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "1fbbc2cc8ccc",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T12:39:59.696Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 3b17cbb0
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas: LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-mskc2g8b","CAND-001"],"metadata":{"sessionId":"sess-mskc2g8b","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786192782940",
+  "extracted": {
+    "entities": 11,
+    "edges": 5
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "a13cd1c412a3",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
