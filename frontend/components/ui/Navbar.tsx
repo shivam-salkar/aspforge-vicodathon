@@ -29,7 +29,7 @@ export function Navbar() {
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
           <img
-            src="/logo.png"
+            src="/abtalks_logo.png"
             alt="AB TALKS Logo"
             className="w-10 h-10 sm:w-11 sm:h-11 object-contain group-hover:scale-105 transition-transform"
           />

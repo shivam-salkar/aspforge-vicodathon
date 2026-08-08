@@ -440,7 +440,7 @@ export default function LandingPage() {
       {/* Extended Footer matching spec */}
       <footer className="border-t border-white/10 py-10 px-6 max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
         <p className="text-center sm:text-left flex items-center gap-2">
-          <img src="/logo.png" alt="AB TALKS Logo" className="w-5 h-5 object-contain" />
+          <img src="/abtalks_logo.png" alt="AB TALKS Logo" className="w-5 h-5 object-contain" />
           <span><strong className="text-gray-300 font-bold">ABTalks InterviewOS</strong> © 2026 ABTalks InterviewOS. The pro-grade technical interview platform.</span>
         </p>
 
