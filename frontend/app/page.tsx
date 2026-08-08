@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/ui/Navbar';
 import { ConsoleDemoWindow } from '@/components/ui/ConsoleDemoWindow';
@@ -22,12 +22,47 @@ import {
 
 export default function LandingPage() {
   const router = useRouter();
-  const [candidateIdInput, setCandidateIdInput] = useState('CAND-001');
+  const [otp, setOtp] = useState<string[]>(['0', '0', '1']);
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
+
+  const handleOtpChange = (index: number, value: string) => {
+    const char = value.slice(-1).toUpperCase();
+    const newOtp = [...otp];
+    newOtp[index] = char;
+    setOtp(newOtp);
+
+    if (char && index < 2) {
+      inputRefs.current[index + 1]?.focus();
+    }
+  };
+
+  const handleOtpKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Backspace' && !otp[index] && index > 0) {
+      inputRefs.current[index - 1]?.focus();
+    }
+  };
+
+  const handleOtpPaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const pasted = e.clipboardData.getData('text').trim().toUpperCase();
+    const digitsOnly = pasted.replace(/^CAND-?/, '').replace(/[^A-Z0-9]/g, '');
+    if (digitsOnly.length > 0) {
+      const chars = digitsOnly.slice(0, 3).split('');
+      const newOtp = [...otp];
+      chars.forEach((c, idx) => {
+        if (idx < 3) newOtp[idx] = c;
+      });
+      setOtp(newOtp);
+      const focusIndex = Math.min(chars.length, 2);
+      inputRefs.current[focusIndex]?.focus();
+    }
+  };
 
   const handleVerifyCandidate = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!candidateIdInput.trim()) return;
-    const formatted = candidateIdInput.trim().toUpperCase();
+    const code = otp.join('').trim().toUpperCase();
+    if (!code) return;
+    const formatted = `CAND-${code.padStart(3, '0')}`;
     router.push(`/profile/${formatted}`);
   };
 
@@ -93,23 +128,34 @@ export default function LandingPage() {
               <span className="text-xs font-bold text-white uppercase tracking-wider">Candidate Verification</span>
             </div>
 
-            <form onSubmit={handleVerifyCandidate} className="flex flex-col sm:flex-row gap-3">
-              <div className="relative flex-1">
-                <input
-                  type="text"
-                  value={candidateIdInput}
-                  onChange={(e) => setCandidateIdInput(e.target.value)}
-                  placeholder="Enter Candidate ID (e.g. CAND-001)"
-                  className="w-full glass-input px-4 py-3 text-sm font-semibold uppercase tracking-wider"
-                />
-                <span className="absolute right-3 top-3 text-[10px] font-mono text-gray-400 bg-white/5 px-2 py-0.5 rounded border border-white/10">
+            <form onSubmit={handleVerifyCandidate} className="flex flex-col sm:flex-row items-center gap-3">
+              <div className="flex items-center gap-2 glass-input px-4 py-2.5 rounded-xl border border-white/10 w-full sm:w-auto flex-1">
+                <span className="font-mono font-black text-blue-400 text-base tracking-wider select-none shrink-0">
+                  CAND-
+                </span>
+                <div className="flex items-center gap-2">
+                  {otp.map((digit, idx) => (
+                    <input
+                      key={idx}
+                      ref={(el) => { inputRefs.current[idx] = el; }}
+                      type="text"
+                      maxLength={1}
+                      value={digit}
+                      onChange={(e) => handleOtpChange(idx, e.target.value)}
+                      onKeyDown={(e) => handleOtpKeyDown(idx, e)}
+                      onPaste={handleOtpPaste}
+                      className="w-10 h-10 text-center text-lg font-mono font-bold uppercase bg-white/5 border border-white/15 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 transition-all"
+                    />
+                  ))}
+                </div>
+                <span className="ml-auto text-[10px] font-mono text-gray-400 bg-white/5 px-2 py-0.5 rounded border border-white/10 hidden sm:inline-block">
                   VERIFIED
                 </span>
               </div>
 
               <button
                 type="submit"
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white text-xs font-bold shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 transition-all hover:scale-[1.02] shrink-0"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white text-xs font-bold shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 transition-all hover:scale-[1.02] shrink-0"
               >
                 <span>Start Interview</span>
                 <ArrowRight className="w-4 h-4" />
@@ -117,7 +163,7 @@ export default function LandingPage() {
             </form>
 
             <p className="text-[11px] text-gray-400 mt-3 text-left">
-              Try test candidate IDs: <button type="button" onClick={() => setCandidateIdInput('CAND-001')} className="text-blue-400 font-mono hover:underline font-bold">CAND-001</button> (Sarah Johnson), <button type="button" onClick={() => setCandidateIdInput('CAND-002')} className="text-blue-400 font-mono hover:underline font-bold">CAND-002</button> (Alex Turner), or <button type="button" onClick={() => setCandidateIdInput('CAND-003')} className="text-blue-400 font-mono hover:underline font-bold">CAND-003</button> (Emily Chen).
+              Try test candidate IDs: <button type="button" onClick={() => setOtp(['0', '0', '1'])} className="text-blue-400 font-mono hover:underline font-bold">CAND-001</button> (Sarah Johnson), <button type="button" onClick={() => setOtp(['0', '0', '2'])} className="text-blue-400 font-mono hover:underline font-bold">CAND-002</button> (Alex Turner), or <button type="button" onClick={() => setOtp(['0', '0', '3'])} className="text-blue-400 font-mono hover:underline font-bold">CAND-003</button> (Emily Chen).
             </p>
           </div>
         </div>
