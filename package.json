@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "tsx src/index.ts",
     "server": "tsx src/server.ts",
+    "test:api": "tsx src/testInterviewApi.ts",
     "build": "tsc"
   },
   "dependencies": {

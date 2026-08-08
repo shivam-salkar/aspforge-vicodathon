@@ -961,3 +961,2374 @@ Turn 4. Evaluated answer on "LLM Core, Prompting & Fine-Tuning". Next topic: "En
 }
 ```
 ---
+
+## [2026-08-08T06:02:12.606Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** c4c76267
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes, 28/31 commit days\nStrong areas: Embeddings & Vector Search, Production & Capstone\nWeak areas (multiple attempts): LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","test-run-1786168922527","CAND-001"],"metadata":{"sessionId":"test-run-1786168922527","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786168924357",
+  "extracted": {
+    "entities": 12,
+    "edges": 6
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "2369f8222ee7",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:02:13.662Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** a0868765
+
+### 1. User Prompt / Intent
+> System: You are an expert AI technical interviewer for the ABTalks AI Cohort program. You are conducting a personalized technical assessment interview.
+> 
+> Your interview rules:
+> - Be professional, encouraging, and precise.
+> - Ask one clear technical question at a time.
+> - Ground your questions in the 31-day AI curriculum the candidate completed.
+> - Start with topics where the candidate showed weakness or skipped content.
+> - Adjust difficulty based on answers.
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes, 28/31 commit days
+> Strong areas: Embeddings & Vector Search, Production & Capstone
+> Weak areas (multiple attempts): LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Curriculum modules: Environment & Tooling, Data Foundations, Embeddings & Vector Search, LLM Core, Prompting & Fine-Tuning, Chatbot Application Build, Agentic AI & MCP, Evaluation, Security & Deployment, Production & Capstone
+> User: Start the interview with Sarah Johnson. Introduce yourself briefly, acknowledge their background as a Senior Data Engineer, and ask your first intermediate technical question about "Production & Capstone".
+
+### 2. AI Reasoning & Strategy
+Initialized session test-run-1786168922527. First topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161202118,
+    "prompt_tokens": 296,
+    "prompt_time": 0.014359177,
+    "completion_tokens": 182,
+    "completion_time": 0.687635338,
+    "total_tokens": 478,
+    "total_time": 0.701994515
+  },
+  "reply": "Good morning Sarah, I'm your technical interviewer for the ABTalks AI Cohort program. With a background as a Senior Data Engineer and an MS in Computer Science, I'm looking forward to discussing your knowledge and experience in the AI domain. \n\nI've reviewed your progress through the 31-day AI curriculum, and I noticed you completed most of the modules, although you mentioned skipping the \"Production & Capstone\" topic. Given your strong foundation in data engineering, I'd like to explore how you would approach deploying an AI model in a production environment.\n\nHere's a question to get us started: Suppose you're tasked with deploying a machine learning model as a RESTful API using Docker and Kubernetes. How would you design the containerization and orchestration process to ensure scalability, reliability, and monitoring of the model's performance in production? Please walk me through your thought process and any relevant technical details."
+}
+```
+---
+
+## [2026-08-08T06:02:17.742Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** ed5740fb
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Candidate Answer","content":"Topic: Production & Capstone\nCandidate Answer: I chose vector search using cosine similarity because standard keyword search could not capture semantic query intent and contextual variations.","tags":["interview-turn","test-run-1786168922527","CAND-001"],"metadata":{"sessionId":"test-run-1786168922527","turn":2,"topic":"Production & Capstone"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786168934419",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "18684d33b290",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": {
+    "should_extract": true,
+    "confidence": 0.9,
+    "reason": "User states a clear decision and rationale for using vector search over keyword search, revealing intent."
+  }
+}
+```
+---
+
+## [2026-08-08T06:02:22.497Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 1c7fccea
+
+### 1. User Prompt / Intent
+> {"query":"Production & Capstone I chose vector search using cosine similarity because standard keyword search could not capture semantic query intent and contextual variations.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "468da6cd-5f9e-495c-b4d2-432fb9b52d87",
+      "source_node": "f1c4756c-47c1-46be-ad3b-966f7d591fb6",
+      "target_node": "50b1dbbb-436d-4101-8f28-3e5e77295c5d",
+      "fact": "Using GPU runtime base images like NVIDIA CUDA",
+      "name": "PROVIDES",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "063615aa-076d-481d-8b57-3968d0a860db",
+      "source_node": "65deb503-9e93-4579-abe8-01c2a9ab1811",
+      "target_node": "c7424dd6-6285-48e7-a6fa-752ea3f13c30",
+      "fact": "Optimization uses gunicorn/uvicorn with worker pools and asynchronous endpoints",
+      "name": "USES",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "aba9d95a-fdf2-443c-845f-f8c2358c6f8c",
+      "source_node": "65deb503-9e93-4579-abe8-01c2a9ab1811",
+      "target_node": "cf2942c8-6b53-4613-a259-6f2b9b1a100a",
+      "fact": "Optimization uses gunicorn/uvicorn with worker pools and asynchronous endpoints",
+      "name": "USES",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:02:23.213Z] - Interview Turn 2: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 837602e6
+
+### 1. User Prompt / Intent
+> Candidate answered: "I chose vector search using cosine similarity because standard keyword search could not capture semantic query intent and contextual variations...."
+
+### 2. AI Reasoning & Strategy
+Turn 2. Evaluated answer on "Production & Capstone". Next topic: "LLM Core, Prompting & Fine-Tuning". Topics covered: 1. Interviewer questions: 1.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161537283,
+    "prompt_tokens": 857,
+    "prompt_time": 0.046514275,
+    "completion_tokens": 141,
+    "completion_time": 0.396534914,
+    "total_tokens": 998,
+    "total_time": 0.443049189
+  },
+  "reply": "**Evaluation:** Incorrect. The candidate's answer does not address the question about deploying a machine learning model as a RESTful API using Docker and Kubernetes, and instead discusses vector search using cosine similarity, which is unrelated to the question asked.\n\n**Next Question:** Let's move on to the topic of LLM Core, Prompting & Fine-Tuning. Suppose you're working with a large language model (LLM) and you want to fine-tune it for a specific task, such as sentiment analysis. What are s"
+}
+```
+---
+
+## [2026-08-08T06:02:30.135Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** a6017aa1
+
+### 1. User Prompt / Intent
+> {"title":"Turn 4 — Candidate Answer","content":"Topic: LLM Core, Prompting & Fine-Tuning\nCandidate Answer: For document chunking, we implemented parent-document retrieval to preserve broad section context while performing fine-grained vector embedding matching.","tags":["interview-turn","test-run-1786168922527","CAND-001"],"metadata":{"sessionId":"test-run-1786168922527","turn":4,"topic":"LLM Core, Prompting & Fine-Tuning"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786168943938",
+  "extracted": {
+    "entities": 6,
+    "edges": 4
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "bff0ae638ee2",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:02:32.736Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 98b5d6a0
+
+### 1. User Prompt / Intent
+> {"query":"LLM Core, Prompting & Fine-Tuning For document chunking, we implemented parent-document retrieval to preserve broad section context while performing fine-grained vector embedding matching.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "739c3aa2-b2c1-49d8-b2b5-83d02803ce58",
+      "source_node": "e27563cc-b7b0-4434-aee6-e0e89afeba6a",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "perform fine-grained vector embedding matching",
+      "name": "CARRIES_OUT",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "48ec1c5d-0887-498e-aaaf-3872cbd4d702",
+      "source_node": "e27563cc-b7b0-4434-aee6-e0e89afeba6a",
+      "target_node": "59f1d672-9ff8-4f19-9326-082342cb4c3b",
+      "fact": "preserves broad section context",
+      "name": "USED_FOR",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "27b248b0-5e3d-4d2a-be16-7624d7662ecf",
+      "source_node": "59f1d672-9ff8-4f19-9326-082342cb4c3b",
+      "target_node": "a66b1cb0-e753-4e29-bc01-5ec549d458da",
+      "fact": "stores broad section context",
+      "name": "PRESERVES",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:02:33.454Z] - Interview Turn 4: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** dca003a1
+
+### 1. User Prompt / Intent
+> Candidate answered: "For document chunking, we implemented parent-document retrieval to preserve broad section context while performing fine-grained vector embedding matching...."
+
+### 2. AI Reasoning & Strategy
+Turn 4. Evaluated answer on "LLM Core, Prompting & Fine-Tuning". Next topic: "Environment & Tooling". Topics covered: 2. Interviewer questions: 2.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.05191354,
+    "prompt_tokens": 1019,
+    "prompt_time": 0.1584389,
+    "completion_tokens": 157,
+    "completion_time": 0.456531961,
+    "total_tokens": 1176,
+    "total_time": 0.614970861
+  },
+  "reply": "**Evaluation:** Incorrect. The candidate's answer does not address the question about designing a prompting strategy for fine-tuning a large language model for sentiment analysis, and instead discusses document chunking and vector embedding matching, which is unrelated to the question asked.\n\n**Next Question:** Let's move on to the topic of Environment & Tooling. Suppose you're tasked with setting up a development environment for a team of AI engineers working on a project that involves training"
+}
+```
+---
+
+## [2026-08-08T06:02:39.291Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 9d969aa8
+
+### 1. User Prompt / Intent
+> {"title":"Turn 6 — Candidate Answer","content":"Topic: Environment & Tooling\nCandidate Answer: We enforced strict JSON output schemas using Pydantic models in Python during function calling and tool execution.","tags":["interview-turn","test-run-1786168922527","CAND-001"],"metadata":{"sessionId":"test-run-1786168922527","turn":6,"topic":"Environment & Tooling"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786168954423",
+  "extracted": {
+    "entities": 4,
+    "edges": 1
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "354a12023929",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:02:41.614Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** d9f14f76
+
+### 1. User Prompt / Intent
+> {"query":"Environment & Tooling We enforced strict JSON output schemas using Pydantic models in Python during function calling and tool execution.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "0f0c2c87-d820-4118-8341-756c5d267c6e",
+      "source_node": "bc39a001-fd2a-48fe-9292-12cb5eec3e82",
+      "target_node": "f69fbaa9-247d-45c8-85b6-59c23cb72afe",
+      "fact": "We enforced strict JSON output schemas using Pydantic models in Python during function calling and tool execution",
+      "name": "ENFORCES",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "468da6cd-5f9e-495c-b4d2-432fb9b52d87",
+      "source_node": "f1c4756c-47c1-46be-ad3b-966f7d591fb6",
+      "target_node": "50b1dbbb-436d-4101-8f28-3e5e77295c5d",
+      "fact": "Using GPU runtime base images like NVIDIA CUDA",
+      "name": "PROVIDES",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c8548b40-fed1-4788-9edd-091e11d0d44a",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "c710d4c0-b2aa-4190-8667-b6a737a19370",
+      "fact": "is a Senior Data Engineer with 9 years of experience and an MS in Computer Science",
+      "name": "OCCUPATION",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:02:42.364Z] - Interview Turn 6: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** bd9fd9a3
+
+### 1. User Prompt / Intent
+> Candidate answered: "We enforced strict JSON output schemas using Pydantic models in Python during function calling and tool execution...."
+
+### 2. AI Reasoning & Strategy
+Turn 6. Evaluated answer on "Environment & Tooling". Next topic: "Data Foundations". Topics covered: 3. Interviewer questions: 3.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.050615142,
+    "prompt_tokens": 1227,
+    "prompt_time": 0.065326628,
+    "completion_tokens": 143,
+    "completion_time": 0.414358271,
+    "total_tokens": 1370,
+    "total_time": 0.479684899
+  },
+  "reply": "**Evaluation:** Incorrect. The candidate's answer does not address the question about selecting a cloud-based platform or service for a team of AI engineers, and instead discusses enforcing strict JSON output schemas using Pydantic models in Python, which is unrelated to the question asked.\n\n**Next Question:** Suppose you're working on a project that involves integrating multiple data sources, including structured and unstructured data, to train a machine learning model. How would you design a d"
+}
+```
+---
+
+## [2026-08-08T06:02:47.891Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** ef1ab57b
+
+### 1. User Prompt / Intent
+> {"title":"Turn 8 — Candidate Answer","content":"Topic: Data Foundations\nCandidate Answer: When MCP tool connections drop, we implement exponential backoff retries and fallback to local cached memory state.","tags":["interview-turn","test-run-1786168922527","CAND-001"],"metadata":{"sessionId":"test-run-1786168922527","turn":8,"topic":"Data Foundations"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786168963059",
+  "extracted": {
+    "entities": 3,
+    "edges": 2
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "c948aa275c77",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:02:50.613Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 7bd88752
+
+### 1. User Prompt / Intent
+> {"query":"Data Foundations When MCP tool connections drop, we implement exponential backoff retries and fallback to local cached memory state.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "48cf48c9-c2d1-46fa-8166-e52fb464dead",
+      "source_node": "bc39a001-fd2a-48fe-9292-12cb5eec3e82",
+      "target_node": "af132013-d09f-48aa-aae4-e67df23cfc74",
+      "fact": "When MCP tool connections drop, we implement exponential backoff retries and fallback to local cached memory state.",
+      "name": "FALLBACKS_TO",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9bfcf466-dec8-46e0-8ca3-ecf32881ccfc",
+      "source_node": "bc39a001-fd2a-48fe-9292-12cb5eec3e82",
+      "target_node": "f21b3e22-713e-4f9b-b3cc-3fe3aef46f08",
+      "fact": "When MCP tool connections drop, we implement exponential backoff retries and fallback to local cached memory state.",
+      "name": "FALLBACK_TO",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "0f0c2c87-d820-4118-8341-756c5d267c6e",
+      "source_node": "bc39a001-fd2a-48fe-9292-12cb5eec3e82",
+      "target_node": "f69fbaa9-247d-45c8-85b6-59c23cb72afe",
+      "fact": "We enforced strict JSON output schemas using Pydantic models in Python during function calling and tool execution",
+      "name": "ENFORCES",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:02:51.274Z] - Interview Turn 8: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** d15b2fa7
+
+### 1. User Prompt / Intent
+> Candidate answered: "When MCP tool connections drop, we implement exponential backoff retries and fallback to local cached memory state...."
+
+### 2. AI Reasoning & Strategy
+Turn 8. Evaluated answer on "Data Foundations". Next topic: "Embeddings & Vector Search". Topics covered: 4. Interviewer questions: 4.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.051749904,
+    "prompt_tokens": 1411,
+    "prompt_time": 0.079348346,
+    "completion_tokens": 149,
+    "completion_time": 0.493670206,
+    "total_tokens": 1560,
+    "total_time": 0.573018552
+  },
+  "reply": "**Evaluation:** Incorrect. The candidate's answer does not address the question about designing a data ingestion pipeline to handle diverse data formats and sources, and instead discusses a strategy for handling dropped tool connections, which is unrelated to the question asked.\n\n**Next Question:** Suppose you're working on a project that involves using embeddings and vector search to enable semantic search capabilities in a large corpus of text documents. How would you approach selecting a suit"
+}
+```
+---
+
+## [2026-08-08T06:02:55.573Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** af2698db
+
+### 1. User Prompt / Intent
+> {"title":"Turn 10 — Candidate Answer","content":"Topic: Embeddings & Vector Search\nCandidate Answer: We used ChromaDB for local vector search prototyping and Pinecone for production cloud-scale indexing.","tags":["interview-turn","test-run-1786168922527","CAND-001"],"metadata":{"sessionId":"test-run-1786168922527","turn":10,"topic":"Embeddings & Vector Search"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786168971946",
+  "extracted": {
+    "entities": 2,
+    "edges": 1
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "2c440936820f",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:02:57.418Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** cc3e16db
+
+### 1. User Prompt / Intent
+> {"query":"Embeddings & Vector Search We used ChromaDB for local vector search prototyping and Pinecone for production cloud-scale indexing.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "fdf1d289-3d3c-4ec5-b8ba-3ebe0057d5b2",
+      "source_node": "192cbf09-40fb-4feb-b2bd-aa9171f38d5b",
+      "target_node": "92c8efff-3c52-4039-a74d-87d7b40500d4",
+      "fact": "ChromaDB was used for local vector search prototyping and Pinecone was used for production cloud-scale indexing",
+      "name": "USED_FOR",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "70819b2f-b696-427f-ba02-75d372eef683",
+      "source_node": "817d4da4-5768-400a-bfae-3e0057e95230",
+      "target_node": "192cbf09-40fb-4feb-b2bd-aa9171f38d5b",
+      "fact": "used sentence transformers for chunk embeddings stored in chromadb",
+      "name": "USED_FOR",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "739c3aa2-b2c1-49d8-b2b5-83d02803ce58",
+      "source_node": "e27563cc-b7b0-4434-aee6-e0e89afeba6a",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "perform fine-grained vector embedding matching",
+      "name": "CARRIES_OUT",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:02:58.207Z] - Interview Turn 10: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 4b75a13f
+
+### 1. User Prompt / Intent
+> Candidate answered: "We used ChromaDB for local vector search prototyping and Pinecone for production cloud-scale indexing...."
+
+### 2. AI Reasoning & Strategy
+Turn 10. Evaluated answer on "Embeddings & Vector Search". Next topic: "Chatbot Application Build". Topics covered: 5. Interviewer questions: 5.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.058529971,
+    "prompt_tokens": 1570,
+    "prompt_time": 0.088410728,
+    "completion_tokens": 174,
+    "completion_time": 0.61089202,
+    "total_tokens": 1744,
+    "total_time": 0.699302748
+  },
+  "reply": "**Evaluation:** Correct. The candidate's answer directly addresses the question about using embeddings and vector search for semantic search capabilities, and they provide specific examples of tools they used for local prototyping (ChromaDB) and production indexing (Pinecone), which demonstrates relevant experience and knowledge in this area.\n\n**Next Question:** Suppose you're tasked with building a conversational AI chatbot application that integrates with a large language model (LLM) to genera"
+}
+```
+---
+
+## [2026-08-08T06:03:03.665Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 863ac606
+
+### 1. User Prompt / Intent
+> {"title":"Turn 6 — Candidate Answer","content":"Topic: Environment & Tooling\nCandidate Answer: We used Sentence Transformers for chunk embeddings and stored them in ChromaDB.","tags":["interview-turn","test-session-001","CAND-001"],"metadata":{"sessionId":"test-session-001","turn":6,"topic":"Environment & Tooling"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786168979575",
+  "extracted": {
+    "entities": 2,
+    "edges": 1
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "76d8c8fb9caf",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:03:04.610Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 9de9596a
+
+### 1. User Prompt / Intent
+> {"title":"Turn 12 — Candidate Answer","content":"Topic: Chatbot Application Build\nCandidate Answer: For system observability, we logged latency, token consumption, and model outputs using structured JSON logs.","tags":["interview-turn","test-run-1786168922527","CAND-001"],"metadata":{"sessionId":"test-run-1786168922527","turn":12,"topic":"Chatbot Application Build"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786168980476",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "84b499a16127",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:03:07.041Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 52bea4ce
+
+### 1. User Prompt / Intent
+> {"query":"Chatbot Application Build For system observability, we logged latency, token consumption, and model outputs using structured JSON logs.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "0f0c2c87-d820-4118-8341-756c5d267c6e",
+      "source_node": "bc39a001-fd2a-48fe-9292-12cb5eec3e82",
+      "target_node": "f69fbaa9-247d-45c8-85b6-59c23cb72afe",
+      "fact": "We enforced strict JSON output schemas using Pydantic models in Python during function calling and tool execution",
+      "name": "ENFORCES",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9bfcf466-dec8-46e0-8ca3-ecf32881ccfc",
+      "source_node": "bc39a001-fd2a-48fe-9292-12cb5eec3e82",
+      "target_node": "f21b3e22-713e-4f9b-b3cc-3fe3aef46f08",
+      "fact": "When MCP tool connections drop, we implement exponential backoff retries and fallback to local cached memory state.",
+      "name": "FALLBACK_TO",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "48cf48c9-c2d1-46fa-8166-e52fb464dead",
+      "source_node": "bc39a001-fd2a-48fe-9292-12cb5eec3e82",
+      "target_node": "af132013-d09f-48aa-aae4-e67df23cfc74",
+      "fact": "When MCP tool connections drop, we implement exponential backoff retries and fallback to local cached memory state.",
+      "name": "FALLBACKS_TO",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:03:07.052Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** e015e702
+
+### 1. User Prompt / Intent
+> {"query":"Environment & Tooling We used Sentence Transformers for chunk embeddings and stored them in ChromaDB.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "70819b2f-b696-427f-ba02-75d372eef683",
+      "source_node": "817d4da4-5768-400a-bfae-3e0057e95230",
+      "target_node": "192cbf09-40fb-4feb-b2bd-aa9171f38d5b",
+      "fact": "used sentence transformers for chunk embeddings stored in chromadb",
+      "name": "USED_FOR",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "d5de8b2a-344c-4617-99cf-64ddf5becf4e",
+      "source_node": "817d4da4-5768-400a-bfae-3e0057e95230",
+      "target_node": "192cbf09-40fb-4feb-b2bd-aa9171f38d5b",
+      "fact": "Sentence Transformers for chunk embeddings stored in ChromaDB",
+      "name": "USED_FOR",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "fdf1d289-3d3c-4ec5-b8ba-3ebe0057d5b2",
+      "source_node": "192cbf09-40fb-4feb-b2bd-aa9171f38d5b",
+      "target_node": "92c8efff-3c52-4039-a74d-87d7b40500d4",
+      "fact": "ChromaDB was used for local vector search prototyping and Pinecone was used for production cloud-scale indexing",
+      "name": "USED_FOR",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:03:07.712Z] - Interview Turn 6: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** f62961ff
+
+### 1. User Prompt / Intent
+> Candidate answered: "We used Sentence Transformers for chunk embeddings and stored them in ChromaDB...."
+
+### 2. AI Reasoning & Strategy
+Turn 6. Evaluated answer on "Environment & Tooling". Next topic: "Data Foundations". Topics covered: 3. Interviewer questions: 3.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.05895866,
+    "prompt_tokens": 1318,
+    "prompt_time": 0.070963999,
+    "completion_tokens": 198,
+    "completion_time": 0.503293061,
+    "total_tokens": 1516,
+    "total_time": 0.57425706
+  },
+  "reply": "**Evaluation:** The candidate's answer is incorrect, as it fails to address the question about the trade-offs between cloud-based platforms and self-managed environments for deploying and managing AI pipelines. Instead, the candidate repeats a previous response about using Sentence Transformers for chunk embeddings and storing them in ChromaDB, which is not relevant to the question being asked.\n\n**Next Question:** Let's dive into the topic of Data Foundations, a fundamental aspect of AI developm"
+}
+```
+---
+
+## [2026-08-08T06:03:07.776Z] - Interview Turn 12: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 78e3386a
+
+### 1. User Prompt / Intent
+> Candidate answered: "For system observability, we logged latency, token consumption, and model outputs using structured JSON logs...."
+
+### 2. AI Reasoning & Strategy
+Turn 12. Evaluated answer on "Chatbot Application Build". Next topic: "Agentic AI & MCP". Topics covered: 6. Interviewer questions: 6.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.059333487,
+    "prompt_tokens": 1793,
+    "prompt_time": 0.184949461,
+    "completion_tokens": 170,
+    "completion_time": 0.459616319,
+    "total_tokens": 1963,
+    "total_time": 0.64456578
+  },
+  "reply": "**Evaluation:** Incorrect. The candidate's answer does not address the question about designing a chatbot's dialogue management system, and instead discusses logging latency, token consumption, and model outputs for system observability, which is unrelated to the question asked.\n\n**Next Question:** Suppose you're working on a project that involves developing an Agentic AI system that interacts with a Multi-Component Pipeline (MCP) to achieve a specific goal. How would you design the AI agent's d"
+}
+```
+---
+
+## [2026-08-08T06:03:17.964Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 2cc25310
+
+### 1. User Prompt / Intent
+> {"title":"Turn 14 — Candidate Answer","content":"Topic: Agentic AI & MCP\nCandidate Answer: We containerized our FastAPI backend with Docker and deployed it onto Kubernetes with health check probes.","tags":["interview-turn","test-run-1786168922527","CAND-001"],"metadata":{"sessionId":"test-run-1786168922527","turn":14,"topic":"Agentic AI & MCP"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786168988498",
+  "extracted": {
+    "entities": 4,
+    "edges": 3
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "c4f192d4d62b",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:03:20.286Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** a53c572e
+
+### 1. User Prompt / Intent
+> {"query":"Agentic AI & MCP We containerized our FastAPI backend with Docker and deployed it onto Kubernetes with health check probes.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "17b2b617-04a4-44e5-a687-c29b6401cf2f",
+      "source_node": "ae92d005-b842-4930-9b55-6b7f97e49f76",
+      "target_node": "65deb503-9e93-4579-abe8-01c2a9ab1811",
+      "fact": "containerized FastAPI backend",
+      "name": "CONTAINERS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "93bbd345-74cf-4b69-8922-66b15e6e0c52",
+      "source_node": "65deb503-9e93-4579-abe8-01c2a9ab1811",
+      "target_node": "952eaeb1-c468-42f7-b078-d05aab8be025",
+      "fact": "deployed with health check probes",
+      "name": "USED_WITH",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "11259577-f41a-49c2-8ba4-0c069c43c0d1",
+      "source_node": "ae92d005-b842-4930-9b55-6b7f97e49f76",
+      "target_node": "7d9dbd44-dd6a-4ed3-bb04-20e85110f1f1",
+      "fact": "deployed onto Kubernetes",
+      "name": "DEPLOYED_ON",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:03:21.275Z] - Interview Turn 14: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 7a210d3e
+
+### 1. User Prompt / Intent
+> Candidate answered: "We containerized our FastAPI backend with Docker and deployed it onto Kubernetes with health check probes...."
+
+### 2. AI Reasoning & Strategy
+Turn 14. Evaluated answer on "Agentic AI & MCP". Next topic: "Evaluation, Security & Deployment". Topics covered: 7. Interviewer questions: 7.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161784286,
+    "prompt_tokens": 1948,
+    "prompt_time": 0.245189494,
+    "completion_tokens": 185,
+    "completion_time": 0.492256932,
+    "total_tokens": 2133,
+    "total_time": 0.737446426
+  },
+  "reply": "**Evaluation:** Correct. The candidate's answer directly addresses the question about developing an Agentic AI system that interacts with a Multi-Component Pipeline (MCP), and they provide specific examples of containerizing their FastAPI backend with Docker and deploying it onto Kubernetes with health check probes, which demonstrates relevant experience and knowledge in this area.\n\n**Next Question:** Suppose you're tasked with deploying a machine learning model in a production environment, and "
+}
+```
+---
+
+## [2026-08-08T06:03:31.117Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 7b6c90aa
+
+### 1. User Prompt / Intent
+> {"title":"Turn 16 — Candidate Answer","content":"Topic: Evaluation, Security & Deployment\nCandidate Answer: For our capstone project, we integrated RAG, multi-agent orchestration via CrewAI, and episodic memory persistence with Breeth AI.","tags":["interview-turn","test-run-1786168922527","CAND-001"],"metadata":{"sessionId":"test-run-1786168922527","turn":16,"topic":"Evaluation, Security & Deployment"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786169002090",
+  "extracted": {
+    "entities": 7,
+    "edges": 6
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "49eea7c18a48",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:03:34.555Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** e16b6fe3
+
+### 1. User Prompt / Intent
+> {"query":"interview evaluation Sarah Johnson","limit":10}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "b9387560-a481-487b-b154-a2a063bc256a",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "c710d4c0-b2aa-4190-8667-b6a737a19370",
+      "fact": "Sarah Johnson HAS_ROLE Senior Data Engineer",
+      "name": "HAS_ROLE",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9be74604-67e8-4636-ac0c-b54ac372cccd",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "465ddc0f-9dff-46a7-9933-24bb0d8bb06a",
+      "fact": "Sarah Johnson holds a master of science in computer science",
+      "name": "EDUCATED_AT",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "d0077d0d-cdce-482c-a378-63f6abbe61dc",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "7ecc5eab-5504-4518-aaaa-a7ca9c04e195",
+      "fact": "Sarah Johnson HAS_EXPERIENCE Experience: 9 years",
+      "name": "HAS_EXPERIENCE",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "91d87b46-86d6-4fd9-8e89-8f8c3d0c62fe",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "32dc1fc0-69bc-473d-b4ea-8d0c2e36e9ba",
+      "fact": "Sarah Johnson HAS_COUNT 20 first-try passes",
+      "name": "HAS_COUNT",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "370552d1-b5d1-4563-a65a-6b2fd4e36228",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "c710d4c0-b2aa-4190-8667-b6a737a19370",
+      "fact": "Sarah Johnson is a senior data engineer with nine years of experience",
+      "name": "WORKS_AS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "73b6cdad-a78e-4e24-9db3-62f08f031809",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "0897d2df-338a-4b38-9243-ad280581899c",
+      "fact": "Sarah Johnson HAS_PROGRESS 30 missions completed out of 31",
+      "name": "HAS_PROGRESS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "7ccefcbb-7469-4c35-9ec4-138bd951794a",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "c7995d63-d43e-49d8-9331-f311017f008e",
+      "fact": "Sarah Johnson has completed thirty out of thirty-one missions and achieved twenty first try passes and twenty eight out of thirty one commit days",
+      "name": "PROGRESSES_THROUGH",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "da4b7c1a-afde-4aa5-b2c4-a3c7018ae83b",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "a11bf421-1b80-4ca4-bbb4-9bbaf362606f",
+      "fact": "Sarah Johnson HAS_COUNT 28 commit days out of 31",
+      "name": "HAS_COUNT",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 8,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:03:35.916Z] - Interview Feedback: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 249f7611
+
+### 1. User Prompt / Intent
+> Generate final feedback for session test-run-1786168922527
+
+### 2. AI Reasoning & Strategy
+Synthesized 16 turns across 8 topics. Weak: [Production & Capstone, LLM Core, Prompting & Fine-Tuning, Environment & Tooling, Data Foundations, Chatbot Application Build]. Strong: [Embeddings & Vector Search, Agentic AI & MCP].
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.059191967,
+    "prompt_tokens": 2737,
+    "prompt_time": 0.245982692,
+    "completion_tokens": 255,
+    "completion_time": 0.994638059,
+    "total_tokens": 2992,
+    "total_time": 1.240620751
+  },
+  "rawFeedback": "{\n  \"summary\": \"Sarah Johnson, a Senior Data Engineer with 9 years of experience, demonstrated strengths in areas like Embeddings & Vector Search and Agentic AI & MCP, but showed significant gaps in understanding and applying concepts related to LLM Core, Prompting & Fine-Tuning, Production & Capstone, and other critical areas, indicating a need for focused improvement and review of fundamental AI concepts and practices. Despite her strong background, the candidate struggled to address many questions directly, often providing unrelated or tangential responses. Overall, while Sarah has a solid foundation in certain aspects of AI, her performance highlights the need for broader and deeper knowledge across the AI domain.\",\n  \"strengths\": [\"Embeddings & Vector Search\", \"Agentic AI & MCP\", \"Experience with containerization using Docker and deployment on Kubernetes\"],\n  \"gaps\": [\"LLM Core\", \"Prompting & Fine-Tuning\", \"Production & Capstone\", \"Data Foundations\", \"Chatbot Application Build\", \"Environment & Tooling\"],\n  \"next\": [\"Review and practice fundamental AI concepts, especially in weak areas\", \"Focus on improving ability to directly address questions and provide relevant responses\", \"Gain more hands-on experience with a wider range of AI tools and technologies\"]\n}"
+}
+```
+---
+
+## [2026-08-08T06:03:46Z] - Create Automated Multi-Turn API Integration Test Script
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** a8f12c9b
+
+### 1. User Prompt / Intent
+> import axios from 'axios';
+> const API_URL = 'http://localhost:3000/api/interview';
+> const SESSION_ID = `test-run-${Date.now()}`;
+> async function runTest() { ... }
+> create a similar test script for testing the api
+
+### 2. AI Reasoning & Strategy
+1. Created `src/testInterviewApi.ts` implementing automated multi-turn testing for `POST /api/interview` using `axios`.
+2. Implemented initialization flow (`candidate` payload), 8 mock conversation turns, adaptive done state checking, and formatted console feedback rendering.
+3. Added `"test:api": "tsx src/testInterviewApi.ts"` script to `package.json`.
+4. Executed `npm run test:api` against live local server, successfully running all 9 turns and verifying final feedback generation schema.
+
+### 3. Generated Code & API Outputs
+```typescript
+// Created src/testInterviewApi.ts and added "test:api" script to package.json
+```
+
+### 4. Runtime & Execution Logs
+```plaintext
+===========================================================
+  InterviewOS - Automated API Integration Test Suite
+===========================================================
+Target Endpoint : http://localhost:3000/api/interview
+Session ID      : test-run-1786168922527
+
+--- Step 1: Initialize Session ---
+✅ Status Code: 200
+🤖 AI Opening Question: Good morning Sarah...
+📌 Done State: false
+
+--- Turn 2 through Turn 9 Executed ---
+...
+🎉 INTERVIEW COMPLETED SUCCESSFULLY
+Final Feedback Payload:
+{
+  "summary": "Sarah Johnson, a Senior Data Engineer with 9 years of experience...",
+  "strengths": ["Embeddings & Vector Search", "Agentic AI & MCP", "..."],
+  "gaps": ["LLM Core", "Prompting & Fine-Tuning", "..."],
+  "next": ["Review and practice fundamental AI concepts...", "..."]
+}
+```
+---
+
+
+## [2026-08-08T06:05:29.991Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 0c5128e8
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes, 28/31 commit days\nStrong areas: Embeddings & Vector Search, Production & Capstone\nWeak areas (multiple attempts): LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","test-run-1786169123683","CAND-001"],"metadata":{"sessionId":"test-run-1786169123683","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786169125260",
+  "extracted": {
+    "entities": 12,
+    "edges": 1
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "5f5b5f5a6eae",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:05:30.649Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 9ea5401f
+
+### 1. User Prompt / Intent
+> System: You are an expert AI technical interviewer for the ABTalks AI Cohort program. You are conducting a personalized technical assessment interview.
+> 
+> Your interview rules:
+> - Be professional, encouraging, and precise.
+> - Ask one clear technical question at a time.
+> - Ground your questions in the 31-day AI curriculum the candidate completed.
+> - Start with topics where the candidate showed weakness or skipped content.
+> - Adjust difficulty based on answers.
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes, 28/31 commit days
+> Strong areas: Embeddings & Vector Search, Production & Capstone
+> Weak areas (multiple attempts): LLM Core, Prompting & Fine-Tuning
+> Skipped topics: Production & Capstone
+> 
+> Curriculum modules: Environment & Tooling, Data Foundations, Embeddings & Vector Search, LLM Core, Prompting & Fine-Tuning, Chatbot Application Build, Agentic AI & MCP, Evaluation, Security & Deployment, Production & Capstone
+> User: Start the interview with Sarah Johnson. Introduce yourself briefly, acknowledge their background as a Senior Data Engineer, and ask your first intermediate technical question about "Production & Capstone".
+
+### 2. AI Reasoning & Strategy
+Initialized session test-run-1786169123683. First topic: "Production & Capstone". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.052021653,
+    "prompt_tokens": 296,
+    "prompt_time": 0.017244666,
+    "completion_tokens": 171,
+    "completion_time": 0.563511843,
+    "total_tokens": 467,
+    "total_time": 0.580756509
+  },
+  "reply": "Good morning Sarah, I'm your technical interviewer for the ABTalks AI Cohort program. I'd like to start by acknowledging your impressive background as a Senior Data Engineer with 9 years of experience and a Master's degree in Computer Science. Your experience will undoubtedly provide a solid foundation for our discussion today.\n\nAs we review your progress through the 31-day AI curriculum, I notice that you skipped the \"Production & Capstone\" module. I'd like to explore this area with you, as it's crucial for deploying AI models in real-world applications.\n\nHere's my first question:\n\nImagine you're tasked with deploying a machine learning model as a RESTful API using a containerization platform like Docker. What considerations would you take into account when designing the API endpoint for model inference, and how would you ensure scalability and reliability in a production environment?"
+}
+```
+---
+
+## [2026-08-08T06:05:34.395Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** e2c26f1f
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Candidate Answer","content":"Topic: Production & Capstone\nCandidate Answer: I chose vector search using cosine similarity because standard keyword search could not capture semantic query intent and contextual variations.","tags":["interview-turn","test-run-1786169123683","CAND-001"],"metadata":{"sessionId":"test-run-1786169123683","turn":2,"topic":"Production & Capstone"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786169131404",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "f531a19717e7",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": {
+    "should_extract": true,
+    "confidence": 0.9,
+    "reason": "User states a deliberate choice of vector search over keyword search, explaining reasoning."
+  }
+}
+```
+---
+
+## [2026-08-08T06:05:38.712Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** cdf052ac
+
+### 1. User Prompt / Intent
+> {"query":"Production & Capstone I chose vector search using cosine similarity because standard keyword search could not capture semantic query intent and contextual variations.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "fdf1d289-3d3c-4ec5-b8ba-3ebe0057d5b2",
+      "source_node": "192cbf09-40fb-4feb-b2bd-aa9171f38d5b",
+      "target_node": "92c8efff-3c52-4039-a74d-87d7b40500d4",
+      "fact": "ChromaDB was used for local vector search prototyping and Pinecone was used for production cloud-scale indexing",
+      "name": "USED_FOR",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "739c3aa2-b2c1-49d8-b2b5-83d02803ce58",
+      "source_node": "e27563cc-b7b0-4434-aee6-e0e89afeba6a",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "perform fine-grained vector embedding matching",
+      "name": "CARRIES_OUT",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "722391f3-d180-44d9-b988-8a3f258cdd85",
+      "source_node": "701477b1-2a70-4aca-89bd-f05b5109e1a1",
+      "target_node": "2adbf338-70c5-48a0-b18b-83ffbe1518b5",
+      "fact": "persisted with Breeth AI",
+      "name": "USING",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:05:39.413Z] - Interview Turn 2: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 35f3b873
+
+### 1. User Prompt / Intent
+> Candidate answered: "I chose vector search using cosine similarity because standard keyword search could not capture semantic query intent and contextual variations...."
+
+### 2. AI Reasoning & Strategy
+Turn 2. Evaluated answer on "Production & Capstone". Next topic: "LLM Core, Prompting & Fine-Tuning". Topics covered: 1. Interviewer questions: 1.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161447072,
+    "prompt_tokens": 847,
+    "prompt_time": 0.063851378,
+    "completion_tokens": 125,
+    "completion_time": 0.425607313,
+    "total_tokens": 972,
+    "total_time": 0.489458691
+  },
+  "reply": "**Evaluation:** The candidate's answer is incorrect. The question asked about designing an API endpoint for model inference and ensuring scalability and reliability in a production environment, but the candidate's response discusses vector search using cosine similarity, which does not address the question.\n\n**Next Question:** Let's move on to the topic of LLM Core, Prompting & Fine-Tuning. Can you explain the concept of \"prompt engineering\" in the context of large language models, and how would"
+}
+```
+---
+
+## [2026-08-08T06:05:45.351Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 1ca2801e
+
+### 1. User Prompt / Intent
+> {"title":"Turn 4 — Candidate Answer","content":"Topic: LLM Core, Prompting & Fine-Tuning\nCandidate Answer: For document chunking, we implemented parent-document retrieval to preserve broad section context while performing fine-grained vector embedding matching.","tags":["interview-turn","test-run-1786169123683","CAND-001"],"metadata":{"sessionId":"test-run-1786169123683","turn":4,"topic":"LLM Core, Prompting & Fine-Tuning"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786169140503",
+  "extracted": {
+    "entities": 6,
+    "edges": 5
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "3fa938dc4b72",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:05:47.399Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** a7337b9e
+
+### 1. User Prompt / Intent
+> {"query":"LLM Core, Prompting & Fine-Tuning For document chunking, we implemented parent-document retrieval to preserve broad section context while performing fine-grained vector embedding matching.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "bf3f3fca-43d5-41d8-b11f-5a5122fa0b37",
+      "source_node": "59f1d672-9ff8-4f19-9326-082342cb4c3b",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "parent-document retrieval technique preserves broad section context while performing fine-grained vector embedding matching during document chunking",
+      "name": "IMPLEMENTED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "739c3aa2-b2c1-49d8-b2b5-83d02803ce58",
+      "source_node": "e27563cc-b7b0-4434-aee6-e0e89afeba6a",
+      "target_node": "e76f4ce6-9b66-49cd-944f-ee6d94a45c1d",
+      "fact": "perform fine-grained vector embedding matching",
+      "name": "CARRIES_OUT",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "27b248b0-5e3d-4d2a-be16-7624d7662ecf",
+      "source_node": "59f1d672-9ff8-4f19-9326-082342cb4c3b",
+      "target_node": "a66b1cb0-e753-4e29-bc01-5ec549d458da",
+      "fact": "stores broad section context",
+      "name": "PRESERVES",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:05:48.321Z] - Interview Turn 4: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 9c45f32c
+
+### 1. User Prompt / Intent
+> Candidate answered: "For document chunking, we implemented parent-document retrieval to preserve broad section context while performing fine-grained vector embedding matching...."
+
+### 2. AI Reasoning & Strategy
+Turn 4. Evaluated answer on "LLM Core, Prompting & Fine-Tuning". Next topic: "Environment & Tooling". Topics covered: 2. Interviewer questions: 2.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.162228954,
+    "prompt_tokens": 1015,
+    "prompt_time": 0.133909658,
+    "completion_tokens": 159,
+    "completion_time": 0.524902225,
+    "total_tokens": 1174,
+    "total_time": 0.658811883
+  },
+  "reply": "**Evaluation:** The candidate's answer is incorrect. The question asked about \"prompt engineering\" in the context of large language models, specifically about designing effective prompts to elicit specific responses or behaviors from a language model, but the candidate's response discusses document chunking and parent-document retrieval, which does not address the question.\n\n**Next Question:** As a Senior Data Engineer, you are familiar with various environment and tooling configurations for AI "
+}
+```
+---
+
+## [2026-08-08T06:05:52.828Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** c053bd2e
+
+### 1. User Prompt / Intent
+> {"title":"Turn 6 — Candidate Answer","content":"Topic: Environment & Tooling\nCandidate Answer: We enforced strict JSON output schemas using Pydantic models in Python during function calling and tool execution.","tags":["interview-turn","test-run-1786169123683","CAND-001"],"metadata":{"sessionId":"test-run-1786169123683","turn":6,"topic":"Environment & Tooling"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786169149706",
+  "extracted": {
+    "entities": 4,
+    "edges": 1
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "b2c675d8bb23",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:05:56.923Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 12463171
+
+### 1. User Prompt / Intent
+> {"query":"Environment & Tooling We enforced strict JSON output schemas using Pydantic models in Python during function calling and tool execution.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "0f0c2c87-d820-4118-8341-756c5d267c6e",
+      "source_node": "bc39a001-fd2a-48fe-9292-12cb5eec3e82",
+      "target_node": "f69fbaa9-247d-45c8-85b6-59c23cb72afe",
+      "fact": "We enforced strict JSON output schemas using Pydantic models in Python during function calling and tool execution",
+      "name": "ENFORCES",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "6d6aba6c-4c05-441d-af86-115775affeb0",
+      "source_node": "d6032f41-02f3-4dac-a0a6-56fa39c3ed6a",
+      "target_node": "59a170cc-d3af-48ba-8ab6-3626bf787424",
+      "fact": "We enforced strict JSON output schemas using Pydantic models",
+      "name": "USES",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9bfcf466-dec8-46e0-8ca3-ecf32881ccfc",
+      "source_node": "bc39a001-fd2a-48fe-9292-12cb5eec3e82",
+      "target_node": "f21b3e22-713e-4f9b-b3cc-3fe3aef46f08",
+      "fact": "When MCP tool connections drop, we implement exponential backoff retries and fallback to local cached memory state.",
+      "name": "FALLBACK_TO",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:05:57.944Z] - Interview Turn 6: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 73bf1625
+
+### 1. User Prompt / Intent
+> Candidate answered: "We enforced strict JSON output schemas using Pydantic models in Python during function calling and tool execution...."
+
+### 2. AI Reasoning & Strategy
+Turn 6. Evaluated answer on "Environment & Tooling". Next topic: "Data Foundations". Topics covered: 3. Interviewer questions: 3.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.162004716,
+    "prompt_tokens": 1206,
+    "prompt_time": 0.194389713,
+    "completion_tokens": 185,
+    "completion_time": 0.576955216,
+    "total_tokens": 1391,
+    "total_time": 0.771344929
+  },
+  "reply": "**Evaluation:** The candidate's answer is partially correct, as it mentions using Pydantic models for strict JSON output schemas, which is a good practice for ensuring data consistency and reproducibility. However, the answer does not fully address the question about designing a cloud-based development environment for seamless collaboration, version control, and reproducibility, as it only focuses on a specific aspect of data schema enforcement.\n\n**Next Question:** Let's move on to the topic of "
+}
+```
+---
+
+## [2026-08-08T06:06:02.998Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 17979242
+
+### 1. User Prompt / Intent
+> {"title":"Turn 8 — Candidate Answer","content":"Topic: Data Foundations\nCandidate Answer: When MCP tool connections drop, we implement exponential backoff retries and fallback to local cached memory state.","tags":["interview-turn","test-run-1786169123683","CAND-001"],"metadata":{"sessionId":"test-run-1786169123683","turn":8,"topic":"Data Foundations"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786169158883",
+  "extracted": {
+    "entities": 3,
+    "edges": 3
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "b046f1a4ab8f",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:06:04.807Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 549da0bb
+
+### 1. User Prompt / Intent
+> {"query":"Data Foundations When MCP tool connections drop, we implement exponential backoff retries and fallback to local cached memory state.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "48cf48c9-c2d1-46fa-8166-e52fb464dead",
+      "source_node": "bc39a001-fd2a-48fe-9292-12cb5eec3e82",
+      "target_node": "af132013-d09f-48aa-aae4-e67df23cfc74",
+      "fact": "When MCP tool connections drop, we implement exponential backoff retries and fallback to local cached memory state.",
+      "name": "FALLBACKS_TO",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9bfcf466-dec8-46e0-8ca3-ecf32881ccfc",
+      "source_node": "bc39a001-fd2a-48fe-9292-12cb5eec3e82",
+      "target_node": "f21b3e22-713e-4f9b-b3cc-3fe3aef46f08",
+      "fact": "When MCP tool connections drop, we implement exponential backoff retries and fallback to local cached memory state.",
+      "name": "FALLBACK_TO",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "b8a443c7-6635-4301-8b79-40f86dbc6fa1",
+      "source_node": "bc39a001-fd2a-48fe-9292-12cb5eec3e82",
+      "target_node": "af132013-d09f-48aa-aae4-e67df23cfc74",
+      "fact": "falls back to local cached memory state when retries fail",
+      "name": "FALLBACK_TO",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:06:05.627Z] - Interview Turn 8: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 4c7bdc30
+
+### 1. User Prompt / Intent
+> Candidate answered: "When MCP tool connections drop, we implement exponential backoff retries and fallback to local cached memory state...."
+
+### 2. AI Reasoning & Strategy
+Turn 8. Evaluated answer on "Data Foundations". Next topic: "Embeddings & Vector Search". Topics covered: 4. Interviewer questions: 4.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.050997502,
+    "prompt_tokens": 1416,
+    "prompt_time": 0.076627437,
+    "completion_tokens": 176,
+    "completion_time": 0.608723885,
+    "total_tokens": 1592,
+    "total_time": 0.685351322
+  },
+  "reply": "**Evaluation:** The candidate's answer is incorrect. The question asked about handling missing or noisy data and designing a data pipeline for preprocessing text documents, but the candidate's response discusses implementing exponential backoff retries and fallback to local cached memory state when MCP tool connections drop, which does not address the question.\n\n**Next Question:** Let's explore the topic of \"Embeddings & Vector Search\" in more depth. Suppose you're tasked with building a semanti"
+}
+```
+---
+
+## [2026-08-08T06:06:12.692Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** f124cce1
+
+### 1. User Prompt / Intent
+> {"title":"Turn 10 — Candidate Answer","content":"Topic: Embeddings & Vector Search\nCandidate Answer: We used ChromaDB for local vector search prototyping and Pinecone for production cloud-scale indexing.","tags":["interview-turn","test-run-1786169123683","CAND-001"],"metadata":{"sessionId":"test-run-1786169123683","turn":10,"topic":"Embeddings & Vector Search"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786169168739",
+  "extracted": {
+    "entities": 2,
+    "edges": 2
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "f17092962071",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:06:15.663Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 65b1fabc
+
+### 1. User Prompt / Intent
+> {"query":"Embeddings & Vector Search We used ChromaDB for local vector search prototyping and Pinecone for production cloud-scale indexing.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "fdf1d289-3d3c-4ec5-b8ba-3ebe0057d5b2",
+      "source_node": "192cbf09-40fb-4feb-b2bd-aa9171f38d5b",
+      "target_node": "92c8efff-3c52-4039-a74d-87d7b40500d4",
+      "fact": "ChromaDB was used for local vector search prototyping and Pinecone was used for production cloud-scale indexing",
+      "name": "USED_FOR",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "b4c7d87b-e0d1-4826-bbcb-ffd51d057d2a",
+      "source_node": "92c8efff-3c52-4039-a74d-87d7b40500d4",
+      "target_node": "192cbf09-40fb-4feb-b2bd-aa9171f38d5b",
+      "fact": "We used Pinecone for production cloud-scale indexing",
+      "name": "USED_IN_PRODUCTION_CLOUD_SCALE_INDEXING",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "70819b2f-b696-427f-ba02-75d372eef683",
+      "source_node": "817d4da4-5768-400a-bfae-3e0057e95230",
+      "target_node": "192cbf09-40fb-4feb-b2bd-aa9171f38d5b",
+      "fact": "used sentence transformers for chunk embeddings stored in chromadb",
+      "name": "USED_FOR",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:06:16.483Z] - Interview Turn 10: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** a2ac7012
+
+### 1. User Prompt / Intent
+> Candidate answered: "We used ChromaDB for local vector search prototyping and Pinecone for production cloud-scale indexing...."
+
+### 2. AI Reasoning & Strategy
+Turn 10. Evaluated answer on "Embeddings & Vector Search". Next topic: "Chatbot Application Build". Topics covered: 5. Interviewer questions: 5.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.162129589,
+    "prompt_tokens": 1620,
+    "prompt_time": 0.08391408,
+    "completion_tokens": 173,
+    "completion_time": 0.511363812,
+    "total_tokens": 1793,
+    "total_time": 0.595277892
+  },
+  "reply": "**Evaluation:** The candidate's answer is correct. They provided a relevant example of using ChromaDB for local vector search prototyping and Pinecone for production cloud-scale indexing, which addresses the question about designing an indexing system using dense vector embeddings for semantic search.\n\n**Next Question:** Suppose you're tasked with building a conversational chatbot application that can understand and respond to user queries in a specific domain, such as customer support or tech t"
+}
+```
+---
+
+## [2026-08-08T06:06:19.441Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 86f0491e
+
+### 1. User Prompt / Intent
+> {"title":"Turn 12 — Candidate Answer","content":"Topic: Chatbot Application Build\nCandidate Answer: For system observability, we logged latency, token consumption, and model outputs using structured JSON logs.","tags":["interview-turn","test-run-1786169123683","CAND-001"],"metadata":{"sessionId":"test-run-1786169123683","turn":12,"topic":"Chatbot Application Build"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786169177850",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "49c8a8c1a284",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:06:21.705Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 67bf34c4
+
+### 1. User Prompt / Intent
+> {"query":"Chatbot Application Build For system observability, we logged latency, token consumption, and model outputs using structured JSON logs.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "6d6aba6c-4c05-441d-af86-115775affeb0",
+      "source_node": "d6032f41-02f3-4dac-a0a6-56fa39c3ed6a",
+      "target_node": "59a170cc-d3af-48ba-8ab6-3626bf787424",
+      "fact": "We enforced strict JSON output schemas using Pydantic models",
+      "name": "USES",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "0f0c2c87-d820-4118-8341-756c5d267c6e",
+      "source_node": "bc39a001-fd2a-48fe-9292-12cb5eec3e82",
+      "target_node": "f69fbaa9-247d-45c8-85b6-59c23cb72afe",
+      "fact": "We enforced strict JSON output schemas using Pydantic models in Python during function calling and tool execution",
+      "name": "ENFORCES",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "b4c7d87b-e0d1-4826-bbcb-ffd51d057d2a",
+      "source_node": "92c8efff-3c52-4039-a74d-87d7b40500d4",
+      "target_node": "192cbf09-40fb-4feb-b2bd-aa9171f38d5b",
+      "fact": "We used Pinecone for production cloud-scale indexing",
+      "name": "USED_IN_PRODUCTION_CLOUD_SCALE_INDEXING",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:06:22.538Z] - Interview Turn 12: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 56c6134b
+
+### 1. User Prompt / Intent
+> Candidate answered: "For system observability, we logged latency, token consumption, and model outputs using structured JSON logs...."
+
+### 2. AI Reasoning & Strategy
+Turn 12. Evaluated answer on "Chatbot Application Build". Next topic: "Agentic AI & MCP". Topics covered: 6. Interviewer questions: 6.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.050987386,
+    "prompt_tokens": 1824,
+    "prompt_time": 0.130345923,
+    "completion_tokens": 202,
+    "completion_time": 0.623614575,
+    "total_tokens": 2026,
+    "total_time": 0.753960498
+  },
+  "reply": "**Evaluation:** The candidate's answer is partially correct, as it mentions logging latency, token consumption, and model outputs using structured JSON logs, which is a good practice for system observability. However, the answer does not fully address the question about designing a conversational chatbot application, as it only focuses on a specific aspect of system logging and monitoring.\n\n**Next Question:** Let's move on to the topic of \"Agentic AI & MCP\". Suppose you're tasked with designing "
+}
+```
+---
+
+## [2026-08-08T06:06:31.637Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** a57acdad
+
+### 1. User Prompt / Intent
+> {"title":"Turn 14 — Candidate Answer","content":"Topic: Agentic AI & MCP\nCandidate Answer: We containerized our FastAPI backend with Docker and deployed it onto Kubernetes with health check probes.","tags":["interview-turn","test-run-1786169123683","CAND-001"],"metadata":{"sessionId":"test-run-1786169123683","turn":14,"topic":"Agentic AI & MCP"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786169184875",
+  "extracted": {
+    "entities": 4,
+    "edges": 5
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "34f76562b2ed",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:06:33.790Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 46dbd1bc
+
+### 1. User Prompt / Intent
+> {"query":"Agentic AI & MCP We containerized our FastAPI backend with Docker and deployed it onto Kubernetes with health check probes.","limit":3}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "55175846-47b6-4050-afbe-64c8d2a9ff0b",
+      "source_node": "ae92d005-b842-4930-9b55-6b7f97e49f76",
+      "target_node": "7d9dbd44-dd6a-4ed3-bb04-20e85110f1f1",
+      "fact": "deployed onto Kubernetes with health check probes",
+      "name": "DEPLOYED_ON",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "17b2b617-04a4-44e5-a687-c29b6401cf2f",
+      "source_node": "ae92d005-b842-4930-9b55-6b7f97e49f76",
+      "target_node": "65deb503-9e93-4579-abe8-01c2a9ab1811",
+      "fact": "containerized FastAPI backend",
+      "name": "CONTAINERS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "431d48a2-2952-4faf-88aa-95883ae85215",
+      "source_node": "ae92d005-b842-4930-9b55-6b7f97e49f76",
+      "target_node": "65deb503-9e93-4579-abe8-01c2a9ab1811",
+      "fact": "containerized FastAPI backend with Docker",
+      "name": "USED_WITH",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:06:34.606Z] - Interview Turn 14: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** d44fc787
+
+### 1. User Prompt / Intent
+> Candidate answered: "We containerized our FastAPI backend with Docker and deployed it onto Kubernetes with health check probes...."
+
+### 2. AI Reasoning & Strategy
+Turn 14. Evaluated answer on "Agentic AI & MCP". Next topic: "Evaluation, Security & Deployment". Topics covered: 7. Interviewer questions: 7.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.058451236,
+    "prompt_tokens": 2029,
+    "prompt_time": 0.103972833,
+    "completion_tokens": 185,
+    "completion_time": 0.583035109,
+    "total_tokens": 2214,
+    "total_time": 0.687007942
+  },
+  "reply": "**Evaluation:** The candidate's answer is correct. They provided a relevant example of containerizing a FastAPI backend with Docker and deploying it onto Kubernetes with health check probes, which addresses the question about designing an autonomous agent and integrating it with an MCP architecture, although the answer seems to be more related to the deployment aspect of the system.\n\n**Next Question:** Suppose you're tasked with evaluating the performance of a large language model in a productio"
+}
+```
+---
+
+## [2026-08-08T06:06:41.262Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** bf352d5e
+
+### 1. User Prompt / Intent
+> {"title":"Turn 16 — Candidate Answer","content":"Topic: Evaluation, Security & Deployment\nCandidate Answer: For our capstone project, we integrated RAG, multi-agent orchestration via CrewAI, and episodic memory persistence with Breeth AI.","tags":["interview-turn","test-run-1786169123683","CAND-001"],"metadata":{"sessionId":"test-run-1786169123683","turn":16,"topic":"Evaluation, Security & Deployment"}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786169196251",
+  "extracted": {
+    "entities": 7,
+    "edges": 10
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "cfa7b1137ded",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-08T06:06:44.029Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** d7c02a87
+
+### 1. User Prompt / Intent
+> {"query":"interview evaluation Sarah Johnson","limit":10}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "d0077d0d-cdce-482c-a378-63f6abbe61dc",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "7ecc5eab-5504-4518-aaaa-a7ca9c04e195",
+      "fact": "Sarah Johnson HAS_EXPERIENCE Experience: 9 years",
+      "name": "HAS_EXPERIENCE",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9be74604-67e8-4636-ac0c-b54ac372cccd",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "465ddc0f-9dff-46a7-9933-24bb0d8bb06a",
+      "fact": "Sarah Johnson holds a master of science in computer science",
+      "name": "EDUCATED_AT",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "b9387560-a481-487b-b154-a2a063bc256a",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "c710d4c0-b2aa-4190-8667-b6a737a19370",
+      "fact": "Sarah Johnson HAS_ROLE Senior Data Engineer",
+      "name": "HAS_ROLE",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "91d87b46-86d6-4fd9-8e89-8f8c3d0c62fe",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "32dc1fc0-69bc-473d-b4ea-8d0c2e36e9ba",
+      "fact": "Sarah Johnson HAS_COUNT 20 first-try passes",
+      "name": "HAS_COUNT",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "370552d1-b5d1-4563-a65a-6b2fd4e36228",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "c710d4c0-b2aa-4190-8667-b6a737a19370",
+      "fact": "Sarah Johnson is a senior data engineer with nine years of experience",
+      "name": "WORKS_AS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "4944bc8e-e787-4d9f-89d1-cfc8eead36b7",
+      "source_node": "197e8aa5-7869-44f3-846f-16ee0ca112f0",
+      "target_node": "2a482c90-c42e-4b78-8c4a-fbd8f43b225a",
+      "fact": "Evaluation integrates RAG",
+      "name": "INTEGRATE_WITH",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "73b6cdad-a78e-4e24-9db3-62f08f031809",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "0897d2df-338a-4b38-9243-ad280581899c",
+      "fact": "Sarah Johnson HAS_PROGRESS 30 missions completed out of 31",
+      "name": "HAS_PROGRESS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "7ccefcbb-7469-4c35-9ec4-138bd951794a",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "c7995d63-d43e-49d8-9331-f311017f008e",
+      "fact": "Sarah Johnson has completed thirty out of thirty-one missions and achieved twenty first try passes and twenty eight out of thirty one commit days",
+      "name": "PROGRESSES_THROUGH",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "58939b4c-8878-45db-ad7d-661cd01b2e09",
+      "source_node": "197e8aa5-7869-44f3-846f-16ee0ca112f0",
+      "target_node": "ab256e84-9d26-4554-82a0-cfe4daf3a7e7",
+      "fact": "Evaluation integrates CrewAI",
+      "name": "INTEGRATE_WITH",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "da4b7c1a-afde-4aa5-b2c4-a3c7018ae83b",
+      "source_node": "af19bd01-78cd-439a-b752-1ea4472b124c",
+      "target_node": "a11bf421-1b80-4ca4-bbb4-9bbaf362606f",
+      "fact": "Sarah Johnson HAS_COUNT 28 commit days out of 31",
+      "name": "HAS_COUNT",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 10,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:06:45.053Z] - Interview Feedback: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 20701845
+
+### 1. User Prompt / Intent
+> Generate final feedback for session test-run-1786169123683
+
+### 2. AI Reasoning & Strategy
+Synthesized 16 turns across 8 topics. Weak: [Production & Capstone, LLM Core, Prompting & Fine-Tuning, Environment & Tooling, Data Foundations, Chatbot Application Build]. Strong: [Embeddings & Vector Search, Agentic AI & MCP].
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.058666413,
+    "prompt_tokens": 3027,
+    "prompt_time": 0.178808024,
+    "completion_tokens": 254,
+    "completion_time": 0.736779616,
+    "total_tokens": 3281,
+    "total_time": 0.91558764
+  },
+  "rawFeedback": "{\n  \"summary\": \"Sarah Johnson, a Senior Data Engineer with 9 years of experience, demonstrated a strong foundation in certain areas of AI, particularly in Embeddings & Vector Search, but struggled with other topics such as Production & Capstone, LLM Core, and Prompting & Fine-Tuning, indicating a need for further development and refinement of her skills. Her responses often failed to directly address the questions, and she provided incomplete or partially correct answers. Despite this, she showed promise in specific areas, such as designing indexing systems and deploying models using containerization.\",\n  \"strengths\": [\"Embeddings & Vector Search\", \"Designing indexing systems using dense vector embeddings\", \"Deploying models using containerization\"],\n  \"gaps\": [\"Production & Capstone\", \"LLM Core\", \"Prompting & Fine-Tuning\", \"Designing cloud-based development environments\", \"Handling missing or noisy data\", \"Building conversational chatbot applications\"],\n  \"next\": [\"Review and practice Production & Capstone concepts\", \"Focus on developing skills in LLM Core and Prompting & Fine-Tuning\", \"Explore designing cloud-based development environments and handling missing or noisy data\", \"Develop conversational chatbot applications using NLP components and dialogue management\"]\n}"
+}
+```
+---
