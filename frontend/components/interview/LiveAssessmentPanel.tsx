@@ -1,7 +1,7 @@
 'use client';
 
 import { useInterviewStore } from '@/stores/interviewStore';
-import { Activity, CheckSquare, Square, Zap, SlidersHorizontal, Award } from 'lucide-react';
+import { Activity, CheckSquare, Square, Zap, SlidersHorizontal } from 'lucide-react';
 
 export function LiveAssessmentPanel() {
   const { scores, contextMemory, activeSignals, difficulty, toggleMemoryItem } = useInterviewStore();

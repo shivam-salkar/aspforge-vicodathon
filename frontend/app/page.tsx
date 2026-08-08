@@ -38,7 +38,7 @@ export default function LandingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <main className="flex-1 max-w-7xl mx-auto px-6 pt-16 pb-24 w-full flex flex-col items-center text-center relative z-10 space-y-20">
+      <main id="home" className="flex-1 max-w-7xl mx-auto px-6 pt-16 pb-24 w-full flex flex-col items-center text-center relative z-10 space-y-20">
         {/* Top Header Block */}
         <div className="flex flex-col items-center text-center max-w-4xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-semibold mb-6 shadow-lg shadow-blue-500/5">
@@ -93,7 +93,9 @@ export default function LandingPage() {
         </div>
 
         {/* Visual Animated Interview Console Demo Window */}
-        <ConsoleDemoWindow />
+        <div id="demo" className="w-full scroll-mt-24">
+          <ConsoleDemoWindow />
+        </div>
 
         {/* 1. ABTalks Metrics Stats Bar */}
         <div className="w-full glass-card p-6 border-white/10 bg-[#0F1015]/80">
@@ -131,7 +133,7 @@ export default function LandingPage() {
         </div>
 
         {/* 2. "How ABTalks works" Section */}
-        <div className="w-full space-y-10 text-center">
+        <div id="about" className="w-full space-y-10 text-center scroll-mt-24">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             How ABTalks works
           </h2>
@@ -194,7 +196,7 @@ export default function LandingPage() {
         </div>
 
         {/* 4. "What our builders say" Testimonials Section */}
-        <div className="w-full space-y-10 text-center">
+        <div id="testimonies" className="w-full space-y-10 text-center scroll-mt-24">
           <div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
               What our builders say
@@ -298,8 +300,9 @@ export default function LandingPage() {
 
       {/* Extended Footer matching spec */}
       <footer className="border-t border-white/10 py-10 px-6 max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-        <p className="text-center sm:text-left">
-          <strong className="text-gray-300 font-bold">ABTalks InterviewOS</strong> © 2026 ABTalks InterviewOS. The pro-grade technical interview platform.
+        <p className="text-center sm:text-left flex items-center gap-2">
+          <img src="/logo.png" alt="AB TALKS Logo" className="w-5 h-5 object-contain" />
+          <span><strong className="text-gray-300 font-bold">ABTalks InterviewOS</strong> © 2026 ABTalks InterviewOS. The pro-grade technical interview platform.</span>
         </p>
 
         <div className="flex items-center gap-6 text-gray-400 font-medium">
