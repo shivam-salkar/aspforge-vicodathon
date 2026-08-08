@@ -2,25 +2,50 @@
 
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 import { PieChart as PieIcon, BarChart2 } from 'lucide-react';
+import { Candidate } from '@/types';
 
-const topicDistribution = [
-  { name: 'Data Engineering', value: 35, color: '#3b82f6' },
-  { name: 'System Architecture', value: 25, color: '#8b5cf6' },
-  { name: 'RAG & Vector DBs', value: 20, color: '#06b6d4' },
-  { name: 'LLM Orchestration', value: 20, color: '#10b981' },
-];
+interface ProfileChartsProps {
+  candidate: Candidate;
+}
 
-const activityTrend = [
-  { day: 'Mon', commits: 4 },
-  { day: 'Tue', commits: 7 },
-  { day: 'Wed', commits: 5 },
-  { day: 'Thu', commits: 9 },
-  { day: 'Fri', commits: 12 },
-  { day: 'Sat', commits: 8 },
-  { day: 'Sun', commits: 6 },
-];
+export function ProfileCharts({ candidate }: ProfileChartsProps) {
+  const { signals, missions } = candidate;
+  const commitDays = signals?.commitDays || 20;
 
-export function ProfileCharts() {
+  // 1. Calculate dynamic topic distribution from candidate missions
+  const ragMissions = missions.filter((m) => m.day >= 7 && m.day <= 10 && m.passed).length;
+  const llmMissions = missions.filter((m) => m.day >= 11 && m.day <= 15 && m.passed).length;
+  const agentMissions = missions.filter((m) => m.day >= 21 && m.day <= 24 && m.passed).length;
+  const dataMissions = missions.filter((m) => (m.day <= 6 || m.day >= 25) && m.passed).length;
+
+  const totalPassed = Math.max(1, ragMissions + llmMissions + agentMissions + dataMissions);
+
+  const topicDistribution = [
+    { name: 'Data Engineering', value: Math.round((dataMissions / totalPassed) * 100) || 30, color: '#3b82f6' },
+    { name: 'System Architecture', value: Math.round((agentMissions / totalPassed) * 100) || 25, color: '#8b5cf6' },
+    { name: 'RAG & Vector DBs', value: Math.round((ragMissions / totalPassed) * 100) || 25, color: '#06b6d4' },
+    { name: 'LLM Orchestration', value: Math.round((llmMissions / totalPassed) * 100) || 20, color: '#10b981' },
+  ];
+
+  // 2. Generate activity trend proportional to candidate's commitDays
+  const baseAvg = Math.max(1, Math.round(commitDays / 4));
+  const activityTrend = [
+    { day: 'Mon', commits: Math.max(1, Math.round(baseAvg * 0.6)) },
+    { day: 'Tue', commits: Math.max(2, Math.round(baseAvg * 1.1)) },
+    { day: 'Wed', commits: Math.max(1, Math.round(baseAvg * 0.8)) },
+    { day: 'Thu', commits: Math.max(3, Math.round(baseAvg * 1.4)) },
+    { day: 'Fri', commits: Math.max(3, Math.round(baseAvg * 1.8)) },
+    { day: 'Sat', commits: Math.max(2, Math.round(baseAvg * 1.2)) },
+    { day: 'Sun', commits: Math.max(1, Math.round(baseAvg * 0.9)) },
+  ];
+
+  const engagementLabel =
+    commitDays >= 25
+      ? `High Activity (${commitDays} Commit Days)`
+      : commitDays >= 18
+      ? `Active Candidate (${commitDays} Commit Days)`
+      : `Moderate Activity (${commitDays} Commit Days)`;
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* Topic Distribution Donut Chart */}
@@ -91,7 +116,7 @@ export function ProfileCharts() {
 
         <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
           <span className="text-gray-400">7-Day Engagement Index</span>
-          <span className="font-bold text-emerald-400 font-mono">High Activity (28 Commit Days)</span>
+          <span className="font-bold text-emerald-400 font-mono">{engagementLabel}</span>
         </div>
       </div>
     </div>
