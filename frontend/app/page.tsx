@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/ui/Navbar';
 import { ConsoleDemoWindow } from '@/components/ui/ConsoleDemoWindow';
 import { ParticleText } from '@/components/ui/ParticleText';
-import { Aurora } from '@/components/ui/Aurora';
+import GradientWaves from '@/components/ui/GradientWaves';
 import {
   Sparkles,
   ArrowRight,
@@ -33,13 +33,29 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-[#08090A] text-gray-100 flex flex-col relative overflow-hidden">
-      {/* Dynamic Aurora WebGL Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-35 overflow-hidden z-0">
-        <Aurora
-          colorStops={['#3b82f6', '#8b5cf6', '#06b6d4']}
-          blend={0.6}
-          amplitude={1.2}
+      {/* Dynamic WebGL GradientWaves Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
+        <GradientWaves
+          horizonColor="#08090A"
+          waveColor="#3b82f6"
+          crestColor="#8b5cf6"
           speed={0.4}
+          amplitude={2.5}
+          waveScale={0.6}
+          waveRatio={0.9}
+          swell={35}
+          turbulence={20}
+          tilt={1.11}
+          zoom={1.0}
+          height={5.5}
+          fogDepth={15}
+          detail="medium"
+          brightness={1.1}
+          opacity={0.8}
+          mouseInteraction={true}
+          parallaxStrength={0.5}
+          grain={true}
+          grainIntensity={0.04}
         />
       </div>
 
@@ -327,7 +343,7 @@ export default function LandingPage() {
       </main>
 
       {/* Extended Footer matching spec */}
-      <footer className="border-t border-white/10 py-10 px-6 max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 relative z-10">
+      <footer className="border-t border-white/10 py-10 px-6 max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
         <p className="text-center sm:text-left">
           <strong className="text-gray-300 font-bold">ABTalks InterviewOS</strong> © 2026 ABTalks InterviewOS. The pro-grade technical interview platform.
         </p>
