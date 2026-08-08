@@ -3332,3 +3332,612 @@ Synthesized 16 turns across 8 topics. Weak: [Production & Capstone, LLM Core, Pr
 }
 ```
 ---
+
+## [2026-08-08T06:38:11.948Z] - Breeth API - Create Episode (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 899dc919
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS CS\nCohort Progress: 30/31 missions completed, 20 first-try passes, 28/31 commit days","tags":["interview-init","test-sess-1","CAND-001"],"metadata":{"sessionId":"test-sess-1","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/episodes. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:40:34.351Z] - Sanity Check - Groq SDK (Key Missing)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 17802ba4
+
+### 1. User Prompt / Intent
+> System check: Verify Groq SDK configuration
+
+### 2. AI Reasoning & Strategy
+API key is missing in environment. Logged configuration state to prompts.md.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "status": "CONFIG_MISSING",
+  "message": "Set GROQ_API_KEY in .env file to enable live completions."
+}
+```
+---
+
+## [2026-08-08T06:40:34.353Z] - Sanity Check - Breeth AI (Key Missing)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 04391be7
+
+### 1. User Prompt / Intent
+> Search Query: "TypeScript candidate history"
+
+### 2. AI Reasoning & Strategy
+API key is missing in environment. Logged endpoint structure test to prompts.md.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "status": "CONFIG_MISSING",
+  "message": "Set BREETH_API_KEY in .env file to enable live search."
+}
+```
+---
+
+## [2026-08-08T06:40:34.354Z] - Sanity Check CLI Complete
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** db94271b
+
+### 1. User Prompt / Intent
+> Initialize InterviewOS System Verification CLI
+
+### 2. AI Reasoning & Strategy
+Completed environment setup, data loading verification, Groq SDK integration, and Breeth API client wrapper.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "timestamp": "2026-08-08T06:40:34.354Z",
+  "status": "INITIALIZATION_SUCCESS",
+  "candidatesLoaded": 20,
+  "curriculumTrack": "AI Cohort · 31 days · 8 modules",
+  "modulesCount": 8
+}
+```
+---
+
+## [2026-08-08T06:42:30.923Z] - Groq LLM Completion
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** d79953c8
+
+### 1. User Prompt / Intent
+> System: System Verification Agent
+> User: System check
+
+### 2. AI Reasoning & Strategy
+Invoked Groq SDK chat completion with model 'llama-3.3-70b-versatile'. Extracted choice[0] completion message content.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.058500918,
+    "prompt_tokens": 40,
+    "prompt_time": 0.002703522,
+    "completion_tokens": 156,
+    "completion_time": 0.535172211,
+    "total_tokens": 196,
+    "total_time": 0.537875733
+  },
+  "completion": "All systems are functioning within normal parameters. Here's a quick rundown of the checks I've performed:\n\n1. **Language Processing**: Online and functioning correctly. I can understand and respond to your queries.\n2. **Knowledge Base**: Up-to-date and accessible. I have access to a vast amount of information and can provide answers to your questions.\n3. **Response Generation**: Working as expected. I can generate human-like responses to your input.\n4. **Error Handling**: Active and ready to handle any errors that may occur during our conversation.\n5. **Connection**: Stable and secure. Our conversation is being transmitted and received without any issues.\n\nIf you have any specific questions or topics you'd like to discuss, I'm here to help. What's on your mind?"
+}
+```
+---
+
+## [2026-08-08T06:42:35.040Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 34750fec
+
+### 1. User Prompt / Intent
+> {"query":"System check"}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "c1aa47cb-0604-498e-8b70-cc0e628bd921",
+      "source_node": "ae92d005-b842-4930-9b55-6b7f97e49f76",
+      "target_node": "952eaeb1-c468-42f7-b078-d05aab8be025",
+      "fact": "health check probes",
+      "name": "HAS_HEALTH_CHECK",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "93bbd345-74cf-4b69-8922-66b15e6e0c52",
+      "source_node": "65deb503-9e93-4579-abe8-01c2a9ab1811",
+      "target_node": "952eaeb1-c468-42f7-b078-d05aab8be025",
+      "fact": "deployed with health check probes",
+      "name": "USED_WITH",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "55175846-47b6-4050-afbe-64c8d2a9ff0b",
+      "source_node": "ae92d005-b842-4930-9b55-6b7f97e49f76",
+      "target_node": "7d9dbd44-dd6a-4ed3-bb04-20e85110f1f1",
+      "fact": "deployed onto Kubernetes with health check probes",
+      "name": "DEPLOYED_ON",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 3,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-08T06:42:35.041Z] - Sanity Check CLI Complete
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 81eb5a55
+
+### 1. User Prompt / Intent
+> Initialize InterviewOS System Verification CLI
+
+### 2. AI Reasoning & Strategy
+Completed environment setup, data loading verification, Groq SDK integration, and Breeth API client wrapper.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "timestamp": "2026-08-08T06:42:35.041Z",
+  "status": "INITIALIZATION_SUCCESS",
+  "candidatesLoaded": 20,
+  "curriculumTrack": "AI Cohort · 31 days · 8 modules",
+  "modulesCount": 8
+}
+```
+---
+
+## [2026-08-08T06:43:54.510Z] - Breeth API - Create Episode (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** fbe1d518
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes, 28/31 commit days\nStrong areas: Embeddings & Vector Search, Chatbot Application Build, Production & Capstone\nWeak areas (multiple attempts): LLM Core, Prompting & Fine-Tuning\nSkipped topics: Production & Capstone","tags":["interview-init","sess-msk0cqen","CAND-001"],"metadata":{"sessionId":"sess-msk0cqen","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/episodes. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:44:13.570Z] - Breeth API - Extract Intent (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 3f03bba0
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Candidate Answer","content":"Topic: Production & Capstone\nCandidate Answer: No","tags":["interview-turn","sess-msk0cqen","CAND-001"],"metadata":{"sessionId":"sess-msk0cqen","turn":2,"topic":"Production & Capstone"}}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/episodes?extract_intent=true. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:44:13.818Z] - Breeth API - Search Memory (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 25cdff55
+
+### 1. User Prompt / Intent
+> {"query":"Production & Capstone No","limit":3}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/search. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:44:41.531Z] - Breeth API - Extract Intent (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** d48655e4
+
+### 1. User Prompt / Intent
+> {"title":"Turn 4 — Candidate Answer","content":"Topic: LLM Core, Prompting & Fine-Tuning\nCandidate Answer: i understood about prompt engineering","tags":["interview-turn","sess-msk0cqen","CAND-001"],"metadata":{"sessionId":"sess-msk0cqen","turn":4,"topic":"LLM Core, Prompting & Fine-Tuning"}}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/episodes?extract_intent=true. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:44:41.825Z] - Breeth API - Search Memory (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** bb62c0bf
+
+### 1. User Prompt / Intent
+> {"query":"LLM Core, Prompting & Fine-Tuning i understood about prompt engineering","limit":3}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/search. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:45:14.244Z] - Breeth API - Extract Intent (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** d962e69c
+
+### 1. User Prompt / Intent
+> {"title":"Turn 6 — Candidate Answer","content":"Topic: Environment & Tooling\nCandidate Answer: no","tags":["interview-turn","sess-msk0cqen","CAND-001"],"metadata":{"sessionId":"sess-msk0cqen","turn":6,"topic":"Environment & Tooling"}}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/episodes?extract_intent=true. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:45:14.512Z] - Breeth API - Search Memory (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 12071eb0
+
+### 1. User Prompt / Intent
+> {"query":"Environment & Tooling no","limit":3}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/search. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:45:22.830Z] - Breeth API - Extract Intent (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** a1287413
+
+### 1. User Prompt / Intent
+> {"title":"Turn 8 — Candidate Answer","content":"Topic: Data Foundations\nCandidate Answer: ok","tags":["interview-turn","sess-msk0cqen","CAND-001"],"metadata":{"sessionId":"sess-msk0cqen","turn":8,"topic":"Data Foundations"}}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/episodes?extract_intent=true. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:45:23.125Z] - Breeth API - Search Memory (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 6bbae74e
+
+### 1. User Prompt / Intent
+> {"query":"Data Foundations ok","limit":3}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/search. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:45:30.566Z] - Breeth API - Extract Intent (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 85e2b38a
+
+### 1. User Prompt / Intent
+> {"title":"Turn 10 — Candidate Answer","content":"Topic: Embeddings & Vector Search\nCandidate Answer: np","tags":["interview-turn","sess-msk0cqen","CAND-001"],"metadata":{"sessionId":"sess-msk0cqen","turn":10,"topic":"Embeddings & Vector Search"}}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/episodes?extract_intent=true. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:45:31.047Z] - Breeth API - Search Memory (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 08f68856
+
+### 1. User Prompt / Intent
+> {"query":"Embeddings & Vector Search np","limit":3}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/search. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:45:39.775Z] - Breeth API - Extract Intent (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** af2146f8
+
+### 1. User Prompt / Intent
+> {"title":"Turn 12 — Candidate Answer","content":"Topic: Chatbot Application Build\nCandidate Answer: jbfskjdfs","tags":["interview-turn","sess-msk0cqen","CAND-001"],"metadata":{"sessionId":"sess-msk0cqen","turn":12,"topic":"Chatbot Application Build"}}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/episodes?extract_intent=true. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:45:40.330Z] - Breeth API - Search Memory (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 60d75b5e
+
+### 1. User Prompt / Intent
+> {"query":"Chatbot Application Build jbfskjdfs","limit":3}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/search. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:45:54.495Z] - Breeth API - Extract Intent (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 7b31708f
+
+### 1. User Prompt / Intent
+> {"title":"Turn 14 — Candidate Answer","content":"Topic: Agentic AI & MCP\nCandidate Answer: hshs","tags":["interview-turn","sess-msk0cqen","CAND-001"],"metadata":{"sessionId":"sess-msk0cqen","turn":14,"topic":"Agentic AI & MCP"}}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/episodes?extract_intent=true. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:45:54.786Z] - Breeth API - Search Memory (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 3c3f8bfd
+
+### 1. User Prompt / Intent
+> {"query":"Agentic AI & MCP hshs","limit":3}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/search. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:46:17.845Z] - Breeth API - Extract Intent (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 6bac4b7c
+
+### 1. User Prompt / Intent
+> {"title":"Turn 16 — Candidate Answer","content":"Topic: Evaluation, Security & Deployment\nCandidate Answer: ok","tags":["interview-turn","sess-msk0cqen","CAND-001"],"metadata":{"sessionId":"sess-msk0cqen","turn":16,"topic":"Evaluation, Security & Deployment"}}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/episodes?extract_intent=true. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
+
+## [2026-08-08T06:46:18.119Z] - Breeth API - Search Memory (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** Gemini 3.6 Flash
+- **Git User:** Shivam Salkar
+- **Execution ID:** 92f56727
+
+### 1. User Prompt / Intent
+> {"query":"interview evaluation Sarah Johnson","limit":10}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/search. Caught error/response: {"error":"missing_authorization","message":"Bearer token (ck_live_... API key or Supabase JWT) required"}
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": {
+    "error": "missing_authorization",
+    "message": "Bearer token (ck_live_... API key or Supabase JWT) required"
+  },
+  "status": 401
+}
+```
+---
