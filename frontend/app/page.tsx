@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/ui/Navbar';
 import { ConsoleDemoWindow } from '@/components/ui/ConsoleDemoWindow';
 import { ParticleText } from '@/components/ui/ParticleText';
+import GradientWaves from '@/components/ui/GradientWaves';
 import {
   Sparkles,
   ArrowRight,
@@ -31,9 +32,14 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#08090A] text-gray-100 flex flex-col relative overflow-hidden">
-      {/* Background Animated Blobs */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-blue-600/15 via-purple-600/10 to-transparent blur-3xl pointer-events-none" />
+    <div className="relative min-h-screen bg-[#08090A] text-white selection:bg-purple-500 selection:text-white">
+      {/* FIXED BACKGROUND: Stays pinned to the viewport during scroll */}
+      <div className="fixed inset-0 z-0 pointer-events-none w-full h-full overflow-hidden opacity-90">
+        <GradientWaves amplitude={2.5} brightness={1.0} crestColor="#FFFFFF" detail="medium" fogDepth={15} grain={true} grainIntensity={0.05} height={5.5} horizonColor="#5227FF" mouseInteraction={false} opacity={1.0} parallaxStrength={0.5} speed={0.4} swell={35} tilt={1.11} turbulence={20} waveColor="#FF9FFC" waveRatio={0.9} waveScale={0.6} zoom={1.0}/>
+      </div>
+
+      {/* SCROLLABLE FOREGROUND CONTENT */}
+      <div className="relative z-10 w-full min-h-screen flex flex-col">
 
       {/* Navbar */}
       <Navbar />
@@ -42,10 +48,7 @@ export default function LandingPage() {
       <main id="home" className="flex-1 max-w-7xl mx-auto px-6 pt-12 pb-24 w-full flex flex-col items-center text-center relative z-10 space-y-16">
         {/* Top Header Block */}
         <div className="flex flex-col items-center text-center max-w-4xl w-full">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-semibold mb-4 shadow-lg shadow-blue-500/5">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-            <span>AI Technical Interviewer • Next.js 15 Platform</span>
-          </div>
+          
 
           {/* Particle Animated Headline */}
           <div className="w-full max-w-3xl flex flex-col items-center mb-6">
@@ -68,9 +71,14 @@ export default function LandingPage() {
                 glow
               />
             </div>
-            <p className="text-2xl sm:text-4xl font-extrabold text-gradient tracking-tight -mt-4">
-              by ABTalks
-            </p>
+            <div className="flex items-center justify-center gap-3 -mt-2 sm:-mt-4">
+              <span className="text-xl sm:text-3xl font-extrabold text-gray-300 tracking-tight">by</span>
+              <img
+                src="/abtalks_logo.png"
+                alt="ABTalks"
+                className="h-8 sm:h-12 w-auto object-contain filter drop-shadow"
+              />
+            </div>
           </div>
 
           <p className="text-base sm:text-lg text-gray-300 max-w-2xl font-normal leading-relaxed mb-10">
@@ -335,6 +343,7 @@ export default function LandingPage() {
           <a href="#" className="hover:text-white transition-colors">Contact</a>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
