@@ -64,6 +64,7 @@ export interface ConversationTurn {
   isFollowUp?: boolean;
   mainQuestion?: string;
   followUpQuestion?: string;
+  validationText?: string;
 }
 
 export interface RecordedQuestion {
@@ -154,6 +155,7 @@ export interface InterviewApiResponse {
   skippedFollowUp?: boolean;
   mainQuestion?: string;
   followUpQuestion?: string;
+  validationText?: string;
   score?: number;
   isRight?: boolean;
   feedback?: Feedback;

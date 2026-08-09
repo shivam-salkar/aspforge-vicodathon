@@ -356,9 +356,13 @@ Focus Topic: "${currentTopic}"`;
       const userPrompt = `The candidate correctly answered your main technical question about "${currentTopic}":
 "${message}"
 
-React in 1 short validation sentence. Then ask a thoughtful, highly specific 1-sentence technical probing question whose ideal answer is a short 2-3 words (e.g. "Which vector index type gave lower search latency: HNSW or IVF?", "Was your cache write-through or write-around?", "Did you use gRPC or REST for inter-service communication?"). Keep total response under 35 words. Do not use markdown labels or headers.`;
+Provide your output in exactly 2 separate lines:
+Line 1: A brief validation phrase (e.g., "Correct! Spot-on analysis.", "Exactly right — strong technical explanation.").
+Line 2: A thoughtful, highly specific 1-sentence technical probing question whose ideal answer is a short 2-3 words (e.g. "Which vector index type gave lower search latency: HNSW or IVF?", "Was your cache write-through or write-around?", "Did you use gRPC or REST for inter-service communication?").
 
-      let followUpReply: string;
+Total response under 40 words. Do not use markdown labels or headers.`;
+
+      let rawReply: string;
       try {
         const response = await groqClient.chat.completions.create({
           messages: [
@@ -367,23 +371,38 @@ React in 1 short validation sentence. Then ask a thoughtful, highly specific 1-s
           ],
           model: 'llama-3.3-70b-versatile',
           temperature: 0.6,
-          max_tokens: 120,
+          max_tokens: 140,
         });
 
-        followUpReply = sanitizeReply(response.choices[0]?.message?.content || '');
+        rawReply = sanitizeReply(response.choices[0]?.message?.content || '');
 
         logAiInteraction({
           taskName: `Interview Follow-up Gen: ${session.candidate.member.name}`,
           userPrompt,
-          reasoning: `Main score ${mainScore} > 5. Generated follow-up probe.`,
-          output: { model: 'llama-3.3-70b-versatile', usage: response.usage, reply: followUpReply },
+          reasoning: `Main score ${mainScore} > 5. Generated validation & follow-up probe.`,
+          output: { model: 'llama-3.3-70b-versatile', usage: response.usage, reply: rawReply },
         });
       } catch (err) {
-        followUpReply = `Got it. Which specific index structure yielded lower search latency in your benchmark: HNSW or IVF?`;
+        rawReply = `Correct! Spot-on technical answer.\nWhich specific index structure yielded lower search latency in your benchmark: HNSW or IVF?`;
         console.warn('[InterviewEngine] Groq follow-up generation failed, using fallback:', (err as Error).message);
       }
 
-      session.currentFollowUpQuestion = followUpReply;
+      let validationText = 'Correct! Spot-on analysis.';
+      let followUpQuestionText = rawReply;
+
+      const lines = rawReply.split('\n').map((l) => l.trim()).filter(Boolean);
+      if (lines.length >= 2) {
+        validationText = lines[0];
+        followUpQuestionText = lines.slice(1).join(' ');
+      } else {
+        const match = rawReply.match(/^(Correct!?[^.?!]*[.?!]|Spot-on[^.?!]*[.?!]|Exactly right[^.?!]*[.?!]|Great job[^.?!]*[.?!])/i);
+        if (match) {
+          validationText = match[0].trim();
+          followUpQuestionText = rawReply.slice(match[0].length).trim() || rawReply;
+        }
+      }
+
+      session.currentFollowUpQuestion = followUpQuestionText;
 
       session.turns.push({
         role: 'candidate',
@@ -395,18 +414,20 @@ React in 1 short validation sentence. Then ask a thoughtful, highly specific 1-s
 
       session.turns.push({
         role: 'interviewer',
-        content: followUpReply,
+        content: followUpQuestionText,
         mainQuestion: session.currentMainQuestion,
-        followUpQuestion: followUpReply,
+        followUpQuestion: followUpQuestionText,
+        validationText,
         topic: currentTopic,
         isFollowUp: true,
         timestamp: new Date().toISOString(),
       });
 
       return {
-        reply: followUpReply,
+        reply: followUpQuestionText,
         mainQuestion: session.currentMainQuestion,
-        followUpQuestion: followUpReply,
+        followUpQuestion: followUpQuestionText,
+        validationText,
         isFollowUp: true,
         skippedFollowUp: false,
         score: mainScore,

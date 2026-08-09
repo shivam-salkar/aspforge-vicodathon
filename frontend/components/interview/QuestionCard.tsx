@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 import { useInterviewStore } from '@/stores/interviewStore';
 import BlurText from '@/components/ui/BlurText';
-import { Clock, BookOpen } from 'lucide-react';
+import { Clock, BookOpen, CheckCircle2 } from 'lucide-react';
 
 export function QuestionCard() {
   const { turnCount, maxTurns, questionTimerSeconds, currentTopic, turns } = useInterviewStore();
@@ -17,9 +17,10 @@ export function QuestionCard() {
   // Identify if current active turn has a follow-up question
   const isFollowUpActive = Boolean(activeTurn?.isFollowUp && (activeTurn?.followUpQuestion || activeTurn?.content));
 
-  // Main question text & follow-up question text
+  // Main question text, follow-up question text & validation feedback text
   const mainQuestionText = activeTurn?.mainQuestion || (activeTurn?.isFollowUp ? interviewerTurns[interviewerTurns.length - 2]?.content : activeTurn?.content) || 'Waiting for question...';
   const followUpText = activeTurn?.followUpQuestion || (activeTurn?.isFollowUp ? activeTurn.content : '');
+  const validationText = activeTurn?.validationText || 'Correct! Spot-on technical answer.';
   const topicName = activeTurn?.topic || currentTopic || 'Completed Curriculum Topic';
 
   // Auto-scroll down smooth when follow-up generates
@@ -97,13 +98,25 @@ export function QuestionCard() {
           />
         </div>
 
-        {/* Single Left-to-Right Animated Line & Question below main question */}
+        {/* Follow-up Stage (Validation Text + Gradient Line with integrated follow-up text + Question) */}
         {isFollowUpActive && (
-          <div ref={followUpRef} className="pt-2 space-y-6">
-            {/* Animated Partition Line (Left to Right) */}
-            <div className="h-px bg-gradient-to-r from-blue-500 via-purple-400 to-white/20 animate-line-expand origin-left w-full" />
+          <div ref={followUpRef} className="pt-2 space-y-5 animate-in fade-in duration-500">
+            {/* 1. Validation Feedback Text ("Correct! Spot-on...", etc.) */}
+            <div className="flex items-center gap-2.5 text-emerald-400 font-bold bg-emerald-950/50 border border-emerald-500/30 px-4 py-2.5 rounded-xl text-sm sm:text-base w-fit shadow-lg shadow-emerald-950/50 backdrop-blur-md">
+              <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+              <span className="tracking-tight">{validationText}</span>
+            </div>
 
-            {/* Generated Question below line: Same typography & BlurText animation as main question */}
+            {/* 2. Gradient Separation Line with integrated "follow-up" text */}
+            <div className="flex items-center gap-3 w-full py-1">
+              <div className="h-px flex-1 bg-gradient-to-r from-blue-500 via-purple-500 to-transparent animate-line-expand origin-left" />
+              <span className="text-[11px] font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-300 to-pink-400 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-950/50 shadow-sm shrink-0">
+                follow-up
+              </span>
+              <div className="h-px flex-1 bg-gradient-to-r from-purple-500 via-blue-500 to-transparent animate-line-expand origin-right" />
+            </div>
+
+            {/* 3. Generated Follow-Up Question */}
             <div>
               <BlurText
                 key={cleanFollowUp}

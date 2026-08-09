@@ -115,6 +115,7 @@ export function LiveActionCard() {
         isFollowUp: response.isFollowUp,
         mainQuestion: response.mainQuestion,
         followUpQuestion: response.followUpQuestion,
+        validationText: response.validationText,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       });
 

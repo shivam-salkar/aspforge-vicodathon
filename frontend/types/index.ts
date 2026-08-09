@@ -44,6 +44,7 @@ export interface ConversationTurn {
   isFollowUp?: boolean;
   mainQuestion?: string;
   followUpQuestion?: string;
+  validationText?: string;
 }
 
 export interface RecordedQuestion {

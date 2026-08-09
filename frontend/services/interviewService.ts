@@ -8,6 +8,7 @@ export interface StartInterviewResponse {
   isFollowUp?: boolean;
   mainQuestion?: string;
   followUpQuestion?: string;
+  validationText?: string;
 }
 
 export interface ConversationTurnResponse {
@@ -18,6 +19,7 @@ export interface ConversationTurnResponse {
   skippedFollowUp?: boolean;
   mainQuestion?: string;
   followUpQuestion?: string;
+  validationText?: string;
   score?: number;
   isRight?: boolean;
   feedback?: Feedback;
