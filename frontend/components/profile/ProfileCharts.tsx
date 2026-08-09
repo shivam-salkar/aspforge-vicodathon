@@ -1,7 +1,14 @@
 'use client';
 
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
-import { PieChart as PieIcon, BarChart2 } from 'lucide-react';
+import {
+  PieChart as PieIcon,
+  BarChart2,
+  CheckCircle2,
+  RefreshCw,
+  SkipForward,
+  XCircle,
+} from 'lucide-react';
 import { Candidate } from '@/types';
 
 interface ProfileChartsProps {
@@ -18,10 +25,10 @@ export function ProfileCharts({ candidate }: ProfileChartsProps) {
   const failed = missions.filter((m) => m.passed === false && !m.skipped).length;
 
   const allOutcomes = [
-    { name: 'First-Try Pass', value: firstTry, color: '#10b981' },
-    { name: 'Multi-Attempt Pass', value: multiAttempts, color: '#3b82f6' },
-    { name: 'Skipped Mission', value: skipped, color: '#f59e0b' },
-    { name: 'Failed Mission', value: failed, color: '#ef4444' },
+    { name: 'First-Try Pass', value: firstTry, color: '#10b981', icon: CheckCircle2 },
+    { name: 'Multi-Attempt Pass', value: multiAttempts, color: '#3b82f6', icon: RefreshCw },
+    { name: 'Skipped Mission', value: skipped, color: '#f59e0b', icon: SkipForward },
+    { name: 'Failed Mission', value: failed, color: '#ef4444', icon: XCircle },
   ];
 
   const outcomeDistribution = allOutcomes.filter((item) => item.value > 0);
@@ -39,14 +46,11 @@ export function ProfileCharts({ candidate }: ProfileChartsProps) {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* 1. Mission Outcome Distribution Donut Chart */}
       <div className="glass-card p-6 border-white/10 flex flex-col justify-between">
-        <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
-          <span
-            className="material-symbols-outlined text-[#c4b5fd] select-none leading-none"
-            style={{ fontSize: '32px' }}
-          >
-            pie_chart
-          </span>
-          <h3 className="text-base font-bold text-white tracking-tight">Mission Outcome Distribution</h3>
+        <div className="flex items-center gap-3 mb-4 pb-3 border-b border-white/10">
+          <div className="p-2 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400">
+            <PieIcon className="w-5 h-5" />
+          </div>
+          <h3 className="text-lg font-bold text-white tracking-tight">Mission Outcome Distribution</h3>
         </div>
 
         <div className="relative h-56 w-full flex items-center justify-center">
@@ -54,9 +58,11 @@ export function ProfileCharts({ candidate }: ProfileChartsProps) {
             <p className="text-xs text-gray-400">No mission telemetry available.</p>
           ) : (
             <>
-              <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-2xl sm:text-3xl font-black text-white font-mono">{totalMissions}</span>
-                <span className="text-[10px] uppercase tracking-wider font-extrabold text-gray-400">Missions</span>
+              {/* Symbol in place of center text */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-14 h-14 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center shadow-lg shadow-indigo-500/10">
+                  <PieIcon className="w-7 h-7 text-indigo-400" />
+                </div>
               </div>
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
@@ -81,23 +87,29 @@ export function ProfileCharts({ candidate }: ProfileChartsProps) {
           )}
         </div>
 
-        {/* Legend / Factor breakdown with clean card alignment */}
+        {/* Legend / Factor breakdown with clean symbol icons & card alignment */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-4 border-t border-white/10">
           {allOutcomes.map((item) => {
+            const IconComponent = item.icon;
             const percentage = totalMissions > 0 ? Math.round((item.value / totalMissions) * 100) : 0;
             return (
               <div
                 key={item.name}
-                className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-white/20 transition-all"
+                className="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-white/20 transition-all"
               >
-                <div className="flex items-center gap-2 min-w-0">
-                  <span
-                    className="w-2.5 h-2.5 rounded-full shrink-0"
-                    style={{ backgroundColor: item.color, boxShadow: `0 0 6px ${item.color}80` }}
-                  />
-                  <span className="text-xs sm:text-sm font-medium text-gray-200 truncate">{item.name}</span>
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div
+                    className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                    style={{
+                      backgroundColor: `${item.color}18`,
+                      border: `1px solid ${item.color}30`,
+                    }}
+                  >
+                    <IconComponent className="w-3.5 h-3.5" style={{ color: item.color }} />
+                  </div>
+                  <span className="text-xs sm:text-sm font-semibold text-gray-200 truncate">{item.name}</span>
                 </div>
-                <div className="flex items-center gap-1.5 shrink-0 ml-2">
+                <div className="flex items-center gap-2 shrink-0 ml-2">
                   <span
                     className="px-2.5 py-0.5 text-xs font-mono font-bold rounded-md"
                     style={{
@@ -122,11 +134,11 @@ export function ProfileCharts({ candidate }: ProfileChartsProps) {
 
       {/* 2. Attempts Per Mission Bar Chart */}
       <div className="glass-card p-6 border-white/10 flex flex-col justify-between">
-        <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
-          <span className="p-1.5 rounded-lg bg-blue-500/20 text-blue-400">
-            <BarChart2 className="w-4 h-4" />
-          </span>
-          <h3 className="text-base font-bold text-white tracking-tight">Attempts per Mission</h3>
+        <div className="flex items-center gap-3 mb-4 pb-3 border-b border-white/10">
+          <div className="p-2 rounded-xl bg-blue-500/15 border border-blue-500/30 text-blue-400">
+            <BarChart2 className="w-5 h-5" />
+          </div>
+          <h3 className="text-lg font-bold text-white tracking-tight">Attempts per Mission</h3>
         </div>
 
         <div className="h-56 w-full">
@@ -145,8 +157,8 @@ export function ProfileCharts({ candidate }: ProfileChartsProps) {
         </div>
 
         <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-          <span className="text-gray-400">Total Missions Evaluated</span>
-          <span className="font-bold text-blue-400 font-mono">{missions.length} Missions</span>
+          <span className="text-gray-400 font-medium">Total Missions Evaluated</span>
+          <span className="font-bold text-blue-400 font-mono text-sm">{missions.length} Missions</span>
         </div>
       </div>
     </div>
