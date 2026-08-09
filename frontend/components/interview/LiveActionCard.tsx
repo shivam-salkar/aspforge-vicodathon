@@ -24,6 +24,7 @@ export function LiveActionCard() {
     setStatusText,
     setIsThinking,
     setIsCompleted,
+    setTransientFeedback,
     updateScores,
   } = useInterviewStore();
 
@@ -83,6 +84,27 @@ export function LiveActionCard() {
         isRight,
       });
 
+      updateScores({
+        technical: Math.min(98, Math.max(65, Math.floor(score * 10))),
+        reasoning: Math.min(97, Math.max(70, Math.floor(score * 10))),
+      });
+
+      // If answer was wrong, show Red Box on CURRENT Question Screen for 2.8s reading delay, then clear BEFORE next question
+      if (!isRight && (response.skippedFollowUp || response.isWrongNotice)) {
+        setTransientFeedback({
+          text: response.validationText || 'Not very accurate — missing core architectural trade-offs.',
+          type: 'wrong',
+        });
+        setStatusText('Evaluation generated • Reviewing feedback...');
+        setIsThinking(true);
+
+        await new Promise((resolve) => setTimeout(resolve, 2800));
+
+        setTransientFeedback(null);
+        setIsThinking(false);
+        setStatusText('Listening for candidate input...');
+      }
+
       addTurn({
         role: 'interviewer',
         content: response.reply,
@@ -91,13 +113,8 @@ export function LiveActionCard() {
         isWrongNotice: response.isWrongNotice,
         mainQuestion: response.mainQuestion,
         followUpQuestion: response.followUpQuestion,
-        validationText: response.validationText,
+        validationText: response.isFollowUp ? response.validationText : undefined,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      });
-
-      updateScores({
-        technical: Math.min(98, Math.max(65, Math.floor(score * 10))),
-        reasoning: Math.min(97, Math.max(70, Math.floor(score * 10))),
       });
 
       if (response.done || (recordedQuestions.length >= 6 && !response.isFollowUp)) {

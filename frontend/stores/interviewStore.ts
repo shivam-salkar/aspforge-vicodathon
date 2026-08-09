@@ -17,7 +17,8 @@ interface InterviewState {
   scores: LiveScores;
   contextMemory: ContextMemoryItem[];
   activeSignals: string[];
-  
+  transientFeedback: { text: string; type: 'wrong' | 'correct' } | null;
+
   // Actions
   initSession: (id: string, initialReply: string, topic?: string) => void;
   addTurn: (turn: ConversationTurn) => void;
@@ -25,6 +26,7 @@ interface InterviewState {
   setStatusText: (text: string) => void;
   setIsThinking: (thinking: boolean) => void;
   setIsCompleted: (completed: boolean) => void;
+  setTransientFeedback: (feedback: { text: string; type: 'wrong' | 'correct' } | null) => void;
   updateScores: (newScores: Partial<LiveScores>) => void;
   toggleMemoryItem: (index: number) => void;
   tickTimer: () => void;
@@ -42,6 +44,7 @@ export const useInterviewStore = create<InterviewState>((set) => ({
   statusText: 'Interview Engine Active • Listening for candidate input...',
   isThinking: false,
   isCompleted: false,
+  transientFeedback: null,
   elapsedSeconds: 0,
   questionTimerSeconds: 0,
   scores: {
@@ -94,6 +97,7 @@ export const useInterviewStore = create<InterviewState>((set) => ({
   setStatusText: (text) => set({ statusText: text }),
   setIsThinking: (thinking) => set({ isThinking: thinking }),
   setIsCompleted: (completed) => set({ isCompleted: completed }),
+  setTransientFeedback: (feedback) => set({ transientFeedback: feedback }),
 
   updateScores: (newScores) =>
     set((state) => ({

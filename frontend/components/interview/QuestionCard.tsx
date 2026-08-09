@@ -6,7 +6,7 @@ import BlurText from '@/components/ui/BlurText';
 import { Clock, BookOpen, CheckCircle2, XCircle } from 'lucide-react';
 
 export function QuestionCard() {
-  const { turnCount, maxTurns, questionTimerSeconds, currentTopic, turns } = useInterviewStore();
+  const { turnCount, maxTurns, questionTimerSeconds, currentTopic, turns, transientFeedback } = useInterviewStore();
   const followUpRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -23,9 +23,9 @@ export function QuestionCard() {
   const validationText = activeTurn?.validationText;
   const topicName = activeTurn?.topic || currentTopic || 'Completed Curriculum Topic';
 
-  // Auto-scroll down smooth when follow-up generates
+  // Auto-scroll down smooth when follow-up or red feedback generates
   useEffect(() => {
-    if (isFollowUpActive && followUpRef.current) {
+    if ((isFollowUpActive || transientFeedback) && followUpRef.current) {
       const interval = setInterval(() => {
         followUpRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
       }, 100);
@@ -41,7 +41,7 @@ export function QuestionCard() {
     } else if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollTop = 0;
     }
-  }, [isFollowUpActive, followUpText]);
+  }, [isFollowUpActive, followUpText, transientFeedback]);
 
   // Format per-question timer
   const formatTimer = (totalSeconds: number) => {
@@ -98,12 +98,12 @@ export function QuestionCard() {
           />
         </div>
 
-        {/* Red Feedback Box for Incorrect Answer directly below main question on the same screen */}
-        {!isFollowUpActive && validationText && (
+        {/* Red Feedback Box for Incorrect Answer directly below main question on the SAME screen */}
+        {transientFeedback?.type === 'wrong' && (
           <div ref={followUpRef} className="pt-2 animate-in fade-in duration-300">
             <div className="flex items-center gap-2.5 text-rose-400 font-bold bg-rose-950/60 border border-rose-500/40 px-4 py-3 rounded-xl text-sm sm:text-base w-fit shadow-lg shadow-rose-950/60 backdrop-blur-md">
               <XCircle className="w-5 h-5 text-rose-400 shrink-0" />
-              <span className="tracking-tight">{validationText}</span>
+              <span className="tracking-tight">{transientFeedback.text}</span>
             </div>
           </div>
         )}
