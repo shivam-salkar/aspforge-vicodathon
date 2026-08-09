@@ -1,50 +1,40 @@
 'use client';
 
+import { useRef, useEffect } from 'react';
 import { useInterviewStore } from '@/stores/interviewStore';
 import BlurText from '@/components/ui/BlurText';
-import { Clock, BookOpen, HelpCircle } from 'lucide-react';
-
-function parseQuestionContent(text: string) {
-  let main = text;
-  let followUp = '';
-
-  if (text.includes('---FOLLOWUP---')) {
-    const parts = text.split('---FOLLOWUP---');
-    main = parts[0].trim();
-    followUp = parts[1].trim().replace(/^Follow-up:\s*/i, '');
-  } else if (text.includes('\n---\n')) {
-    const parts = text.split('\n---\n');
-    main = parts[0].trim();
-    followUp = parts[1].trim().replace(/^Follow-up:\s*/i, '');
-  } else {
-    const lower = text.toLowerCase();
-    if (lower.includes('latency') || lower.includes('performance') || lower.includes('speed')) {
-      followUp = 'Explain latency impact?';
-    } else if (lower.includes('vector') || lower.includes('embedding') || lower.includes('index')) {
-      followUp = 'Why vector index?';
-    } else if (lower.includes('scale') || lower.includes('throughput') || lower.includes('volume')) {
-      followUp = 'What scale threshold?';
-    } else if (lower.includes('agent') || lower.includes('mcp') || lower.includes('orchestration')) {
-      followUp = 'How handle failures?';
-    } else if (lower.includes('docker') || lower.includes('kubernetes') || lower.includes('container')) {
-      followUp = 'Why containerize this?';
-    } else if (lower.includes('cache') || lower.includes('memory') || lower.includes('redis')) {
-      followUp = 'Cache invalidation strategy?';
-    } else {
-      followUp = 'Key trade-offs involved?';
-    }
-  }
-
-  return { main, followUp };
-}
+import { Clock, BookOpen } from 'lucide-react';
 
 export function QuestionCard() {
   const { turnCount, maxTurns, questionTimerSeconds, currentTopic, turns } = useInterviewStore();
+  const followUpRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Find the last interviewer turn to display as active question & topic
-  const activeTurn = turns.filter((t) => t.role === 'interviewer').pop();
-  const rawQuestion = activeTurn?.content || 'Waiting for question...';
+  // Find all interviewer turns
+  const interviewerTurns = turns.filter((t) => t.role === 'interviewer');
+  const activeTurn = interviewerTurns[interviewerTurns.length - 1];
+
+  // Identify if current active turn is a follow-up question
+  const isFollowUpActive = Boolean(activeTurn?.isFollowUp);
+
+  // Main question is either activeTurn (if not follow-up) or previous turn's mainQuestion/content
+  const mainQuestionText = activeTurn?.isFollowUp
+    ? activeTurn.mainQuestion || interviewerTurns[interviewerTurns.length - 2]?.content || 'Main Question'
+    : activeTurn?.content || 'Waiting for question...';
+
+  const followUpText = activeTurn?.isFollowUp ? activeTurn.content : '';
   const topicName = activeTurn?.topic || currentTopic || 'Completed Curriculum Topic';
+
+  // Auto-scroll down smooth when follow-up generates
+  useEffect(() => {
+    if (isFollowUpActive && followUpRef.current) {
+      setTimeout(() => {
+        followUpRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 150);
+    } else if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = 0;
+    }
+  }, [isFollowUpActive, followUpText]);
 
   // Format per-question timer
   const formatTimer = (totalSeconds: number) => {
@@ -53,9 +43,8 @@ export function QuestionCard() {
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
-  // Strip any legacy Topic: tags if present in string
-  const cleanQuestionText = rawQuestion.replace(/^Topic:\s*[^|]+\|\s*Q\d+:\s*/i, '').trim();
-  const { main: mainQuestion, followUp: followUpQuestion } = parseQuestionContent(cleanQuestionText);
+  const cleanMainQuestion = mainQuestionText.replace(/^Topic:\s*[^|]+\|\s*Q\d+:\s*/i, '').trim();
+  const cleanFollowUp = followUpText.replace(/^Topic:\s*[^|]+\|\s*Q\d+:\s*/i, '').trim();
 
   return (
     <div className="glass-card p-6 md:p-8 h-full flex flex-col border-white/10 relative overflow-hidden bg-gray-950/70 shadow-2xl">
@@ -88,34 +77,39 @@ export function QuestionCard() {
         <span>Topic: {topicName} • Q{turnCount}</span>
       </div>
 
-      {/* Main AI Technical Question */}
-      <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar min-h-0">
-        <BlurText
-          key={mainQuestion}
-          text={mainQuestion}
-          delay={120}
-          animateBy="words"
-          direction="top"
-          className="text-lg md:text-2xl font-semibold text-white leading-relaxed tracking-tight"
-        />
-      </div>
-
-      {/* Partition Line */}
-      <div className="my-5 border-t border-white/10 flex items-center gap-3 pt-3 shrink-0">
-        <span className="px-2.5 py-0.5 rounded-md bg-purple-500/20 text-purple-300 text-[10px] font-extrabold tracking-wider uppercase border border-purple-500/30">
-          Follow-up Probe
-        </span>
-        <div className="h-px flex-1 bg-gradient-to-r from-purple-500/40 via-blue-500/30 to-transparent" />
-      </div>
-
-      {/* 2-3 Word Follow-up Question Box */}
-      <div className="p-4 rounded-2xl bg-purple-950/40 border border-purple-500/30 shadow-lg shrink-0">
-        <div className="flex items-center gap-2.5">
-          <HelpCircle className="w-5 h-5 text-purple-400 shrink-0" />
-          <span className="text-base md:text-xl font-bold text-purple-200 tracking-tight">
-            {followUpQuestion}
-          </span>
+      {/* Scrollable Question Container */}
+      <div ref={scrollContainerRef} className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-6 min-h-0">
+        {/* Main AI Technical Question */}
+        <div>
+          <BlurText
+            key={cleanMainQuestion}
+            text={cleanMainQuestion}
+            delay={120}
+            animateBy="words"
+            direction="top"
+            className="text-lg md:text-2xl font-semibold text-white leading-relaxed tracking-tight"
+          />
         </div>
+
+        {/* Single Partition Line & Follow-up Question (Only after user answers main question) */}
+        {isFollowUpActive && (
+          <div ref={followUpRef} className="pt-4 space-y-6 animate-in fade-in slide-in-from-bottom-3 duration-500">
+            {/* Single Partition Line */}
+            <div className="border-t border-white/10 w-full" />
+
+            {/* Follow-up Question: Same typography & animation as main question */}
+            <div>
+              <BlurText
+                key={cleanFollowUp}
+                text={cleanFollowUp}
+                delay={120}
+                animateBy="words"
+                direction="top"
+                className="text-lg md:text-2xl font-semibold text-white leading-relaxed tracking-tight"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

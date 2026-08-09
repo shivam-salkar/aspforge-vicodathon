@@ -41,6 +41,8 @@ export interface ConversationTurn {
   topic?: string;
   timestamp: string;
   timeSpentSeconds?: number;
+  isFollowUp?: boolean;
+  mainQuestion?: string;
 }
 
 export interface RecordedQuestion {

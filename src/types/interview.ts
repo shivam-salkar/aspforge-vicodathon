@@ -61,6 +61,8 @@ export interface ConversationTurn {
   topic?: string;
   timestamp: string;
   timeSpentSeconds?: number;
+  isFollowUp?: boolean;
+  mainQuestion?: string;
 }
 
 export interface RecordedQuestion {
@@ -114,6 +116,9 @@ export interface InterviewSession {
   strongAreas: string[];
   difficulty: 'easy' | 'medium' | 'hard';
   createdAt: string;
+  isExpectingFollowUpAnswer?: boolean;
+  currentMainQuestion?: string;
+  currentMainAnswer?: string;
 }
 
 // ─── API Request / Response Contract ─────────────────────────────────────────
@@ -136,6 +141,8 @@ export interface InterviewApiResponse {
   reply: string;
   done: boolean;
   topic?: string;
+  isFollowUp?: boolean;
+  mainQuestion?: string;
   score?: number;
   isRight?: boolean;
   feedback?: Feedback;

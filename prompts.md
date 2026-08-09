@@ -21097,3 +21097,314 @@ Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
 }
 ```
 ---
+
+## [2026-08-09T06:29:00.941Z] - Interview Start: Emily Chen
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** b46b007f
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
+> 5. NEVER output markdown labels or prefixes like "Evaluation:" or "Topic:". Speak naturally in conversational speech.
+> 6. Keep your total response under 60 words (3-4 sentences max).
+> 
+> 
+> Candidate Profile:
+> Candidate: Emily Chen
+> Role: AI Engineer | Experience: 6 years | Education: MS Artificial Intelligence
+> Cohort Progress: 31/31 missions completed, 30 first-try passes
+> Completed Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), RAG End-to-End & LLM API Basics (Day 11), Prompt Engineering Fundamentals (Day 12), Advanced Prompting: Function Calling & Structured Outputs (Day 13), Agentic Frameworks: LangChain Agents & Tool Use (Day 21), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)
+> 
+> Target Completed Curriculum Topic: "Embeddings Explained" (Day 7) [Level: intermediate]
+> User: Ask your first technical question Q1 directly to Emily Chen ("you") about completed topic "Embeddings Explained" (Day 7). Focus on concrete system architecture, tools (Sentence Transformers, OpenAI Embeddings, Scikit-learn, Matplotlib), or trade-offs. Speak in second-person. Under 60 words total. No topic headers in text.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mslf9gew. Topic: "Embeddings Explained (Day 7)". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.057997546,
+    "prompt_tokens": 477,
+    "prompt_time": 0.025598836,
+    "completion_tokens": 38,
+    "completion_time": 0.163404468,
+    "total_tokens": 515,
+    "total_time": 0.189003304
+  },
+  "reply": "You completed Embeddings Explained, so how would you architect a system using Sentence Transformers and Scikit-learn to generate and compare embeddings, considering trade-offs between accuracy and computational efficiency?"
+}
+```
+---
+
+## [2026-08-09T06:29:28.334Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 46737478
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Emily Chen","content":"Candidate: Emily Chen\nRole: AI Engineer | Experience: 6 years | Education: MS Artificial Intelligence\nCohort Progress: 31/31 missions completed, 30 first-try passes\nCompleted Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), RAG End-to-End & LLM API Basics (Day 11), Prompt Engineering Fundamentals (Day 12), Advanced Prompting: Function Calling & Structured Outputs (Day 13), Agentic Frameworks: LangChain Agents & Tool Use (Day 21), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)","tags":["interview-init","sess-mslf9gew","CAND-003"],"metadata":{"sessionId":"sess-mslf9gew","candidateId":"CAND-003"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786256942057",
+  "extracted": {
+    "entities": 24,
+    "edges": 34
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "a66992a45ed8",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-09T06:29:43.910Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 36c5d1b4
+
+### 1. User Prompt / Intent
+> {"query":"Emily Chen Embeddings Explained (Day 7) I’d use Sentence Transformers to produce high-quality sentence embeddings, then use Scikit-learn for","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "d5de8b2a-344c-4617-99cf-64ddf5becf4e",
+      "source_node": "817d4da4-5768-400a-bfae-3e0057e95230",
+      "target_node": "192cbf09-40fb-4feb-b2bd-aa9171f38d5b",
+      "fact": "Sentence Transformers for chunk embeddings stored in ChromaDB",
+      "name": "USED_FOR",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "70819b2f-b696-427f-ba02-75d372eef683",
+      "source_node": "817d4da4-5768-400a-bfae-3e0057e95230",
+      "target_node": "192cbf09-40fb-4feb-b2bd-aa9171f38d5b",
+      "fact": "used sentence transformers for chunk embeddings stored in chromadb",
+      "name": "USED_FOR",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "1c602f75-5d49-43fd-816d-6f0881f01323",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "Embeddings Explained (Day 7)",
+      "name": "COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "1098b531-ebff-4b40-907c-8c18fa4e8083",
+      "source_node": "92f523ab-6d79-46ae-ac93-45186db5fe81",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "Embeddings Explained (Day 7)",
+      "name": "COMPLETED_CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "868d3da5-d6d3-4642-9976-c88183928b86",
+      "source_node": "72b4ccd7-5a2e-4b31-a266-a3e7c9a3e554",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "Emily Chen completed the Embeddings Explained curriculum topic on Day 7",
+      "name": "COMPLETED_CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-09T06:29:44.283Z] - Interview Turn 2: Emily Chen
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 32326a05
+
+### 1. User Prompt / Intent
+> Candidate: "I’d use Sentence Transformers to produce high-quality sentence embeddings, then use Scikit-learn for lightweight preprocessing, similarity computation..."
+
+### 2. AI Reasoning & Strategy
+Turn 2. Q2 on completed day 8 ("Vector Databases Overview").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161029845,
+    "prompt_tokens": 590,
+    "prompt_time": 0.030571615,
+    "completion_tokens": 23,
+    "completion_time": 0.147184869,
+    "total_tokens": 613,
+    "total_time": 0.177756484
+  },
+  "reply": "Your answer effectively balances quality and efficiency. What are key considerations when selecting a vector database to store these embeddings?"
+}
+```
+---
+
+## [2026-08-09T06:29:46.584Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 3f46b999
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Candidate Answer","content":"Topic: Embeddings Explained (Day 7)\nScore: 7.7/10 (RIGHT)\nAnswer: I’d use Sentence Transformers to produce high-quality sentence embeddings, then use Scikit-learn for lightweight preprocessing, similarity computation","tags":["interview-turn","sess-mslf9gew","CAND-003"],"metadata":{"sessionId":"sess-mslf9gew","turn":2,"topic":"Embeddings Explained (Day 7)","score":7.7,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786256982377",
+  "extracted": {
+    "entities": 2,
+    "edges": 1
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "7cb452465dae",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-09T06:31:12.598Z] - Interview Start: Emily Chen
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 1e5d13a0
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
+> 5. Format your output into 2 sections separated by "---FOLLOWUP---":
+>    [Main Technical Question]
+>    ---FOLLOWUP---
+>    [2-3 word targeted follow-up probe]
+>    Example:
+>    How do you optimize vector index search latency in production?
+>    ---FOLLOWUP---
+>    Why vector index?
+> 6. Keep total response under 60 words total. Speak naturally without markdown labels like "Evaluation:" or "Topic:".
+> 
+> 
+> Candidate Profile:
+> Candidate: Emily Chen
+> Role: AI Engineer | Experience: 6 years | Education: MS Artificial Intelligence
+> Cohort Progress: 31/31 missions completed, 30 first-try passes
+> Completed Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), RAG End-to-End & LLM API Basics (Day 11), Prompt Engineering Fundamentals (Day 12), Advanced Prompting: Function Calling & Structured Outputs (Day 13), Agentic Frameworks: LangChain Agents & Tool Use (Day 21), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)
+> 
+> Target Completed Curriculum Topic: "Embeddings Explained" (Day 7) [Level: intermediate]
+> User: Ask your first technical question Q1 directly to Emily Chen ("you") about completed topic "Embeddings Explained" (Day 7). Focus on concrete system architecture, tools (Sentence Transformers, OpenAI Embeddings, Scikit-learn, Matplotlib), or trade-offs. Remember to include the "---FOLLOWUP---" separator and a 2-3 word follow-up question below it. Under 60 words total.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mslfca0e. Topic: "Embeddings Explained (Day 7)". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.052568327,
+    "prompt_tokens": 541,
+    "prompt_time": 0.027587083,
+    "completion_tokens": 24,
+    "completion_time": 0.123185308,
+    "total_tokens": 565,
+    "total_time": 0.150772391
+  },
+  "reply": "You implemented Sentence Transformers for embeddings, how did you architect the system? ---FOLLOWUP--- Why transformers?"
+}
+```
+---
+
+## [2026-08-09T06:31:22.683Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** c1fc7d40
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Emily Chen","content":"Candidate: Emily Chen\nRole: AI Engineer | Experience: 6 years | Education: MS Artificial Intelligence\nCohort Progress: 31/31 missions completed, 30 first-try passes\nCompleted Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), RAG End-to-End & LLM API Basics (Day 11), Prompt Engineering Fundamentals (Day 12), Advanced Prompting: Function Calling & Structured Outputs (Day 13), Agentic Frameworks: LangChain Agents & Tool Use (Day 21), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)","tags":["interview-init","sess-mslfca0e","CAND-003"],"metadata":{"sessionId":"sess-mslfca0e","candidateId":"CAND-003"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786257075568",
+  "extracted": {
+    "entities": 24,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "a9f75fb25b0e",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---

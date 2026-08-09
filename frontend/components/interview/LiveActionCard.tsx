@@ -129,6 +129,8 @@ export function LiveActionCard() {
       setStatusText('Error processing turn. Please try again.');
     }
   };
+  const lastInterviewerTurn = turns.filter((t) => t.role === 'interviewer').pop();
+  const isFollowUpActive = Boolean(lastInterviewerTurn?.isFollowUp);
 
   return (
     <div className="glass-card p-4 md:p-6 h-full flex flex-col justify-between border-white/10 relative overflow-hidden bg-[#0a0a0c]/80 shadow-2xl">
@@ -138,43 +140,33 @@ export function LiveActionCard() {
         {/* AI Avatar */}
         <div className="rounded-2xl bg-gray-950 border border-white/10 flex flex-col items-center justify-center relative overflow-hidden shadow-inner">
           <div
-            className={`w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
-              isThinking
-                ? 'bg-gradient-to-br from-blue-500 to-cyan-500 animate-pulse shadow-blue-500/50'
-                : 'bg-gradient-to-br from-blue-600 to-indigo-600 shadow-blue-900/50'
+            className={`w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-600 p-1 flex items-center justify-center shadow-lg transition-transform duration-500 ${
+              isThinking ? 'scale-110 animate-pulse' : ''
             }`}
           >
-            <Bot className="w-8 h-8 md:w-10 md:h-10 text-white" />
+            <div className="w-full h-full bg-black rounded-full flex items-center justify-center relative overflow-hidden">
+              <Bot className="w-10 h-10 md:w-12 md:h-12 text-blue-400" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/10 to-purple-500/20" />
+            </div>
           </div>
 
           <div className="absolute bottom-3 left-3 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/10 text-[10px] font-bold tracking-wide">
-            {isThinking ? (
-              <>
-                <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-ping" />
-                <span className="text-blue-300 uppercase">Evaluating</span>
-              </>
-            ) : (
-              <>
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span className="text-emerald-300 uppercase font-semibold">Listening</span>
-              </>
-            )}
+            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-white uppercase">AI Interviewer</span>
           </div>
-          <div className="absolute top-3 right-3 text-[10px] font-bold text-gray-500 bg-black/40 px-2.5 py-1 rounded-md border border-white/5">
-            AI Interviewer
+
+          <div className="absolute top-3 right-3 text-[10px] font-bold text-blue-400 bg-blue-950/60 px-2.5 py-1 rounded-md border border-blue-500/30">
+            Groq Llama 3.3 70B
           </div>
         </div>
 
-        {/* Candidate Webcam with Browser Camera Permission & Mirrored Feed */}
+        {/* Candidate Video Feed */}
         <div className="rounded-2xl bg-gray-950 border border-white/10 flex flex-col items-center justify-center relative overflow-hidden shadow-inner">
-          {/* Live Video Feed */}
           <video
             ref={videoRef}
-            autoPlay
             playsInline
             muted
-            className={`w-full h-full object-cover ${isCameraActive ? 'block' : 'hidden'}`}
-            style={{ transform: 'scaleX(-1)', WebkitTransform: 'scaleX(-1)' }}
+            className={`w-full h-full object-cover transform -scale-x-100 ${!isCameraActive ? 'hidden' : ''}`}
           />
 
           {/* Camera Error / Fallback UI */}
@@ -225,7 +217,11 @@ export function LiveActionCard() {
                 handleSendMessage();
               }
             }}
-            placeholder="Type your detailed technical response here... (Press Ctrl+Enter or click Submit)"
+            placeholder={
+              isFollowUpActive
+                ? "Answer follow-up in 2-3 words (e.g., 'HNSW index')... (Press Ctrl+Enter or click Submit)"
+                : "Type your detailed technical response here... (Press Ctrl+Enter or click Submit)"
+            }
             disabled={isThinking}
             className="w-full flex-1 bg-gray-950/70 border border-white/10 focus:border-blue-500/50 p-5 md:p-6 pr-4 pb-16 text-lg md:text-xl font-medium text-white placeholder-gray-500 placeholder:text-base resize-none rounded-2xl transition-all outline-none focus:ring-2 focus:ring-blue-500/20 leading-relaxed font-sans shadow-inner"
           />
