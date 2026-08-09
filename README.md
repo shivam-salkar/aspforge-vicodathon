@@ -47,13 +47,14 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 ![Landing Dashboard](assets/landing.png)
 <br />
 ![Interview Demo](assets/interview.gif)
 
-**InterviewOS** is an autonomous AI-powered technical interviewer built specifically for the **ABTalks Hackathon**. 
+**InterviewOS** is an autonomous AI-powered technical interviewer built specifically for the **ABTalks Hackathon**.
 
 It conducts realistic, multi-turn technical interviews tailored to a candidate's progress through a 31-day AI Cohort curriculum, evaluating their understanding of concepts they built during the program and generating structured performance reports.
 
@@ -62,13 +63,14 @@ It conducts realistic, multi-turn technical interviews tailored to a candidate's
 ### The Situation
 
 The **AI Cohort** is an intensive 31-day enterprise AI engineering program covering core modern AI topics, including:
-* **Retrieval-Augmented Generation (RAG)**
-* **Vector Databases**
-* **Prompt Engineering**
-* **Agentic AI & Orchestration**
-* **Model Context Protocol (MCP)**
-* **AI Deployment (Docker & Kubernetes)**
-* **Production AI Systems & Observability**
+
+- **Retrieval-Augmented Generation (RAG)**
+- **Vector Databases**
+- **Prompt Engineering**
+- **Agentic AI & Orchestration**
+- **Model Context Protocol (MCP)**
+- **AI Deployment (Docker & Kubernetes)**
+- **Production AI Systems & Observability**
 
 After completing the cohort, learners must be able to confidently explain the systems they built and the engineering decisions behind them. However, preparing for technical interviews and effectively communicating this knowledge remains one of the biggest challenges.
 
@@ -77,6 +79,7 @@ After completing the cohort, learners must be able to confidently explain the sy
 ### The Challenge
 
 Design and build an **AI Interview Agent** capable of conducting a realistic, multi-turn technical interview that:
+
 1. **Assesses Understanding**: Evaluates concepts the candidate completed during the 31-day cohort.
 2. **Adapts Naturally**: Dynamically shifts topics and difficulty based on live candidate answers.
 3. **Asks Intelligent Follow-ups**: Probes candidate depth when questions are answered correctly.
@@ -88,12 +91,13 @@ Design and build an **AI Interview Agent** capable of conducting a realistic, mu
 ### Minimum Requirements
 
 Our hackathon solution satisfies all core requirements:
-* ✅ **Conversational Technical Interview**: Multi-turn natural dialogue simulating a 1-on-1 engineering interview.
-* ✅ **Curriculum Coverage**: Asks at least 8 main technical questions covering at least 4 different curriculum days.
-* ✅ **Intelligent Follow-ups**: Evaluates answers in real time and asks targeted follow-up probes.
-* ✅ **Context Persistence**: Maintains full conversation history and state throughout the session.
-* ✅ **Structured Feedback**: Computes topic-level scoring breakdowns, time analysis, and right/wrong classifications.
-* ✅ **Required HTTP Endpoint**: Exposes standard API routes as defined in the technical specification.
+
+- ✅ **Conversational Technical Interview**: Multi-turn natural dialogue simulating a 1-on-1 engineering interview.
+- ✅ **Curriculum Coverage**: Asks at least 8 main technical questions covering at least 4 different curriculum days.
+- ✅ **Intelligent Follow-ups**: Evaluates answers in real time and asks targeted follow-up probes.
+- ✅ **Context Persistence**: Maintains full conversation history and state throughout the session.
+- ✅ **Structured Feedback**: Computes topic-level scoring breakdowns, time analysis, and right/wrong classifications.
+- ✅ **Required HTTP Endpoint**: Exposes standard API routes as defined in the technical specification.
 
 ---
 
@@ -107,60 +111,65 @@ Our hackathon solution satisfies all core requirements:
 
 ### Key Features
 
-* 🧠 **Adaptive AI Interview Engine**: Custom evaluation algorithm adjusting technical difficulty based on real-time candidate answers.
-* 📊 **Comprehensive Evaluation Reports**: Automatic scoring across topics, right/wrong answer classification, and topic time analysis.
-* 💾 **Episodic Memory Integration**: Breeth AI memory persistence tracking candidate progress and historical performance.
-* ⚡ **Ultra-Fast LLM Inference**: Powered by Groq API (`llama-3.1-8b-instant` & `llama-3.3-70b-versatile`).
+- 🧠 **Adaptive AI Interview Engine**: Custom evaluation algorithm adjusting technical difficulty based on real-time candidate answers.
+- 📊 **Comprehensive Evaluation Reports**: Automatic scoring across topics, right/wrong answer classification, and topic time analysis.
+- 💾 **Episodic Memory Integration**: Breeth AI memory persistence tracking candidate progress and historical performance.
+- ⚡ **Ultra-Fast LLM Inference**: Powered by Groq API (`llama-3.1-8b-instant` & `llama-3.3-70b-versatile`).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![TypeScript][TypeScript]][TypeScript-url]
-* [![Express][Express.js]][Express-url]
-* [![TailwindCSS][Tailwind]][Tailwind-url]
-* [![Groq][Groq]][Groq-url]
+- [![Next][Next.js]][Next-url]
+- [![React][React.js]][React-url]
+- [![TypeScript][TypeScript]][TypeScript-url]
+- [![Express][Express.js]][Express-url]
+- [![TailwindCSS][Tailwind]][Tailwind-url]
+- [![Groq][Groq]][Groq-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 Follow these simple steps to get InterviewOS running locally.
 
 ### Prerequisites
 
-* **Node.js**: v18.0.0 or higher
-* **npm**:
+- **Node.js**: v18.0.0 or higher
+- **npm**:
   ```sh
   npm install npm@latest -g
   ```
-* **API Keys**:
-  * Groq API Key ([Get one here](https://console.groq.com/))
-  * Breeth AI API Key (`https://api.thebreeth.com/v1`)
+- **API Keys**:
+  - Groq API Key ([Get one here](https://console.groq.com/))
+  - Breeth AI API Key (`https://api.thebreeth.com/v1`)
 
 ### Installation
 
 1. **Clone the repository**:
+
    ```sh
    git clone https://github.com/shivam-salkar/aspforge-vicodathon.git
    cd aspforge-vicodathon
    ```
 
 2. **Install root & backend dependencies**:
+
    ```sh
    npm install
    ```
 
 3. **Install frontend dependencies**:
+
    ```sh
    cd frontend && npm install && cd ..
    ```
 
 4. **Configure Environment Variables**:
    Create a `.env` file in the project root:
+
    ```env
    GROQ_API_KEY=your_groq_api_key_here
    BREETH_API_KEY=your_breeth_api_key_here
@@ -168,11 +177,11 @@ Follow these simple steps to get InterviewOS running locally.
    ```
 
 5. **Run the Application**:
-   * **Backend Server** (Express API on port 3001):
+   - **Backend Server** (Express API on port 3001):
      ```sh
      npm run server
      ```
-   * **Frontend Dashboard** (Next.js on port 3000):
+   - **Frontend Dashboard** (Next.js on port 3000):
      ```sh
      npm run dev:frontend
      ```
@@ -180,26 +189,31 @@ Follow these simple steps to get InterviewOS running locally.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE & SCREENSHOTS -->
+
 ## Usage & Screenshots
 
 ### 1. Landing Dashboard & Candidate Selection
+
 Select a candidate from the cohort database by Candidate ID (e.g. `CAND-001` through `CAND-013`) to verify their learning record.
 
 ![Landing Page](assets/landing.png)
 
 ### 2. Candidate Profile & Telemetry
+
 Inspect completed curriculum days, mission attempt history, commit signals, and topic mastery before beginning the technical interview.
 
 ![Candidate Profile](assets/profile.png)
 
 ### 3. Live Technical Interview Console
+
 Engage in a live multi-turn technical interview with dynamic question generation, real-time question timers, and follow-up probes.
 
-![Live Interview Console](assets/interview.png)
+![Live Interview Console](assets/interview.jpeg)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS -->
+
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
