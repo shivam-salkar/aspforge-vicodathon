@@ -50,6 +50,8 @@
 ## About The Project
 
 ![Landing Dashboard](assets/landing.png)
+<br />
+![Interview Demo](assets/interview.gif)
 
 **InterviewOS** is an autonomous AI-powered technical interviewer built specifically for the **ABTalks Hackathon**. 
 
