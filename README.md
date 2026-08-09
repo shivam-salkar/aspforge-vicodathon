@@ -214,6 +214,12 @@ Engage in a live multi-turn technical interview with dynamic question generation
 
 ![Live Interview Console](assets/interview.jpeg)
 
+### 4. Final Results And Grading
+
+Analyze the final evaluation report, topic-wise performance, right/wrong classification, and time analysis.
+
+![Final Results](assets/results.jpeg)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS -->
