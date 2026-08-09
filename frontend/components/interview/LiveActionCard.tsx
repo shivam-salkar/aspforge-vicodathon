@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Send, Bot, Cpu, Camera, Mic, VideoOff, Sparkles } from 'lucide-react';
+import { Send, Bot, Cpu, Camera, Mic, VideoOff, Sparkles, User, RefreshCw } from 'lucide-react';
 import { useInterviewStore } from '@/stores/interviewStore';
 import { interviewService } from '@/services/interviewService';
 
@@ -30,20 +30,34 @@ export function LiveActionCard() {
 
   const [inputMessage, setInputMessage] = useState('');
   const [cameraActive, setCameraActive] = useState(false);
+  const [cameraError, setCameraError] = useState<string | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    async function setupWebcam() {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+  const setupWebcam = async () => {
+    try {
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { width: { ideal: 640 }, height: { ideal: 480 }, facingMode: 'user' },
+          audio: false,
+        });
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
-          setCameraActive(true);
+          await videoRef.current.play().catch(() => {});
         }
-      } catch (err) {
+        setCameraActive(true);
+        setCameraError(null);
+      } else {
+        setCameraError('Camera API not supported');
         setCameraActive(false);
       }
+    } catch (err: any) {
+      console.warn('[LiveActionCard] Webcam error:', err?.message || err);
+      setCameraError('Camera permission denied or camera in use');
+      setCameraActive(false);
     }
+  };
+
+  useEffect(() => {
     setupWebcam();
   }, []);
 
@@ -178,20 +192,30 @@ export function LiveActionCard() {
         <div className="rounded-2xl bg-gray-950 border border-white/10 flex flex-col items-center justify-center relative overflow-hidden shadow-inner">
           <video
             ref={videoRef}
+            autoPlay
             playsInline
             muted
-            className={`w-full h-full object-cover transform -scale-x-100 ${!cameraActive ? 'hidden' : ''}`}
+            className={`w-full h-full object-cover transform -scale-x-100 ${!cameraActive ? 'hidden' : 'block'}`}
           />
 
-          {/* Camera Error / Fallback UI */}
+          {/* Camera Error / Interactive Fallback UI */}
           {!cameraActive && (
-            <div className="absolute inset-0 bg-black/90 flex flex-col items-center justify-center p-3 text-center">
-              <div className="w-10 h-10 rounded-full bg-gray-900 border border-white/10 flex items-center justify-center mb-2">
-                <VideoOff className="w-5 h-5 text-gray-500" />
+            <div className="absolute inset-0 bg-gray-950/95 flex flex-col items-center justify-center p-3 text-center z-10">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-cyan-600 to-blue-600 p-0.5 mb-2 shadow-lg animate-pulse">
+                <div className="w-full h-full bg-black rounded-full flex items-center justify-center">
+                  <User className="w-6 h-6 text-cyan-400" />
+                </div>
               </div>
-              <p className="text-[11px] text-gray-400 font-medium">
-                Requesting camera access...
+              <p className="text-[11px] text-gray-400 font-medium max-w-[180px] mb-2">
+                {cameraError || 'Camera inactive'}
               </p>
+              <button
+                type="button"
+                onClick={setupWebcam}
+                className="px-3 py-1.5 rounded-lg bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/40 text-blue-300 text-xs font-bold transition-all flex items-center gap-1.5 shadow-md active:scale-95"
+              >
+                <RefreshCw className="w-3.5 h-3.5 text-blue-400" /> Enable Webcam
+              </button>
             </div>
           )}
 
