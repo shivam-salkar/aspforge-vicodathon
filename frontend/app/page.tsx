@@ -6,7 +6,7 @@ import { candidateService } from '@/services/candidateService';
 import { Navbar } from '@/components/ui/Navbar';
 import { ConsoleDemoWindow } from '@/components/ui/ConsoleDemoWindow';
 import { ParticleText } from '@/components/ui/ParticleText';
-import Prism from '@/components/ui/Prism';
+import GradientWaves from '@/components/ui/GradientWaves';
 import GlassSurface from '@/components/ui/GlassSurface';
 import {
   Sparkles,
@@ -123,22 +123,29 @@ export default function LandingPage() {
         </div>
       )}
 
-      {/* FIXED BACKGROUND: Prism 3D Shader Background */}
+      {/* FIXED BACKGROUND: GradientWaves Shader Background */}
       <div className="fixed inset-0 z-0 pointer-events-none w-full h-full overflow-hidden opacity-90">
-        <Prism
-          height={3.5}
-          baseWidth={5.5}
-          animationType="rotate"
-          glow={1}
-          noise={0}
-          transparent
-          scale={3.6}
-          hueShift={0}
-          colorFrequency={1}
-          hoverStrength={2}
-          inertia={0.05}
-          bloom={1}
-          timeScale={0.5}
+        <GradientWaves
+          horizonColor="#5227FF"
+          waveColor="#FF9FFC"
+          crestColor="#FFFFFF"
+          speed={0.4}
+          amplitude={2.5}
+          waveScale={0.6}
+          waveRatio={0.9}
+          swell={35}
+          turbulence={20}
+          tilt={1.11}
+          zoom={1.0}
+          height={5.5}
+          fogDepth={15}
+          detail="medium"
+          brightness={1.0}
+          opacity={1.0}
+          mouseInteraction={false}
+          parallaxStrength={0.5}
+          grain={true}
+          grainIntensity={0.05}
         />
         <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
       </div>
