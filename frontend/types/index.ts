@@ -42,6 +42,7 @@ export interface ConversationTurn {
   timestamp: string;
   timeSpentSeconds?: number;
   isFollowUp?: boolean;
+  isWrongNotice?: boolean;
   mainQuestion?: string;
   followUpQuestion?: string;
   validationText?: string;
@@ -78,8 +79,10 @@ export interface InterviewResultData {
   candidateName: string;
   jobRole: string;
   createdAt?: string;
-  overallScore: number; // 0 to 10 scale
+  overallScore: number; // 0-10 avg scale
   overallPercentage: number;
+  totalMaxScore: number; // e.g. 60 points for 6 questions
+  totalEarnedScore: number; // e.g. 48.5 points earned
   totalQuestions: number;
   rightCount: number;
   wrongCount: number;

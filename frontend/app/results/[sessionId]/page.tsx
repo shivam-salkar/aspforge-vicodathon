@@ -110,9 +110,11 @@ export default function ResultsPage({ params }: { params: Promise<{ sessionId: s
                 <span className="text-sm font-bold text-blue-400 uppercase tracking-widest">Overall Score</span>
                 <div className="flex items-baseline gap-3 mt-2">
                   <span className="text-6xl md:text-7xl font-black text-white tracking-tight font-mono">
-                    {result.overallScore}
+                    {result.totalEarnedScore ?? Number((result.overallScore * result.totalQuestions).toFixed(1))}
                   </span>
-                  <span className="text-2xl font-bold text-gray-400 font-mono">/ 10</span>
+                  <span className="text-2xl font-bold text-gray-400 font-mono">
+                    / {result.totalMaxScore ?? result.totalQuestions * 10}
+                  </span>
                   <span className="ml-2 px-3.5 py-1.5 rounded-full text-sm font-extrabold bg-blue-500/20 text-blue-300 border border-blue-500/30">
                     {result.overallPercentage}%
                   </span>
@@ -130,7 +132,9 @@ export default function ResultsPage({ params }: { params: Promise<{ sessionId: s
             <div className="mt-6">
               <div className="flex justify-between text-sm text-gray-300 mb-2 font-medium">
                 <span>Performance Score</span>
-                <span className="font-mono font-bold text-white text-sm sm:text-base">{result.overallScore} / 10.0</span>
+                <span className="font-mono font-bold text-white text-sm sm:text-base">
+                  {result.totalEarnedScore ?? Number((result.overallScore * result.totalQuestions).toFixed(1))} / {result.totalMaxScore ?? result.totalQuestions * 10} Points
+                </span>
               </div>
               <div className="h-3.5 w-full bg-gray-900 rounded-full overflow-hidden border border-white/10">
                 <div

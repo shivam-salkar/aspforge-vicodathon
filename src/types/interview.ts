@@ -62,6 +62,7 @@ export interface ConversationTurn {
   timestamp: string;
   timeSpentSeconds?: number;
   isFollowUp?: boolean;
+  isWrongNotice?: boolean;
   mainQuestion?: string;
   followUpQuestion?: string;
   validationText?: string;
@@ -100,6 +101,8 @@ export interface InterviewResultData {
   createdAt?: string;
   overallScore: number; // 0-10 scale
   overallPercentage: number;
+  totalMaxScore: number; // e.g. 60 points for 6 questions
+  totalEarnedScore: number; // e.g. 48.5 points earned
   totalQuestions: number;
   rightCount: number;
   wrongCount: number;
@@ -125,6 +128,7 @@ export interface InterviewSession {
   difficulty: 'easy' | 'medium' | 'hard';
   createdAt: string;
   isExpectingFollowUpAnswer?: boolean;
+  isShowingWrongNotice?: boolean;
   currentMainQuestion?: string;
   currentMainAnswer?: string;
   currentMainScore?: number;
@@ -152,6 +156,7 @@ export interface InterviewApiResponse {
   done: boolean;
   topic?: string;
   isFollowUp?: boolean;
+  isWrongNotice?: boolean;
   skippedFollowUp?: boolean;
   mainQuestion?: string;
   followUpQuestion?: string;

@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Send, Bot, Cpu, Camera, Mic, VideoOff } from 'lucide-react';
+import { Send, Bot, Cpu, Camera, Mic, VideoOff, Sparkles } from 'lucide-react';
 import { useInterviewStore } from '@/stores/interviewStore';
 import { interviewService } from '@/services/interviewService';
 
@@ -15,6 +15,7 @@ export function LiveActionCard() {
     currentTopic,
     statusText,
     isThinking,
+    isCompleted,
     questionTimerSeconds,
     turns,
     recordedQuestions,
@@ -27,56 +28,35 @@ export function LiveActionCard() {
   } = useInterviewStore();
 
   const [inputMessage, setInputMessage] = useState('');
-  const [cameraError, setCameraError] = useState<string | null>(null);
-  const [isCameraActive, setIsCameraActive] = useState(false);
+  const [cameraActive, setCameraActive] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Request real camera permission on mount
   useEffect(() => {
-    let stream: MediaStream | null = null;
-
-    async function startCamera() {
+    async function setupWebcam() {
       try {
-        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-          stream = await navigator.mediaDevices.getUserMedia({
-            video: { width: { ideal: 640 }, height: { ideal: 480 } },
-            audio: false,
-          });
-          if (videoRef.current) {
-            videoRef.current.srcObject = stream;
-            videoRef.current.play().catch(() => {});
-          }
-          setIsCameraActive(true);
-        } else {
-          setCameraError('Camera API not supported in browser');
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+        if (videoRef.current) {
+          videoRef.current.srcObject = stream;
+          setCameraActive(true);
         }
-      } catch (err: any) {
-        console.warn('Webcam permission denied or error:', err);
-        setCameraError('Camera permission denied');
-        setIsCameraActive(false);
+      } catch (err) {
+        setCameraActive(false);
       }
     }
-
-    startCamera();
-
-    return () => {
-      if (stream) {
-        stream.getTracks().forEach((track) => track.stop());
-      }
-    };
+    setupWebcam();
   }, []);
 
   const handleSendMessage = async () => {
-    if (!inputMessage.trim() || isThinking) return;
+    if (!inputMessage.trim() || isThinking || isCompleted) return;
 
     const userText = inputMessage.trim();
-    const timeSpent = Math.max(5, questionTimerSeconds);
     setInputMessage('');
+    setIsThinking(true);
+    setStatusText('Evaluating technical depth & reasoning...');
 
-    // Capture last interviewer turn text & topic
-    const lastInterviewerTurn = turns.filter((t) => t.role === 'interviewer').pop();
-    const lastQuestion = lastInterviewerTurn?.content || 'Technical Question';
-    const activeTopic = lastInterviewerTurn?.topic || currentTopic;
+    const lastQuestion = turns.filter((t) => t.role === 'interviewer').pop()?.content || 'Technical Question';
+    const activeTopic = currentTopic || 'Curriculum Focus';
+    const timeSpent = Math.max(5, questionTimerSeconds);
 
     addTurn({
       role: 'candidate',
@@ -84,19 +64,14 @@ export function LiveActionCard() {
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     });
 
-    setIsThinking(true);
-    setStatusText('Querying Breeth AI Memory & Groq LLM for evaluation...');
-
     try {
       const response = await interviewService.sendTurn(sessionId, userText, timeSpent);
-
       setIsThinking(false);
-      setStatusText('Interview Engine Active • Listening for candidate input...');
+      setStatusText('Listening for candidate input...');
 
       const score = response.score ?? (userText.length > 25 ? 8.0 : 4.0);
       const isRight = response.isRight ?? score > 5.0;
 
-      // Add to recorded questions state
       addRecordedQuestion({
         questionNumber: recordedQuestions.length + 1,
         topic: activeTopic,
@@ -113,6 +88,7 @@ export function LiveActionCard() {
         content: response.reply,
         topic: response.topic || currentTopic,
         isFollowUp: response.isFollowUp,
+        isWrongNotice: response.isWrongNotice,
         mainQuestion: response.mainQuestion,
         followUpQuestion: response.followUpQuestion,
         validationText: response.validationText,
@@ -124,9 +100,12 @@ export function LiveActionCard() {
         reasoning: Math.min(97, Math.max(70, Math.floor(score * 10))),
       });
 
-      if (response.done || turnCount >= maxTurns) {
+      if (response.done || (recordedQuestions.length >= 6 && !response.isFollowUp)) {
         setIsCompleted(true);
-        router.push(`/results/${sessionId}`);
+        setStatusText('Interview Completed • Compiling Candidate Results...');
+        setTimeout(() => {
+          router.push(`/results/${sessionId}`);
+        }, 2400);
       }
     } catch (err: any) {
       console.error('[LiveActionCard] Turn processing error:', err);
@@ -134,12 +113,25 @@ export function LiveActionCard() {
       setStatusText('Error processing turn. Please try again.');
     }
   };
+
   const lastInterviewerTurn = turns.filter((t) => t.role === 'interviewer').pop();
   const isFollowUpActive = Boolean(lastInterviewerTurn?.isFollowUp);
 
   return (
     <div className="glass-card p-4 md:p-6 h-full flex flex-col justify-between border-white/10 relative overflow-hidden bg-[#0a0a0c]/80 shadow-2xl">
-      
+      {isCompleted && (
+        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-2xl flex flex-col items-center justify-center space-y-6 animate-in fade-in duration-500">
+          <div className="relative flex items-center justify-center">
+            <div className="w-24 h-24 border-4 border-blue-500/20 border-t-blue-500 border-r-purple-500 rounded-full animate-spin" />
+            <Sparkles className="w-8 h-8 text-cyan-400 absolute animate-pulse" />
+          </div>
+          <div className="text-center space-y-2 max-w-md px-4">
+            <h2 className="text-2xl font-bold text-white tracking-tight">Compiling Candidate Results & AI Analysis...</h2>
+            <p className="text-sm text-gray-400 font-mono">Synthesizing performance score out of 60 points across 6 completed topics...</p>
+          </div>
+        </div>
+      )}
+
       {/* Video Call Section (AI Interviewer + Candidate Webcam) */}
       <div className="grid grid-cols-2 gap-4 mb-4 md:mb-6 shrink-0 h-44 md:h-56">
         {/* AI Avatar */}
@@ -171,25 +163,25 @@ export function LiveActionCard() {
             ref={videoRef}
             playsInline
             muted
-            className={`w-full h-full object-cover transform -scale-x-100 ${!isCameraActive ? 'hidden' : ''}`}
+            className={`w-full h-full object-cover transform -scale-x-100 ${!cameraActive ? 'hidden' : ''}`}
           />
 
           {/* Camera Error / Fallback UI */}
-          {!isCameraActive && (
+          {!cameraActive && (
             <div className="absolute inset-0 bg-black/90 flex flex-col items-center justify-center p-3 text-center">
               <div className="w-10 h-10 rounded-full bg-gray-900 border border-white/10 flex items-center justify-center mb-2">
                 <VideoOff className="w-5 h-5 text-gray-500" />
               </div>
               <p className="text-[11px] text-gray-400 font-medium">
-                {cameraError || 'Requesting camera access...'}
+                Requesting camera access...
               </p>
             </div>
           )}
 
           {/* Status Badges */}
           <div className="absolute bottom-3 left-3 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/10 text-[10px] font-bold tracking-wide z-20">
-            <div className={`w-1.5 h-1.5 rounded-full ${isCameraActive ? 'bg-red-500 animate-pulse' : 'bg-gray-500'}`} />
-            <span className="text-white uppercase">{isCameraActive ? 'Live Cam' : 'Cam Off'}</span>
+            <div className={`w-1.5 h-1.5 rounded-full ${cameraActive ? 'bg-red-500 animate-pulse' : 'bg-gray-500'}`} />
+            <span className="text-white uppercase">{cameraActive ? 'Live Cam' : 'Cam Off'}</span>
           </div>
 
           <div className="absolute top-3 right-3 text-[10px] font-bold text-gray-500 bg-black/40 px-2.5 py-1 rounded-md border border-white/5 z-20">

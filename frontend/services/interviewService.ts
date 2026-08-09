@@ -6,6 +6,7 @@ export interface StartInterviewResponse {
   done: boolean;
   topic?: string;
   isFollowUp?: boolean;
+  isWrongNotice?: boolean;
   mainQuestion?: string;
   followUpQuestion?: string;
   validationText?: string;
@@ -16,6 +17,7 @@ export interface ConversationTurnResponse {
   done: boolean;
   topic?: string;
   isFollowUp?: boolean;
+  isWrongNotice?: boolean;
   skippedFollowUp?: boolean;
   mainQuestion?: string;
   followUpQuestion?: string;

@@ -654,11 +654,10 @@ export function compileInterviewResult(session: InterviewSession): InterviewResu
   const wrongCount = recorded.filter((q) => !q.isRight).length;
   const totalTimeSeconds = recorded.reduce((acc, q) => acc + q.timeSpentSeconds, 0);
 
-  const overallScore =
-    totalQuestions > 0
-      ? Number((recorded.reduce((acc, q) => acc + q.score, 0) / totalQuestions).toFixed(1))
-      : 0;
-  const overallPercentage = Math.round(overallScore * 10);
+  const totalEarnedScore = Number(recorded.reduce((acc, q) => acc + q.score, 0).toFixed(1));
+  const totalMaxScore = totalQuestions * 10;
+  const overallPercentage = totalMaxScore > 0 ? Math.round((totalEarnedScore / totalMaxScore) * 100) : 0;
+  const overallScore = Number((totalEarnedScore / (totalQuestions || 1)).toFixed(1));
 
   const topicMap = new Map<
     string,
@@ -697,6 +696,8 @@ export function compileInterviewResult(session: InterviewSession): InterviewResu
     createdAt: session.createdAt || new Date().toISOString(),
     overallScore,
     overallPercentage,
+    totalMaxScore,
+    totalEarnedScore,
     totalQuestions,
     rightCount,
     wrongCount,

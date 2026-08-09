@@ -49,13 +49,18 @@ export const resultService = {
         totalTimeSeconds: t.totalTimeSeconds,
       }));
 
+      const totalEarnedScore = Number(recorded.reduce((acc, q) => acc + q.score, 0).toFixed(1));
+      const totalMaxScore = totalQuestions * 10;
+
       return {
         sessionId,
         candidateId,
         candidateName,
         jobRole,
         overallScore,
-        overallPercentage,
+        overallPercentage: totalMaxScore > 0 ? Math.round((totalEarnedScore / totalMaxScore) * 100) : 0,
+        totalMaxScore,
+        totalEarnedScore,
         totalQuestions,
         rightCount,
         wrongCount,
@@ -132,8 +137,10 @@ export const resultService = {
     const wrongCount = sampleQuestions.filter((q) => !q.isRight).length;
     const totalTimeSeconds = sampleQuestions.reduce((acc, q) => acc + q.timeSpentSeconds, 0);
 
-    const overallScore = Number((sampleQuestions.reduce((acc, q) => acc + q.score, 0) / totalQuestions).toFixed(1));
-    const overallPercentage = Math.round(overallScore * 10);
+    const totalEarnedScore = Number(sampleQuestions.reduce((acc, q) => acc + q.score, 0).toFixed(1));
+    const totalMaxScore = totalQuestions * 10;
+    const overallScore = Number((totalEarnedScore / totalQuestions).toFixed(1));
+    const overallPercentage = Math.round((totalEarnedScore / totalMaxScore) * 100);
 
     const topicMap = new Map<string, { topic: string; dayNumber?: number; questionCount: number; totalScore: number; totalTimeSeconds: number }>();
     sampleQuestions.forEach((q) => {
@@ -159,6 +166,8 @@ export const resultService = {
       jobRole,
       overallScore,
       overallPercentage,
+      totalMaxScore,
+      totalEarnedScore,
       totalQuestions,
       rightCount,
       wrongCount,

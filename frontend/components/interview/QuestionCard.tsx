@@ -86,14 +86,6 @@ export function QuestionCard() {
 
       {/* Scrollable Question Container */}
       <div ref={scrollContainerRef} className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-6 min-h-0">
-        {/* Red Feedback Box for Incorrect Answer on Next Question transition */}
-        {!isFollowUpActive && validationText && (
-          <div className="flex items-center gap-2.5 text-rose-400 font-bold bg-rose-950/50 border border-rose-500/30 px-4 py-2.5 rounded-xl text-sm sm:text-base w-fit shadow-lg shadow-rose-950/50 backdrop-blur-md animate-in fade-in duration-300 mb-2">
-            <XCircle className="w-5 h-5 text-rose-400 shrink-0" />
-            <span className="tracking-tight">{validationText}</span>
-          </div>
-        )}
-
         {/* Main AI Technical Question */}
         <div>
           <BlurText
@@ -105,6 +97,16 @@ export function QuestionCard() {
             className="text-lg md:text-2xl font-semibold text-white leading-relaxed tracking-tight"
           />
         </div>
+
+        {/* Red Feedback Box for Incorrect Answer directly below main question on the same screen */}
+        {!isFollowUpActive && validationText && (
+          <div ref={followUpRef} className="pt-2 animate-in fade-in duration-300">
+            <div className="flex items-center gap-2.5 text-rose-400 font-bold bg-rose-950/60 border border-rose-500/40 px-4 py-3 rounded-xl text-sm sm:text-base w-fit shadow-lg shadow-rose-950/60 backdrop-blur-md">
+              <XCircle className="w-5 h-5 text-rose-400 shrink-0" />
+              <span className="tracking-tight">{validationText}</span>
+            </div>
+          </div>
+        )}
 
         {/* Follow-up Stage (Green Validation Text + Gradient Line with integrated follow-up text + Question) */}
         {isFollowUpActive && (
