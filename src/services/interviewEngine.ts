@@ -129,8 +129,13 @@ function sanitizeReply(reply: string): string {
   if (!reply) return '';
   return reply
     .replace(/^Topic:\s*[^|]+\|\s*Q\d+:\s*/i, '')
-    .replace(/\*\*(?:Evaluation|Next Question|Question|Feedback):\*\*/gi, '')
-    .replace(/(?:Evaluation|Next Question|Question|Feedback):/gi, '')
+    .replace(/\*\*(?:Evaluation|Next Question|Question|Feedback|Follow-up|Follow up|Followup|Probe):\*\*/gi, '')
+    .replace(/(?:Evaluation|Next Question|Main Question|Question|Feedback|Follow-up Question|Follow-up|Follow up Question|Follow up|Followup|Probe):/gi, '')
+    .replace(/\[(?:Follow-up|Follow up|Question|Probe)\]/gi, '')
+    .replace(/\((?:Follow-up|Follow up|Question|Probe)\)/gi, '')
+    .replace(/\bFollow-up\b/gi, '')
+    .replace(/\bFollow up\b/gi, '')
+    .replace(/\bFollowup\b/gi, '')
     .replace(/The candidate's answer/gi, 'Your answer')
     .replace(/The candidate's response/gi, 'Your response')
     .replace(/The candidate/gi, 'You')

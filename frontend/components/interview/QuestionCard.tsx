@@ -50,8 +50,27 @@ export function QuestionCard() {
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
-  const cleanMainQuestion = mainQuestionText.replace(/^Topic:\s*[^|]+\|\s*Q\d+:\s*/i, '').trim();
-  const cleanFollowUp = followUpText.replace(/^Topic:\s*[^|]+\|\s*Q\d+:\s*/i, '').trim();
+  const cleanMainQuestion = mainQuestionText
+    .replace(/^Topic:\s*[^|]+\|\s*Q\d+:\s*/i, '')
+    .replace(/(?:Follow-up Question|Follow-up|Follow up Question|Follow up|Followup|Main Question|Question|Probe):/gi, '')
+    .replace(/\[(?:Follow-up|Follow up|Question|Probe)\]/gi, '')
+    .replace(/\((?:Follow-up|Follow up|Question|Probe)\)/gi, '')
+    .replace(/\bFollow-up\b/gi, '')
+    .replace(/\bFollow up\b/gi, '')
+    .replace(/\bFollowup\b/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  const cleanFollowUp = followUpText
+    .replace(/^Topic:\s*[^|]+\|\s*Q\d+:\s*/i, '')
+    .replace(/(?:Follow-up Question|Follow-up|Follow up Question|Follow up|Followup|Question|Probe):/gi, '')
+    .replace(/\[(?:Follow-up|Follow up|Question|Probe)\]/gi, '')
+    .replace(/\((?:Follow-up|Follow up|Question|Probe)\)/gi, '')
+    .replace(/\bFollow-up\b/gi, '')
+    .replace(/\bFollow up\b/gi, '')
+    .replace(/\bFollowup\b/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 
   return (
     <div className="glass-card p-6 md:p-8 h-full flex flex-col border-white/10 relative overflow-hidden bg-gray-950/70 shadow-2xl">
