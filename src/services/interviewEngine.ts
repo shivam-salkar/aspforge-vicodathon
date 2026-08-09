@@ -146,29 +146,39 @@ function sanitizeReply(reply: string): string {
  * Score > 5 is Right (Passed), <= 5 is Wrong (Needs Improvement).
  */
 function evaluateAnswerScore(answer: string, topic: string): number {
+  if (!answer) return 1.5;
   const text = answer.trim().toLowerCase();
-  if (!text || text.length < 5) return 2.0;
+  if (text.length < 5) return 1.5;
 
-  if (
-    text.includes("don't know") ||
-    text.includes("dont know") ||
-    text.includes("not sure") ||
-    text.includes("no idea") ||
-    text.includes("haven't worked") ||
-    text.includes("skip")
-  ) {
-    return Number((Math.random() * 1.5 + 2.0).toFixed(1));
+  const unknownPatterns = [
+    "don't know", "dont know", "do not know", "idk",
+    "cant recall", "can't recall", "cannot recall", "unable to recall", "dont recall", "don't recall",
+    "not sure", "unsure", "no idea", "no clue", "haven't worked", "havent worked",
+    "skip", "pass", "no experience", "forgot", "forget", "not familiar", "don't remember", "dont remember",
+    "na", "n/a", "no answer", "nothing"
+  ];
+
+  for (const pattern of unknownPatterns) {
+    if (text.includes(pattern)) {
+      return Number((Math.random() * 1.0 + 1.5).toFixed(1)); // 1.5 - 2.5 (ALWAYS <= 5 -> RED BOX!)
+    }
   }
 
-  if (text.split(' ').length < 12) {
-    return Number((Math.random() * 1.5 + 4.0).toFixed(1));
+  // Short answers without technical keywords (< 8 words)
+  const words = text.split(/\s+/).filter(Boolean);
+  if (words.length < 8) {
+    const simpleTechHits = ['vector', 'index', 'hnsw', 'ivf', 'cache', 'rag', 'embedding', 'redis', 'api'].filter(k => text.includes(k)).length;
+    if (simpleTechHits === 0) {
+      return Number((Math.random() * 1.0 + 2.5).toFixed(1)); // 2.5 - 3.5 (ALWAYS <= 5 -> RED BOX!)
+    }
   }
 
   const techKeywords = [
     'system', 'architecture', 'vector', 'embedding', 'retrieval', 'index',
     'latency', 'throughput', 'cache', 'pipeline', 'agent', 'model', 'api',
     'docker', 'kubernetes', 'scale', 'database', 'sqlite', 'chroma', 'rag',
-    'prompt', 'mcp', 'context', 'memory', 'optimization', 'trade-off'
+    'prompt', 'mcp', 'context', 'memory', 'optimization', 'trade-off',
+    'hnsw', 'ivf', 'redis', 'kafka', 'postgres', 'grpc', 'rest', 'json', 'token'
   ];
 
   const keywordHits = techKeywords.filter((kw) => text.includes(kw)).length;
@@ -176,10 +186,11 @@ function evaluateAnswerScore(answer: string, topic: string): number {
   if (keywordHits >= 3) {
     return Number((Math.min(10.0, Math.random() * 1.5 + 8.2)).toFixed(1));
   } else if (keywordHits >= 1) {
-    return Number((Math.random() * 1.5 + 6.5).toFixed(1));
+    return Number((Math.random() * 1.0 + 6.2).toFixed(1));
   }
 
-  return Number((Math.random() * 1.5 + 5.5).toFixed(1));
+  // Default for non-technical or vague answers: strictly <= 5 (RED BOX!)
+  return Number((Math.random() * 1.0 + 3.2).toFixed(1)); // 3.2 - 4.2 (ALWAYS <= 5 -> RED BOX!)
 }
 
 // ─── Candidate Telemetry Analysis ───────────────────────────────────────────
@@ -461,7 +472,19 @@ Total response under 40 words. Do not use markdown labels or headers.`;
         isRight: false,
       });
 
-      const wrongValidationText = 'Not very accurate — missing core architectural trade-offs.';
+      let wrongValidationText = 'Not very accurate — missing core architectural trade-offs.';
+      const lowerMsg = message.toLowerCase();
+      if (
+        lowerMsg.includes('know') ||
+        lowerMsg.includes('recall') ||
+        lowerMsg.includes('sure') ||
+        lowerMsg.includes('remember') ||
+        lowerMsg.includes('idea') ||
+        lowerMsg.includes('clue') ||
+        lowerMsg.includes('idk')
+      ) {
+        wrongValidationText = 'Candidate was unable to recall key technical concepts for this topic.';
+      }
 
       session.turns.push({
         role: 'candidate',
