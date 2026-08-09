@@ -167,7 +167,7 @@ function evaluateAnswerScore(answer: string, topic: string): number {
     "cant recall", "can't recall", "cannot recall", "unable to recall", "dont recall", "don't recall",
     "not sure", "unsure", "no idea", "no clue", "haven't worked", "havent worked",
     "skip", "pass", "no experience", "forgot", "forget", "not familiar", "don't remember", "dont remember",
-    "na", "n/a", "no answer", "nothing"
+    "na", "n/a", "no answer", "nothing", "can't remember", "cant remember"
   ];
 
   for (const pattern of unknownPatterns) {
@@ -176,33 +176,33 @@ function evaluateAnswerScore(answer: string, topic: string): number {
     }
   }
 
-  // Short answers without technical keywords (< 8 words)
-  const words = text.split(/\s+/).filter(Boolean);
-  if (words.length < 8) {
-    const simpleTechHits = ['vector', 'index', 'hnsw', 'ivf', 'cache', 'rag', 'embedding', 'redis', 'api'].filter(k => text.includes(k)).length;
-    if (simpleTechHits === 0) {
-      return Number((Math.random() * 1.0 + 2.5).toFixed(1)); // 2.5 - 3.5 (ALWAYS <= 5 -> RED BOX!)
-    }
-  }
-
+  // Technical and domain concept keywords
   const techKeywords = [
     'system', 'architecture', 'vector', 'embedding', 'retrieval', 'index',
     'latency', 'throughput', 'cache', 'pipeline', 'agent', 'model', 'api',
     'docker', 'kubernetes', 'scale', 'database', 'sqlite', 'chroma', 'rag',
-    'prompt', 'mcp', 'context', 'memory', 'optimization', 'trade-off',
-    'hnsw', 'ivf', 'redis', 'kafka', 'postgres', 'grpc', 'rest', 'json', 'token'
+    'prompt', 'mcp', 'context', 'memory', 'optimization', 'search', 'dimension',
+    'distance', 'similarity', 'cosine', 'dot', 'euclidean', 'dense', 'sparse',
+    'python', 'node', 'express', 'react', 'next', 'fastapi', 'semantic', 'query',
+    'token', 'chunk', 'transformer', 'llm', 'groq', 'openai', 'store', 'storage'
   ];
 
   const keywordHits = techKeywords.filter((kw) => text.includes(kw)).length;
 
-  if (keywordHits >= 3) {
+  if (keywordHits >= 2) {
     return Number((Math.min(10.0, Math.random() * 1.5 + 8.2)).toFixed(1));
   } else if (keywordHits >= 1) {
-    return Number((Math.random() * 1.0 + 6.2).toFixed(1));
+    return Number((Math.random() * 1.2 + 7.0).toFixed(1));
   }
 
-  // Default for non-technical or vague answers: strictly <= 5 (RED BOX!)
-  return Number((Math.random() * 1.0 + 3.2).toFixed(1)); // 3.2 - 4.2 (ALWAYS <= 5 -> RED BOX!)
+  // Any substantive answer (at least 6 words long) that is not an unknown response passes (> 5.5)
+  const wordCount = text.split(/\s+/).filter(Boolean).length;
+  if (wordCount >= 6) {
+    return Number((Math.random() * 1.2 + 6.5).toFixed(1)); // 6.5 - 7.7 (PASSED -> GREEN BOX!)
+  }
+
+  // Only short non-technical gibberish under 6 words gets <= 5.0
+  return Number((Math.random() * 1.0 + 3.5).toFixed(1));
 }
 
 // ─── Candidate Telemetry Analysis ───────────────────────────────────────────
@@ -303,7 +303,7 @@ ${profile}
 
 Target Completed Curriculum Topic: "${initialDay.title}" (Day ${initialDay.day}) [Level: ${getDifficultyLabel(session.difficulty)}]`;
 
-  const userPrompt = `Ask your first main technical question Q1 directly to ${candidate.member.name} ("you") about completed topic "${initialDay.title}" (Day ${initialDay.day}). Focus on concrete system architecture, tools (${(initialDay.tools || []).join(', ')}), or trade-offs. Ask only the main question in 2-3 sentences. Under 50 words total. Do not include follow-up headers or labels.`;
+  const userPrompt = `Ask your first main technical question Q1 directly to ${candidate.member.name} ("you") about completed topic "${initialDay.title}" (Day ${initialDay.day}). Focus on practical system implementation, tools (${(initialDay.tools || []).join(', ')}), or core concepts. Ask only the main question in 2-3 sentences. Under 50 words total. Do not include follow-up headers or labels.`;
 
   let reply: string;
   try {
@@ -484,7 +484,7 @@ Total response under 40 words. Do not use markdown labels or headers.`;
         isRight: false,
       });
 
-      let wrongValidationText = 'Not very accurate — missing core architectural trade-offs.';
+      let wrongValidationText = `Incomplete response — needs more technical detail on ${currentTopic}.`;
       const lowerMsg = message.toLowerCase();
       if (
         lowerMsg.includes('know') ||
@@ -526,7 +526,7 @@ ${profile}
 
 Target Completed Curriculum Topic: "${nextDay.title}" (Day ${nextDay.day}) [Level: ${getDifficultyLabel(session.difficulty)}]`;
 
-      const userPrompt = `Ask main technical question Q${qNum} directly to ${session.candidate.member.name} ("you") about completed topic "${nextDay.title}" (Day ${nextDay.day}). Focus on architecture, tools (${(nextDay.tools || []).join(', ')}), or trade-offs. Ask only the main question in 2-3 sentences. Under 50 words total. Do not include follow-up headers or labels.`;
+      const userPrompt = `Ask main technical question Q${qNum} directly to ${session.candidate.member.name} ("you") about completed topic "${nextDay.title}" (Day ${nextDay.day}). Focus on practical implementation, tools (${(nextDay.tools || []).join(', ')}), or key concepts. Ask only the main question in 2-3 sentences. Under 50 words total. Do not include follow-up headers or labels.`;
 
       let nextMainReply: string;
       try {
@@ -632,7 +632,7 @@ ${profile}
 
 Target Completed Curriculum Topic: "${nextDay.title}" (Day ${nextDay.day}) [Level: ${getDifficultyLabel(session.difficulty)}]`;
 
-  const userPrompt = `Ask main technical question Q${qNum} directly to ${session.candidate.member.name} ("you") about completed topic "${nextDay.title}" (Day ${nextDay.day}). Focus on architecture, tools (${(nextDay.tools || []).join(', ')}), or trade-offs. Ask only the main question in 2-3 sentences. Under 50 words total. Do not include follow-up headers or labels.`;
+  const userPrompt = `Ask main technical question Q${qNum} directly to ${session.candidate.member.name} ("you") about completed topic "${nextDay.title}" (Day ${nextDay.day}). Focus on practical implementation, tools (${(nextDay.tools || []).join(', ')}), or key concepts. Ask only the main question in 2-3 sentences. Under 50 words total. Do not include follow-up headers or labels.`;
 
   let nextMainReply: string;
 
