@@ -37,15 +37,18 @@ export function ProfileCharts({ candidate }: ProfileChartsProps) {
       {/* 1. Mission Outcome Distribution Donut Chart */}
       <div className="glass-card p-6 border-white/10 flex flex-col justify-between">
         <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
-          <span className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400">
-            <PieIcon className="w-4 h-4" />
+          <span
+            className="material-symbols-outlined text-[#c4b5fd] select-none leading-none"
+            style={{ fontSize: '48px' }}
+          >
+            pie_chart
           </span>
-          <h3 className="text-base font-bold text-white tracking-tight">Mission Outcome Distribution</h3>
+          <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">Mission Outcome Distribution</h3>
         </div>
 
         <div className="h-56 w-full flex items-center justify-center">
           {outcomeDistribution.length === 0 ? (
-            <p className="text-xs text-gray-400">No mission telemetry available.</p>
+            <p className="text-sm text-gray-400">No mission telemetry available.</p>
           ) : (
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
@@ -72,10 +75,10 @@ export function ProfileCharts({ candidate }: ProfileChartsProps) {
         {/* Legend */}
         <div className="grid grid-cols-2 gap-2 pt-4 border-t border-white/10">
           {outcomeDistribution.map((item) => (
-            <div key={item.name} className="flex items-center gap-2 text-xs">
-              <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
-              <span className="text-gray-400 truncate">{item.name}</span>
-              <span className="font-bold text-white font-mono ml-auto">{item.value}</span>
+            <div key={item.name} className="flex items-center gap-2 text-sm font-semibold">
+              <span className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
+              <span className="text-gray-300 truncate">{item.name}</span>
+              <span className="font-extrabold text-white font-mono ml-auto">{item.value}</span>
             </div>
           ))}
         </div>
@@ -84,17 +87,20 @@ export function ProfileCharts({ candidate }: ProfileChartsProps) {
       {/* 2. Attempts Per Mission Bar Chart */}
       <div className="glass-card p-6 border-white/10 flex flex-col justify-between">
         <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
-          <span className="p-1.5 rounded-lg bg-blue-500/20 text-blue-400">
-            <BarChart2 className="w-4 h-4" />
+          <span
+            className="material-symbols-outlined text-[#c4b5fd] select-none leading-none"
+            style={{ fontSize: '48px' }}
+          >
+            bar_chart
           </span>
-          <h3 className="text-base font-bold text-white tracking-tight">Attempts per Mission</h3>
+          <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">Attempts per Mission</h3>
         </div>
 
         <div className="h-56 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={attemptsData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-              <XAxis dataKey="dayLabel" stroke="#6b7280" fontSize={10} tickLine={false} axisLine={false} />
-              <YAxis stroke="#6b7280" fontSize={10} tickLine={false} axisLine={false} allowDecimals={false} />
+              <XAxis dataKey="dayLabel" stroke="#9ca3af" fontSize={11} tickLine={false} axisLine={false} />
+              <YAxis stroke="#9ca3af" fontSize={11} tickLine={false} axisLine={false} allowDecimals={false} />
               <Tooltip
                 contentStyle={{ backgroundColor: '#111216', borderColor: '#374151', borderRadius: '12px' }}
                 itemStyle={{ color: '#ffffff' }}
@@ -105,9 +111,9 @@ export function ProfileCharts({ candidate }: ProfileChartsProps) {
           </ResponsiveContainer>
         </div>
 
-        <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-          <span className="text-gray-400">Total Missions Evaluated</span>
-          <span className="font-bold text-blue-400 font-mono">{missions.length} Missions</span>
+        <div className="pt-4 border-t border-white/10 flex items-center justify-between text-sm">
+          <span className="text-gray-300 font-medium">Total Missions Evaluated</span>
+          <span className="font-extrabold text-blue-400 font-mono text-sm sm:text-base">{missions.length} Missions</span>
         </div>
       </div>
     </div>

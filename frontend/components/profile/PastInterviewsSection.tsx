@@ -65,18 +65,21 @@ export function PastInterviewsSection({ candidateId, candidateName }: PastInterv
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/10">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
-            <Calendar className="w-5 h-5" />
-          </div>
+          <span
+            className="material-symbols-outlined text-[#c4b5fd] select-none shrink-0 leading-none"
+            style={{ fontSize: '48px' }}
+          >
+            history
+          </span>
           <div>
-            <h2 className="text-lg font-bold text-white tracking-tight">Interview History & Evaluation Results</h2>
-            <p className="text-xs text-gray-400">
+            <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">Interview History & Evaluation Results</h2>
+            <p className="text-sm font-medium text-gray-300 mt-0.5">
               Recorded past interviews for {candidateName}. Click any entry to view full question responses & scores.
             </p>
           </div>
         </div>
 
-        <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-white/5 border border-white/10 text-purple-300 self-start sm:self-auto">
+        <span className="px-3.5 py-1.5 rounded-full text-sm font-mono font-bold bg-white/5 border border-white/10 text-purple-300 self-start sm:self-auto">
           {interviews.length} {interviews.length === 1 ? 'Interview Recorded' : 'Interviews Recorded'}
         </span>
       </div>
@@ -84,8 +87,8 @@ export function PastInterviewsSection({ candidateId, candidateName }: PastInterv
       {interviews.length === 0 ? (
         <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/5 text-center space-y-3">
           <FileText className="w-8 h-8 text-gray-600 mx-auto" />
-          <p className="text-xs text-gray-400 font-semibold">No past interviews recorded yet for this candidate.</p>
-          <p className="text-[11px] text-gray-500 max-w-sm mx-auto">
+          <p className="text-sm text-gray-300 font-semibold">No past interviews recorded yet for this candidate.</p>
+          <p className="text-xs sm:text-sm text-gray-400 max-w-sm mx-auto">
             Click &quot;Begin AI Interview&quot; above to launch a personalized technical evaluation session.
           </p>
         </div>
@@ -97,55 +100,55 @@ export function PastInterviewsSection({ candidateId, candidateName }: PastInterv
               className="p-5 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-purple-500/30 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 group"
             >
               {/* Left Column: Date, Time, Session ID & Questions Count */}
-              <div className="space-y-2">
+              <div className="space-y-2.5">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-purple-400" />
-                  <span className="text-sm font-bold text-white tracking-tight">
+                  <span className="text-base sm:text-lg font-bold text-white tracking-tight">
                     {formatDate(item.createdAt)}
                   </span>
-                  <span className="text-xs text-gray-500 font-mono">({item.sessionId})</span>
+                  <span className="text-sm text-gray-400 font-mono">({item.sessionId})</span>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400">
-                  <span className="flex items-center gap-1.5 bg-gray-900 px-2.5 py-1 rounded-lg border border-white/5 font-mono">
-                    <Clock className="w-3.5 h-3.5 text-cyan-400" />
+                <div className="flex flex-wrap items-center gap-3 text-sm text-gray-300">
+                  <span className="flex items-center gap-1.5 bg-gray-900 px-3 py-1.5 rounded-lg border border-white/5 font-mono font-semibold">
+                    <Clock className="w-4 h-4 text-cyan-400" />
                     {formatSeconds(item.totalTimeSeconds)}
                   </span>
 
-                  <span className="flex items-center gap-1.5 bg-gray-900 px-2.5 py-1 rounded-lg border border-white/5 font-mono">
-                    <FileText className="w-3.5 h-3.5 text-blue-400" />
+                  <span className="flex items-center gap-1.5 bg-gray-900 px-3 py-1.5 rounded-lg border border-white/5 font-mono font-semibold">
+                    <FileText className="w-4 h-4 text-blue-400" />
                     {item.totalQuestions} Questions
                   </span>
 
-                  <span className="flex items-center gap-1 bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded-lg border border-emerald-500/20 font-mono font-bold">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
+                  <span className="flex items-center gap-1.5 bg-emerald-500/10 text-emerald-400 px-3 py-1.5 rounded-lg border border-emerald-500/20 font-mono font-bold">
+                    <CheckCircle2 className="w-4 h-4" />
                     {item.rightCount} Right
                   </span>
 
-                  <span className="flex items-center gap-1 bg-rose-500/10 text-rose-400 px-2.5 py-1 rounded-lg border border-rose-500/20 font-mono font-bold">
-                    <XCircle className="w-3.5 h-3.5" />
+                  <span className="flex items-center gap-1.5 bg-rose-500/10 text-rose-400 px-3 py-1.5 rounded-lg border border-rose-500/20 font-mono font-bold">
+                    <XCircle className="w-4 h-4" />
                     {item.wrongCount} Wrong
                   </span>
                 </div>
               </div>
 
               {/* Right Column: Score Badge & Redirect CTA Button */}
-              <div className="flex items-center justify-between md:justify-end gap-4 border-t md:border-t-0 pt-3 md:pt-0 border-white/10">
+              <div className="flex items-center justify-between md:justify-end gap-5 border-t md:border-t-0 pt-3 md:pt-0 border-white/10">
                 <div className="text-right">
-                  <span className="text-[10px] uppercase font-bold text-gray-400 block tracking-wider">Overall Score</span>
-                  <div className="flex items-baseline gap-1 font-mono">
-                    <span className="text-2xl font-black text-white">{item.overallScore}</span>
-                    <span className="text-xs text-gray-500">/ 10</span>
-                    <span className="ml-1 text-xs font-bold text-blue-400">({item.overallPercentage}%)</span>
+                  <span className="text-xs uppercase font-bold text-gray-400 block tracking-wider">Overall Score</span>
+                  <div className="flex items-baseline gap-1.5 font-mono">
+                    <span className="text-3xl font-black text-white">{item.overallScore}</span>
+                    <span className="text-sm font-bold text-gray-400">/ 10</span>
+                    <span className="ml-1 text-sm font-extrabold text-blue-400">({item.overallPercentage}%)</span>
                   </div>
                 </div>
 
                 <Link
                   href={`/results/${item.sessionId}`}
-                  className="px-4 py-2.5 rounded-xl bg-purple-600/20 hover:bg-purple-600 text-purple-300 hover:text-white border border-purple-500/30 text-xs font-bold flex items-center gap-2 transition-all shadow-md group-hover:scale-105"
+                  className="px-5 py-3 rounded-xl bg-purple-600/20 hover:bg-purple-600 text-purple-300 hover:text-white border border-purple-500/30 text-sm font-bold flex items-center gap-2 transition-all shadow-md group-hover:scale-105"
                 >
                   <span>View Results</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <ExternalLink className="w-4 h-4" />
                 </Link>
               </div>
             </div>

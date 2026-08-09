@@ -12,8 +12,11 @@ export function AIVerdictCard({ summary, strengths, gaps }: AIVerdictCardProps) 
   return (
     <div className="glass-card p-6 border-purple-500/20 bg-gradient-to-r from-purple-950/20 to-blue-950/10">
       <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
-        <span className="p-1.5 rounded-lg bg-purple-500/20 text-purple-400">
-          <Sparkles className="w-4 h-4" />
+        <span
+          className="material-symbols-outlined text-[#c4b5fd] select-none leading-none"
+          style={{ fontSize: '48px' }}
+        >
+          auto_awesome
         </span>
         <h3 className="text-base font-extrabold text-white tracking-tight">AI Interview Verdict</h3>
       </div>

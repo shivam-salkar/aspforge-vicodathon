@@ -11,8 +11,11 @@ export function DomainPerformance({ domains }: DomainPerformanceProps) {
   return (
     <div className="glass-card p-6 border-white/10">
       <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/10">
-        <span className="p-1.5 rounded-lg bg-blue-500/20 text-blue-400">
-          <Layers className="w-4 h-4" />
+        <span
+          className="material-symbols-outlined text-[#c4b5fd] select-none leading-none"
+          style={{ fontSize: '48px' }}
+        >
+          layers
         </span>
         <h3 className="text-base font-extrabold text-white tracking-tight">Domain Performance Breakdown</h3>
       </div>

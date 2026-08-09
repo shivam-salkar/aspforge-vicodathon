@@ -104,7 +104,6 @@ export default function ProfilePage({ params }: { params: Promise<{ candidateId:
               <span className="font-extrabold text-base tracking-tight text-white group-hover:text-blue-400 transition-colors">
                 InterviewOS
               </span>
-              <p className="text-[10px] text-gray-400 font-medium -mt-1">Candidate Intelligence Platform</p>
             </div>
           </Link>
 

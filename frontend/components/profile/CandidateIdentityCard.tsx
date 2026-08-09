@@ -35,13 +35,14 @@ export function CandidateIdentityCard({ candidate }: CandidateIdentityCardProps)
   return (
     <div className="glass-card p-6 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
       <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
-        {/* Avatar */}
-        <div className="relative shrink-0">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 p-1 shadow-lg shadow-blue-500/20">
-            <div className="w-full h-full rounded-[14px] bg-gray-900 flex items-center justify-center font-extrabold text-2xl text-blue-400">
-              {m.name.split(' ').map((n) => n[0]).join('')}
-            </div>
-          </div>
+        {/* Avatar - Big Google Material Symbol Icon with no background */}
+        <div className="relative shrink-0 flex items-center justify-center">
+          <span
+            className="material-symbols-outlined text-[#c4b5fd] select-none leading-none"
+            style={{ fontSize: '110px' }}
+          >
+            account_circle
+          </span>
         </div>
 
         {/* Candidate Details */}
