@@ -39,7 +39,7 @@ RULES:
    How do you optimize vector index search latency in production?
    ---FOLLOWUP---
    Why vector index?
-6. Keep total response under 60 words total. Speak naturally without markdown labels like "Evaluation:" or "Topic:".
+6. Keep total response between 50 and 90 words. Vary your sentence structure and phrasing so you don't sound repetitive. Speak naturally without markdown labels like "Evaluation:" or "Topic:".
 `;
 
 // ─── In-Memory Session Store ─────────────────────────────────────────────────
@@ -154,13 +154,11 @@ function sanitizeReply(reply: string): string {
 }
 
 /**
- * Evaluate candidate's answer quality on a 0-10 scale.
+ * Evaluate candidate's answer quality on a 0-10 scale using Groq API.
  * Score > 5 is Right (Passed), <= 5 is Wrong (Needs Improvement).
  */
-function evaluateAnswerScore(answer: string, topic: string): number {
-  if (!answer) return 1.5;
-  const text = answer.trim().toLowerCase();
-  if (text.length < 5) return 1.5;
+async function evaluateAnswerScore(question: string, answer: string, topic: string): Promise<number> {
+  if (!answer || answer.trim().length < 3) return 1.5;
 
   const unknownPatterns = [
     "don't know", "dont know", "do not know", "idk",
@@ -169,40 +167,48 @@ function evaluateAnswerScore(answer: string, topic: string): number {
     "skip", "pass", "no experience", "forgot", "forget", "not familiar", "don't remember", "dont remember",
     "na", "n/a", "no answer", "nothing", "can't remember", "cant remember"
   ];
-
+  
+  const text = answer.trim().toLowerCase();
   for (const pattern of unknownPatterns) {
-    if (text.includes(pattern)) {
-      return Number((Math.random() * 1.0 + 1.5).toFixed(1)); // 1.5 - 2.5 (ALWAYS <= 5 -> RED BOX!)
+    if (text === pattern || text.startsWith(pattern) || text.endsWith(pattern)) {
+      return Number((Math.random() * 1.0 + 1.5).toFixed(1)); // 1.5 - 2.5
     }
   }
 
-  // Technical and domain concept keywords
-  const techKeywords = [
-    'system', 'architecture', 'vector', 'embedding', 'retrieval', 'index',
-    'latency', 'throughput', 'cache', 'pipeline', 'agent', 'model', 'api',
-    'docker', 'kubernetes', 'scale', 'database', 'sqlite', 'chroma', 'rag',
-    'prompt', 'mcp', 'context', 'memory', 'optimization', 'search', 'dimension',
-    'distance', 'similarity', 'cosine', 'dot', 'euclidean', 'dense', 'sparse',
-    'python', 'node', 'express', 'react', 'next', 'fastapi', 'semantic', 'query',
-    'token', 'chunk', 'transformer', 'llm', 'groq', 'openai', 'store', 'storage'
-  ];
+  const prompt = `You are an expert technical interviewer evaluating a candidate's answer.
+Topic: ${topic}
+Question Asked: "${question}"
+Candidate Answer: "${answer}"
 
-  const keywordHits = techKeywords.filter((kw) => text.includes(kw)).length;
+Rate the answer on a scale of 0.0 to 10.0.
+- 0-5: Wrong, incomplete, or lacks fundamental understanding.
+- 6-7: Acceptable but basic.
+- 8-10: Excellent, comprehensive, or highly accurate.
 
-  if (keywordHits >= 2) {
-    return Number((Math.min(10.0, Math.random() * 1.5 + 8.2)).toFixed(1));
-  } else if (keywordHits >= 1) {
-    return Number((Math.random() * 1.2 + 7.0).toFixed(1));
+Output ONLY a single number with one decimal place (e.g., 8.5, 4.2). Do not output any other text or reasoning.`;
+
+  try {
+    const response = await groqClient.chat.completions.create({
+      messages: [{ role: 'user', content: prompt }],
+      model: 'llama-3.1-8b-instant',
+      temperature: 0.1,
+      max_tokens: 10,
+    });
+    const content = response.choices[0]?.message?.content?.trim() || '';
+    const score = parseFloat(content);
+    if (!isNaN(score) && score >= 0 && score <= 10) {
+      return Number(score.toFixed(1));
+    }
+  } catch (err) {
+    console.warn('[InterviewEngine] Groq scoring failed, falling back to simple heuristic:', (err as Error).message);
   }
 
-  // Any substantive answer (at least 6 words long) that is not an unknown response passes (> 5.5)
-  const wordCount = text.split(/\s+/).filter(Boolean).length;
+  // Fallback heuristic if API fails or returns invalid format
+  const wordCount = answer.split(/\s+/).filter(Boolean).length;
   if (wordCount >= 6) {
-    return Number((Math.random() * 1.2 + 6.5).toFixed(1)); // 6.5 - 7.7 (PASSED -> GREEN BOX!)
+    return Number((Math.random() * 1.2 + 6.5).toFixed(1));
   }
-
-  // Only short non-technical gibberish under 6 words gets <= 5.0
-  return Number((Math.random() * 1.0 + 3.5).toFixed(1));
+  return Number((Math.random() * 1.5 + 5.5).toFixed(1));
 }
 
 // ─── Candidate Telemetry Analysis ───────────────────────────────────────────
@@ -303,7 +309,7 @@ ${profile}
 
 Target Completed Curriculum Topic: "${initialDay.title}" (Day ${initialDay.day}) [Level: ${getDifficultyLabel(session.difficulty)}]`;
 
-  const userPrompt = `Ask your first main technical question Q1 directly to ${candidate.member.name} ("you") about completed topic "${initialDay.title}" (Day ${initialDay.day}). Focus on practical system implementation, tools (${(initialDay.tools || []).join(', ')}), or core concepts. Ask only the main question in 2-3 sentences. Under 50 words total. Do not include follow-up headers or labels.`;
+  const userPrompt = `Ask your first main technical question Q1 directly to ${candidate.member.name} ("you") about completed topic "${initialDay.title}" (Day ${initialDay.day}). Focus on practical system implementation, edge cases, tools (${(initialDay.tools || []).join(', ')}), or trade-offs. Frame the question as a real-world scenario. Vary your sentence structure and wording so you do not sound repetitive. Ask only the main question in 3-5 sentences (up to 80 words). Do not include follow-up headers or labels.`;
 
   let reply: string;
   try {
@@ -312,7 +318,7 @@ Target Completed Curriculum Topic: "${initialDay.title}" (Day ${initialDay.day})
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt },
       ],
-      model: 'llama-3.3-70b-versatile',
+      model: 'llama-3.1-8b-instant',
       temperature: 0.6,
       max_tokens: 180,
     });
@@ -323,7 +329,7 @@ Target Completed Curriculum Topic: "${initialDay.title}" (Day ${initialDay.day})
       taskName: `Interview Start: ${candidate.member.name}`,
       userPrompt: `System: ${systemPrompt}\nUser: ${userPrompt}`,
       reasoning: `Initialized session ${sessionId}. Topic: "${topicLabel}". Difficulty: ${session.difficulty}.`,
-      output: { model: 'llama-3.3-70b-versatile', usage: response.usage, reply },
+      output: { model: 'llama-3.1-8b-instant', usage: response.usage, reply },
     });
   } catch (err) {
     reply = `Welcome ${candidate.member.name}. Regarding your completed work on ${initialDay.title}: How do you approach designing and optimizing this component in production?`;
@@ -361,7 +367,7 @@ export async function processConversationTurn(
   // STAGE 1: Candidate just answered the MAIN QUESTION
   // ─────────────────────────────────────────────────────────────────────────────
   if (!session.isExpectingFollowUpAnswer) {
-    const mainScore = evaluateAnswerScore(message, currentTopic);
+    const mainScore = await evaluateAnswerScore(session.currentMainQuestion || '', message, currentTopic);
     session.currentMainAnswer = message;
     session.currentMainScore = mainScore;
 
@@ -392,7 +398,7 @@ Total response under 40 words. Do not use markdown labels or headers.`;
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt },
           ],
-          model: 'llama-3.3-70b-versatile',
+          model: 'llama-3.1-8b-instant',
           temperature: 0.6,
           max_tokens: 140,
         });
@@ -403,7 +409,7 @@ Total response under 40 words. Do not use markdown labels or headers.`;
           taskName: `Interview Follow-up Gen: ${session.candidate.member.name}`,
           userPrompt,
           reasoning: `Main score ${mainScore} > 5. Generated validation & follow-up probe.`,
-          output: { model: 'llama-3.3-70b-versatile', usage: response.usage, reply: rawReply },
+          output: { model: 'llama-3.1-8b-instant', usage: response.usage, reply: rawReply },
         });
       } catch (err) {
         rawReply = `Correct! Spot-on technical answer.\nWhich specific index structure yielded lower search latency in your benchmark: HNSW or IVF?`;
@@ -526,7 +532,7 @@ ${profile}
 
 Target Completed Curriculum Topic: "${nextDay.title}" (Day ${nextDay.day}) [Level: ${getDifficultyLabel(session.difficulty)}]`;
 
-      const userPrompt = `Ask main technical question Q${qNum} directly to ${session.candidate.member.name} ("you") about completed topic "${nextDay.title}" (Day ${nextDay.day}). Focus on practical implementation, tools (${(nextDay.tools || []).join(', ')}), or key concepts. Ask only the main question in 2-3 sentences. Under 50 words total. Do not include follow-up headers or labels.`;
+      const userPrompt = `Ask main technical question Q${qNum} directly to ${session.candidate.member.name} ("you") about completed topic "${nextDay.title}" (Day ${nextDay.day}). Focus on practical implementation, edge cases, tools (${(nextDay.tools || []).join(', ')}), or key trade-offs. Frame the question as a real-world scenario. Vary your sentence structure and wording so you do not sound repetitive. Ask only the main question in 3-5 sentences (up to 80 words). Do not include follow-up headers or labels.`;
 
       let nextMainReply: string;
       try {
@@ -535,7 +541,7 @@ Target Completed Curriculum Topic: "${nextDay.title}" (Day ${nextDay.day}) [Leve
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt },
           ],
-          model: 'llama-3.3-70b-versatile',
+          model: 'llama-3.1-8b-instant',
           temperature: 0.6,
           max_tokens: 180,
         });
@@ -580,7 +586,7 @@ Target Completed Curriculum Topic: "${nextDay.title}" (Day ${nextDay.day}) [Leve
   // ─────────────────────────────────────────────────────────────────────────────
   session.isExpectingFollowUpAnswer = false;
 
-  const followUpScore = evaluateAnswerScore(message, currentTopic);
+  const followUpScore = await evaluateAnswerScore(session.currentFollowUpQuestion || '', message, currentTopic);
   const combinedScore = Number((((session.currentMainScore || 6.0) * 0.7) + (followUpScore * 0.3)).toFixed(1));
   const isRight = combinedScore > 5.0;
 
@@ -632,7 +638,7 @@ ${profile}
 
 Target Completed Curriculum Topic: "${nextDay.title}" (Day ${nextDay.day}) [Level: ${getDifficultyLabel(session.difficulty)}]`;
 
-  const userPrompt = `Ask main technical question Q${qNum} directly to ${session.candidate.member.name} ("you") about completed topic "${nextDay.title}" (Day ${nextDay.day}). Focus on practical implementation, tools (${(nextDay.tools || []).join(', ')}), or key concepts. Ask only the main question in 2-3 sentences. Under 50 words total. Do not include follow-up headers or labels.`;
+  const userPrompt = `Ask main technical question Q${qNum} directly to ${session.candidate.member.name} ("you") about completed topic "${nextDay.title}" (Day ${nextDay.day}). Focus on practical implementation, edge cases, tools (${(nextDay.tools || []).join(', ')}), or key trade-offs. Frame the question as a real-world scenario. Vary your sentence structure and wording so you do not sound repetitive. Ask only the main question in 3-5 sentences (up to 80 words). Do not include follow-up headers or labels.`;
 
   let nextMainReply: string;
 
@@ -642,14 +648,14 @@ Target Completed Curriculum Topic: "${nextDay.title}" (Day ${nextDay.day}) [Leve
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt },
       ],
-      model: 'llama-3.3-70b-versatile',
+      model: 'llama-3.1-8b-instant',
       temperature: 0.6,
       max_tokens: 180,
     });
 
     nextMainReply = sanitizeReply(response.choices[0]?.message?.content || '');
   } catch (err) {
-    nextMainReply = `Moving to your completed topic ${nextDay.title}: How do you approach designing and scaling this component for reliability?`;
+    nextMainReply = `Moving to your next completed topic ${nextDay.title}: What are the key architectural tradeoffs to consider here?`;
   }
 
   session.currentMainQuestion = nextMainReply;

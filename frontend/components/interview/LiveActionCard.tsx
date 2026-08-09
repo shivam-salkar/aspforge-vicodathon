@@ -87,16 +87,36 @@ export function LiveActionCard() {
       const score = response.score ?? (userText.length > 25 ? 8.0 : 4.0);
       const isRight = response.isRight ?? score > 5.0;
 
-      addRecordedQuestion({
-        questionNumber: recordedQuestions.length + 1,
-        topic: activeTopic,
-        question: lastQuestion,
-        mainQuestion: response.mainQuestion || lastQuestion,
-        answer: userText,
-        timeSpentSeconds: timeSpent,
-        score,
-        isRight,
-      });
+      // ─── CRITICAL FIX: Only record a question result when this is NOT a follow-up generation ───
+      // When response.isFollowUp === true, it means the main answer was correct and the backend
+      // is sending a follow-up probe. We do NOT record yet — we wait until the follow-up is
+      // answered and the backend returns the final combined score (with isFollowUp === false).
+      //
+      // When response.isFollowUp is false/undefined, it means either:
+      //   (a) The main answer was wrong (skippedFollowUp) → record with the main score
+      //   (b) The follow-up was just answered → record with the combined score from backend
+      if (!response.isFollowUp) {
+        // Use backend result data if available (authoritative), otherwise use response score
+        const backendQuestion = response.result?.questions?.slice(-1)[0];
+        const recordedScore = backendQuestion?.score ?? score;
+        const recordedIsRight = backendQuestion?.isRight ?? isRight;
+
+        addRecordedQuestion({
+          questionNumber: recordedQuestions.length + 1,
+          topic: backendQuestion?.topic || activeTopic,
+          question: backendQuestion?.question || lastQuestion,
+          mainQuestion: backendQuestion?.mainQuestion || response.mainQuestion || lastQuestion,
+          mainAnswer: backendQuestion?.mainAnswer,
+          mainScore: backendQuestion?.mainScore,
+          followUpQuestion: backendQuestion?.followUpQuestion,
+          followUpAnswer: backendQuestion?.followUpAnswer,
+          followUpScore: backendQuestion?.followUpScore,
+          answer: backendQuestion?.answer || userText,
+          timeSpentSeconds: backendQuestion?.timeSpentSeconds || timeSpent,
+          score: recordedScore,
+          isRight: recordedIsRight,
+        });
+      }
 
       updateScores({
         technical: Math.min(98, Math.max(65, Math.floor(score * 10))),

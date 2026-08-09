@@ -41,10 +41,9 @@ export default function InterviewConsolePage({ params }: { params: Promise<{ ses
 
       let cand = activeCandidate;
       if (!cand) {
-        cand = await candidateService.getCandidateById('CAND-001');
-        if (cand) {
-          setActiveCandidate(cand);
-        }
+        console.error('Candidate state lost. Redirecting to home.');
+        router.push('/');
+        return;
       }
 
       if (cand) {
