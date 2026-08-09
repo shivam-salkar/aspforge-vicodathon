@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
+import BackendPreloader from '@/components/ui/BackendPreloader';
+
 export const metadata: Metadata = {
   title: 'InterviewOS — Enterprise AI Technical Interviewer',
   description: 'The AI-based interview platform by AB Talks for adaptive technical interviews.',
@@ -26,7 +28,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased bg-[#08090A] text-white min-h-screen">
-        {children}
+        <BackendPreloader>
+          {children}
+        </BackendPreloader>
       </body>
     </html>
   );

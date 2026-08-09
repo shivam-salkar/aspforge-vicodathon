@@ -16,9 +16,9 @@ app.use(express.json({ limit: '2mb' }));
 
 // ─── Routes ──────────────────────────────────────────────────────────────────
 
-// Health check — registered BEFORE router to debug ordering
-app.get('/health', (_req: Request, res: Response) => {
-  res.json({ status: 'ok', service: 'InterviewOS', timestamp: new Date().toISOString() });
+// Fast health-check route with no DB or LLM overhead
+app.get(['/health', '/api/health'], (_req: Request, res: Response) => {
+  res.status(200).json({ status: 'ok', service: 'InterviewOS', timestamp: new Date().toISOString() });
 });
 
 app.use('/api', interviewRouter);
