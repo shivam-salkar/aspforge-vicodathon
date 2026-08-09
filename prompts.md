@@ -21408,3 +21408,223 @@ Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
 }
 ```
 ---
+
+## [2026-08-09T06:36:41.713Z] - Interview Start: Emily Chen
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** fe6d8fdd
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
+> 5. Format your output into 2 sections separated by "---FOLLOWUP---":
+>    [Main Technical Question]
+>    ---FOLLOWUP---
+>    [2-3 word targeted follow-up probe]
+>    Example:
+>    How do you optimize vector index search latency in production?
+>    ---FOLLOWUP---
+>    Why vector index?
+> 6. Keep total response under 60 words total. Speak naturally without markdown labels like "Evaluation:" or "Topic:".
+> 
+> 
+> Candidate Profile:
+> Candidate: Emily Chen
+> Role: AI Engineer | Experience: 6 years | Education: MS Artificial Intelligence
+> Cohort Progress: 31/31 missions completed, 30 first-try passes
+> Completed Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), RAG End-to-End & LLM API Basics (Day 11), Prompt Engineering Fundamentals (Day 12), Advanced Prompting: Function Calling & Structured Outputs (Day 13), Agentic Frameworks: LangChain Agents & Tool Use (Day 21), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)
+> 
+> Target Completed Curriculum Topic: "Embeddings Explained" (Day 7) [Level: intermediate]
+> User: Ask your first main technical question Q1 directly to Emily Chen ("you") about completed topic "Embeddings Explained" (Day 7). Focus on concrete system architecture, tools (Sentence Transformers, OpenAI Embeddings, Scikit-learn, Matplotlib), or trade-offs. Ask only the main question in 2-3 sentences. Under 50 words total. Do not include follow-up headers or labels.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mslfjbuo. Topic: "Embeddings Explained (Day 7)". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.163142483,
+    "prompt_tokens": 539,
+    "prompt_time": 0.041126157,
+    "completion_tokens": 31,
+    "completion_time": 0.121722364,
+    "total_tokens": 570,
+    "total_time": 0.162848521
+  },
+  "reply": "You implemented embeddings in your projects, how do you choose between Sentence Transformers and OpenAI Embeddings for text representation? What trade-offs do you consider?"
+}
+```
+---
+
+## [2026-08-09T06:37:14.999Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 86aef472
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Emily Chen","content":"Candidate: Emily Chen\nRole: AI Engineer | Experience: 6 years | Education: MS Artificial Intelligence\nCohort Progress: 31/31 missions completed, 30 first-try passes\nCompleted Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), RAG End-to-End & LLM API Basics (Day 11), Prompt Engineering Fundamentals (Day 12), Advanced Prompting: Function Calling & Structured Outputs (Day 13), Agentic Frameworks: LangChain Agents & Tool Use (Day 21), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)","tags":["interview-init","sess-mslfjbuo","CAND-003"],"metadata":{"sessionId":"sess-mslfjbuo","candidateId":"CAND-003"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786257404054",
+  "extracted": {
+    "entities": 24,
+    "edges": 35
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "890d1270675a",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-09T06:37:22.948Z] - Interview Follow-up Gen: Emily Chen
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** bb8fdf60
+
+### 1. User Prompt / Intent
+> The candidate just answered your main technical question about "Embeddings Explained (Day 7)":
+> "Choosing between Sentence Transformers and OpenAI Embeddings usually comes down to four things: control, quality, cost, and deployment constraints."
+> 
+> React briefly in 1 short sentence. Then ask a 1-sentence targeted follow-up question framed specifically so the candidate can answer in a short 2-3 words (e.g. "Which vector index type gave lower latency: HNSW or IVF?", "Was your cache write-through or write-around?", "Did you use gRPC or REST?"). Keep total response under 35 words. Do not use markdown labels.
+
+### 2. AI Reasoning & Strategy
+Generated follow-up probe for turn 1.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.058246664,
+    "prompt_tokens": 582,
+    "prompt_time": 0.038443056,
+    "completion_tokens": 17,
+    "completion_time": 0.078785689,
+    "total_tokens": 599,
+    "total_time": 0.117228745
+  },
+  "reply": "Your answer is spot on. ---FOLLOWUP--- Which embedding type?"
+}
+```
+---
+
+## [2026-08-09T06:37:35.797Z] - Interview Main Q Gen 2: Emily Chen
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 679d5f08
+
+### 1. User Prompt / Intent
+> Candidate follow-up answer: "no idea"
+
+### 2. AI Reasoning & Strategy
+Turn 2. Q2 on completed day 8 ("Vector Databases Overview").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.058281052,
+    "prompt_tokens": 526,
+    "prompt_time": 0.027069017,
+    "completion_tokens": 30,
+    "completion_time": 0.110941343,
+    "total_tokens": 556,
+    "total_time": 0.13801036
+  },
+  "reply": "You completed Vector Databases Overview, how do you architect a scalable vector database using tools like ChromaDB or Pinecone, considering trade-offs?"
+}
+```
+---
+
+## [2026-08-09T06:37:42.698Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** bf0dd18a
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Combined Answer","content":"Topic: Embeddings Explained (Day 7)\nScore: 2.4/10 (WRONG)\nCombined Answer: Main Answer: Choosing between Sentence Transformers and OpenAI Embeddings usually comes down to four things: control, quality, cost, and deployment constraints. | Follow-up Answer (2-3 words): no idea","tags":["interview-turn","sess-mslfjbuo","CAND-003"],"metadata":{"sessionId":"sess-mslfjbuo","turn":2,"topic":"Embeddings Explained (Day 7)","score":2.4,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786257457343",
+  "extracted": {
+    "entities": 4,
+    "edges": 1
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "aa378c4fabe2",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-09T06:37:47.495Z] - Interview Follow-up Gen: Emily Chen
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** d886c88a
+
+### 1. User Prompt / Intent
+> The candidate just answered your main technical question about "Vector Databases Overview (Day 8)":
+> "no idea"
+> 
+> React briefly in 1 short sentence. Then ask a 1-sentence targeted follow-up question framed specifically so the candidate can answer in a short 2-3 words (e.g. "Which vector index type gave lower latency: HNSW or IVF?", "Was your cache write-through or write-around?", "Did you use gRPC or REST?"). Keep total response under 35 words. Do not use markdown labels.
+
+### 2. AI Reasoning & Strategy
+Generated follow-up probe for turn 2.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161828448,
+    "prompt_tokens": 559,
+    "prompt_time": 0.027841791,
+    "completion_tokens": 22,
+    "completion_time": 0.076913445,
+    "total_tokens": 581,
+    "total_time": 0.104755236
+  },
+  "reply": "That's okay, it's a tough topic. ---FOLLOWUP--- Use HNSW?"
+}
+```
+---

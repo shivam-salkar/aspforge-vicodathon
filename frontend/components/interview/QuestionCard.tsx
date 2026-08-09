@@ -28,9 +28,18 @@ export function QuestionCard() {
   // Auto-scroll down smooth when follow-up generates
   useEffect(() => {
     if (isFollowUpActive && followUpRef.current) {
-      setTimeout(() => {
-        followUpRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 150);
+      const interval = setInterval(() => {
+        followUpRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      }, 100);
+
+      const timeout = setTimeout(() => {
+        clearInterval(interval);
+      }, 1000);
+
+      return () => {
+        clearInterval(interval);
+        clearTimeout(timeout);
+      };
     } else if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollTop = 0;
     }
@@ -91,13 +100,13 @@ export function QuestionCard() {
           />
         </div>
 
-        {/* Single Partition Line & Follow-up Question (Only after user answers main question) */}
+        {/* Single Left-to-Right Animated Line & Question below main question */}
         {isFollowUpActive && (
-          <div ref={followUpRef} className="pt-4 space-y-6 animate-in fade-in slide-in-from-bottom-3 duration-500">
-            {/* Single Partition Line */}
-            <div className="border-t border-white/10 w-full" />
+          <div ref={followUpRef} className="pt-2 space-y-6">
+            {/* Animated Partition Line (Left to Right) */}
+            <div className="h-px bg-gradient-to-r from-blue-500 via-purple-400 to-white/20 animate-line-expand origin-left w-full" />
 
-            {/* Follow-up Question: Same typography & animation as main question */}
+            {/* Generated Question below line: Same typography & BlurText animation as main question */}
             <div>
               <BlurText
                 key={cleanFollowUp}

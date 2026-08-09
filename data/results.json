@@ -1,5 +1,39 @@
 [
   {
+    "sessionId": "sess-mslfjbuo",
+    "candidateId": "CAND-003",
+    "candidateName": "Emily Chen",
+    "jobRole": "AI Engineer",
+    "createdAt": "2026-08-09T06:36:41.306Z",
+    "overallScore": 2.4,
+    "overallPercentage": 24,
+    "totalQuestions": 1,
+    "rightCount": 0,
+    "wrongCount": 1,
+    "totalTimeSeconds": 12,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "topic": "Embeddings Explained (Day 7)",
+        "dayNumber": 7,
+        "question": "You implemented embeddings in your projects, how do you choose between Sentence Transformers and OpenAI Embeddings for text representation? What trade-offs do you consider?",
+        "answer": "Main Answer: Choosing between Sentence Transformers and OpenAI Embeddings usually comes down to four things: control, quality, cost, and deployment constraints. | Follow-up Answer (2-3 words): no idea",
+        "timeSpentSeconds": 12,
+        "score": 2.4,
+        "isRight": false
+      }
+    ],
+    "topicTimeAnalysis": [
+      {
+        "topic": "Embeddings Explained (Day 7)",
+        "dayNumber": 7,
+        "questionCount": 1,
+        "avgScore": 2.4,
+        "totalTimeSeconds": 12
+      }
+    ]
+  },
+  {
     "sessionId": "sess-mslfca0e",
     "candidateId": "CAND-003",
     "candidateName": "Emily Chen",

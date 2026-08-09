@@ -219,7 +219,7 @@ export function LiveActionCard() {
             }}
             placeholder={
               isFollowUpActive
-                ? "Answer follow-up in 2-3 words (e.g., 'HNSW index')... (Press Ctrl+Enter or click Submit)"
+                ? "Type short response in 2-3 words (e.g., 'HNSW index')... (Press Ctrl+Enter or click Submit)"
                 : "Type your detailed technical response here... (Press Ctrl+Enter or click Submit)"
             }
             disabled={isThinking}
