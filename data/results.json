@@ -1,5 +1,103 @@
 [
   {
+    "sessionId": "sess-mslf3n42",
+    "candidateId": "CAND-001",
+    "candidateName": "Sarah Johnson",
+    "jobRole": "Senior Data Engineer",
+    "createdAt": "2026-08-09T06:24:29.390Z",
+    "overallScore": 0,
+    "overallPercentage": 0,
+    "totalQuestions": 0,
+    "rightCount": 0,
+    "wrongCount": 0,
+    "totalTimeSeconds": 0,
+    "questions": [],
+    "topicTimeAnalysis": []
+  },
+  {
+    "sessionId": "sess-msleywrb",
+    "candidateId": "CAND-004",
+    "candidateName": "David Miller",
+    "jobRole": "Business Analyst",
+    "createdAt": "2026-08-09T06:20:48.639Z",
+    "overallScore": 5.3,
+    "overallPercentage": 53,
+    "totalQuestions": 3,
+    "rightCount": 1,
+    "wrongCount": 2,
+    "totalTimeSeconds": 90,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "topic": "Embeddings Explained (Day 7)",
+        "dayNumber": 7,
+        "question": "You completed Embeddings Explained, so how would you architect a system using Sentence Transformers and Scikit-learn to generate and compare embeddings, considering trade-offs between accuracy and computational efficiency?",
+        "answer": "no idea",
+        "timeSpentSeconds": 16,
+        "score": 2.2,
+        "isRight": false
+      },
+      {
+        "questionNumber": 2,
+        "topic": "Vector Databases Overview (Day 8)",
+        "dayNumber": 8,
+        "question": "You seemed a bit unsure, that's okay. What are key considerations when designing a vector database for efficient similarity searches?",
+        "answer": "Key considerations are embedding quality, similarity metric, index choice, recall-latency trade-offs, filtering, scalability, update support, memory use, hybrid retrieval, reranking, security, and observability.",
+        "timeSpentSeconds": 38,
+        "score": 9.1,
+        "isRight": true
+      },
+      {
+        "questionNumber": 3,
+        "topic": "The Retrieval & Matching Engine (Day 10)",
+        "dayNumber": 10,
+        "question": "You provided a comprehensive list of considerations for designing a vector database. How do you think retrieval and matching engines impact the overall performance of a system like this?",
+        "answer": "no clue",
+        "timeSpentSeconds": 36,
+        "score": 4.5,
+        "isRight": false
+      }
+    ],
+    "topicTimeAnalysis": [
+      {
+        "topic": "Embeddings Explained (Day 7)",
+        "dayNumber": 7,
+        "questionCount": 1,
+        "avgScore": 2.2,
+        "totalTimeSeconds": 16
+      },
+      {
+        "topic": "Vector Databases Overview (Day 8)",
+        "dayNumber": 8,
+        "questionCount": 1,
+        "avgScore": 9.1,
+        "totalTimeSeconds": 38
+      },
+      {
+        "topic": "The Retrieval & Matching Engine (Day 10)",
+        "dayNumber": 10,
+        "questionCount": 1,
+        "avgScore": 4.5,
+        "totalTimeSeconds": 36
+      }
+    ]
+  },
+  {
+    "sessionId": "sess-msleuedi",
+    "candidateId": "CAND-004",
+    "candidateName": "David Miller",
+    "jobRole": "Business Analyst",
+    "createdAt": "2026-08-09T06:17:18.164Z",
+    "overallScore": 0,
+    "overallPercentage": 0,
+    "totalQuestions": 0,
+    "rightCount": 0,
+    "wrongCount": 0,
+    "totalTimeSeconds": 0,
+    "questions": [],
+    "topicTimeAnalysis": []
+  },
+  {
     "sessionId": "sess-mskpp03e",
     "candidateId": "CAND-002",
     "candidateName": "Alex Turner",

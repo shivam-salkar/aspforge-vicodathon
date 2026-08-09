@@ -31,8 +31,15 @@ RULES:
 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
-5. NEVER output markdown labels or prefixes like "Evaluation:" or "Topic:". Speak naturally in conversational speech.
-6. Keep your total response under 60 words (3-4 sentences max).
+5. Format your output into 2 sections separated by "---FOLLOWUP---":
+   [Main Technical Question]
+   ---FOLLOWUP---
+   [2-3 word targeted follow-up probe]
+   Example:
+   How do you optimize vector index search latency in production?
+   ---FOLLOWUP---
+   Why vector index?
+6. Keep total response under 60 words total. Speak naturally without markdown labels like "Evaluation:" or "Topic:".
 `;
 
 // ─── In-Memory Session Store ─────────────────────────────────────────────────
@@ -273,7 +280,7 @@ ${profile}
 
 Target Completed Curriculum Topic: "${initialDay.title}" (Day ${initialDay.day}) [Level: ${getDifficultyLabel(session.difficulty)}]`;
 
-  const userPrompt = `Ask your first technical question Q1 directly to ${candidate.member.name} ("you") about completed topic "${initialDay.title}" (Day ${initialDay.day}). Focus on concrete system architecture, tools (${(initialDay.tools || []).join(', ')}), or trade-offs. Speak in second-person. Under 60 words total. No topic headers in text.`;
+  const userPrompt = `Ask your first technical question Q1 directly to ${candidate.member.name} ("you") about completed topic "${initialDay.title}" (Day ${initialDay.day}). Focus on concrete system architecture, tools (${(initialDay.tools || []).join(', ')}), or trade-offs. Remember to include the "---FOLLOWUP---" separator and a 2-3 word follow-up question below it. Under 60 words total.`;
 
   let reply: string;
   try {
@@ -296,7 +303,7 @@ Target Completed Curriculum Topic: "${initialDay.title}" (Day ${initialDay.day})
       output: { model: 'llama-3.3-70b-versatile', usage: response.usage, reply },
     });
   } catch (err) {
-    reply = `Welcome ${candidate.member.name}. Regarding your completed work on ${initialDay.title}: How do you approach designing and optimizing this component in production?`;
+    reply = `Welcome ${candidate.member.name}. Regarding your completed work on ${initialDay.title}: How do you approach designing and optimizing this component in production?\n---FOLLOWUP---\nWhy this architecture?`;
     console.warn('[InterviewEngine] Groq completion failed, using concise fallback:', (err as Error).message);
   }
 
@@ -404,7 +411,7 @@ Interview Progress:
   const userPrompt = `Recent Conversation:
 ${recentTurns}
 
-React directly to what the candidate just said in 1 sentence using second-person ("you" / "your answer"). If they said "i dont know", acknowledge it empathetically. Then ask question Q${qNum} about completed topic "${nextDay.title}" (Day ${nextDay.day}). Total response under 60 words. Speak naturally in conversational speech without markdown labels or topic headers.`;
+React directly to what the candidate just said in 1 sentence using second-person ("you" / "your answer"). If they said "i dont know", acknowledge it empathetically. Then ask question Q${qNum} about completed topic "${nextDay.title}" (Day ${nextDay.day}). Remember to include the "---FOLLOWUP---" separator and a 2-3 word follow-up question below it. Total response under 60 words.`;
 
   let reply: string;
 
@@ -428,7 +435,7 @@ React directly to what the candidate just said in 1 sentence using second-person
       output: { model: 'llama-3.3-70b-versatile', usage: response.usage, reply },
     });
   } catch (err) {
-    reply = `Got it. Moving to your completed topic ${nextDay.title}: How do you approach designing this component for reliability?`;
+    reply = `Got it. Moving to your completed topic ${nextDay.title}: How do you approach designing this component for reliability?\n---FOLLOWUP---\nHow handle failures?`;
     console.warn('[InterviewEngine] Groq completion failed, using fallback:', (err as Error).message);
   }
 

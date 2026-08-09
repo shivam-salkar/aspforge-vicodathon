@@ -53,10 +53,12 @@ export default function InterviewConsolePage({ params }: { params: Promise<{ ses
           initSession(sessionId, response.reply, response.topic);
         } catch (err) {
           console.error('[InterviewConsole] Engine initialization error:', err);
+          const firstMission = cand.missions?.find((m) => m.passed && !m.skipped) || cand.missions?.[0];
+          const fallbackTopic = firstMission ? `${firstMission.title} (Day ${firstMission.day})` : 'System Architecture (Day 7)';
           initSession(
             sessionId,
-            `Welcome ${cand.member.name}. Let's begin by discussing embeddings and high-dimensional vector index optimization: How do you optimize query latency?`,
-            'Embeddings Explained (Day 7)'
+            `Welcome ${cand.member.name}. Let's begin by discussing your completed work on ${firstMission?.title || 'System Architecture'}: How do you approach designing and scaling this component in production?\n---FOLLOWUP---\nWhy this architecture?`,
+            fallbackTopic
           );
         } finally {
           setIsInitializing(false);

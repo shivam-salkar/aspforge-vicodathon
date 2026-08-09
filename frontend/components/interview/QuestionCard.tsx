@@ -2,7 +2,41 @@
 
 import { useInterviewStore } from '@/stores/interviewStore';
 import BlurText from '@/components/ui/BlurText';
-import { Clock, BookOpen } from 'lucide-react';
+import { Clock, BookOpen, HelpCircle } from 'lucide-react';
+
+function parseQuestionContent(text: string) {
+  let main = text;
+  let followUp = '';
+
+  if (text.includes('---FOLLOWUP---')) {
+    const parts = text.split('---FOLLOWUP---');
+    main = parts[0].trim();
+    followUp = parts[1].trim().replace(/^Follow-up:\s*/i, '');
+  } else if (text.includes('\n---\n')) {
+    const parts = text.split('\n---\n');
+    main = parts[0].trim();
+    followUp = parts[1].trim().replace(/^Follow-up:\s*/i, '');
+  } else {
+    const lower = text.toLowerCase();
+    if (lower.includes('latency') || lower.includes('performance') || lower.includes('speed')) {
+      followUp = 'Explain latency impact?';
+    } else if (lower.includes('vector') || lower.includes('embedding') || lower.includes('index')) {
+      followUp = 'Why vector index?';
+    } else if (lower.includes('scale') || lower.includes('throughput') || lower.includes('volume')) {
+      followUp = 'What scale threshold?';
+    } else if (lower.includes('agent') || lower.includes('mcp') || lower.includes('orchestration')) {
+      followUp = 'How handle failures?';
+    } else if (lower.includes('docker') || lower.includes('kubernetes') || lower.includes('container')) {
+      followUp = 'Why containerize this?';
+    } else if (lower.includes('cache') || lower.includes('memory') || lower.includes('redis')) {
+      followUp = 'Cache invalidation strategy?';
+    } else {
+      followUp = 'Key trade-offs involved?';
+    }
+  }
+
+  return { main, followUp };
+}
 
 export function QuestionCard() {
   const { turnCount, maxTurns, questionTimerSeconds, currentTopic, turns } = useInterviewStore();
@@ -21,11 +55,12 @@ export function QuestionCard() {
 
   // Strip any legacy Topic: tags if present in string
   const cleanQuestionText = rawQuestion.replace(/^Topic:\s*[^|]+\|\s*Q\d+:\s*/i, '').trim();
+  const { main: mainQuestion, followUp: followUpQuestion } = parseQuestionContent(cleanQuestionText);
 
   return (
     <div className="glass-card p-6 md:p-8 h-full flex flex-col border-white/10 relative overflow-hidden bg-gray-950/70 shadow-2xl">
       {/* Top Header Row: Question Counter + Per-Question Timer */}
-      <div className="mb-4 pb-4 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div className="mb-4 pb-4 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shrink-0">
         <div>
           <div className="flex items-center gap-2 mb-1.5">
             <h3 className="text-gray-300 text-xs font-bold uppercase tracking-widest">
@@ -48,21 +83,39 @@ export function QuestionCard() {
       </div>
 
       {/* Top Topic & Q.no Header Badge */}
-      <div className="mb-5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-purple-500/15 via-indigo-500/15 to-blue-500/15 border border-purple-500/30 text-purple-300 text-xs font-bold tracking-tight shadow-md self-start">
+      <div className="mb-5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-purple-500/15 via-indigo-500/15 to-blue-500/15 border border-purple-500/30 text-purple-300 text-xs font-bold tracking-tight shadow-md self-start shrink-0">
         <BookOpen className="w-3.5 h-3.5 text-purple-400 shrink-0" />
         <span>Topic: {topicName} • Q{turnCount}</span>
       </div>
 
-      {/* Pure AI Question Text (No topic/Q.no in conversational speech body) */}
-      <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
+      {/* Main AI Technical Question */}
+      <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar min-h-0">
         <BlurText
-          key={cleanQuestionText}
-          text={cleanQuestionText}
+          key={mainQuestion}
+          text={mainQuestion}
           delay={120}
           animateBy="words"
           direction="top"
           className="text-lg md:text-2xl font-semibold text-white leading-relaxed tracking-tight"
         />
+      </div>
+
+      {/* Partition Line */}
+      <div className="my-5 border-t border-white/10 flex items-center gap-3 pt-3 shrink-0">
+        <span className="px-2.5 py-0.5 rounded-md bg-purple-500/20 text-purple-300 text-[10px] font-extrabold tracking-wider uppercase border border-purple-500/30">
+          Follow-up Probe
+        </span>
+        <div className="h-px flex-1 bg-gradient-to-r from-purple-500/40 via-blue-500/30 to-transparent" />
+      </div>
+
+      {/* 2-3 Word Follow-up Question Box */}
+      <div className="p-4 rounded-2xl bg-purple-950/40 border border-purple-500/30 shadow-lg shrink-0">
+        <div className="flex items-center gap-2.5">
+          <HelpCircle className="w-5 h-5 text-purple-400 shrink-0" />
+          <span className="text-base md:text-xl font-bold text-purple-200 tracking-tight">
+            {followUpQuestion}
+          </span>
+        </div>
       </div>
     </div>
   );

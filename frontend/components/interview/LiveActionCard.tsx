@@ -110,7 +110,7 @@ export function LiveActionCard() {
       addTurn({
         role: 'interviewer',
         content: response.reply,
-        topic: currentTopic,
+        topic: response.topic || currentTopic,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       });
 

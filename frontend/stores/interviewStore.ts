@@ -37,7 +37,7 @@ export const useInterviewStore = create<InterviewState>((set) => ({
   recordedQuestions: [],
   turnCount: 1,
   maxTurns: 8,
-  currentTopic: 'Embeddings Explained (Day 7)',
+  currentTopic: '',
   difficulty: 'medium',
   statusText: 'Interview Engine Active • Listening for candidate input...',
   isThinking: false,
@@ -66,11 +66,11 @@ export const useInterviewStore = create<InterviewState>((set) => ({
         {
           role: 'interviewer',
           content: initialReply,
-          topic: topic || 'Embeddings Explained (Day 7)',
+          topic: topic || 'Completed Curriculum Topic',
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         },
       ],
-      currentTopic: topic || 'Embeddings Explained (Day 7)',
+      currentTopic: topic || 'Completed Curriculum Topic',
       recordedQuestions: [],
       turnCount: 1,
       isCompleted: false,
@@ -82,6 +82,7 @@ export const useInterviewStore = create<InterviewState>((set) => ({
     set((state) => ({
       turns: [...state.turns, turn],
       turnCount: turn.role === 'interviewer' ? state.turnCount + 1 : state.turnCount,
+      currentTopic: turn.role === 'interviewer' && turn.topic ? turn.topic : state.currentTopic,
       questionTimerSeconds: turn.role === 'interviewer' ? 0 : state.questionTimerSeconds,
     })),
 

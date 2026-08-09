@@ -20434,3 +20434,666 @@ Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
 }
 ```
 ---
+
+## [2026-08-09T06:17:18.455Z] - Interview Start: David Miller
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** c062f8a9
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
+> 5. NEVER output markdown labels or prefixes like "Evaluation:" or "Topic:". Speak naturally in conversational speech.
+> 6. Keep your total response under 60 words (3-4 sentences max).
+> 
+> 
+> Candidate Profile:
+> Candidate: David Miller
+> Role: Business Analyst | Experience: 8 years | Education: MBA
+> Cohort Progress: 28/31 missions completed, 6 first-try passes
+> Completed Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Conversation Memory & Context Management (Day 20), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)
+> 
+> Target Completed Curriculum Topic: "Embeddings Explained" (Day 7) [Level: intermediate]
+> User: Ask your first technical question Q1 directly to David Miller ("you") about completed topic "Embeddings Explained" (Day 7). Focus on concrete system architecture, tools (Sentence Transformers, OpenAI Embeddings, Scikit-learn, Matplotlib), or trade-offs. Speak in second-person. Under 60 words total. No topic headers in text.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-msleuedi. Topic: "Embeddings Explained (Day 7)". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.056096192,
+    "prompt_tokens": 449,
+    "prompt_time": 0.02370655,
+    "completion_tokens": 38,
+    "completion_time": 0.161139919,
+    "total_tokens": 487,
+    "total_time": 0.184846469
+  },
+  "reply": "You completed Embeddings Explained, so how would you architect a system using Sentence Transformers and Scikit-learn to generate and compare embeddings, considering trade-offs between accuracy and computational efficiency?"
+}
+```
+---
+
+## [2026-08-09T06:17:30.731Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 0c4dda16
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: David Miller","content":"Candidate: David Miller\nRole: Business Analyst | Experience: 8 years | Education: MBA\nCohort Progress: 28/31 missions completed, 6 first-try passes\nCompleted Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Conversation Memory & Context Management (Day 20), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)","tags":["interview-init","sess-msleuedi","CAND-004"],"metadata":{"sessionId":"sess-msleuedi","candidateId":"CAND-004"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786256239188",
+  "extracted": {
+    "entities": 15,
+    "edges": 21
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "73eaa8f26132",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-09T06:20:48.984Z] - Interview Start: David Miller
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** f099b0bf
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
+> 5. NEVER output markdown labels or prefixes like "Evaluation:" or "Topic:". Speak naturally in conversational speech.
+> 6. Keep your total response under 60 words (3-4 sentences max).
+> 
+> 
+> Candidate Profile:
+> Candidate: David Miller
+> Role: Business Analyst | Experience: 8 years | Education: MBA
+> Cohort Progress: 28/31 missions completed, 6 first-try passes
+> Completed Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Conversation Memory & Context Management (Day 20), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)
+> 
+> Target Completed Curriculum Topic: "Embeddings Explained" (Day 7) [Level: intermediate]
+> User: Ask your first technical question Q1 directly to David Miller ("you") about completed topic "Embeddings Explained" (Day 7). Focus on concrete system architecture, tools (Sentence Transformers, OpenAI Embeddings, Scikit-learn, Matplotlib), or trade-offs. Speak in second-person. Under 60 words total. No topic headers in text.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-msleywrb. Topic: "Embeddings Explained (Day 7)". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.058378498,
+    "prompt_tokens": 449,
+    "prompt_time": 0.024880012,
+    "completion_tokens": 38,
+    "completion_time": 0.170703938,
+    "total_tokens": 487,
+    "total_time": 0.19558395
+  },
+  "reply": "You completed Embeddings Explained, so how would you architect a system using Sentence Transformers and Scikit-learn to generate and compare embeddings, considering trade-offs between accuracy and computational efficiency?"
+}
+```
+---
+
+## [2026-08-09T06:21:02.043Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 0ee5ff7e
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: David Miller","content":"Candidate: David Miller\nRole: Business Analyst | Experience: 8 years | Education: MBA\nCohort Progress: 28/31 missions completed, 6 first-try passes\nCompleted Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Conversation Memory & Context Management (Day 20), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)","tags":["interview-init","sess-msleywrb","CAND-004"],"metadata":{"sessionId":"sess-msleywrb","candidateId":"CAND-004"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786256450050",
+  "extracted": {
+    "entities": 15,
+    "edges": 19
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "27540b19dddd",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-09T06:21:16.704Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 3a16ae9f
+
+### 1. User Prompt / Intent
+> {"query":"David Miller Embeddings Explained (Day 7) no idea","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "1c602f75-5d49-43fd-816d-6f0881f01323",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "Embeddings Explained (Day 7)",
+      "name": "COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "1098b531-ebff-4b40-907c-8c18fa4e8083",
+      "source_node": "92f523ab-6d79-46ae-ac93-45186db5fe81",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "Embeddings Explained (Day 7)",
+      "name": "COMPLETED_CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9a135fef-c1e8-425b-b51c-7998b19d0996",
+      "source_node": "92f523ab-6d79-46ae-ac93-45186db5fe81",
+      "target_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "fact": "Completed Embeddings Explained (Day 7)",
+      "name": "COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "e5c327c2-77a8-461e-8e9f-f28537da598d",
+      "source_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "target_node": "b21207e2-dab6-42c8-b225-e82b6ca020e4",
+      "fact": "Embeddings Explained is the topic of Day 7",
+      "name": "FOLLOWED_BY",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "02e60631-17ff-417a-8e14-e6868cd30f10",
+      "source_node": "dfcaaff5-aeff-41cb-b690-f60f10c64788",
+      "target_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "fact": "Day 8 curriculum follows Embeddings Explained (Day 7)",
+      "name": "PREVIOUS_TO",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-09T06:21:16.996Z] - Interview Turn 2: David Miller
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** d24f8244
+
+### 1. User Prompt / Intent
+> Candidate: "no idea..."
+
+### 2. AI Reasoning & Strategy
+Turn 2. Q2 on completed day 8 ("Vector Databases Overview").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.057812932,
+    "prompt_tokens": 537,
+    "prompt_time": 0.026889587,
+    "completion_tokens": 25,
+    "completion_time": 0.167270962,
+    "total_tokens": 562,
+    "total_time": 0.194160549
+  },
+  "reply": "You seemed a bit unsure, that's okay. What are key considerations when designing a vector database for efficient similarity searches?"
+}
+```
+---
+
+## [2026-08-09T06:21:17.511Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 95f76643
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Candidate Answer","content":"Topic: Embeddings Explained (Day 7)\nScore: 2.2/10 (WRONG)\nAnswer: no idea","tags":["interview-turn","sess-msleywrb","CAND-004"],"metadata":{"sessionId":"sess-msleywrb","turn":2,"topic":"Embeddings Explained (Day 7)","score":2.2,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786256474856",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "eb4ea4057961",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-09T06:22:00.600Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 7c57f4fa
+
+### 1. User Prompt / Intent
+> {"title":"Turn 4 — Candidate Answer","content":"Topic: Vector Databases Overview (Day 8)\nScore: 9.1/10 (RIGHT)\nAnswer: Key considerations are embedding quality, similarity metric, index choice, recall-latency trade-offs, filtering, scalability, update support, memory use, hybrid retrieval, reranking, security, and observability.","tags":["interview-turn","sess-msleywrb","CAND-004"],"metadata":{"sessionId":"sess-msleywrb","turn":4,"topic":"Vector Databases Overview (Day 8)","score":9.1,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786256518036",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "ae9eede8d11f",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-09T06:22:05.118Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 51d46dc2
+
+### 1. User Prompt / Intent
+> {"query":"David Miller Vector Databases Overview (Day 8) Key considerations are embedding quality, similarity metric, index choice, recall-latency trade-offs","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "99e7869d-bd6d-4f50-a121-ea052730750a",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "fact": "Vector Databases Overview (Day 8)",
+      "name": "COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "369c8e05-d17a-4a45-b6e5-51db44aca740",
+      "source_node": "92f523ab-6d79-46ae-ac93-45186db5fe81",
+      "target_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "fact": "Completed Vector Databases Overview (Day 8)",
+      "name": "COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "ea2bdc4d-ac52-4a1a-a5ba-0cf9d032bbf4",
+      "source_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "target_node": "8c5157e7-7694-4a1c-be5f-8a184ea9bf21",
+      "fact": "discusses vector databases overview as the subject of this episode",
+      "name": "TOPIC_OF",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "5fbae428-49b8-4f36-87bc-6b2b64961db8",
+      "source_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "Vector Databases Overview (Day 8) followed by The Retrieval & Matching Engine (Day 10)",
+      "name": "PRECEDES",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "c0a8516b-5d01-42b4-8324-58adf99a19c3",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "3fbbbadc-6d02-4264-910b-8cae77396ad0",
+      "fact": "completed curriculum Item Vector Databases Overview Day 8",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-09T06:22:05.495Z] - Interview Turn 4: David Miller
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** ea3f546b
+
+### 1. User Prompt / Intent
+> Candidate: "Key considerations are embedding quality, similarity metric, index choice, recall-latency trade-offs, filtering, scalability, update support, memory u..."
+
+### 2. AI Reasoning & Strategy
+Turn 4. Q3 on completed day 10 ("The Retrieval & Matching Engine").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.052590782,
+    "prompt_tokens": 612,
+    "prompt_time": 0.036373209,
+    "completion_tokens": 32,
+    "completion_time": 0.125217664,
+    "total_tokens": 644,
+    "total_time": 0.161590873
+  },
+  "reply": "You provided a comprehensive list of considerations for designing a vector database. How do you think retrieval and matching engines impact the overall performance of a system like this?"
+}
+```
+---
+
+## [2026-08-09T06:22:45.391Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 1d4920b8
+
+### 1. User Prompt / Intent
+> {"title":"Turn 6 — Candidate Answer","content":"Topic: The Retrieval & Matching Engine (Day 10)\nScore: 4.5/10 (WRONG)\nAnswer: no clue","tags":["interview-turn","sess-msleywrb","CAND-004"],"metadata":{"sessionId":"sess-msleywrb","turn":6,"topic":"The Retrieval & Matching Engine (Day 10)","score":4.5,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786256563470",
+  "extracted": {
+    "entities": 1,
+    "edges": 0
+  },
+  "group_id": "default",
+  "warning": "Graphiti extracted entities but no edges from this content. Common causes: snake_case predicates, pronouns instead of names, or terse fragments. The episode is stored as raw text and reachable via GET /v1/entities/{name}?mode=episodes.",
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "fe91c34a3301",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-09T06:22:46.935Z] - Breeth API - Search Memory
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** baa5b91a
+
+### 1. User Prompt / Intent
+> {"query":"David Miller The Retrieval & Matching Engine (Day 10) no clue","limit":5}
+
+### 2. AI Reasoning & Strategy
+Executing search query against Breeth episodic memory via POST /v1/search.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "director_profile": null,
+  "edges": [
+    {
+      "edge_uuid": "276ca00b-ab17-4fb3-bcfe-294b4833a997",
+      "source_node": "268a4a4f-39b1-486d-bf93-0ad85aea8061",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "The Retrieval & Matching Engine (Day 10)",
+      "name": "COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "9d7c51f2-0376-4da6-98de-6af1f9ccad8c",
+      "source_node": "92f523ab-6d79-46ae-ac93-45186db5fe81",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "The Retrieval & Matching Engine (Day 10)",
+      "name": "COMPLETED_CURRICULUM_TOPIC",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "84a62035-6770-4f1d-8fb5-386c774e9a00",
+      "source_node": "92f523ab-6d79-46ae-ac93-45186db5fe81",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "Completed The Retrieval & Matching Engine (Day 10)",
+      "name": "COMPLETED",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "70029da6-1e90-4153-aa67-eba389860978",
+      "source_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "target_node": "70a09a4b-4c72-4122-9328-61470ab4c515",
+      "fact": "Day 16 curriculum follows The Retrieval & Matching Engine (Day 10)",
+      "name": "FOLLOWS",
+      "intent_meta": null,
+      "_tier": "cold"
+    },
+    {
+      "edge_uuid": "e14f84b7-d2e1-4f15-8afe-7cc154cf9de6",
+      "source_node": "222b142a-9e83-46e6-ac36-3482657e4c1e",
+      "target_node": "e5388dbf-4b76-4e79-9191-63985775be60",
+      "fact": "completed curriculum Item The Retrieval & Matching Engine Day 10",
+      "name": "COMPLETED_CURRICULUM",
+      "intent_meta": null,
+      "_tier": "cold"
+    }
+  ],
+  "_cache": {
+    "tier": "skipped: fanout",
+    "hot_hits": 0,
+    "cold_hits": 5,
+    "group_id": "*"
+  },
+  "note": null
+}
+```
+---
+
+## [2026-08-09T06:22:47.340Z] - Interview Turn 6: David Miller
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** a33b8d32
+
+### 1. User Prompt / Intent
+> Candidate: "no clue..."
+
+### 2. AI Reasoning & Strategy
+Turn 6. Q4 on completed day 12 ("Prompt Engineering Fundamentals").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161856337,
+    "prompt_tokens": 606,
+    "prompt_time": 0.041881571,
+    "completion_tokens": 30,
+    "completion_time": 0.144095308,
+    "total_tokens": 636,
+    "total_time": 0.185976879
+  },
+  "reply": "That's okay, not knowing something is completely fine. You previously completed Prompt Engineering Fundamentals, how do you optimize prompts for better response quality?"
+}
+```
+---
+
+## [2026-08-09T06:24:29.672Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 74eb0b8f
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
+> 5. NEVER output markdown labels or prefixes like "Evaluation:" or "Topic:". Speak naturally in conversational speech.
+> 6. Keep your total response under 60 words (3-4 sentences max).
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Completed Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Docker & Kubernetes Deployment (Day 28), Capstone Project & Final Demo (Day 31)
+> 
+> Target Completed Curriculum Topic: "Embeddings Explained" (Day 7) [Level: intermediate]
+> User: Ask your first technical question Q1 directly to Sarah Johnson ("you") about completed topic "Embeddings Explained" (Day 7). Focus on concrete system architecture, tools (Sentence Transformers, OpenAI Embeddings, Scikit-learn, Matplotlib), or trade-offs. Speak in second-person. Under 60 words total. No topic headers in text.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mslf3n42. Topic: "Embeddings Explained (Day 7)". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.051098648,
+    "prompt_tokens": 451,
+    "prompt_time": 0.023590582,
+    "completion_tokens": 34,
+    "completion_time": 0.162324056,
+    "total_tokens": 485,
+    "total_time": 0.185914638
+  },
+  "reply": "You implemented embeddings in your projects, how do you decide between using Sentence Transformers or OpenAI Embeddings for dimensionality reduction, considering factors like performance and interpretability?"
+}
+```
+---
+
+## [2026-08-09T06:24:59.090Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** ccf30a4c
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nCompleted Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Docker & Kubernetes Deployment (Day 28), Capstone Project & Final Demo (Day 31)","tags":["interview-init","sess-mslf3n42","CAND-001"],"metadata":{"sessionId":"sess-mslf3n42","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786256674956",
+  "extracted": {
+    "entities": 15,
+    "edges": 27
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "460fdf0aef3d",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
