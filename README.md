@@ -218,7 +218,7 @@ Engage in a live multi-turn technical interview with dynamic question generation
 
 Analyze the final evaluation report, topic-wise performance, right/wrong classification, and time analysis.
 
-![Final Results](assets/results.jpeg)
+![Final Results](assets/result.jpeg)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
