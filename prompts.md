@@ -20185,3 +20185,252 @@ Synthesized 16 turns across 16 topics.
 }
 ```
 ---
+
+## [2026-08-09T06:14:27.028Z] - Interview Start: David Miller
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 7612c35b
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
+> 5. NEVER output markdown labels or prefixes like "Evaluation:" or "Topic:". Speak naturally in conversational speech.
+> 6. Keep your total response under 60 words (3-4 sentences max).
+> 
+> 
+> Candidate Profile:
+> Candidate: David Miller
+> Role: Business Analyst | Experience: 8 years | Education: MBA
+> Cohort Progress: 28/31 missions completed, 6 first-try passes
+> Completed Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Conversation Memory & Context Management (Day 20), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)
+> 
+> Target Completed Curriculum Topic: "Embeddings Explained" (Day 7) [Level: intermediate]
+> User: Ask your first technical question Q1 directly to David Miller ("you") about completed topic "Embeddings Explained" (Day 7). Focus on concrete system architecture, tools (Sentence Transformers, OpenAI Embeddings, Scikit-learn, Matplotlib), or trade-offs. Speak in second-person. Under 60 words total. No topic headers in text.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-msleqpuy. Topic: "Embeddings Explained (Day 7)". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.058358798,
+    "prompt_tokens": 449,
+    "prompt_time": 0.071576819,
+    "completion_tokens": 37,
+    "completion_time": 0.159282514,
+    "total_tokens": 486,
+    "total_time": 0.230859333
+  },
+  "reply": "You completed Embeddings Explained, so how would you utilize Sentence Transformers and Scikit-learn to generate and compare embeddings in a production environment, considering scalability and performance trade-offs?"
+}
+```
+---
+
+## [2026-08-09T06:14:53.697Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 041da2ce
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: David Miller","content":"Candidate: David Miller\nRole: Business Analyst | Experience: 8 years | Education: MBA\nCohort Progress: 28/31 missions completed, 6 first-try passes\nCompleted Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Conversation Memory & Context Management (Day 20), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)","tags":["interview-init","sess-msleqpuy","CAND-004"],"metadata":{"sessionId":"sess-msleqpuy","candidateId":"CAND-004"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786256069456",
+  "extracted": {
+    "entities": 15,
+    "edges": 3
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "6300439f68a8",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-09T06:14:58.152Z] - Interview Start: David Miller
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** e4facffe
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
+> 5. NEVER output markdown labels or prefixes like "Evaluation:" or "Topic:". Speak naturally in conversational speech.
+> 6. Keep your total response under 60 words (3-4 sentences max).
+> 
+> 
+> Candidate Profile:
+> Candidate: David Miller
+> Role: Business Analyst | Experience: 8 years | Education: MBA
+> Cohort Progress: 28/31 missions completed, 6 first-try passes
+> Completed Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Conversation Memory & Context Management (Day 20), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)
+> 
+> Target Completed Curriculum Topic: "Embeddings Explained" (Day 7) [Level: intermediate]
+> User: Ask your first technical question Q1 directly to David Miller ("you") about completed topic "Embeddings Explained" (Day 7). Focus on concrete system architecture, tools (Sentence Transformers, OpenAI Embeddings, Scikit-learn, Matplotlib), or trade-offs. Speak in second-person. Under 60 words total. No topic headers in text.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mslerdzb. Topic: "Embeddings Explained (Day 7)". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.160842666,
+    "prompt_tokens": 449,
+    "prompt_time": 0.023381852,
+    "completion_tokens": 38,
+    "completion_time": 0.163680081,
+    "total_tokens": 487,
+    "total_time": 0.187061933
+  },
+  "reply": "You completed Embeddings Explained, so how would you architect a system using Sentence Transformers and Scikit-learn to generate and compare embeddings, considering trade-offs between accuracy and computational efficiency?"
+}
+```
+---
+
+## [2026-08-09T06:15:16.301Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** ec0bc0da
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: David Miller","content":"Candidate: David Miller\nRole: Business Analyst | Experience: 8 years | Education: MBA\nCohort Progress: 28/31 missions completed, 6 first-try passes\nCompleted Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Conversation Memory & Context Management (Day 20), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)","tags":["interview-init","sess-mslerdzb","CAND-004"],"metadata":{"sessionId":"sess-mslerdzb","candidateId":"CAND-004"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786256098386",
+  "extracted": {
+    "entities": 15,
+    "edges": 18
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "b54147b59d78",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-09T06:15:52.599Z] - Interview Start: David Miller
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** c1610b92
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
+> 5. NEVER output markdown labels or prefixes like "Evaluation:" or "Topic:". Speak naturally in conversational speech.
+> 6. Keep your total response under 60 words (3-4 sentences max).
+> 
+> 
+> Candidate Profile:
+> Candidate: David Miller
+> Role: Business Analyst | Experience: 8 years | Education: MBA
+> Cohort Progress: 28/31 missions completed, 6 first-try passes
+> Completed Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Conversation Memory & Context Management (Day 20), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)
+> 
+> Target Completed Curriculum Topic: "Embeddings Explained" (Day 7) [Level: intermediate]
+> User: Ask your first technical question Q1 directly to David Miller ("you") about completed topic "Embeddings Explained" (Day 7). Focus on concrete system architecture, tools (Sentence Transformers, OpenAI Embeddings, Scikit-learn, Matplotlib), or trade-offs. Speak in second-person. Under 60 words total. No topic headers in text.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mslesk3o. Topic: "Embeddings Explained (Day 7)". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.056583046,
+    "prompt_tokens": 449,
+    "prompt_time": 0.022915046,
+    "completion_tokens": 39,
+    "completion_time": 0.191700712,
+    "total_tokens": 488,
+    "total_time": 0.214615758
+  },
+  "reply": "You completed Embeddings Explained, so how would you utilize Sentence Transformers and Scikit-learn to generate and compare embeddings in a system architecture, considering trade-offs between dimensionality and performance?"
+}
+```
+---
+
+## [2026-08-09T06:16:12.504Z] - Breeth API - Create Episode
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 1315e334
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: David Miller","content":"Candidate: David Miller\nRole: Business Analyst | Experience: 8 years | Education: MBA\nCohort Progress: 28/31 missions completed, 6 first-try passes\nCompleted Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Conversation Memory & Context Management (Day 20), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Capstone Project & Final Demo (Day 31)","tags":["interview-init","sess-mslesk3o","CAND-004"],"metadata":{"sessionId":"sess-mslesk3o","candidateId":"CAND-004"}}
+
+### 2. AI Reasoning & Strategy
+Creating new episodic memory entry in Breeth AI via POST /v1/episodes.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786256154645",
+  "extracted": {
+    "entities": 15,
+    "edges": 21
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "953d417651f8",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---

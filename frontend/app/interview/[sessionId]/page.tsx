@@ -22,51 +22,50 @@ export default function InterviewConsolePage({ params }: { params: Promise<{ ses
   const { turnCount, maxTurns, elapsedSeconds, tickTimer, initSession, turns, setIsCompleted } = useInterviewStore();
   const [isInitializing, setIsInitializing] = useState(false);
   const [showWelcomeOverlay, setShowWelcomeOverlay] = useState(true);
+  const [hasBegun, setHasBegun] = useState(false);
 
-  // Running Timer
+  // Running Timer (Starts after briefing is completed & first question is loaded)
   useEffect(() => {
+    if (!hasBegun || isInitializing || turns.length === 0) return;
     const timer = setInterval(() => tickTimer(), 1000);
     return () => clearInterval(timer);
-  }, [tickTimer]);
+  }, [hasBegun, isInitializing, turns.length, tickTimer]);
 
-  // Ensure real API session initialization on mount
-  useEffect(() => {
-    async function initializeEngine() {
-      if (turns.length === 0 && !isInitializing) {
-        setIsInitializing(true);
+  // Handle "Begin Technical Interview" button click
+  const handleStartInterviewSession = async () => {
+    setShowWelcomeOverlay(false);
+    setHasBegun(true);
 
-        // Ensure active candidate profile exists
-        let cand = activeCandidate;
-        if (!cand) {
-          cand = await candidateService.getCandidateById('CAND-001');
-          if (cand) {
-            setActiveCandidate(cand);
-          }
-        }
+    if (turns.length === 0 && !isInitializing) {
+      setIsInitializing(true);
 
+      let cand = activeCandidate;
+      if (!cand) {
+        cand = await candidateService.getCandidateById('CAND-001');
         if (cand) {
-          try {
-            // Call backend POST /api/interview to initialize Groq + Breeth AI session
-            const response = await interviewService.startInterview(sessionId, cand);
-            initSession(sessionId, response.reply, response.topic);
-          } catch (err) {
-            console.error('[InterviewConsole] Engine initialization error:', err);
-            initSession(
-              sessionId,
-              `Welcome ${cand.member.name}. Let's begin by discussing embeddings and high-dimensional vector index optimization: How do you optimize query latency?`,
-              'Embeddings Explained (Day 7)'
-            );
-          } finally {
-            setIsInitializing(false);
-          }
-        } else {
-          setIsInitializing(false);
+          setActiveCandidate(cand);
         }
       }
-    }
 
-    initializeEngine();
-  }, [sessionId, activeCandidate, setActiveCandidate, initSession, turns.length, isInitializing]);
+      if (cand) {
+        try {
+          const response = await interviewService.startInterview(sessionId, cand);
+          initSession(sessionId, response.reply, response.topic);
+        } catch (err) {
+          console.error('[InterviewConsole] Engine initialization error:', err);
+          initSession(
+            sessionId,
+            `Welcome ${cand.member.name}. Let's begin by discussing embeddings and high-dimensional vector index optimization: How do you optimize query latency?`,
+            'Embeddings Explained (Day 7)'
+          );
+        } finally {
+          setIsInitializing(false);
+        }
+      } else {
+        setIsInitializing(false);
+      }
+    }
+  };
 
   const formatTimer = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -79,6 +78,17 @@ export default function InterviewConsolePage({ params }: { params: Promise<{ ses
     router.push(`/results/${sessionId}`);
   };
 
+  // 1. Initial Briefing Welcome Overlay
+  if (showWelcomeOverlay) {
+    return (
+      <WelcomeOverlay
+        candidate={activeCandidate}
+        onContinue={handleStartInterviewSession}
+      />
+    );
+  }
+
+  // 2. Loading State while generating first question after button click
   if (isInitializing || turns.length === 0) {
     return (
       <div className="h-screen bg-[#08090A] flex flex-col items-center justify-center text-white p-6 text-center">
@@ -93,13 +103,6 @@ export default function InterviewConsolePage({ params }: { params: Promise<{ ses
 
   return (
     <div className="h-screen bg-[#08090A] text-gray-100 flex flex-col overflow-hidden relative">
-      {/* Blurred Translucent Overlay for Initial Welcome Briefing */}
-      {showWelcomeOverlay && (
-        <WelcomeOverlay
-          candidate={activeCandidate}
-          onContinue={() => setShowWelcomeOverlay(false)}
-        />
-      )}
 
       {/* Console Top Header */}
       <header className="glass-nav px-6 py-4 border-b border-white/10 flex items-center justify-between shrink-0 bg-black/50 z-10 relative">
