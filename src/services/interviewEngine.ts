@@ -117,8 +117,15 @@ function getCandidateCompletedDays(candidate: Candidate, curriculum: Curriculum)
   const curriculumDays = (curriculum.days || []) as CurriculumDay[];
   const matchedDays = curriculumDays.filter((d) => completedSet.has(d.day));
 
-  if (matchedDays.length === 0) {
-    return curriculumDays.slice(0, 5);
+  if (matchedDays.length < 4) {
+    const existingDays = new Set(matchedDays.map((d) => d.day));
+    for (const d of curriculumDays) {
+      if (!existingDays.has(d.day)) {
+        matchedDays.push(d);
+        existingDays.add(d.day);
+      }
+      if (matchedDays.length >= 5) break;
+    }
   }
   return matchedDays;
 }
@@ -502,7 +509,7 @@ Total response under 40 words. Do not use markdown labels or headers.`;
       session.turnCount++;
 
       const interviewerTurns = session.turns.filter((t) => t.role === 'interviewer' && !t.isFollowUp).length;
-      if (interviewerTurns >= 6 || session.recordedQuestions.length >= 6) {
+      if (interviewerTurns >= 8 || session.recordedQuestions.length >= 8) {
         const feedbackResponse = await generateFinalFeedback(session);
         const result = compileInterviewResult(session);
         return { ...feedbackResponse, result, done: true, isFollowUp: false, validationText: wrongValidationText, isRight: false };
@@ -608,7 +615,7 @@ Target Completed Curriculum Topic: "${nextDay.title}" (Day ${nextDay.day}) [Leve
   session.turnCount++;
 
   const interviewerTurns = session.turns.filter((t) => t.role === 'interviewer' && !t.isFollowUp).length;
-  if (interviewerTurns >= 6 || session.recordedQuestions.length >= 6) {
+  if (interviewerTurns >= 8 || session.recordedQuestions.length >= 8) {
     const feedbackResponse = await generateFinalFeedback(session);
     const result = compileInterviewResult(session);
     return { ...feedbackResponse, result, done: true, isFollowUp: false };

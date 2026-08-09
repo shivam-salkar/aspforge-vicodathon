@@ -131,7 +131,7 @@ export function LiveActionCard() {
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       });
 
-      if (response.done || (recordedQuestions.length >= 6 && !response.isFollowUp)) {
+      if (response.done || (recordedQuestions.length >= 8 && !response.isFollowUp)) {
         setIsCompleted(true);
         setStatusText('Interview Completed • Compiling Candidate Results...');
         setTimeout(() => {
@@ -158,7 +158,7 @@ export function LiveActionCard() {
           </div>
           <div className="text-center space-y-2 max-w-md px-4">
             <h2 className="text-2xl font-bold text-white tracking-tight">Compiling Candidate Results & AI Analysis...</h2>
-            <p className="text-sm text-gray-400 font-mono">Synthesizing performance score out of 60 points across 6 completed topics...</p>
+            <p className="text-sm text-gray-400 font-mono">Synthesizing performance score out of 80 points across 8 completed topics...</p>
           </div>
         </div>
       )}
