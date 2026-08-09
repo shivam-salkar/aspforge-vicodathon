@@ -11,7 +11,7 @@
     "dev:frontend": "npm run dev --prefix frontend",
     "build:frontend": "npm run build --prefix frontend",
     "test:api": "tsx src/testInterviewApi.ts",
-    "build": "tsc && npm run build:frontend"
+    "build": "tsc"
   },
   "dependencies": {
     "axios": "^1.7.9",
