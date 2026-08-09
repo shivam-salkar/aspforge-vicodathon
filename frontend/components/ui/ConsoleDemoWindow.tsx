@@ -14,7 +14,7 @@ const demoScript = [
   {
     role: 'candidate',
     time: '01:09 PM',
-    text: 'Production is the way to deploy',
+    text: 'Production is deploying tested, reliable code to live servers with automated CI/CD pipelines, monitoring, and zero-downtime rollouts.',
   },
   {
     role: 'ai',

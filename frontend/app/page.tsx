@@ -302,7 +302,7 @@ export default function LandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
             {/* Step 1 */}
-            <GlassSurface borderRadius={24} backgroundOpacity={0.1} blur={16} brightness={55} className="border border-white/10 glass-card-hover">
+            <GlassSurface borderRadius={24} backgroundOpacity={0.1} blur={16} brightness={55} className="border border-white/10">
               <div className="w-full p-8 space-y-4">
                 <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center">
                   <GraduationCap className="w-5 h-5" />
@@ -315,7 +315,7 @@ export default function LandingPage() {
             </GlassSurface>
 
             {/* Step 2 */}
-            <GlassSurface borderRadius={24} backgroundOpacity={0.1} blur={16} brightness={55} className="border border-white/10 glass-card-hover">
+            <GlassSurface borderRadius={24} backgroundOpacity={0.1} blur={16} brightness={55} className="border border-white/10">
               <div className="w-full p-8 space-y-4">
                 <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center">
                   <Code2 className="w-5 h-5" />
@@ -328,7 +328,7 @@ export default function LandingPage() {
             </GlassSurface>
 
             {/* Step 3 */}
-            <GlassSurface borderRadius={24} backgroundOpacity={0.1} blur={16} brightness={55} className="border border-white/10 glass-card-hover">
+            <GlassSurface borderRadius={24} backgroundOpacity={0.1} blur={16} brightness={55} className="border border-white/10">
               <div className="w-full p-8 space-y-4">
                 <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center">
                   <Trophy className="w-5 h-5" />
