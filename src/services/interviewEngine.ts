@@ -461,6 +461,8 @@ Total response under 40 words. Do not use markdown labels or headers.`;
         isRight: false,
       });
 
+      const wrongValidationText = 'Not very accurate — missing core architectural trade-offs.';
+
       session.turns.push({
         role: 'candidate',
         content: message,
@@ -472,10 +474,10 @@ Total response under 40 words. Do not use markdown labels or headers.`;
       session.turnCount++;
 
       const interviewerTurns = session.turns.filter((t) => t.role === 'interviewer' && !t.isFollowUp).length;
-      if (interviewerTurns >= 8 && session.topicsCovered.size >= 4) {
+      if (interviewerTurns >= 6 || session.recordedQuestions.length >= 6) {
         const feedbackResponse = await generateFinalFeedback(session);
         const result = compileInterviewResult(session);
-        return { ...feedbackResponse, result, isFollowUp: false };
+        return { ...feedbackResponse, result, done: true, isFollowUp: false, validationText: wrongValidationText, isRight: false };
       }
 
       const nextDay = selectNextCompletedDayTopic(session);
@@ -513,6 +515,7 @@ Target Completed Curriculum Topic: "${nextDay.title}" (Day ${nextDay.day}) [Leve
         role: 'interviewer',
         content: nextMainReply,
         mainQuestion: nextMainReply,
+        validationText: wrongValidationText,
         topic: topicLabel,
         isFollowUp: false,
         timestamp: new Date().toISOString(),
@@ -525,6 +528,7 @@ Target Completed Curriculum Topic: "${nextDay.title}" (Day ${nextDay.day}) [Leve
       return {
         reply: nextMainReply,
         mainQuestion: nextMainReply,
+        validationText: wrongValidationText,
         isFollowUp: false,
         skippedFollowUp: true,
         done: false,
@@ -576,10 +580,10 @@ Target Completed Curriculum Topic: "${nextDay.title}" (Day ${nextDay.day}) [Leve
   session.turnCount++;
 
   const interviewerTurns = session.turns.filter((t) => t.role === 'interviewer' && !t.isFollowUp).length;
-  if (interviewerTurns >= 8 && session.topicsCovered.size >= 4) {
+  if (interviewerTurns >= 6 || session.recordedQuestions.length >= 6) {
     const feedbackResponse = await generateFinalFeedback(session);
     const result = compileInterviewResult(session);
-    return { ...feedbackResponse, result, isFollowUp: false };
+    return { ...feedbackResponse, result, done: true, isFollowUp: false };
   }
 
   const nextDay = selectNextCompletedDayTopic(session);

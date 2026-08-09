@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 import { useInterviewStore } from '@/stores/interviewStore';
 import BlurText from '@/components/ui/BlurText';
-import { Clock, BookOpen, CheckCircle2 } from 'lucide-react';
+import { Clock, BookOpen, CheckCircle2, XCircle } from 'lucide-react';
 
 export function QuestionCard() {
   const { turnCount, maxTurns, questionTimerSeconds, currentTopic, turns } = useInterviewStore();
@@ -20,7 +20,7 @@ export function QuestionCard() {
   // Main question text, follow-up question text & validation feedback text
   const mainQuestionText = activeTurn?.mainQuestion || (activeTurn?.isFollowUp ? interviewerTurns[interviewerTurns.length - 2]?.content : activeTurn?.content) || 'Waiting for question...';
   const followUpText = activeTurn?.followUpQuestion || (activeTurn?.isFollowUp ? activeTurn.content : '');
-  const validationText = activeTurn?.validationText || 'Correct! Spot-on technical answer.';
+  const validationText = activeTurn?.validationText;
   const topicName = activeTurn?.topic || currentTopic || 'Completed Curriculum Topic';
 
   // Auto-scroll down smooth when follow-up generates
@@ -86,6 +86,14 @@ export function QuestionCard() {
 
       {/* Scrollable Question Container */}
       <div ref={scrollContainerRef} className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-6 min-h-0">
+        {/* Red Feedback Box for Incorrect Answer on Next Question transition */}
+        {!isFollowUpActive && validationText && (
+          <div className="flex items-center gap-2.5 text-rose-400 font-bold bg-rose-950/50 border border-rose-500/30 px-4 py-2.5 rounded-xl text-sm sm:text-base w-fit shadow-lg shadow-rose-950/50 backdrop-blur-md animate-in fade-in duration-300 mb-2">
+            <XCircle className="w-5 h-5 text-rose-400 shrink-0" />
+            <span className="tracking-tight">{validationText}</span>
+          </div>
+        )}
+
         {/* Main AI Technical Question */}
         <div>
           <BlurText
@@ -98,13 +106,13 @@ export function QuestionCard() {
           />
         </div>
 
-        {/* Follow-up Stage (Validation Text + Gradient Line with integrated follow-up text + Question) */}
+        {/* Follow-up Stage (Green Validation Text + Gradient Line with integrated follow-up text + Question) */}
         {isFollowUpActive && (
           <div ref={followUpRef} className="pt-2 space-y-5 animate-in fade-in duration-500">
-            {/* 1. Validation Feedback Text ("Correct! Spot-on...", etc.) */}
+            {/* 1. Green Validation Feedback Text ("Correct! Spot-on...", etc.) */}
             <div className="flex items-center gap-2.5 text-emerald-400 font-bold bg-emerald-950/50 border border-emerald-500/30 px-4 py-2.5 rounded-xl text-sm sm:text-base w-fit shadow-lg shadow-emerald-950/50 backdrop-blur-md">
               <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-              <span className="tracking-tight">{validationText}</span>
+              <span className="tracking-tight">{validationText || 'Correct! Spot-on technical answer.'}</span>
             </div>
 
             {/* 2. Gradient Separation Line with integrated "follow-up" text */}

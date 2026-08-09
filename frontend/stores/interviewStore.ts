@@ -36,7 +36,7 @@ export const useInterviewStore = create<InterviewState>((set) => ({
   turns: [],
   recordedQuestions: [],
   turnCount: 1,
-  maxTurns: 8,
+  maxTurns: 6,
   currentTopic: '',
   difficulty: 'medium',
   statusText: 'Interview Engine Active • Listening for candidate input...',
