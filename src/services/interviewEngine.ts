@@ -308,12 +308,13 @@ Target Completed Curriculum Topic: "${initialDay.title}" (Day ${initialDay.day})
   }
 
   // Record the turn with explicit topic metadata
-  session.turns.push({ role: 'interviewer', content: reply, topic: topicLabel, isFollowUp: false, timestamp: new Date().toISOString() });
+  session.currentMainQuestion = reply;
+  session.turns.push({ role: 'interviewer', content: reply, mainQuestion: reply, topic: topicLabel, isFollowUp: false, timestamp: new Date().toISOString() });
   session.turnCount = 1;
   session.topicsCovered.add(`Day ${initialDay.day}`);
   session.topicsCovered.add(initialDay.title);
 
-  return { reply, done: false, topic: topicLabel, isFollowUp: false };
+  return { reply, mainQuestion: reply, done: false, topic: topicLabel, isFollowUp: false };
 }
 
 /**
@@ -334,84 +335,194 @@ export async function processConversationTurn(
   const profile = buildCandidateProfile(session.candidate);
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // PHASE A: Candidate just answered the MAIN QUESTION -> Generate 1-sentence Follow-Up
+  // STAGE 1: Candidate just answered the MAIN QUESTION
   // ─────────────────────────────────────────────────────────────────────────────
   if (!session.isExpectingFollowUpAnswer) {
-    session.currentMainQuestion = lastInterviewerTurn ? lastInterviewerTurn.content : 'Technical Question';
+    const mainScore = evaluateAnswerScore(message, currentTopic);
     session.currentMainAnswer = message;
-    session.isExpectingFollowUpAnswer = true;
+    session.currentMainScore = mainScore;
 
-    session.turns.push({
-      role: 'candidate',
-      content: message,
-      topic: currentTopic,
-      timestamp: new Date().toISOString(),
-      timeSpentSeconds,
-    });
+    // Rule 2: Follow-up question is generated ONLY IF main question score > 5 (Answered correctly!)
+    if (mainScore > 5.0) {
+      session.isExpectingFollowUpAnswer = true;
 
-    const systemPrompt = `${SYSTEM_PROMPT}
+      const systemPrompt = `${SYSTEM_PROMPT}
 
 Candidate Profile:
 ${profile}
 
 Focus Topic: "${currentTopic}"`;
 
-    const userPrompt = `The candidate just answered your main technical question about "${currentTopic}":
+      const userPrompt = `The candidate correctly answered your main technical question about "${currentTopic}":
 "${message}"
 
-React briefly in 1 short sentence. Then ask a 1-sentence targeted follow-up question framed specifically so the candidate can answer in a short 2-3 words (e.g. "Which vector index type gave lower latency: HNSW or IVF?", "Was your cache write-through or write-around?", "Did you use gRPC or REST?"). Keep total response under 35 words. Do not use markdown labels.`;
+React in 1 short validation sentence. Then ask a thoughtful, highly specific 1-sentence technical probing question whose ideal answer is a short 2-3 words (e.g. "Which vector index type gave lower search latency: HNSW or IVF?", "Was your cache write-through or write-around?", "Did you use gRPC or REST for inter-service communication?"). Keep total response under 35 words. Do not use markdown labels or headers.`;
 
-    let followUpReply: string;
-    try {
-      const response = await groqClient.chat.completions.create({
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: userPrompt },
-        ],
-        model: 'llama-3.3-70b-versatile',
-        temperature: 0.6,
-        max_tokens: 120,
+      let followUpReply: string;
+      try {
+        const response = await groqClient.chat.completions.create({
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt },
+          ],
+          model: 'llama-3.3-70b-versatile',
+          temperature: 0.6,
+          max_tokens: 120,
+        });
+
+        followUpReply = sanitizeReply(response.choices[0]?.message?.content || '');
+
+        logAiInteraction({
+          taskName: `Interview Follow-up Gen: ${session.candidate.member.name}`,
+          userPrompt,
+          reasoning: `Main score ${mainScore} > 5. Generated follow-up probe.`,
+          output: { model: 'llama-3.3-70b-versatile', usage: response.usage, reply: followUpReply },
+        });
+      } catch (err) {
+        followUpReply = `Got it. Which specific index structure yielded lower search latency in your benchmark: HNSW or IVF?`;
+        console.warn('[InterviewEngine] Groq follow-up generation failed, using fallback:', (err as Error).message);
+      }
+
+      session.currentFollowUpQuestion = followUpReply;
+
+      session.turns.push({
+        role: 'candidate',
+        content: message,
+        topic: currentTopic,
+        timestamp: new Date().toISOString(),
+        timeSpentSeconds,
       });
 
-      followUpReply = sanitizeReply(response.choices[0]?.message?.content || '');
-
-      logAiInteraction({
-        taskName: `Interview Follow-up Gen: ${session.candidate.member.name}`,
-        userPrompt,
-        reasoning: `Generated follow-up probe for turn ${session.turnCount}.`,
-        output: { model: 'llama-3.3-70b-versatile', usage: response.usage, reply: followUpReply },
+      session.turns.push({
+        role: 'interviewer',
+        content: followUpReply,
+        mainQuestion: session.currentMainQuestion,
+        followUpQuestion: followUpReply,
+        topic: currentTopic,
+        isFollowUp: true,
+        timestamp: new Date().toISOString(),
       });
-    } catch (err) {
-      followUpReply = `Got it. Which specific index structure yielded lower search latency in your benchmark: HNSW or IVF?`;
-      console.warn('[InterviewEngine] Groq follow-up generation failed, using fallback:', (err as Error).message);
+
+      return {
+        reply: followUpReply,
+        mainQuestion: session.currentMainQuestion,
+        followUpQuestion: followUpReply,
+        isFollowUp: true,
+        skippedFollowUp: false,
+        score: mainScore,
+        isRight: true,
+        done: false,
+        topic: currentTopic,
+      };
+    } else {
+      // ─── Main Answer Score <= 5 (Incorrect / Weak) ───
+      // Rule 2: DO NOT generate a follow-up! Record question and move directly to Next Main Question Q+1
+      session.isExpectingFollowUpAnswer = false;
+
+      const dayNumMatch = currentTopic.match(/Day\s*(\d+)/i);
+      const dayNumber = dayNumMatch ? parseInt(dayNumMatch[1], 10) : undefined;
+
+      const questionNumber = session.recordedQuestions.length + 1;
+      session.recordedQuestions.push({
+        questionNumber,
+        topic: currentTopic,
+        dayNumber,
+        question: session.currentMainQuestion || 'Technical Question',
+        answer: message,
+        mainQuestion: session.currentMainQuestion || 'Technical Question',
+        mainAnswer: message,
+        mainScore,
+        followUpQuestion: undefined,
+        followUpAnswer: undefined,
+        followUpScore: undefined,
+        timeSpentSeconds: Math.max(10, timeSpentSeconds),
+        score: mainScore,
+        isRight: false,
+      });
+
+      session.turns.push({
+        role: 'candidate',
+        content: message,
+        topic: currentTopic,
+        timestamp: new Date().toISOString(),
+        timeSpentSeconds,
+      });
+
+      session.turnCount++;
+
+      const interviewerTurns = session.turns.filter((t) => t.role === 'interviewer' && !t.isFollowUp).length;
+      if (interviewerTurns >= 8 && session.topicsCovered.size >= 4) {
+        const feedbackResponse = await generateFinalFeedback(session);
+        const result = compileInterviewResult(session);
+        return { ...feedbackResponse, result, isFollowUp: false };
+      }
+
+      const nextDay = selectNextCompletedDayTopic(session);
+      const qNum = interviewerTurns + 1;
+      const topicLabel = `${nextDay.title} (Day ${nextDay.day})`;
+
+      const systemPrompt = `${SYSTEM_PROMPT}
+
+Candidate Profile:
+${profile}
+
+Target Completed Curriculum Topic: "${nextDay.title}" (Day ${nextDay.day}) [Level: ${getDifficultyLabel(session.difficulty)}]`;
+
+      const userPrompt = `Ask main technical question Q${qNum} directly to ${session.candidate.member.name} ("you") about completed topic "${nextDay.title}" (Day ${nextDay.day}). Focus on architecture, tools (${(nextDay.tools || []).join(', ')}), or trade-offs. Ask only the main question in 2-3 sentences. Under 50 words total. Do not include follow-up headers or labels.`;
+
+      let nextMainReply: string;
+      try {
+        const response = await groqClient.chat.completions.create({
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt },
+          ],
+          model: 'llama-3.3-70b-versatile',
+          temperature: 0.6,
+          max_tokens: 180,
+        });
+
+        nextMainReply = sanitizeReply(response.choices[0]?.message?.content || '');
+      } catch (err) {
+        nextMainReply = `Moving to your completed topic ${nextDay.title}: How do you approach designing and scaling this component for reliability?`;
+      }
+
+      session.currentMainQuestion = nextMainReply;
+      session.turns.push({
+        role: 'interviewer',
+        content: nextMainReply,
+        mainQuestion: nextMainReply,
+        topic: topicLabel,
+        isFollowUp: false,
+        timestamp: new Date().toISOString(),
+      });
+      session.currentTopic = topicLabel;
+      session.topicsCovered.add(`Day ${nextDay.day}`);
+      session.topicsCovered.add(nextDay.title);
+
+      const currentResult = compileInterviewResult(session);
+      return {
+        reply: nextMainReply,
+        mainQuestion: nextMainReply,
+        isFollowUp: false,
+        skippedFollowUp: true,
+        done: false,
+        topic: topicLabel,
+        score: mainScore,
+        isRight: false,
+        result: currentResult,
+      };
     }
-
-    session.turns.push({
-      role: 'interviewer',
-      content: followUpReply,
-      topic: currentTopic,
-      isFollowUp: true,
-      mainQuestion: session.currentMainQuestion,
-      timestamp: new Date().toISOString(),
-    });
-
-    return {
-      reply: followUpReply,
-      isFollowUp: true,
-      mainQuestion: session.currentMainQuestion,
-      done: false,
-      topic: currentTopic,
-    };
   }
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // PHASE B: Candidate answered the FOLLOW-UP QUESTION in 2-3 words -> Advance to Next Main Q
+  // STAGE 2: Candidate answered the FOLLOW-UP QUESTION (short 2-3 words)
   // ─────────────────────────────────────────────────────────────────────────────
   session.isExpectingFollowUpAnswer = false;
 
-  const combinedAnswer = `Main Answer: ${session.currentMainAnswer || ''} | Follow-up Answer (2-3 words): ${message}`;
-  const score = evaluateAnswerScore(combinedAnswer, currentTopic);
-  const isRight = score > 5.0;
+  const followUpScore = evaluateAnswerScore(message, currentTopic);
+  const combinedScore = Number((((session.currentMainScore || 6.0) * 0.7) + (followUpScore * 0.3)).toFixed(1));
+  const isRight = combinedScore > 5.0;
 
   const dayNumMatch = currentTopic.match(/Day\s*(\d+)/i);
   const dayNumber = dayNumMatch ? parseInt(dayNumMatch[1], 10) : undefined;
@@ -422,9 +533,15 @@ React briefly in 1 short sentence. Then ask a 1-sentence targeted follow-up ques
     topic: currentTopic,
     dayNumber,
     question: session.currentMainQuestion || 'Technical Question',
-    answer: combinedAnswer,
+    answer: `Main: ${session.currentMainAnswer || ''} | Follow-up: ${message}`,
+    mainQuestion: session.currentMainQuestion || 'Technical Question',
+    mainAnswer: session.currentMainAnswer,
+    mainScore: session.currentMainScore,
+    followUpQuestion: session.currentFollowUpQuestion,
+    followUpAnswer: message,
+    followUpScore,
     timeSpentSeconds: Math.max(10, timeSpentSeconds),
-    score,
+    score: combinedScore,
     isRight,
   });
 
@@ -437,20 +554,11 @@ React briefly in 1 short sentence. Then ask a 1-sentence targeted follow-up ques
   });
   session.turnCount++;
 
-  breethClient.extractIntent({
-    title: `Turn ${session.turnCount} — Combined Answer`,
-    content: `Topic: ${currentTopic}\nScore: ${score}/10 (${isRight ? 'RIGHT' : 'WRONG'})\nCombined Answer: ${combinedAnswer}`,
-    tags: ['interview-turn', sessionId, session.candidate.member.id],
-    metadata: { sessionId, turn: session.turnCount, topic: currentTopic, score, isRight },
-  }).catch((err) => {
-    console.warn('[InterviewEngine] Breeth extractIntent failed (non-fatal):', (err as Error).message);
-  });
-
   const interviewerTurns = session.turns.filter((t) => t.role === 'interviewer' && !t.isFollowUp).length;
   if (interviewerTurns >= 8 && session.topicsCovered.size >= 4) {
     const feedbackResponse = await generateFinalFeedback(session);
     const result = compileInterviewResult(session);
-    return { ...feedbackResponse, result };
+    return { ...feedbackResponse, result, isFollowUp: false };
   }
 
   const nextDay = selectNextCompletedDayTopic(session);
@@ -480,29 +588,15 @@ Target Completed Curriculum Topic: "${nextDay.title}" (Day ${nextDay.day}) [Leve
     });
 
     nextMainReply = sanitizeReply(response.choices[0]?.message?.content || '');
-
-    logAiInteraction({
-      taskName: `Interview Main Q Gen ${session.turnCount}: ${session.candidate.member.name}`,
-      userPrompt: `Candidate follow-up answer: "${message}"`,
-      reasoning: `Turn ${session.turnCount}. Q${qNum} on completed day ${nextDay.day} ("${nextDay.title}").`,
-      output: { model: 'llama-3.3-70b-versatile', usage: response.usage, reply: nextMainReply },
-    });
   } catch (err) {
     nextMainReply = `Moving to your completed topic ${nextDay.title}: How do you approach designing and scaling this component for reliability?`;
-    console.warn('[InterviewEngine] Groq completion failed, using fallback:', (err as Error).message);
   }
 
-  adjustDifficulty(session, nextMainReply);
-
-  if (!isRight) {
-    if (!session.weakAreas.includes(currentTopic)) session.weakAreas.push(currentTopic);
-  } else {
-    if (!session.strongAreas.includes(currentTopic)) session.strongAreas.push(currentTopic);
-  }
-
+  session.currentMainQuestion = nextMainReply;
   session.turns.push({
     role: 'interviewer',
     content: nextMainReply,
+    mainQuestion: nextMainReply,
     topic: topicLabel,
     isFollowUp: false,
     timestamp: new Date().toISOString(),
@@ -515,10 +609,11 @@ Target Completed Curriculum Topic: "${nextDay.title}" (Day ${nextDay.day}) [Leve
 
   return {
     reply: nextMainReply,
+    mainQuestion: nextMainReply,
     isFollowUp: false,
     done: false,
     topic: topicLabel,
-    score,
+    score: combinedScore,
     isRight,
     result: currentResult,
   };

@@ -1,5 +1,56 @@
 [
   {
+    "sessionId": "sess-mslfqe9z",
+    "candidateId": "CAND-001",
+    "candidateName": "Sarah Johnson",
+    "jobRole": "Senior Data Engineer",
+    "createdAt": "2026-08-09T06:42:11.040Z",
+    "overallScore": 7,
+    "overallPercentage": 70,
+    "totalQuestions": 2,
+    "rightCount": 1,
+    "wrongCount": 1,
+    "totalTimeSeconds": 20,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "topic": "Embeddings Explained (Day 7)",
+        "dayNumber": 7,
+        "question": "You implemented embeddings, how do you utilize Sentence Transformers for text embedding generation in your system architecture? You used OpenAI Embeddings, what trade-offs did you consider?",
+        "answer": "Main Answer: We use sentence transformers as the embedding layer for semantic retrieval and normalization: they convert each chunk of text into a dense vector that captures meaning rather than exact wording, then those vectors are indexed for similarity search, clustering, and deduplication in the retrieval pipeline. | Follow-up Answer (2-3 words): ivf",
+        "timeSpentSeconds": 10,
+        "score": 9.2,
+        "isRight": true
+      },
+      {
+        "questionNumber": 2,
+        "topic": "Vector Databases Overview (Day 8)",
+        "dayNumber": 8,
+        "question": "You designed a vector database, what tools did you choose and why, considering ChromaDB and Pinecone? ---FOLLOWUP--- Why ChromaDB",
+        "answer": "Main Answer: idk | Follow-up Answer (2-3 words): hnsw",
+        "timeSpentSeconds": 10,
+        "score": 4.9,
+        "isRight": false
+      }
+    ],
+    "topicTimeAnalysis": [
+      {
+        "topic": "Embeddings Explained (Day 7)",
+        "dayNumber": 7,
+        "questionCount": 1,
+        "avgScore": 9.2,
+        "totalTimeSeconds": 10
+      },
+      {
+        "topic": "Vector Databases Overview (Day 8)",
+        "dayNumber": 8,
+        "questionCount": 1,
+        "avgScore": 4.9,
+        "totalTimeSeconds": 10
+      }
+    ]
+  },
+  {
     "sessionId": "sess-mslfjbuo",
     "candidateId": "CAND-003",
     "candidateName": "Emily Chen",

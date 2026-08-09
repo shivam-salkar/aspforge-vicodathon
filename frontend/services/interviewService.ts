@@ -5,12 +5,19 @@ export interface StartInterviewResponse {
   reply: string;
   done: boolean;
   topic?: string;
+  isFollowUp?: boolean;
+  mainQuestion?: string;
+  followUpQuestion?: string;
 }
 
 export interface ConversationTurnResponse {
   reply: string;
   done: boolean;
   topic?: string;
+  isFollowUp?: boolean;
+  skippedFollowUp?: boolean;
+  mainQuestion?: string;
+  followUpQuestion?: string;
   score?: number;
   isRight?: boolean;
   feedback?: Feedback;

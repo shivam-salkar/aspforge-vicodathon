@@ -43,6 +43,7 @@ export interface ConversationTurn {
   timeSpentSeconds?: number;
   isFollowUp?: boolean;
   mainQuestion?: string;
+  followUpQuestion?: string;
 }
 
 export interface RecordedQuestion {
@@ -51,6 +52,12 @@ export interface RecordedQuestion {
   dayNumber?: number;
   question: string;
   answer: string;
+  mainQuestion: string;
+  mainAnswer?: string;
+  mainScore?: number;
+  followUpQuestion?: string;
+  followUpAnswer?: string;
+  followUpScore?: number;
   timeSpentSeconds: number;
   score: number; // 0 to 10 scale
   isRight: boolean; // score > 5

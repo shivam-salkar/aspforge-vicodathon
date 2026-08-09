@@ -101,6 +101,7 @@ export function LiveActionCard() {
         questionNumber: recordedQuestions.length + 1,
         topic: activeTopic,
         question: lastQuestion,
+        mainQuestion: response.mainQuestion || lastQuestion,
         answer: userText,
         timeSpentSeconds: timeSpent,
         score,
@@ -111,6 +112,9 @@ export function LiveActionCard() {
         role: 'interviewer',
         content: response.reply,
         topic: response.topic || currentTopic,
+        isFollowUp: response.isFollowUp,
+        mainQuestion: response.mainQuestion,
+        followUpQuestion: response.followUpQuestion,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       });
 

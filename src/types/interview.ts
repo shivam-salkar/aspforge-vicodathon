@@ -63,6 +63,7 @@ export interface ConversationTurn {
   timeSpentSeconds?: number;
   isFollowUp?: boolean;
   mainQuestion?: string;
+  followUpQuestion?: string;
 }
 
 export interface RecordedQuestion {
@@ -71,6 +72,12 @@ export interface RecordedQuestion {
   dayNumber?: number;
   question: string;
   answer: string;
+  mainQuestion: string;
+  mainAnswer?: string;
+  mainScore?: number;
+  followUpQuestion?: string;
+  followUpAnswer?: string;
+  followUpScore?: number;
   timeSpentSeconds: number;
   score: number; // 0-10 scale
   isRight: boolean; // score > 5
@@ -119,6 +126,8 @@ export interface InterviewSession {
   isExpectingFollowUpAnswer?: boolean;
   currentMainQuestion?: string;
   currentMainAnswer?: string;
+  currentMainScore?: number;
+  currentFollowUpQuestion?: string;
 }
 
 // ─── API Request / Response Contract ─────────────────────────────────────────
@@ -142,7 +151,9 @@ export interface InterviewApiResponse {
   done: boolean;
   topic?: string;
   isFollowUp?: boolean;
+  skippedFollowUp?: boolean;
   mainQuestion?: string;
+  followUpQuestion?: string;
   score?: number;
   isRight?: boolean;
   feedback?: Feedback;

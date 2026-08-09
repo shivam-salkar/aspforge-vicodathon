@@ -14,15 +14,12 @@ export function QuestionCard() {
   const interviewerTurns = turns.filter((t) => t.role === 'interviewer');
   const activeTurn = interviewerTurns[interviewerTurns.length - 1];
 
-  // Identify if current active turn is a follow-up question
-  const isFollowUpActive = Boolean(activeTurn?.isFollowUp);
+  // Identify if current active turn has a follow-up question
+  const isFollowUpActive = Boolean(activeTurn?.isFollowUp && (activeTurn?.followUpQuestion || activeTurn?.content));
 
-  // Main question is either activeTurn (if not follow-up) or previous turn's mainQuestion/content
-  const mainQuestionText = activeTurn?.isFollowUp
-    ? activeTurn.mainQuestion || interviewerTurns[interviewerTurns.length - 2]?.content || 'Main Question'
-    : activeTurn?.content || 'Waiting for question...';
-
-  const followUpText = activeTurn?.isFollowUp ? activeTurn.content : '';
+  // Main question text & follow-up question text
+  const mainQuestionText = activeTurn?.mainQuestion || (activeTurn?.isFollowUp ? interviewerTurns[interviewerTurns.length - 2]?.content : activeTurn?.content) || 'Waiting for question...';
+  const followUpText = activeTurn?.followUpQuestion || (activeTurn?.isFollowUp ? activeTurn.content : '');
   const topicName = activeTurn?.topic || currentTopic || 'Completed Curriculum Topic';
 
   // Auto-scroll down smooth when follow-up generates

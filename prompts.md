@@ -21628,3 +21628,274 @@ Generated follow-up probe for turn 2.
 }
 ```
 ---
+
+## [2026-08-09T06:42:11.653Z] - Interview Start: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** ee85b9ea
+
+### 1. User Prompt / Intent
+> System: 
+> You are a Senior Principal AI Engineer conducting a realistic 1-on-1 technical interview.
+> 
+> RULES:
+> 1. ALWAYS speak directly to the candidate in second person ("you", "your answer"). NEVER say "the candidate", "the candidate's answer", or "the user".
+> 2. React naturally like a real human interviewer. If they answer well, give a brief 1-sentence validation. If they say "i dont know" or give a weak answer, acknowledge it empathetically in 1 sentence.
+> 3. Use persistent memory facts from Breeth AI to ground your responses in what the candidate previously stated or achieved.
+> 4. ONLY ask technical questions strictly from the candidate's COMPLETED curriculum topics.
+> 5. Format your output into 2 sections separated by "---FOLLOWUP---":
+>    [Main Technical Question]
+>    ---FOLLOWUP---
+>    [2-3 word targeted follow-up probe]
+>    Example:
+>    How do you optimize vector index search latency in production?
+>    ---FOLLOWUP---
+>    Why vector index?
+> 6. Keep total response under 60 words total. Speak naturally without markdown labels like "Evaluation:" or "Topic:".
+> 
+> 
+> Candidate Profile:
+> Candidate: Sarah Johnson
+> Role: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science
+> Cohort Progress: 30/31 missions completed, 20 first-try passes
+> Completed Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Docker & Kubernetes Deployment (Day 28), Capstone Project & Final Demo (Day 31)
+> 
+> Target Completed Curriculum Topic: "Embeddings Explained" (Day 7) [Level: intermediate]
+> User: Ask your first main technical question Q1 directly to Sarah Johnson ("you") about completed topic "Embeddings Explained" (Day 7). Focus on concrete system architecture, tools (Sentence Transformers, OpenAI Embeddings, Scikit-learn, Matplotlib), or trade-offs. Ask only the main question in 2-3 sentences. Under 50 words total. Do not include follow-up headers or labels.
+
+### 2. AI Reasoning & Strategy
+Initialized session sess-mslfqe9z. Topic: "Embeddings Explained (Day 7)". Difficulty: medium.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.204537223,
+    "prompt_tokens": 513,
+    "prompt_time": 0.043983485,
+    "completion_tokens": 35,
+    "completion_time": 0.180960184,
+    "total_tokens": 548,
+    "total_time": 0.224943669
+  },
+  "reply": "You implemented embeddings, how do you utilize Sentence Transformers for text embedding generation in your system architecture? You used OpenAI Embeddings, what trade-offs did you consider?"
+}
+```
+---
+
+## [2026-08-09T06:42:56.602Z] - Interview Follow-up Gen: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 17e3b5c9
+
+### 1. User Prompt / Intent
+> The candidate just answered your main technical question about "Embeddings Explained (Day 7)":
+> "We use sentence transformers as the embedding layer for semantic retrieval and normalization: they convert each chunk of text into a dense vector that captures meaning rather than exact wording, then those vectors are indexed for similarity search, clustering, and deduplication in the retrieval pipeline."
+> 
+> React briefly in 1 short sentence. Then ask a 1-sentence targeted follow-up question framed specifically so the candidate can answer in a short 2-3 words (e.g. "Which vector index type gave lower latency: HNSW or IVF?", "Was your cache write-through or write-around?", "Did you use gRPC or REST?"). Keep total response under 35 words. Do not use markdown labels.
+
+### 2. AI Reasoning & Strategy
+Generated follow-up probe for turn 1.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.161219565,
+    "prompt_tokens": 581,
+    "prompt_time": 0.028375984,
+    "completion_tokens": 19,
+    "completion_time": 0.076827894,
+    "total_tokens": 600,
+    "total_time": 0.105203878
+  },
+  "reply": "Your answer is correct. ---FOLLOWUP--- HNSW or IVF?"
+}
+```
+---
+
+## [2026-08-09T06:43:06.760Z] - Interview Main Q Gen 2: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 6fd39e1c
+
+### 1. User Prompt / Intent
+> Candidate follow-up answer: "ivf"
+
+### 2. AI Reasoning & Strategy
+Turn 2. Q2 on completed day 8 ("Vector Databases Overview").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.056374009,
+    "prompt_tokens": 500,
+    "prompt_time": 0.025363761,
+    "completion_tokens": 33,
+    "completion_time": 0.103810258,
+    "total_tokens": 533,
+    "total_time": 0.129174019
+  },
+  "reply": "You designed a vector database, what tools did you choose and why, considering ChromaDB and Pinecone? ---FOLLOWUP--- Why ChromaDB"
+}
+```
+---
+
+## [2026-08-09T06:43:11.754Z] - Breeth API - Create Episode (Logged)
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** d61d4e9e
+
+### 1. User Prompt / Intent
+> {"title":"Interview Session Init: Sarah Johnson","content":"Candidate: Sarah Johnson\nRole: Senior Data Engineer | Experience: 9 years | Education: MS Computer Science\nCohort Progress: 30/31 missions completed, 20 first-try passes\nCompleted Curriculum Topics: Embeddings Explained (Day 7), Vector Databases Overview (Day 8), The Retrieval & Matching Engine (Day 10), Prompt Engineering Fundamentals (Day 12), Chatbot Backend & API Integration (Day 16), Multi-Agent Orchestration (Day 22), Model Context Protocol (MCP) (Day 23), Docker & Kubernetes Deployment (Day 28), Capstone Project & Final Demo (Day 31)","tags":["interview-init","sess-mslfqe9z","CAND-001"],"metadata":{"sessionId":"sess-mslfqe9z","candidateId":"CAND-001"}}
+
+### 2. AI Reasoning & Strategy
+Attempted POST /v1/episodes. Caught error/response: "<html>\r\n<head><title>504 Gateway Time-out</title></head>\r\n<body>\r\n<center><h1>504 Gateway Time-out</h1></center>\r\n</body>\r\n</html>\r\n"
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "error": "<html>\r\n<head><title>504 Gateway Time-out</title></head>\r\n<body>\r\n<center><h1>504 Gateway Time-out</h1></center>\r\n</body>\r\n</html>\r\n",
+  "status": 504
+}
+```
+---
+
+## [2026-08-09T06:43:20.995Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 726f046b
+
+### 1. User Prompt / Intent
+> {"title":"Turn 2 — Combined Answer","content":"Topic: Embeddings Explained (Day 7)\nScore: 9.2/10 (RIGHT)\nCombined Answer: Main Answer: We use sentence transformers as the embedding layer for semantic retrieval and normalization: they convert each chunk of text into a dense vector that captures meaning rather than exact wording, then those vectors are indexed for similarity search, clustering, and deduplication in the retrieval pipeline. | Follow-up Answer (2-3 words): ivf","tags":["interview-turn","sess-mslfqe9z","CAND-001"],"metadata":{"sessionId":"sess-mslfqe9z","turn":2,"topic":"Embeddings Explained (Day 7)","score":9.2,"isRight":true}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786257787980",
+  "extracted": {
+    "entities": 6,
+    "edges": 6
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "6764fca4f74f",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
+
+## [2026-08-09T06:43:26.735Z] - Interview Follow-up Gen: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 6b3cba08
+
+### 1. User Prompt / Intent
+> The candidate just answered your main technical question about "Vector Databases Overview (Day 8)":
+> "idk"
+> 
+> React briefly in 1 short sentence. Then ask a 1-sentence targeted follow-up question framed specifically so the candidate can answer in a short 2-3 words (e.g. "Which vector index type gave lower latency: HNSW or IVF?", "Was your cache write-through or write-around?", "Did you use gRPC or REST?"). Keep total response under 35 words. Do not use markdown labels.
+
+### 2. AI Reasoning & Strategy
+Generated follow-up probe for turn 2.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.056320197,
+    "prompt_tokens": 532,
+    "prompt_time": 0.039942714,
+    "completion_tokens": 23,
+    "completion_time": 0.101536872,
+    "total_tokens": 555,
+    "total_time": 0.141479586
+  },
+  "reply": "That's okay, vector databases can be complex. ---FOLLOWUP--- Try HNSW or?"
+}
+```
+---
+
+## [2026-08-09T06:43:37.992Z] - Interview Main Q Gen 3: Sarah Johnson
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** b5e49bba
+
+### 1. User Prompt / Intent
+> Candidate follow-up answer: "hnsw"
+
+### 2. AI Reasoning & Strategy
+Turn 3. Q3 on completed day 10 ("The Retrieval & Matching Engine").
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "model": "llama-3.3-70b-versatile",
+  "usage": {
+    "queue_time": 0.160989423,
+    "prompt_tokens": 505,
+    "prompt_time": 0.025829377,
+    "completion_tokens": 35,
+    "completion_time": 0.175129213,
+    "total_tokens": 540,
+    "total_time": 0.20095859
+  },
+  "reply": "You designed a retrieval engine, how did you architect it using SQLite and ChromaDB, and what trade-offs did you consider? ---FOLLOWUP--- Engine choice"
+}
+```
+---
+
+## [2026-08-09T06:43:47.207Z] - Breeth API - Extract Intent
+- **Tool Used:** Antigravity
+- **AI Model:** gemini 3.6 flash
+- **Git User:** Aryan Darekar
+- **Execution ID:** 13634dfb
+
+### 1. User Prompt / Intent
+> {"title":"Turn 3 — Combined Answer","content":"Topic: Vector Databases Overview (Day 8)\nScore: 4.9/10 (WRONG)\nCombined Answer: Main Answer: idk | Follow-up Answer (2-3 words): hnsw","tags":["interview-turn","sess-mslfqe9z","CAND-001"],"metadata":{"sessionId":"sess-mslfqe9z","turn":3,"topic":"Vector Databases Overview (Day 8)","score":4.9,"isRight":false}}
+
+### 2. AI Reasoning & Strategy
+Posting episode to Breeth AI with intent extraction flag via POST /v1/episodes?extract_intent=true.
+
+### 3. Generated Code / API Output Logs
+```json
+{
+  "ok": true,
+  "episode_name": "api_1786257819070",
+  "extracted": {
+    "entities": 3,
+    "edges": 1
+  },
+  "group_id": "default",
+  "warning": null,
+  "cogram": {
+    "mode": "async",
+    "status": "pipeline_running_in_background",
+    "task_id": "bece6ed47811",
+    "note": "narrative/profile populate within ~15s; intent_meta runs only when extract_intent=True. Poll GET /v1/tasks/{task_id} or block with ?wait_seconds=20."
+  },
+  "intent_suggestion": null
+}
+```
+---
