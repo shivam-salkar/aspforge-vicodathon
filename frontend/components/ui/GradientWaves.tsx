@@ -38,9 +38,9 @@ const hexToRgb = (hex: string): [number, number, number] => {
 };
 
 const detailToSteps = (detail: string): number => {
-  if (detail === "low") return 40.0;
-  if (detail === "high") return 110.0;
-  return 70.0;
+  if (detail === "low") return 25.0;
+  if (detail === "high") return 65.0;
+  return 42.0;
 };
 
 const vertex = `#version 300 es
@@ -393,7 +393,7 @@ export const GradientWaves: React.FC<GradientWavesProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`relative w-full h-full overflow-hidden will-change-transform transform-gpu ${className}`.trim()}
+      className={`relative w-full h-full overflow-hidden ${className}`.trim()}
     />
   );
 };

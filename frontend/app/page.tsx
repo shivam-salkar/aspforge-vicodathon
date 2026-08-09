@@ -124,7 +124,7 @@ export default function LandingPage() {
       )}
 
       {/* FIXED BACKGROUND: GradientWaves Shader Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none w-full h-full overflow-hidden opacity-90">
+      <div className="fixed inset-0 z-0 pointer-events-none w-full h-full overflow-hidden opacity-90 will-change-transform transform-gpu">
         <GradientWaves
           horizonColor="#5227FF"
           waveColor="#FF9FFC"
