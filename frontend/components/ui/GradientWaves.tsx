@@ -194,7 +194,7 @@ export const GradientWaves: React.FC<GradientWavesProps> = ({
         alpha: true,
         premultipliedAlpha: true,
         antialias: false,
-        dpr: Math.min(window.devicePixelRatio || 1, 2),
+        dpr: Math.min(window.devicePixelRatio || 1, 1.25),
       });
     } catch (e) {
       console.warn("WebGL 2 not supported for GradientWaves", e);
@@ -393,7 +393,7 @@ export const GradientWaves: React.FC<GradientWavesProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`relative w-full h-full overflow-hidden ${className}`.trim()}
+      className={`relative w-full h-full overflow-hidden will-change-transform transform-gpu ${className}`.trim()}
     />
   );
 };
